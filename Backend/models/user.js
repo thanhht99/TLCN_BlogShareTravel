@@ -11,8 +11,11 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here (xác định liên kết ở đây)
+      
+      
       User.hasMany(models.Review, { foreignKey: 'userId'});
-
+      User.hasMany(models.Comment, { foreignKey: 'userId'});
+      User.hasMany(models.Blog, { foreignKey: 'userId'});
     }
   };
   User.init({

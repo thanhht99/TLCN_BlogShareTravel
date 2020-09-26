@@ -13,7 +13,12 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       Blog.belongsTo(models.Brand, { foreignKey: 'brandId'});
       Blog.belongsTo(models.Place, { foreignKey: 'placeId'});
+      Blog.belongsTo(models.User, { foreignKey: 'userId'});
+
+      Blog.hasMany(models.AlbumImageBlog, { foreignKey: 'blogId'});
+      Blog.hasMany(models.BlogContent, { foreignKey: 'blogId'});
       Blog.hasMany(models.Review, {foreignKey: 'blogId'});
+      Blog.hasMany(models.Comment, {foreignKey: 'blogId'});
 
     }
   };
