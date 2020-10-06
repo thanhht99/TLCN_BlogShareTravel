@@ -14,6 +14,7 @@ module.exports = (sequelize, DataTypes) => {
       // Done
       Review.belongsTo(models.User, { foreignKey: 'userId'});
       Review.belongsTo(models.Blog, { foreignKey: 'blogId'});
+      Review.belongsTo(models.Tour, { foreignKey: 'tourId'});
     }
   };
   Review.init({

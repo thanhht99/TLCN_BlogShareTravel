@@ -16,6 +16,10 @@ module.exports = (sequelize, DataTypes) => {
       User.hasMany(models.Review, { foreignKey: 'userId'});
       User.hasMany(models.Comment, { foreignKey: 'userId'});
       User.hasMany(models.Blog, { foreignKey: 'userId'});
+
+      User.hasMany(models.Tour, { foreignKey: 'tourGuideId'});
+
+      User.hasMany(models.ListCustomersOfTour, { foreignKey: 'customersId'});
     }
   };
   User.init({
@@ -25,6 +29,7 @@ module.exports = (sequelize, DataTypes) => {
     avatarPath: DataTypes.TEXT,
     username: DataTypes.STRING,
     password: DataTypes.STRING,
+    isTourGuide: DataTypes.BOOLEAN,
     isAdmin: DataTypes.BOOLEAN,
     isSuperAdmin: DataTypes.BOOLEAN
   }, {
