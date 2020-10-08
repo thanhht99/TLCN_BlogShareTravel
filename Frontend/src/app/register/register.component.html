@@ -14,9 +14,9 @@
       <input type="password" placeholder="Confirm Password" name="confirmpassword" autocomplete="new-password" required />
       <div class="avatar">
         <label>Select your avatar: </label>
-          <input type="file" name="avatar" accept="image/*" required />
+          <input type="file" name="avatarPath" accept="image/*" required />
       </div>
-      <input type="submit" value="Register" name="register" class="btn btn-block btn-primary" />
+      <input type="submit" value="Register" name="register" class="btn btn-block btn-primary" (click)="createNewUser()"/>
     </form>
   </div>
 </div>
