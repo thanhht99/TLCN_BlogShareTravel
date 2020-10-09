@@ -1,21 +1,33 @@
 'use strict';
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('Brands', {
+    await queryInterface.createTable('Trips', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      name: {
+      infoHotel: {
         type: Sequelize.STRING
       },
-      imagePath: {
+      infoVehicle: {
+        type: Sequelize.STRING
+      },
+      detail: {
         type: Sequelize.TEXT
       },
-      summary: {
-        type: Sequelize.TEXT
+      startDate: {
+        type: Sequelize.STRING
+      },
+      endDate: {
+        type: Sequelize.STRING
+      },
+      departureLocation: {
+        type: Sequelize.STRING
+      },
+      isStatus: {
+        type: Sequelize.BOOLEAN
       },
       createdAt: {
         allowNull: false,
@@ -28,6 +40,6 @@ module.exports = {
     });
   },
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('Brands');
+    await queryInterface.dropTable('Trips');
   }
 };

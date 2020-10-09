@@ -28,7 +28,7 @@ app.use(function (req, res, next) {
  */
 
 // register
-app.use('/users', require('./router/userRouter'));
+//app.use('/users', require('./router/userRouter'));
 
 
 

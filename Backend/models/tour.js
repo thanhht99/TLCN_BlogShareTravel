@@ -11,19 +11,21 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      Tour.belongsTo(models.User, { foreignKey: 'tourGuideId'});
+      Tour.belongsTo(models.TourGuide, { foreignKey: 'tourGuideId'});
 
-      Tour.hasMany(models.Review, {foreignKey: 'tourId'});
-      Tour.hasMany(models.Comment, {foreignKey: 'tourId'});
-      Tour.hasMany(models.ListCustomersOfTour, {foreignKey: 'tourId'});
+      Tour.hasMany(models.CommentsOfTour, {foreignKey: 'tourId'});
+      Tour.hasMany(models.Blog, {foreignKey: 'tourId'});
+      Tour.hasMany(models.Trip, {foreignKey: 'tourId'});
     }
   };
   Tour.init({
-    nameTour: DataTypes.STRING,
+    name: DataTypes.STRING,
     summary: DataTypes.TEXT,
+    price: DataTypes.DOUBLE,
+    time: DataTypes.STRING,
+    departureLocation: DataTypes.STRING,
     amount: DataTypes.INTEGER,
-    isAccept: DataTypes.BOOLEAN,
-    isRemove: DataTypes.BOOLEAN
+    isStatus: DataTypes.BOOLEAN
   }, {
     sequelize,
     modelName: 'Tour',

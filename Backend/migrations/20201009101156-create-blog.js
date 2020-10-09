@@ -1,29 +1,23 @@
 'use strict';
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('ListCustomersOfTours', {
+    await queryInterface.createTable('Blogs', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      nameCustomer: {
+      title: {
         type: Sequelize.STRING
       },
-      phone: {
-        type: Sequelize.STRING
+      imagePath: {
+        type: Sequelize.TEXT
       },
-      identityCard: {
-        type: Sequelize.STRING
+      summary: {
+        type: Sequelize.TEXT
       },
-      amount: {
-        type: Sequelize.INTEGER
-      },
-      isRegister: {
-        type: Sequelize.BOOLEAN
-      },
-      isCancel: {
+      isStatus: {
         type: Sequelize.BOOLEAN
       },
       createdAt: {
@@ -37,6 +31,6 @@ module.exports = {
     });
   },
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('ListCustomersOfTours');
+    await queryInterface.dropTable('Blogs');
   }
 };

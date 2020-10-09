@@ -1,7 +1,7 @@
 'use strict';
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('Places', {
+    await queryInterface.createTable('Tours', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -11,17 +11,14 @@ module.exports = {
       name: {
         type: Sequelize.STRING
       },
-      address: {
-        type: Sequelize.STRING
-      },
-      dictrict: {
-        type: Sequelize.STRING
-      },
-      province: {
-        type: Sequelize.STRING
-      },
-      avatarPath: {
+      summary: {
         type: Sequelize.TEXT
+      },
+      time: {
+        type: Sequelize.STRING
+      },
+      startingGate: {
+        type: Sequelize.STRING
       },
       isStatus: {
         type: Sequelize.BOOLEAN
@@ -37,6 +34,6 @@ module.exports = {
     });
   },
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('Places');
+    await queryInterface.dropTable('Tours');
   }
 };

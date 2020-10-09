@@ -1,27 +1,18 @@
 'use strict';
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('Blogs', {
+    await queryInterface.createTable('TripReviews', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      title: {
-        type: Sequelize.STRING
-      },
-      imagePath: {
+      message: {
         type: Sequelize.TEXT
       },
-      summary: {
-        type: Sequelize.TEXT
-      },
-      isAccept: {
-        type: Sequelize.BOOLEAN
-      },
-      isRemove: {
-        type: Sequelize.BOOLEAN
+      rating: {
+        type: Sequelize.INTEGER
       },
       createdAt: {
         allowNull: false,
@@ -34,6 +25,6 @@ module.exports = {
     });
   },
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('Blogs');
+    await queryInterface.dropTable('TripReviews');
   }
 };
