@@ -7,12 +7,14 @@ import { RegisterComponent } from './register/register.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { CustomerInfoComponent } from './customer-info/customer-info.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    RegisterComponent
+    RegisterComponent,
+    CustomerInfoComponent
   ],
   imports: [
     BrowserModule,
