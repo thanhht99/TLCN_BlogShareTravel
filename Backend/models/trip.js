@@ -16,6 +16,7 @@ module.exports = (sequelize, DataTypes) => {
 
       Trip.hasMany(models.TripReview, { foreignKey: 'tripId'});
       Trip.hasMany(models.FeedbackOfTrip, { foreignKey: 'tripId'});
+      Trip.hasMany(models.RegisterTrip, { foreignKey: 'tripId'});
     }
   };
   Trip.init({
