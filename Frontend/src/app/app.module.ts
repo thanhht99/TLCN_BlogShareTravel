@@ -8,13 +8,15 @@ import { RegisterComponent } from './register/register.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { CustomerInfoComponent } from './customer-info/customer-info.component';
+import { TourGuideInfoComponent } from './tour-guide-info/tour-guide-info.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     RegisterComponent,
-    CustomerInfoComponent
+    CustomerInfoComponent,
+    TourGuideInfoComponent
   ],
   imports: [
     BrowserModule,
