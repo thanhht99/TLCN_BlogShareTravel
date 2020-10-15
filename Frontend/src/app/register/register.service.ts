@@ -8,7 +8,7 @@ export class RegisterService {
 
   constructor(private webRequestService: WebRequestService) { }
 
-  createUser(name: string, email: string, avatarPath: string, username: string, password: string){
-    return this.webRequestService.post('users/register', {name, email, avatarPath, username, password});
+  createAccount(name: string, email: string, username: string, password: string){
+    return this.webRequestService.post('account/register', {name, email, username, password});
   }
 }

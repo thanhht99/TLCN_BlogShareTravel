@@ -31,8 +31,10 @@
 //         name: req.body.name,
 //         email: req.body.email,
 //         avatarPath: req.body.avatarPath,
-//         username: req.body.username,
-//         password: req.body.password, 
+//         // username: req.body.username,
+//         // password: req.body.password, 
+//         username: true,
+//         password: false, 
 //         isTourGuide: true,
 //         isAdmin: false,        
 //         isSuperAdmin: false

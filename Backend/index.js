@@ -27,9 +27,8 @@ app.use(function (req, res, next) {
   Table user
  */
 
-// register
-//app.use('/users', require('./router/userRouter'));
-
+// account
+app.use('/account', require('./router/accountRouter'));
 
 
 

@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { RegisterService } from './register.service';
-
+// import $ from "jquery";
 
 @Component({
   selector: 'app-register',
@@ -10,13 +10,19 @@ import { RegisterService } from './register.service';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor(private registerService: RegisterService) { }
+  micrositeName: string;
+
+  constructor(private registerService: RegisterService) { 
+    //this.micrositeName = $("#micrositeNameId").val();
+
+  }
 
   ngOnInit(): void {
   }
 
-  createNewUser(){
-    this.registerService.createUser('Testing', 'Testing', 'Testing', 'Testing', 'Testing').subscribe((response: any) =>{
+
+  createNewAccount(fullname: string){
+    this.registerService.createAccount(fullname, 'email', 'username', 'password').subscribe((response: any) =>{
       console.log(response);
     });
   }
