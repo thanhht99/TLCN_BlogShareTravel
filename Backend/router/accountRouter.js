@@ -79,6 +79,43 @@ router.post('/register', async (req, res, next) => {
     }
 });
 
+// delete account
+router.delete('/register/:id', async (req, res) => {
+    const idneed = parseInt(req.params.id, 10);
+    const testuser = await Account.findOne({where:{id: idneed}});
+
+    if (!testuser){
+        res.send(404);
+    }
+    else {
+        Account.destroy({
+            where: {id : idneed}
+        }).then(()=>{
+            res.send(200);
+        })
+    }                                
+});
+
+// change status Account
+router.patch('/register/:id/changeStatusAccount', async (req, res) => {
+    const idneed = parseInt(req.params.id, 10);
+    const testAccount = await Account.findOne({where:{id: idneed}});
+
+    if (!testAccount){
+        res.send(404);
+    }
+    else {
+        Account.update(
+            {isStatus: req.body.isStatus},
+            {where: {id : idneed}}
+        ).then(()=>{
+            res.send(200);
+        })
+    }                                
+});
+
+
+
 
 
 
