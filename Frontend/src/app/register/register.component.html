@@ -4,31 +4,28 @@
 <div class="body-content">
     <div class="module">
       <h1>Create An Account</h1>
-      <form class="form" action="form.php" method="post" enctype="multipart/form-data" autocomplete="off">
+      <form class="form" enctype="multipart/form-data" autocomplete="off" (ngSubmit)="createNewAccount()" #postForm="ngForm">
         <div class="alert alert-error"></div>
-        <input #nameInput type="text" placeholder="Full Name" name="fullname" id="fullname" required />
-        <input #emailInput type="email" placeholder="Email" name="email" id="email" required />
-        <input #usernameInput type="text" placeholder="User Name" name="username" id="username" required />
-        <input #passInput type="password" placeholder="Password" name="password" id="password" autocomplete="new-password" required />
-        <input type="password" placeholder="Confirm Password" name="confirmpassword" autocomplete="new-password" required />
+        <input [(ngModel)]='fullname' type="text" placeholder="Full Name" name="fullname" id="fullname" required />
+        <input [(ngModel)]='email' type="email" placeholder="Email" name="email" id="email" required />
+        <input [(ngModel)]='username' type="text" placeholder="User Name" name="username" id="username" required />
+        <input [(ngModel)]='password' type="password" placeholder="Password" name="password" id="password" autocomplete="new-password" required />
+        <input [(ngModel)]='confirmpassword' type="password" placeholder="Confirm Password" name="confirmpassword" autocomplete="new-password" required />
         
         <h5>Please select your type:</h5>
-        <div class="control">
+        <div class="control" >
           <label class="radio">
-            <input type="radio" name="typeUser" value="customer" id="customer">
+            <input type="radio" name="typeUser" value="customer" id="customer" [(ngModel)]='typeUser'>
             Customer
           </label>
           <label class="radio">
-            <input type="radio" name="typeUser" value="tourGuide" id="tourGuide">
+            <input type="radio" name="typeUser" value="tourGuide" id="tourGuide" [(ngModel)]='typeUser'>
             Tour Guide
           </label>
         </div>
 
-        <!-- <div class="avatar">
-          <label>Select your avatar: </label> 
-            <input type="file" name="avatarPath" accept="image/*" required />
-        </div> -->
-        <input type="submit" value="Register" name="register" class="btn btn-block btn-primary" (click)="createNewAccount(nameInput.value)"/>
+        <input type="submit" value="Register" name="register" class="btn btn-block btn-primary" />
+        <!-- (click)="createNewAccount()" -->
       </form>
     </div>
   </div>

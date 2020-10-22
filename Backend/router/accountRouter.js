@@ -29,54 +29,63 @@ router.get('/lists', (req, res) => {
 // register
 router.post('/register', async (req, res, next) => {
     
-    var salt = bcrypt.genSaltSync(10);
-    var hash = bcrypt.hashSync(req.body.password, salt);
-    req.body.password = hash;
-
+    
     let valueAccount = new Account({
         username: req.body.username,
         password: req.body.password,
-        // isTourGuide: req.body.isTourGuide,
-        // isCustomer: req.body.isCustomer,
-        isTourGuide: true,
-        isCustomer: false,
+        isTourGuide: req.body.isTourGuide,
+        isCustomer: req.body.isCustomer,       
         isAdmin: false,
         isSuperAdmin: false,
         isStatus: true            
-    });
+    });    
 
-    let valueCustomer = new Customer({
-        name: req.body.name,
-        email: req.body.email,
-        isStatus: false
-    });
-
-    let valueTourGuide = new TourGuide({
-        name: req.body.name,
-        email: req.body.email,
-        isStatus: false
-    });
-
-    //console.log(valueAccount);
-
-    valueAccount.save().then((listDoc) => {
-        res.send(listDoc);
-    });
-    
-    if(valueAccount.isCustomer == true)
+    if(valueAccount.password === req.body.confirmpassword )
     {
-        //console.log(valueCustomer);
-        valueCustomer.save().then((listDocCustomer) => {
-            res.send(listDocCustomer);
+        var salt = bcrypt.genSaltSync(10);
+        var hash = bcrypt.hashSync(valueAccount.password, salt);
+        valueAccount.password = hash;
+
+        //console.log(valueAccount);
+
+        valueAccount.save().then((data) => {
+            res.send(data);
+
+            let valueCustomer = new Customer({
+                name: req.body.name,
+                email: req.body.email,
+                isStatus: false,
+                accountId: data.id
+            });
+        
+            let valueTourGuide = new TourGuide({
+                name: req.body.name,
+                email: req.body.email,
+                isStatus: false,
+                accountId: data.id
+            });
+
+            if(valueAccount.isCustomer == true)
+            {
+                //console.log(valueCustomer);
+                valueCustomer.save().then((listDocCustomer) => {
+                    res.send(listDocCustomer);
+                });
+            }
+            if(valueAccount.isTourGuide == true)
+            {
+                //console.log(valueTourGuide);
+                valueTourGuide.save().then((listDocTourGuide) => {
+                    res.send(listDocTourGuide);
+                });
+            }
         });
     }
-    if(valueAccount.isTourGuide == true)
+    else
     {
-        //console.log(valueTourGuide);
-        valueTourGuide.save().then((listDocTourGuide) => {
-            res.send(listDocTourGuide);
-        });
-    }
+        res.send(403);
+    }  
+               
 });
 
 // delete account
