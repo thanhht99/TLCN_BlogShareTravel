@@ -1,10 +1,18 @@
 <head>
   <meta charset = "utf-8">
+  
 </head>
+
+<ng-template #customNotification let-notificationData="notification">
+  <my-custom-alert type="notificationData.type">
+      {{ notificationData.message }}
+  </my-custom-alert>
+</ng-template>
+
 <div class="body-content">
     <div class="module">
       <h1>Create An Account</h1>
-      <form class="form" enctype="multipart/form-data" autocomplete="off" (ngSubmit)="createNewAccount()" #postForm="ngForm">
+      <form class="form" enctype="multipart/form-data" autocomplete="off" #postForm="ngForm">
         <div class="alert alert-error"></div>
         <input [(ngModel)]='fullname' type="text" placeholder="Full Name" name="fullname" id="fullname" required />
         <input [(ngModel)]='email' type="email" placeholder="Email" name="email" id="email" required />
@@ -24,7 +32,7 @@
           </label>
         </div>
 
-        <input type="submit" value="Register" name="register" class="btn btn-block btn-primary" />
+        <input type="submit" value="Register" name="register" class="btn btn-block btn-primary" (click)="createNewAccount()"/>
         <!-- (click)="createNewAccount()" -->
       </form>
     </div>

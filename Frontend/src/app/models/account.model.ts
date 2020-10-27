@@ -3,8 +3,7 @@ export class Account {
     email: String;
     username: String;
     password: String;
-    confirmpassword: String;
-    typeUser: String;
+    confirmpassword: String;    
     isTourGuide: Boolean;
     isCustomer: Boolean;
 }

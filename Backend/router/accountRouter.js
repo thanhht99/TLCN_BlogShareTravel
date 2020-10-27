@@ -49,17 +49,17 @@ router.post('/register', async (req, res, next) => {
         //console.log(valueAccount);
 
         valueAccount.save().then((data) => {
-            res.send(data);
+            res.status(200).send(data);
 
             let valueCustomer = new Customer({
-                name: req.body.name,
+                name: req.body.fullname,
                 email: req.body.email,
                 isStatus: false,
                 accountId: data.id
             });
         
             let valueTourGuide = new TourGuide({
-                name: req.body.name,
+                name: req.body.fullname,
                 email: req.body.email,
                 isStatus: false,
                 accountId: data.id
@@ -83,7 +83,7 @@ router.post('/register', async (req, res, next) => {
     }
     else
     {
-        res.send(403);
+        res.sendStatus(403);
     }  
                
 });
