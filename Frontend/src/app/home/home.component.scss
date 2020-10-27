@@ -42,22 +42,25 @@ body {
 }
 #main-header {
 	background-color: #2f3738;
+	background-image: url(https://viettravelo.com/wp-content/uploads/2017/11/22789024_932576133560793_4377969808991149434_n.jpg);
+	background-position: center center;
+    background-size: cover;
 }
 #header {
 	margin: auto;
 	width: 100%;
-	max-width: 1170px;
-	padding: 20px;
+	max-width: initial;
+	padding: 100px;
 	overflow: hidden;
 }
 #header-logo {
 	width: 60%;
 	float: left;
 	padding: 20px;
-} 
+}
 #header-logo img {
 	transition: all 0.3s linear;
-	width: 100%;
+	width: 30%;
 	max-width: 371px;
 }
 #header-logo img:hover {
@@ -76,10 +79,10 @@ body {
 	text-align: right;
 }
 #socialbar ul li a:link, #socialbar ul li a:visited {
-	padding: 20px;
+	padding: 10px;
 	color: #d5fbff;
-	font-size: 40px;
-	line-height: 100px;
+	font-size: 10px;
+	line-height: 10px;
 	text-align: center;
 }
 #socialbar ul li a:hover {
@@ -103,8 +106,9 @@ ul.navbar {
 	background-color: #647678;
 	width: 100%;
 	overflow: hidden;
-	margin-top: 20px;
+	margin-top: 1px;
 	margin-bottom: 20px;
+	display: table-cell;
 }
 ul.navbar li {
 	display: inline-block;
@@ -175,11 +179,11 @@ ul.navbar li.icon {
 	float: right;
 	margin: 20px;
 	width: 100%;
-	max-width: 700px;
+	max-width: 1500px;
 }
 #main-hero {
 	background-color: #9fbcbf;
-	background-image: url(https://image.ibb.co/nP5th6/parallax.jpg);
+	background-image: url(https://vnn-imgs-f.vgcloud.vn/2020/07/27/09/img-5663.jpg);
 	background-repeat: no-repeat;
 	background-position: center top;
 	background-attachment: fixed;
