@@ -10,6 +10,11 @@ const Customer = models.Customer;
 const TourGuide = models.TourGuide;
 
 //const User = models.User;
+const {
+    send,
+    sendEmail
+} = require('../utility/mail');
+
 
 router.use(bodyParser.json());
 
@@ -33,58 +38,79 @@ router.post('/register', async (req, res, next) => {
     let valueAccount = new Account({
         username: req.body.username,
         password: req.body.password,
-        isTourGuide: req.body.isTourGuide,
-        isCustomer: req.body.isCustomer,       
+        // isTourGuide: req.body.isTourGuide,
+        // isCustomer: req.body.isCustomer,   
+        isTourGuide: true,
+        isCustomer: false,      
         isAdmin: false,
         isSuperAdmin: false,
         isStatus: true            
     });    
 
-    if(valueAccount.password === req.body.confirmpassword )
-    {
-        var salt = bcrypt.genSaltSync(10);
-        var hash = bcrypt.hashSync(valueAccount.password, salt);
-        valueAccount.password = hash;
 
-        //console.log(valueAccount);
+    var salt = bcrypt.genSaltSync(10);
+    var hash = bcrypt.hashSync(valueAccount.password, salt);
+    valueAccount.password = hash;
 
-        valueAccount.save().then((data) => {
-            res.status(200).send(data);
+    //console.log(valueAccount);
 
-            let valueCustomer = new Customer({
-                name: req.body.fullname,
-                email: req.body.email,
-                isStatus: false,
-                accountId: data.id
-            });
-        
-            let valueTourGuide = new TourGuide({
-                name: req.body.fullname,
-                email: req.body.email,
-                isStatus: false,
-                accountId: data.id
-            });
+    valueAccount.save().then((data) => {
+        //res.status(200).send(data);
 
-            if(valueAccount.isCustomer == true)
-            {
-                //console.log(valueCustomer);
-                valueCustomer.save().then((listDocCustomer) => {
-                    res.send(listDocCustomer);
-                });
-            }
-            if(valueAccount.isTourGuide == true)
-            {
-                //console.log(valueTourGuide);
-                valueTourGuide.save().then((listDocTourGuide) => {
-                    res.send(listDocTourGuide);
-                });
-            }
+        let valueCustomer = new Customer({
+            name: req.body.fullname,
+            email: req.body.email,
+            isStatus: false,
+            accountId: data.id
         });
-    }
-    else
-    {
-        res.sendStatus(403);
-    }  
+    
+        let valueTourGuide = new TourGuide({
+            name: req.body.fullname,
+            email: req.body.email,
+            isStatus: false,
+            accountId: data.id
+        });
+
+        if(valueAccount.isCustomer == true)
+        {
+            //console.log(valueCustomer);
+            valueCustomer.save().then(async listDocCustomer => {
+                //res.status(200).send(listDocCustomer);
+                var req = {
+                    username: valueAccount.username,
+                    fullname: listDocCustomer.name,
+                    email: listDocCustomer.email
+                };
+                res.status(200).send(req);
+                await sendEmail(req, res, next);
+            });
+        }
+        if(valueAccount.isTourGuide == true)
+        {
+            //console.log(valueTourGuide);
+            valueTourGuide.save().then(async listDocTourGuide => {
+                //res.status(200).send(listDocTourGuide);
+                var req = {
+                    username: valueAccount.username,
+                    fullname: listDocTourGuide.name,
+                    email: listDocTourGuide.email
+                };
+                res.status(200).send(req);
+                await sendEmail(req, res, next);
+            });
+        }
+    });
+
+
+
+    // if(valueAccount.password === req.body.confirmpassword )
+    // {
+        
+    // }
+    // else
+    // {
+    //     res.sendStatus(403);
+    // }  
                
 });
 

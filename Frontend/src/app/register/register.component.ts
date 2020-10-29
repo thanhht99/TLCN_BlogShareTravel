@@ -1,12 +1,16 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { Router } from '@angular/router';
-import { NotifierService } from "angular-notifier";
-import { ViewChild } from "@angular/core";
+import { Router, ActivatedRoute } from '@angular/router';
 import { HttpResponse } from '@angular/common/http';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { RegisterService } from './register.service';
 import { Account } from '../models/account.model';
-import { NotifyComponent } from '../notify/notify.component';
+import { first } from 'rxjs/operators';
+
+import { AlertService } from '../_services';
+
+import { MustMatch } from '../_helpers';
+
 // import $ from "jquery";
 
 @Component({
@@ -17,86 +21,98 @@ import { NotifyComponent } from '../notify/notify.component';
 })
 export class RegisterComponent implements OnInit {
 
-  public username: string;
-  public password: String;
-  public confirmpassword: String;
-  public email: String;
-  public fullname: String;
-  public typeUser: String;
-  //public toast: ToastComponent
-
-  private readonly notifier: NotifierService;
-  @ViewChild("customNotification", { static: true }) customNotificationTmpl;
-  
-  constructor(private registerService: RegisterService, 
-              private router: Router,
-              public notify: NotifyComponent,
-              notifierService: NotifierService) 
-  { 
+    form: FormGroup;
+    loading = false;
+    submitted = false;
     
-    this.notifier = notifierService;
-
-  }
-
-  ngOnInit(): void {
-  }
-
-  showNotification() {
-    this.notifier.show({
-        message: "Hi there!",
-        type: "info",
-        template: this.customNotificationTmpl
-    });
-  } 
-  
-  createNewAccount(){
-    let account = new Account();
-        account.fullname = this.fullname;
-        account.email = this.email;
-        account.username = this.username;
-        account.password = this.password;
-        account.confirmpassword = this.confirmpassword;       
-
-    if(this.typeUser == 'customer')
-    { 
-        account.isCustomer = true;
-        account.isTourGuide = false;
-    }
-    if(this.typeUser == 'tourGuide')
-    { 
-        account.isCustomer = false;
-        account.isTourGuide = true;
-    }
-
-    //console.log(account);
-
-    this.registerService.createAccount(account).subscribe(
-      (res) =>{
-        // if (res.status === 200) {
-        //   // we have logged in successfully
-        //     console.log('Hello200');
-        //     this.router.navigate(['home']);
-        // }
-        // if (res.status === 403) {
-        //   // we have logged in successfully
-        //   console.log('Hello403');
-        //   //this.router.navigate(['/home']);
-        // }
-        console.log(res);
-        console.log('Hello');
-        //this.notify.setMessage('Successfully registered!', 'success');
-        //this.notifier.notify("success", "Successfully registered!");
-
-        
+    constructor(private registerService: RegisterService, 
+                private router: Router,
+                private route: ActivatedRoute,
+                private formBuilder: FormBuilder,
+                private alertService: AlertService) 
+    {   
       
+    }
 
-        //this.router.navigate(['/']);
-      },
-      error => console.log(error)
-    );
+    ngOnInit(): void {
+        this.form = this.formBuilder.group({
+          fullname: ['', Validators.required],
+          email:    ['', [Validators.required, Validators.email]],
+          username: ['', Validators.required],
+          password: ['', [Validators.required, Validators.minLength(6)]],
+          confirmPassword: ['', Validators.required]
+        },
+        {
+          validator: MustMatch('password', 'confirmPassword')
+        }
+      );
+    }
 
+    get f() { return this.form.controls; }
     
-    
-  }
+    createNewAccount(){
+      // let account = new Account();
+      //     account.fullname = this.fullname;
+      //     account.email = this.email;
+      //     account.username = this.username;
+      //     account.password = this.password;
+      //     account.confirmpassword = this.confirmpassword;       
+
+      // if(this.typeUser == 'customer')
+      // { 
+      //     account.isCustomer = true;
+      //     account.isTourGuide = false;
+      // }
+      // if(this.typeUser == 'tourGuide')
+      // { 
+      //     account.isCustomer = false;
+      //     account.isTourGuide = true;
+      // }
+
+      //console.log(account);
+
+      // this.registerService.createAccount(account).subscribe(
+      //   (res) =>{
+      //     // if (res.status === 200) {
+      //     //   // we have logged in successfully
+      //     //     console.log('Hello200');
+      //     //     this.router.navigate(['home']);
+      //     // }
+      //     // if (res.status === 403) {
+      //     //   // we have logged in successfully
+      //     //   console.log('Hello403');
+      //     //   //this.router.navigate(['/home']);
+      //     // }    
+        
+
+      //     this.router.navigate(['/login']);
+      //   },
+      //   error => console.log(error)
+      // );
+
+        this.submitted = true;
+
+        // reset alerts on submit
+        this.alertService.clear();
+
+        // stop here if form is invalid
+        if (this.form.invalid) {
+          return;
+        }
+        this.loading = true;
+        this.registerService.createAccount(this.form.value)
+                            .pipe(first())
+                                  .subscribe({
+                                      next: (data) => {
+                                          this.alertService.success('Registration successful. Please check your mail. Thank you!', { keepAfterRouteChange: true });
+                                          console.log(data);
+                                          this.router.navigate(['/login'], { relativeTo: this.route });
+                                      },
+                                      error: error => {
+                                          this.alertService.error(error);
+                                          this.loading = false;
+                                      }
+                                  });
+    }
 
 }

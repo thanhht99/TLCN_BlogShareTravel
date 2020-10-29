@@ -1,41 +1,41 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { NotifierModule } from "angular-notifier";
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { RegisterComponent } from './register/register.component';
 
-import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
-import { NotifyComponent } from './notify/notify.component';
 
+import { AlertComponent } from './_components';
 
 @NgModule({
   declarations: [
     AppComponent,
     RegisterComponent,
     LoginComponent,
-    HomeComponent,
-    NotifyComponent
+    AlertComponent,
+    HomeComponent    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    NotifierModule
+    ReactiveFormsModule
   ],
   exports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    NotifyComponent
+    ReactiveFormsModule
   ],
   providers: [
-    NotifyComponent
   ],
   bootstrap: [AppComponent]
 })
