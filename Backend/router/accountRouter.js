@@ -53,7 +53,7 @@ router.post('/register', async (req, res, next) => {
     valueAccount.password = hash;
 
     //console.log(valueAccount);
-
+    console.log('Account');
     valueAccount.save().then((data) => {
         //res.status(200).send(data);
 
@@ -76,12 +76,13 @@ router.post('/register', async (req, res, next) => {
             //console.log(valueCustomer);
             valueCustomer.save().then(async listDocCustomer => {
                 //res.status(200).send(listDocCustomer);
+                console.log('Customer');
                 var req = {
                     username: valueAccount.username,
                     fullname: listDocCustomer.name,
                     email: listDocCustomer.email
                 };
-                res.status(200).send(req);
+                //res.status(200).send(req);
                 await sendEmail(req, res, next);
             });
         }
@@ -90,14 +91,19 @@ router.post('/register', async (req, res, next) => {
             //console.log(valueTourGuide);
             valueTourGuide.save().then(async listDocTourGuide => {
                 //res.status(200).send(listDocTourGuide);
+                console.log('TourGuide');
                 var req = {
                     username: valueAccount.username,
                     fullname: listDocTourGuide.name,
                     email: listDocTourGuide.email
                 };
-                res.status(200).send(req);
+                //res.status(200).send(req);
                 await sendEmail(req, res, next);
             });
+        }
+        else
+        {
+            res.send(error);
         }
     });
 
