@@ -29,10 +29,11 @@ exports.sendEmail = async (req,res,next)=>{
     console.log('SendEmail');
     //console.log(req);
     let mainOptions = { // thiết lập đối tượng, nội dung gửi mail
-        from: 'Share Blog Travel',
+        from: 'Share_Blog_Travel',
         to: req.email,
-        subject: 'Notify account information',
-        text: 'Fullname: ' + req.fullname + 
+        subject: 'Notify account information registered',
+        text: 'Thank you for registering an account on our website. ^-^' +
+                '\nFullname: ' + req.fullname + 
                 '\nUsername: ' + req.username + 
                 '\nEmail registered: ' + req.email + '\n'
         // html: htmlToSend

@@ -15,6 +15,9 @@ const {
     sendEmail
 } = require('../utility/mail');
 
+const comparePassword = (password, hash) => {
+    return bcrypt.compareSync(password, hash);
+}
 
 router.use(bodyParser.json());
 
@@ -30,18 +33,16 @@ router.get('/lists', (req, res) => {
     });
 })
 
-
 // register
 router.post('/register', async (req, res, next) => {
-    
-    
+        
     let valueAccount = new Account({
         username: req.body.username,
         password: req.body.password,
-        // isTourGuide: req.body.isTourGuide,
-        // isCustomer: req.body.isCustomer,   
-        isTourGuide: true,
-        isCustomer: false,      
+        isTourGuide: req.body.isTourGuide,
+        isCustomer: req.body.isCustomer,   
+        // isTourGuide: true,
+        // isCustomer: false,      
         isAdmin: false,
         isSuperAdmin: false,
         isStatus: true            
@@ -156,7 +157,57 @@ router.patch('/register/:id/changeStatusAccount', async (req, res) => {
 });
 
 
+// login
+router.post('/login', async (req, res, next) => {
+        
+    const {
+        username,
+        password
+    } = req.body; 
 
+    const account = await Account.findOne({
+        where: {
+            username: username
+        }
+    });
+
+    if (account && comparePassword(password, account.password)) {
+        const customer = await Customer.findOne({
+            where: {
+                accountId: account.id
+            },
+            include: [{
+                model: models.Account
+            }]
+        });
+        const tourGuide = await TourGuide.findOne({
+            where: {
+                accountId: account.id
+            },
+            include: [{
+                model: models.Account
+            }]
+        });
+        if(customer)
+        {
+            res.status(200).send(customer);
+        }
+        if(tourGuide)
+        {
+            res.status(200).send(tourGuide);
+        }
+        else
+        {
+            res.sendStatus(404);
+        }
+    }
+    else
+    {        
+        res.sendStatus(404);
+    }
+});
+
+    
 
 
 
