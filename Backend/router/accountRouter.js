@@ -172,29 +172,23 @@ router.post('/login', async (req, res, next) => {
     });
 
     if (account && comparePassword(password, account.password)) {
-        const customer = await Customer.findOne({
-            where: {
-                accountId: account.id
-            },
-            include: [{
-                model: models.Account
-            }]
+        const accountCustomer = await Account.findOne({
+            include:[{model: models.Customer,
+                where: {accountId: account.id}}]            
         });
-        const tourGuide = await TourGuide.findOne({
-            where: {
-                accountId: account.id
-            },
-            include: [{
-                model: models.Account
-            }]
+        const accountTourGuide = await Account.findOne({
+            include:[{model: models.TourGuide,
+                where: {accountId: account.id}}]
         });
-        if(customer)
+        if(accountCustomer)
         {
-            res.status(200).send(customer);
+            res.status(200).send(accountCustomer);
+            // console.log('------------------NAME--------------------------');
+            // console.log(accountCustomer.isCustomer);
         }
-        if(tourGuide)
+        if(accountTourGuide)
         {
-            res.status(200).send(tourGuide);
+            res.status(200).send(accountTourGuide);
         }
         else
         {

@@ -3,6 +3,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { HttpResponse } from '@angular/common/http';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
+import { BehaviorSubject, Observable } from 'rxjs';
+
 import { LoginService } from './login.service';
 import { Account } from '../models/account.model';
 import { first } from 'rxjs/operators';
@@ -18,6 +20,10 @@ export class LoginComponent implements OnInit {
   form: FormGroup;
   loading = false;
   submitted = false;
+
+  private accountSubject: BehaviorSubject<Account>;
+  public account: Observable<Account>;
+
   constructor(  private loginService: LoginService,
                 private router: Router,
                 private route: ActivatedRoute,
@@ -25,7 +31,12 @@ export class LoginComponent implements OnInit {
                 private alertService: AlertService
   ) 
   { 
+    this.accountSubject = new BehaviorSubject<Account>(null);
+    this.account = this.accountSubject.asObservable();
+  }
 
+  public get accountValue(): Account {
+      return this.accountSubject.value;
   }
 
   ngOnInit(): void {
@@ -52,12 +63,22 @@ export class LoginComponent implements OnInit {
     this.loginService.login(this.f.username.value, this.f.password.value)
         .pipe(first())
         .subscribe({
-            next: (dataAccount) => {
+            next: (account: any) => {
                 this.alertService.success('Logged in successfully!!!. Wish you have a great experience on our website...', { keepAfterRouteChange: true });
-                console.log(dataAccount);
+                console.log(account);
                 // get return url from query parameters or default to home page
-                const returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
-                this.router.navigateByUrl(returnUrl);
+                // const returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
+                // this.router.navigateByUrl(returnUrl);
+                if(account.isCustomer == true)
+                {
+                  //const returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/customerinfo';
+                  //this.router.navigateByUrl(returnUrl,account.id);
+                  this.router.navigate(['/customerinfo',account.id], { relativeTo: this.route });
+                }
+                if(account.isTourGuide == true)
+                {
+                  this.router.navigate(['/tourguideinfo',account.id], { relativeTo: this.route });
+                }
             },
             error: error => {
                 this.alertService.error(error);

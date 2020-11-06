@@ -9,8 +9,8 @@ import { CustomerInfoComponent } from './customer-info/customer-info.component';
 const routes: Routes = [
   { path: 'register', component: RegisterComponent},
   { path: 'login',component: LoginComponent},
-  { path: 'customerinfo', component: CustomerInfoComponent},
-  { path: 'tourguideinfo', component: TourGuideInfoComponent},
+  { path: 'customerinfo/:id', component: CustomerInfoComponent},
+  { path: 'tourguideinfo/:id', component: TourGuideInfoComponent},
   { path: '', component: HomeComponent},
   { path: 'home', component: HomeComponent}
 ];

@@ -30,6 +30,8 @@ app.use(function (req, res, next) {
 // account
 app.use('/account', require('./router/accountRouter'));
 
+app.use('/customer', require('./router/customerRouter'));
+
 
 
 app.get('/sync', (req, res) => {
