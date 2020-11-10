@@ -8,26 +8,25 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { RegisterComponent } from './register/register.component';
-import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './account/register.component';
+import { LoginComponent } from './account/login.component';
 import { HomeComponent } from './home/home.component';
 
 import { AlertComponent } from './_components';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    RegisterComponent,
-    LoginComponent,
-    AlertComponent,
-    HomeComponent    
-  ],
+  
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule
+  ],
+  declarations: [
+    AppComponent,
+    AlertComponent,
+    HomeComponent    
   ],
   exports: [
     BrowserModule,

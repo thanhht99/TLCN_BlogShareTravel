@@ -3,7 +3,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { HttpResponse } from '@angular/common/http';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
-import { RegisterService } from './register.service';
+import { RegisterService } from '../_services/register.service';
 import { Account } from '../models/account.model';
 import { first } from 'rxjs/operators';
 
@@ -105,8 +105,8 @@ export class RegisterComponent implements OnInit {
                                   .subscribe({
                                       next: (data) => {
                                           this.alertService.success('Registration successful. Please check your mail. Thank you!', { keepAfterRouteChange: true });
-                                          //console.log(data);
-                                          this.router.navigate(['/login'], { relativeTo: this.route });
+                                          console.log(data);
+                                          this.router.navigate(['/account/login'], { relativeTo: this.route });
                                       },
                                       error: error => {
                                           this.alertService.error(error);

@@ -1,18 +1,26 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
+
 import { HomeComponent } from './home/home.component';
 import { TourGuideInfoComponent } from './tour-guide-info/tour-guide-info.component';
 import { CustomerInfoComponent } from './customer-info/customer-info.component';
 
+import { AuthGuard } from './_helpers';
+
+const accountModule = () => import('./account/account.module').then(x => x.AccountModule);
+
+
 const routes: Routes = [
-  { path: 'register', component: RegisterComponent},
-  { path: 'login',component: LoginComponent},
-  { path: 'customerinfo/:id', component: CustomerInfoComponent},
-  { path: 'tourguideinfo/:id', component: TourGuideInfoComponent},
-  { path: '', component: HomeComponent},
-  { path: 'home', component: HomeComponent}
+  { path: 'account', loadChildren: accountModule },
+
+  // { path: 'customerinfo/:id', component: CustomerInfoComponent},
+  // { path: 'tourguideinfo/:id', component: TourGuideInfoComponent},
+  
+  { path: '', component: HomeComponent, canActivate: [AuthGuard]},
+  { path: 'home', component: HomeComponent, canActivate: [AuthGuard]},
+
+  // otherwise redirect to home
+  { path: '**', redirectTo: '' }
 ];
 
 @NgModule({
