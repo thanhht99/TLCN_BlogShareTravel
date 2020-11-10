@@ -39,10 +39,10 @@ router.post('/register', async (req, res, next) => {
     let valueAccount = new Account({
         username: req.body.username,
         password: req.body.password,
-        isTourGuide: req.body.isTourGuide,
-        isCustomer: req.body.isCustomer,   
-        // isTourGuide: true,
-        // isCustomer: false,      
+        // isTourGuide: req.body.isTourGuide,
+        // isCustomer: req.body.isCustomer,   
+        isTourGuide: true,
+        isCustomer: false,      
         isAdmin: false,
         isSuperAdmin: false,
         isStatus: true            
@@ -178,13 +178,13 @@ router.post('/login', async (req, res, next) => {
         });
         const accountTourGuide = await Account.findOne({
             include:[{model: models.TourGuide,
-                where: {accountId: account.id}}]
+                where: {accountId: account.id}}]            
         });
         if(accountCustomer)
         {
             res.status(200).send(accountCustomer);
             // console.log('------------------NAME--------------------------');
-            // console.log(accountCustomer.isCustomer);
+            // console.log(accountCustomer.Customers);
         }
         if(accountTourGuide)
         {
@@ -192,12 +192,12 @@ router.post('/login', async (req, res, next) => {
         }
         else
         {
-            res.sendStatus(404);
+            res.status(404).send('Not Found');
         }
     }
     else
     {        
-        res.sendStatus(404);
+        res.status(404).send('Not Found');
     }
 });
 

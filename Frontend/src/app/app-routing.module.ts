@@ -3,15 +3,16 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { HomeComponent } from './home/home.component';
 import { TourGuideInfoComponent } from './tour-guide-info/tour-guide-info.component';
-import { CustomerInfoComponent } from './customer-info/customer-info.component';
 
 import { AuthGuard } from './_helpers';
 
+const customerModule = () => import('./customer/customer.module').then(x => x.CustomerModule);
 const accountModule = () => import('./account/account.module').then(x => x.AccountModule);
 
 
 const routes: Routes = [
   { path: 'account', loadChildren: accountModule },
+  { path: 'customer', loadChildren: customerModule, canActivate: [AuthGuard] },
 
   // { path: 'customerinfo/:id', component: CustomerInfoComponent},
   // { path: 'tourguideinfo/:id', component: TourGuideInfoComponent},

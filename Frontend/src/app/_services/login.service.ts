@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import { Account } from '../models';
+import { Account, Customer } from '../models';
 import { WebRequestService } from '../web-request.service';
 
 @Injectable({
@@ -15,6 +15,9 @@ export class LoginService {
 
   private accountSubject: BehaviorSubject<Account>;
   public account: Observable<Account>;
+  
+  private customerSubject: BehaviorSubject<Customer>;
+  public customer: Observable<Customer>;
 
   constructor(private webRequestService: WebRequestService, 
               private router: Router, 
@@ -26,7 +29,11 @@ export class LoginService {
 
   public get accountValue(): Account {
     return this.accountSubject.value;
-}
+  }
+
+  public get customerValue(): Customer {
+    return this.customerSubject.value;
+  }
 
   login(username: string, password: string) {
     return this.http.post<Account>(`${this.webRequestService.ROOT_URL}/account/login`, {username, password})
@@ -44,5 +51,12 @@ export class LoginService {
     this.accountSubject.next(null);
     this.router.navigate(['/account/login']);
   }
+
+  // infoCustomer(id: string) {
+  //   return this.http.get<Customer>(`${this.webRequestService.ROOT_URL}/customer/info`, {id})
+  //     .pipe(map(customer => {
+  //         this.customerSubject.next(customer);
+  //     }));
+  // }
 
 }

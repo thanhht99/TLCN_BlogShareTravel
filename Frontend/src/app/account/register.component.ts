@@ -109,7 +109,7 @@ export class RegisterComponent implements OnInit {
                                           this.router.navigate(['/account/login'], { relativeTo: this.route });
                                       },
                                       error: error => {
-                                          this.alertService.error(error);
+                                          this.alertService.error('Registration failed', { keepAfterRouteChange: true });
                                           this.loading = false;
                                       }
                                   });

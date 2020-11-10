@@ -71,18 +71,22 @@ export class LoginComponent implements OnInit {
                 // this.router.navigateByUrl(returnUrl);
                 if(account.isCustomer == true)
                 {
-                  const returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
-                  this.router.navigateByUrl(returnUrl,account.id);
+                  // const returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
+                  // this.router.navigateByUrl(returnUrl);
                   console.log(account);
-                  //this.router.navigate(['/customerinfo',account.id], { relativeTo: this.route });
+                  this.router.navigate(['/customer/info',account.id], { relativeTo: this.route });
+                  //this.router.navigate(['/customer/info',account.id], { relativeTo: this.route });
                 }
                 if(account.isTourGuide == true)
                 {
-                  this.router.navigate(['/tourguideinfo',account.id], { relativeTo: this.route });
+                  // const returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
+                  // this.router.navigateByUrl(returnUrl);
+                  // console.log(account);
+                  // this.router.navigate(['/tourguideinfo',account.id], { relativeTo: this.route });
                 }
             },
             error: error => {
-                this.alertService.error(error);
+                this.alertService.error('Account or password is incorrect', { keepAfterRouteChange: true });
                 this.loading = false;
             }
         });
