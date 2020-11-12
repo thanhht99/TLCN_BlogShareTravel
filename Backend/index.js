@@ -32,7 +32,7 @@ app.use('/account', require('./router/accountRouter'));
 
 app.use('/customer', require('./router/customerRouter'));
 
-
+app.use('/tourguide', require('./router/tourguideRouter'));
 
 app.get('/sync', (req, res) => {
   let models = require('./models');

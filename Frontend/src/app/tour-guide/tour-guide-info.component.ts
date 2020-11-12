@@ -2,30 +2,26 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
 import { LoginService } from '../_services/login.service';
-import { Customer } from '../models';
-
+import { TourGuide } from '../models';
 @Component({
-  selector: 'app-customer-info',
-  templateUrl: './customer-info.component.html',
-  styleUrls: ['./customer-info.component.scss']
+  selector: 'app-tour-guide-info',
+  templateUrl: './tour-guide-info.component.html',
+  styleUrls: ['./tour-guide-info.component.scss']
 })
-export class CustomerInfoComponent implements OnInit {
+export class TourGuideInfoComponent implements OnInit {
 
-  customer: Customer;
+  tourguide: TourGuide;
   id: string;
-  
+
   constructor(private loginService: LoginService, 
               private router: Router,
               private route: ActivatedRoute) 
   {
-      this.customer = this.loginService.customerValue;
+    this.tourguide = this.loginService.tourguideValue;
   }
 
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];
-
-    //this.customer = this.loginService.infoCustomer(this.id);
   }
 
-  
 }

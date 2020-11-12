@@ -12,9 +12,6 @@ body {
     margin: 10px;
     padding: 0 0 40px;
     background-color: #f8f8f8;
-/*     background-image: radial-gradient(#e5e5e5 5%, transparent 6%), radial-gradient(#e5e5e5 5%, transparent 6%);
-    background-size: 30px 30px; 
-    background-position: 0 0, 15px 15px;*/
     background: transparent;
     border: 1px solid #e00;
 }
@@ -130,12 +127,12 @@ body {
 .card-wrapper .img-and-name .information .email {
     font-size: 0;
 }
-.card-wrapper .img-and-name .information .contacts .phone-number p:before {
-    background-image: url('https://hhh.msf.org.br/sites/all/themes/msf/assets/images/tel.png');
-}
-.card-wrapper .img-and-name .information .contacts .email p:before {
-    background-image: url('https://hhh.msf.org.br/sites/all/themes/msf/assets/images/message.png');
-}
+// .card-wrapper .img-and-name .information .contacts .phone-number p:before {
+//     background-image: url('https://hhh.msf.org.br/sites/all/themes/msf/assets/images/tel.png');
+// }
+// .card-wrapper .img-and-name .information .contacts .email p:before {
+//     background-image: url('https://hhh.msf.org.br/sites/all/themes/msf/assets/images/message.png');
+// }
 .card-wrapper .img-and-name .information .contacts .email,
 .card-wrapper .img-and-name .information .contacts .phone-number {
     font-size: 0;

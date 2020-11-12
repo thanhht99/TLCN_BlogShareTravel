@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import { Account, Customer } from '../models';
+import { Account, Customer, TourGuide } from '../models';
 import { WebRequestService } from '../web-request.service';
 
 @Injectable({
@@ -19,12 +19,21 @@ export class LoginService {
   private customerSubject: BehaviorSubject<Customer>;
   public customer: Observable<Customer>;
 
+  private tourguideSubject: BehaviorSubject<TourGuide>;
+  public tourguide: Observable<TourGuide>;
+
   constructor(private webRequestService: WebRequestService, 
               private router: Router, 
               private http: HttpClient) 
   { 
     this.accountSubject = new BehaviorSubject<Account>(JSON.parse(localStorage.getItem('account')));
     this.account = this.accountSubject.asObservable();
+
+    this.customerSubject = new BehaviorSubject<Customer>(JSON.parse(localStorage.getItem('customer')));
+    this.customer = this.customerSubject.asObservable();
+
+    this.tourguideSubject = new BehaviorSubject<TourGuide>(JSON.parse(localStorage.getItem('tourguide')));
+    this.tourguide = this.tourguideSubject.asObservable();
   }
 
   public get accountValue(): Account {
@@ -33,6 +42,10 @@ export class LoginService {
 
   public get customerValue(): Customer {
     return this.customerSubject.value;
+  }
+
+  public get tourguideValue(): TourGuide {
+    return this.tourguideSubject.value;
   }
 
   login(username: string, password: string) {
@@ -52,11 +65,22 @@ export class LoginService {
     this.router.navigate(['/account/login']);
   }
 
-  // infoCustomer(id: string) {
-  //   return this.http.get<Customer>(`${this.webRequestService.ROOT_URL}/customer/info`, {id})
-  //     .pipe(map(customer => {
-  //         this.customerSubject.next(customer);
-  //     }));
-  // }
+  infoCustomer(id: number) {
+    return this.http.get<Customer>(`${this.webRequestService.ROOT_URL}/customer/info/${id}`)
+      .pipe(map(customer => {
+          localStorage.setItem('customer', JSON.stringify(customer));
+          this.customerSubject.next(customer);
+          return customer; 
+      }));
+  }
+
+  infoTourGuide(id: number) {
+    return this.http.get<TourGuide>(`${this.webRequestService.ROOT_URL}/tourguide/info/${id}`)
+      .pipe(map(tourguide => {
+          localStorage.setItem('tourguide', JSON.stringify(tourguide));
+          this.tourguideSubject.next(tourguide);
+          return tourguide; 
+      }));
+  }
 
 }

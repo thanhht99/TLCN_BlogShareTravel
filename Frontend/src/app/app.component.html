@@ -2,6 +2,8 @@
 <nav class="navbar navbar-expand navbar-dark bg-dark" *ngIf="account">
     <div class="navbar-nav">
         <a class="nav-item nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
+        <a *ngIf="account.isCustomer" class="nav-item nav-link" routerLink="/customer/info/{{account.id}}" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Info</a>
+        <a *ngIf="account.isTourGuide" class="nav-item nav-link" routerLink="/tourguide/info/{{account.id}}" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Info</a>
         <a class="nav-item nav-link" (click)="logout()">Logout</a>
     </div>
 </nav>

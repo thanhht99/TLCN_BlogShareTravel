@@ -73,16 +73,30 @@ export class LoginComponent implements OnInit {
                 {
                   // const returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
                   // this.router.navigateByUrl(returnUrl);
-                  console.log(account);
+                  
+                  //console.log(account);
+                  
                   this.router.navigate(['/customer/info',account.id], { relativeTo: this.route });
-                  //this.router.navigate(['/customer/info',account.id], { relativeTo: this.route });
+                  this.loginService.infoCustomer(account.id)
+                    .pipe(first())
+                    .subscribe({
+                    next: (data: any) =>{console.log(data);},
+                    error: error => {
+                      this.alertService.error('Customer not found', { keepAfterRouteChange: true });
+                    }
+                  });
                 }
                 if(account.isTourGuide == true)
                 {
-                  // const returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
-                  // this.router.navigateByUrl(returnUrl);
-                  // console.log(account);
-                  // this.router.navigate(['/tourguideinfo',account.id], { relativeTo: this.route });
+                  this.router.navigate(['/tourguide/info',account.id], { relativeTo: this.route });
+                  this.loginService.infoTourGuide(account.id)
+                    .pipe(first())
+                    .subscribe({
+                    next: (data: any) =>{console.log(data);},
+                    error: error => {
+                      this.alertService.error('Tour Guide not found', { keepAfterRouteChange: true });
+                    }
+                  });
                 }
             },
             error: error => {

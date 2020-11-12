@@ -170,6 +170,8 @@ router.post('/login', async (req, res, next) => {
             username: username
         }
     });
+    // console.log('------------------Account--------------------------');
+    // console.log(account);
 
     if (account && comparePassword(password, account.password)) {
         const accountCustomer = await Account.findOne({
