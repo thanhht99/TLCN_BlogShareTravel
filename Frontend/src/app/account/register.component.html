@@ -42,16 +42,6 @@
             </div>
             <div class="form-group">
                 <label for="accountType">Account Type</label>
-                
-                <!-- <div class="custom-control custom-radio">
-                    <input type="radio" class="custom-control-input" id="customer" value="customer" name="defaultUnchecked" formControlName="accountType" mdbInput>
-                    <label class="custom-control-label" for="customer">Customer</label>
-                </div>
-                
-                <div class="custom-control custom-radio">
-                    <input type="radio"o class="custom-cntrol-input" id="tourguide" value="tourguide" name="defaultExampleRadios" formControlName="accountType" checked mdbInput>
-                    <label class="custom-control-label" for="tourguide">Tour Guide</label>
-                </div> -->
                 <div>
                     <input id="customer" type="radio" value="customer" name="accountType" formControlName="accountType">
                     <label for="customer">Customer</label>
@@ -61,7 +51,7 @@
                     <label for="tourguide">Tour Guide</label>
                 </div>                    
                 <!-- f.accountType.touched &&  -->
-                <div *ngIf="f.accountType.invalid" class="alert alert-danger">
+                <div *ngIf="submitted && f.accountType.errors" class="alert alert-danger">
                       <div *ngIf="f.accountType.errors.required">Account Type is required.</div>
                 </div>
             </div>
