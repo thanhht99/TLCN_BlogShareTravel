@@ -39,10 +39,10 @@ router.post('/register', async (req, res, next) => {
     let valueAccount = new Account({
         username: req.body.username,
         password: req.body.password,
-        // isTourGuide: req.body.isTourGuide,
-        // isCustomer: req.body.isCustomer,   
-        isTourGuide: true,
-        isCustomer: false,      
+        isTourGuide: req.body.isTourGuide,
+        isCustomer: req.body.isCustomer,   
+        // isTourGuide: true,
+        // isCustomer: false,      
         isAdmin: false,
         isSuperAdmin: false,
         isStatus: true            

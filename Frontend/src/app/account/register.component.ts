@@ -22,6 +22,7 @@ import { MustMatch } from '../_helpers';
 export class RegisterComponent implements OnInit {
 
     form: FormGroup;
+    account: Account;
     loading = false;
     submitted = false;
     
@@ -39,6 +40,7 @@ export class RegisterComponent implements OnInit {
           fullname: ['', Validators.required],
           email:    ['', [Validators.required, Validators.email]],
           username: ['', Validators.required],
+          accountType: ['', Validators.required],
           password: ['', [Validators.required, Validators.minLength(6)]],
           confirmPassword: ['', Validators.required]
         },
@@ -57,38 +59,9 @@ export class RegisterComponent implements OnInit {
       //     account.username = this.username;
       //     account.password = this.password;
       //     account.confirmpassword = this.confirmpassword;       
+   
 
-      // if(this.typeUser == 'customer')
-      // { 
-      //     account.isCustomer = true;
-      //     account.isTourGuide = false;
-      // }
-      // if(this.typeUser == 'tourGuide')
-      // { 
-      //     account.isCustomer = false;
-      //     account.isTourGuide = true;
-      // }
-
-      //console.log(account);
-
-      // this.registerService.createAccount(account).subscribe(
-      //   (res) =>{
-      //     // if (res.status === 200) {
-      //     //   // we have logged in successfully
-      //     //     console.log('Hello200');
-      //     //     this.router.navigate(['home']);
-      //     // }
-      //     // if (res.status === 403) {
-      //     //   // we have logged in successfully
-      //     //   console.log('Hello403');
-      //     //   //this.router.navigate(['/home']);
-      //     // }    
-        
-
-      //     this.router.navigate(['/login']);
-      //   },
-      //   error => console.log(error)
-      // );
+        //console.log(this.account);
 
         this.submitted = true;
 
@@ -100,7 +73,19 @@ export class RegisterComponent implements OnInit {
           return;
         }
         this.loading = true;
-        this.registerService.createAccount(this.form.value)
+        this.account = this.form.value;
+          
+        if(this.form.value.accountType == 'customer')
+        { 
+            this.account.isCustomer = true;
+            this.account.isTourGuide = false;
+        }
+        if(this.form.value.accountType == 'tourguide')
+        { 
+            this.account.isCustomer = false;
+            this.account.isTourGuide = true;
+        }
+        this.registerService.createAccount(this.account)
                             .pipe(first())
                                   .subscribe({
                                       next: (data) => {
