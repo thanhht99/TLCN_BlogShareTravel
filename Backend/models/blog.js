@@ -14,11 +14,6 @@ module.exports = (sequelize, DataTypes) => {
       Blog.belongsTo(models.Tour, { foreignKey: 'tourId'});
       Blog.belongsTo(models.TourGuide, { foreignKey: 'tourGuideId'});
 
-      Blog.hasMany(models.AlbumImageBlog, { foreignKey: 'blogId'});
-      Blog.hasMany(models.BlogContent, { foreignKey: 'blogId'});
-
-      Blog.hasMany(models.CommentsOfBlog, { foreignKey: 'blogId'});
-
     }
   };
   Blog.init({

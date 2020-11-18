@@ -45,7 +45,7 @@ router.post('/register', async (req, res, next) => {
         // isCustomer: false,      
         isAdmin: false,
         isSuperAdmin: false,
-        isStatus: true            
+        isStatus: false            
     });    
 
 
@@ -61,14 +61,14 @@ router.post('/register', async (req, res, next) => {
         let valueCustomer = new Customer({
             name: req.body.fullname,
             email: req.body.email,
-            isStatus: false,
+            isStatus: true,
             accountId: data.id
         });
     
         let valueTourGuide = new TourGuide({
             name: req.body.fullname,
             email: req.body.email,
-            isStatus: false,
+            isStatus: true,
             accountId: data.id
         });
 
