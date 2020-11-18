@@ -16,7 +16,6 @@ module.exports = (sequelize, DataTypes) => {
       TourGuide.hasMany(models.TourGuideReviews, { foreignKey: 'tourGuideId'});
 
       TourGuide.hasMany(models.CommentsOfTour, { foreignKey: 'tourGuideId'});
-      TourGuide.hasMany(models.CommentsOfBlog, { foreignKey: 'tourGuideId'});
 
       TourGuide.hasMany(models.Tour, { foreignKey: 'tourGuideId'});
       TourGuide.hasMany(models.Blog, { foreignKey: 'tourGuideId'});

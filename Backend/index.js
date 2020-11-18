@@ -34,6 +34,9 @@ app.use('/customer', require('./router/customerRouter'));
 
 app.use('/tourguide', require('./router/tourguideRouter'));
 
+// tour
+app.use('/tour', require('./router/tourRouter'));
+
 app.get('/sync', (req, res) => {
   let models = require('./models');
   models.sequelize.sync()
