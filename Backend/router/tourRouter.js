@@ -16,7 +16,8 @@ router.get('/list', (req, res) => {
     Tour.findAll({
        
     }).then((tours) => {
-        res.send(tours);
+        res.json(tours);
+        //res.send(tours);
     }).catch((err) =>{
         res.send(err);
     });

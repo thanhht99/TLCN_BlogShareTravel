@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { first } from 'rxjs/operators';
+
+import { TourService } from '../_services';
+import { Tour } from '../models';
 
 @Component({
   selector: 'app-list-tours',
@@ -7,9 +11,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListToursComponent implements OnInit {
 
-  constructor() { }
+  tours: Tour;
+
+  constructor(private tourService: TourService) 
+  { 
+    //this.tourService.tour.subscribe(x => this.tour = x);
+  }
 
   ngOnInit(): void {
+    this.tourService.listTour()
+            .pipe(first())
+            .subscribe(tour => this.tours = tour);
   }
 
 }
