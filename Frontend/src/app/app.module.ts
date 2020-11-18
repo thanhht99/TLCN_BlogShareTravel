@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -14,6 +14,9 @@ import { HomeComponent } from './home/home.component';
 
 import { AlertComponent } from './_components';
 
+import { CreatetourComponent } from './createtour/createtour.component';
+import { ListToursComponent } from './list-tours/list-tours.component';
+
 @NgModule({
   
   imports: [
@@ -26,7 +29,9 @@ import { AlertComponent } from './_components';
   declarations: [
     AppComponent,
     AlertComponent,
-    HomeComponent    
+    HomeComponent,
+    CreatetourComponent,
+    ListToursComponent    
   ],
   exports: [
     BrowserModule,
@@ -36,6 +41,8 @@ import { AlertComponent } from './_components';
   ],
   providers: [
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas : [CUSTOM_ELEMENTS_SCHEMA]
+
 })
 export class AppModule { }

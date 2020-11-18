@@ -28,7 +28,9 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              
+              "src/assets/scss/material-dashboard.scss",
+              "src/assets/css/demo.css"
             ],
             "scripts": []
           },
@@ -92,7 +94,9 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              
+              "src/styles.scss",
+              "scr/assets/scss/material-dashboard.scss"
             ],
             "scripts": []
           }
@@ -123,7 +127,7 @@
           }
         }
       }
-    }
+   }
   },
   "defaultProject": "Frontend",
   "cli": {
