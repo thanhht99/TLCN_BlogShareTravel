@@ -22,11 +22,11 @@ module.exports = (sequelize, DataTypes) => {
   Trip.init({
     infoHotel: DataTypes.STRING,
     infoVehicle: DataTypes.STRING,
-    detailTrip: DataTypes.TEXT,
-    detailPrice: DataTypes.TEXT,
     startDate: DataTypes.STRING,
     endDate: DataTypes.STRING,
-    departureLocation: DataTypes.STRING,
+    price: DataTypes.STRING,
+    childrenPrice: DataTypes.STRING,
+    babyPrice: DataTypes.STRING,    
     isStatus: DataTypes.BOOLEAN
   }, {
     sequelize,
