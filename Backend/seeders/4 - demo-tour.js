@@ -11,7 +11,7 @@ module.exports = {
             departureLocation: 'TP. HỒ CHÍ MINH',
             destination: 'MIỀN TÂY | ĐBSCL',
             amount: 3,
-            avatarPath: 'https://drive.google.com/file/d/18yzNocS-sp8PsQqkus3o276lyXWAFb30/view',
+            avatarPath: 'https://www.saigontourist.net/uploads/destination/TrongNuoc/Mientay/My-tho-Vinh-tranh-pagoda.jpg',
             isStatus: true,
             tourGuideId: 1
         },
@@ -23,7 +23,7 @@ module.exports = {
             departureLocation: 'TP. HỒ CHÍ MINH',
             destination: 'HỒ TRÀM',
             amount: 0,
-            avatarPath: 'https://drive.google.com/file/d/1y6jUrQoB80p_NF7eGfFSSn08Ik2B2gyj/view?usp=sharing',
+            avatarPath: 'https://www.saigontourist.net/uploads/destination/TrongNuoc/Vungtau/ho-tram-outside.jpg',
             isStatus: true,
             tourGuideId: 1
         },
@@ -35,7 +35,7 @@ module.exports = {
             departureLocation: 'TP. HỒ CHÍ MINH',
             destination: 'PHAN THIẾT',
             amount: 4,
-            avatarPath: 'https://drive.google.com/file/d/1sIkKlrVJdgV-lxJOoJkqI9S6VnIiGMDo/view?usp=sharing',
+            avatarPath: 'https://www.saigontourist.net/uploads/destination/TrongNuoc/Phanthiet/Mui-Ne-beach_1085095151.jpg',
             isStatus: true,
             tourGuideId: 1
         }];

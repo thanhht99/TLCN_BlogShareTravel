@@ -76,7 +76,7 @@ export class LoginComponent implements OnInit {
                   
                   //console.log(account);
                   
-                  this.router.navigate(['/customer/info',account.id], { relativeTo: this.route });
+                  this.router.navigate(['/home'], { relativeTo: this.route });
                   this.loginService.infoCustomer(account.id)
                     .pipe(first())
                     .subscribe({
@@ -88,7 +88,7 @@ export class LoginComponent implements OnInit {
                 }
                 if(account.isTourGuide == true)
                 {
-                  this.router.navigate(['/tourguide/info',account.id], { relativeTo: this.route });
+                  this.router.navigate(['/home'], { relativeTo: this.route });
                   this.loginService.infoTourGuide(account.id)
                     .pipe(first())
                     .subscribe({

@@ -15,7 +15,6 @@ import { HomeComponent } from './home/home.component';
 import { AlertComponent } from './_components';
 
 import { CreatetourComponent } from './createtour/createtour.component';
-import { ListToursComponent } from './list-tours/list-tours.component';
 import { ListTripComponent } from './list-trip/list-trip.component';
 
 @NgModule({
@@ -32,7 +31,6 @@ import { ListTripComponent } from './list-trip/list-trip.component';
     AlertComponent,
     HomeComponent,
     CreatetourComponent,
-    ListToursComponent,
     ListTripComponent    
   ],
   exports: [

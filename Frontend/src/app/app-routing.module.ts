@@ -5,11 +5,12 @@ import { HomeComponent } from './home/home.component';
 import { AuthGuard } from './_helpers';
 
 import {CreatetourComponent} from './createtour/createtour.component';
-import {ListToursComponent} from './list-tours/list-tours.component';
 
 const customerModule = () => import('./customer/customer.module').then(x => x.CustomerModule);
 const tourguideModule = () => import('./tour-guide/tour-guide.module').then(x => x.TourGuideModule);
 const accountModule = () => import('./account/account.module').then(x => x.AccountModule);
+
+const tourModule = () => import('./tour/tour.module').then(x => x.TourModule);
 
 
 const routes: Routes = [
@@ -17,14 +18,18 @@ const routes: Routes = [
   { path: 'customer', loadChildren: customerModule, canActivate: [AuthGuard] },
   { path: 'tourguide', loadChildren: tourguideModule, canActivate: [AuthGuard] },
 
+  { path: 'tour', loadChildren: tourModule},
+
+
+
   { path: 'createtour', component:CreatetourComponent},
-  { path: 'tour', component:ListToursComponent},
+  
 
   // { path: 'customerinfo/:id', component: CustomerInfoComponent},
   // { path: 'tourguideinfo/:id', component: TourGuideInfoComponent},
   
-  { path: '', component: HomeComponent, canActivate: [AuthGuard]},
-  { path: 'home', component: HomeComponent, canActivate: [AuthGuard]},
+  { path: '', component: HomeComponent},
+  { path: 'home', component: HomeComponent},
 
   // otherwise redirect to home
   { path: '**', redirectTo: '' }
