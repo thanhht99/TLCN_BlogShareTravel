@@ -14,7 +14,8 @@ import { Trip } from '../models';
 export class BlogAndTripComponent implements OnInit {
 
   trips: Trip;
-  id: number;
+  
+  sub: any;
 
   constructor(private tourService: TourService, 
               private router: Router,
@@ -24,11 +25,16 @@ export class BlogAndTripComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.id = this.id = this.route.snapshot.params['id'];
-    
-    this.tourService.getTripById(this.id)
+    // this.id = this.route.snapshot.params['id'];
+
+    this.sub = this.route.params.subscribe(params => {
+      let id = Number.parseInt(params['id']);
+      this.tourService.getTripById(id)
             .pipe(first())
             .subscribe(trip => this.trips = trip);
+    });
+    
+    
   }
 
 }
