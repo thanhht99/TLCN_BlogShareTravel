@@ -26,7 +26,9 @@ module.exports = (sequelize, DataTypes) => {
     endDate: DataTypes.STRING,
     price: DataTypes.STRING,
     childrenPrice: DataTypes.STRING,
-    babyPrice: DataTypes.STRING,    
+    babyPrice: DataTypes.STRING, 
+    amount: DataTypes.INTEGER,   
+    theRemainingAmount: DataTypes.INTEGER,   
     isStatus: DataTypes.BOOLEAN
   }, {
     sequelize,

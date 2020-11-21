@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { TourRoutingModule } from './tour-routing.module';
 import { LayoutComponent } from './layout.component';
 import { ListToursComponent } from './list-tours.component';
+import { BlogAndTripComponent } from './blog-and-trip.component';
 
 
 
@@ -16,7 +17,8 @@ import { ListToursComponent } from './list-tours.component';
   ],
   declarations: [
     LayoutComponent,
-    ListToursComponent
+    ListToursComponent,
+    BlogAndTripComponent
   ]
 })
 export class TourModule { }

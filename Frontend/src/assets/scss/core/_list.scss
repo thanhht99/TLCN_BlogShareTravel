@@ -1,0 +1,45 @@
+html * {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-box-smoothing: border-box;
+}
+
+.list-tour-detail {
+  float: left;
+  background: #ffeddf;
+  padding: 6px 10px;
+  margin-bottom: 15px;
+  overflow: hidden;
+
+  font-family: "Montserrat", "Open Sans", sans-serif;
+  font-size: 14px;
+  line-height: 21px;
+  color: black;
+  font-weight: 400;
+
+  .trip-row {
+    margin-right: -15px;
+    margin-left: -15px;
+
+    .tour-detail-header-col {
+      padding-top: 10px;
+      margin-bottom: 10px;
+      margin-top: 0px;
+      border-bottom: 1px solid #333;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+    .col-sm-12 {
+      width: 100%;
+
+      .list-inline {
+        margin: 0;
+        line-height: 32px;
+      }
+
+      .price {
+        color: #ff891e;
+      }
+    }
+  }
+}

@@ -9,7 +9,9 @@ module.exports = {
             endDate: '25/11/2020',
             price: '3.879.000',
             childrenPrice: '1.940.000',
-            babyPrice: '0',    
+            babyPrice: '0',
+            amount: 40,
+            theRemainingAmount: 30,    
             isStatus: true,
             tourId: 1,
             tourGuideId: 1
@@ -21,7 +23,9 @@ module.exports = {
             endDate: '30/11/2020',
             price: '1.879.000',
             childrenPrice: '940.000',
-            babyPrice: '0',    
+            babyPrice: '0',   
+            amount: 40,
+            theRemainingAmount: 10, 
             isStatus: true,
             tourId: 8,
             tourGuideId: 1
@@ -34,6 +38,8 @@ module.exports = {
             price: '1.879.000',
             childrenPrice: '940.000',
             babyPrice: '0',    
+            amount: 40,
+            theRemainingAmount: 11,
             isStatus: true,
             tourId: 8,
             tourGuideId: 1

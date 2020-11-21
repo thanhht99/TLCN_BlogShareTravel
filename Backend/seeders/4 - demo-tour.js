@@ -47,7 +47,7 @@ module.exports = {
             departureLocation: 'TP. HỒ CHÍ MINH',
             destination: 'ĐÀ LẠT',
             amount: 14,
-            avatarPath: '/tour/dalat1.jpg',
+            avatarPath: '../../assets/img/tour/dalat1.jpg',
             isStatus: true,
             tourGuideId: 1
         },
@@ -59,7 +59,7 @@ module.exports = {
             departureLocation: 'TP. HỒ CHÍ MINH',
             destination: 'MIỀN TÂY',
             amount: 1,
-            avatarPath: '/tour/mientay1.jpg',
+            avatarPath: '../../assets/img/tour/mientay1.jpg',
             isStatus: true,
             tourGuideId: 1
         },
@@ -71,7 +71,7 @@ module.exports = {
             departureLocation: 'TP. HỒ CHÍ MINH',
             destination: 'NHA TRANG',
             amount: 17,
-            avatarPath: '/tour/nhatrang1.jpg',
+            avatarPath: '../../assets/img/tour/nhatrang1.jpg',
             isStatus: true,
             tourGuideId: 1
         },
@@ -83,7 +83,7 @@ module.exports = {
             departureLocation: 'TP. HỒ CHÍ MINH',
             destination: 'ĐÀ LẠT',
             amount: 7,
-            avatarPath: '/tour/dalat2.jpg',
+            avatarPath: '../../assets/img/tour/dalat2.jpg',
             isStatus: true,
             tourGuideId: 1
         },
@@ -95,7 +95,7 @@ module.exports = {
             departureLocation: 'TP. HỒ CHÍ MINH',
             destination: 'TÂY NINH',
             amount: 10,
-            avatarPath: '/tour/tayninh1.jpg',
+            avatarPath: '../../assets/img/tour/tayninh1.jpg',
             isStatus: true,
             tourGuideId: 1
         }];
