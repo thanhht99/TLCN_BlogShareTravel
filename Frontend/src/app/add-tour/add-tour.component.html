@@ -1,0 +1,106 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row" class="d-flex justify-content-center align-items-center">
+      <div class="col-md-8">
+        <div class="card">
+          
+          <h2>Add New Tour</h2>
+          <div class="card-body">
+            <form>
+              <div class="form-row">
+                <label for="fullname">Full Name</label>
+        <input
+          type="text"
+          formControlName="fullname"
+          class="form-control"
+          [ngClass]="{ 'is-invalid': submitted && f.fullname.errors }"
+        />
+        <div *ngIf="submitted && f.fullname.errors" class="invalid-feedback">
+          <div *ngIf="f.fullname.errors.required">Full Name is required</div>
+        </div>
+              </div>
+
+              <div class="form-row">
+                <label>Summary</label>
+                <div class="col-md-12">
+                  <mat-form-field class="example-full-width">
+                    <input
+                      formControlName="Summary"
+                      class="form-control"
+                      type="text"
+                    />
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="form-row">
+                <label>Price</label>
+                <div class="col-md-12">
+                  <mat-form-field class="example-full-width">
+                    <input formControlName="Price" class="form-control" />
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="form-row">
+                <label>Time</label>
+                <div class="col-md-12">
+                  <mat-form-field class="example-full-width">
+                    <input
+                      formControlName="Email "
+                      class="form-control"
+                      type="email"
+                    />
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="form-row">
+                <label>Phones</label>
+                <div class="col-md-12">
+                  <mat-form-field class="example-full-width">
+                    <input
+                      formControlName="Phone "
+                      class="form-control"
+                      type="text"
+                    />
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="form-row">
+                <label>Register Quantity</label>
+                <div class="col-md-12">
+                  <mat-form-field class="example-full-width">
+                    <input
+                      formControlName="RegisterQuantity"
+                      class="form-control"
+                      type="text"
+                    />
+                  </mat-form-field>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <label>Detail Quantity</label>
+                <div class="col-md-12">
+                  <mat-form-field class="example-full-width">
+                    <input
+                      formControlName="DetailQuantity"
+                      class="form-control"
+                      type="text"
+                    />
+                  </mat-form-field>
+                </div>
+              </div>
+              <button
+                mat-raised-button
+                type="submit"
+                class="btn btn-danger pull-right"
+              >
+                Update Profile
+              </button>
+              <div class="clearfix"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

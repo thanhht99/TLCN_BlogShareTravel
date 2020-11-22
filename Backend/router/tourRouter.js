@@ -56,6 +56,26 @@ router.get('/:id/blog&trip', async (req, res) => {
     }                                
 });
 
+// add
+router.post('/add', async (req, res) => {
+        
+    let valueTour = new Tour({
+        name: req.body.name,
+        summary: req.body.summary + "...",
+        price: req.body.price,
+        time: req.body.time,   
+        departureLocation: req.body.departureLocation,
+        destination: req.body.destination,      
+        amount: req.body.amount,
+        avatarPath: req.body.avatarPath,
+        isStatus: true            
+    });    
+    console.log("---------------TOUR-----------------")
+    //console.log(valueTour);
+    valueTour.save()
+        .then((data) => res.json(data))
+        .catch();
+});
 
 
 

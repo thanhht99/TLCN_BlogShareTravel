@@ -14,7 +14,8 @@ import { HomeComponent } from './home/home.component';
 
 import { AlertComponent } from './_components';
 
-import { CreatetourComponent } from './createtour/createtour.component';
+import { BlogComponent } from './blog/blog.component';
+import { AddTourComponent } from './add-tour/add-tour.component';
 
 @NgModule({
   
@@ -29,7 +30,8 @@ import { CreatetourComponent } from './createtour/createtour.component';
     AppComponent,
     AlertComponent,
     HomeComponent,
-    CreatetourComponent,
+    BlogComponent,
+    AddTourComponent,
   ],
   exports: [
     BrowserModule,
