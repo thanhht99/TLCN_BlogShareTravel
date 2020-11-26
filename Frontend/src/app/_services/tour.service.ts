@@ -12,6 +12,7 @@ import { WebRequestService } from '../web-request.service';
   providedIn: 'root'
 })
 export class TourService {
+  public tours: Tour[];
 
   private tourSubject: BehaviorSubject<Tour>;
   public tour: Observable<Tour>;
@@ -68,6 +69,15 @@ export class TourService {
           //console.log(trip);
           return trip; 
       }));
+  }
+
+  createTour(tour: Tour){   
+    console.log("Dang chay createTour"); 
+    return this.webRequestService.post('tour/add', tour);
+  }
+
+  addImage(image: FormData){  
+    return this.webRequestService.post('tour/addImage', image);
   }
 
 }

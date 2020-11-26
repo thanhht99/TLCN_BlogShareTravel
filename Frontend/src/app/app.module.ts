@@ -13,14 +13,15 @@ import { LoginComponent } from './account/login.component';
 import { HomeComponent } from './home/home.component';
 
 import { AlertComponent } from './_components';
+import { CommonModule } from '@angular/common';
 
 import { BlogComponent } from './blog/blog.component';
-import { AddTourComponent } from './add-tour/add-tour.component';
 
 @NgModule({
   
   imports: [
     BrowserModule,
+    CommonModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
@@ -31,7 +32,6 @@ import { AddTourComponent } from './add-tour/add-tour.component';
     AlertComponent,
     HomeComponent,
     BlogComponent,
-    AddTourComponent,
   ],
   exports: [
     BrowserModule,

@@ -1,12 +1,7 @@
 <!-- nav -->
 <nav class="navbar navbar-expand navbar-dark bg-dark" *ngIf="account">
-  <div class="navbar-nav">
-    <a
-      class="nav-item nav-link"
-      routerLink="/"
-      routerLinkActive="active"
-      [routerLinkActiveOptions]="{ exact: true }"
-      >Home</a
+    <div class="navbar-nav">
+        <a class="nav-item nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a
     >
     <a
       class="nav-item nav-link"
@@ -15,13 +10,15 @@
       [routerLinkActiveOptions]="{ exact: true }"
       >Tour
     </a>
+        <a *ngIf="account.isCustomer" class="nav-item nav-link" routerLink="/customer/info/{{ account.id }}" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Info</a
+    >
     <a
-      *ngIf="account.isCustomer"
+      *ngIf="account.isTourGuide"
       class="nav-item nav-link"
-      routerLink="/customer/info/{{ account.id }}"
+      routerLink="/tour/add"
       routerLinkActive="active"
       [routerLinkActiveOptions]="{ exact: true }"
-      >Info</a
+      >Add Tour</a
     >
     <a
       *ngIf="account.isTourGuide"
@@ -31,45 +28,26 @@
       [routerLinkActiveOptions]="{ exact: true }"
       >Info</a
     >
+
     <a class="nav-item nav-link" (click)="logout()">Logout</a>
-  </div>
+    </div>
 </nav>
 <nav class="navbar navbar-expand navbar-dark bg-dark" *ngIf="!account">
-  <div class="navbar-nav">
-    <a
-      class="nav-item nav-link"
-      routerLink="/"
-      routerLinkActive="active"
-      [routerLinkActiveOptions]="{ exact: true }"
-      >Home
+    <div class="navbar-nav">
+        <a class="nav-item nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home
     </a>
-    <a
-      class="nav-item nav-link"
-      routerLink="/tour/list"
-      routerLinkActive="active"
-      [routerLinkActiveOptions]="{ exact: true }"
-      >Tour
+        <a class="nav-item nav-link" routerLink="/tour/list" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Tour
     </a>
-    <a
-      class="nav-item nav-link"
-      routerLink="/account/login"
-      routerLinkActive="active"
-      [routerLinkActiveOptions]="{ exact: true }"
-      >Login
+        <a class="nav-item nav-link" routerLink="/account/login" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Login
     </a>
-    <a
-      class="nav-item nav-link"
-      routerLink="/account/register"
-      routerLinkActive="active"
-      [routerLinkActiveOptions]="{ exact: true }"
-      >Register
+        <a class="nav-item nav-link" routerLink="/account/register" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Register
     </a>
-  </div>
+    </div>
 </nav>
 <!-- main app container -->
 <div class="app-container" [ngClass]="{ 'bg-light': account }">
-  <alert></alert>
-  <router-outlet></router-outlet>
+    <alert></alert>
+    <router-outlet></router-outlet>
 </div>
 
 <!-- credits -->

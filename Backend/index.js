@@ -7,7 +7,7 @@ const models = require('./models');
 const User = models.User;
 
 app.get('/', (req, res) => {
-  res.send('Hello World!')
+    res.send('Hello World!')
 })
 
 app.use(express.json()) // for parsing application/json
@@ -15,12 +15,15 @@ app.use(express.urlencoded({ extended: true }))
 
 app.use(bodyParser.json());
 
-// CORS HEADERS MIDDLEWARE
-app.use(function (req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+//Set Public Static Folder
+app.use(express.static(__dirname + '/public'));
 
-  next();
+// CORS HEADERS MIDDLEWARE
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+
+    next();
 });
 
 /*
@@ -38,13 +41,13 @@ app.use('/tourguide', require('./router/tourguideRouter'));
 app.use('/tour', require('./router/tourRouter'));
 
 app.get('/sync', (req, res) => {
-  let models = require('./models');
-  models.sequelize.sync()
-  .then(() => {    
-    res.send('Database sync completed!');
-  })
+    let models = require('./models');
+    models.sequelize.sync()
+        .then(() => {
+            res.send('Database sync completed!');
+        })
 })
 
 app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`)
+    console.log(`Example app listening at http://localhost:${port}`)
 })

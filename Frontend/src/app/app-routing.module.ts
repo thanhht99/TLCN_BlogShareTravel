@@ -4,7 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { AuthGuard } from './_helpers';
 
-import {AddTourComponent} from './add-tour/add-tour.component';
+
 
 const customerModule = () => import('./customer/customer.module').then(x => x.CustomerModule);
 const tourguideModule = () => import('./tour-guide/tour-guide.module').then(x => x.TourGuideModule);
@@ -21,8 +21,6 @@ const routes: Routes = [
   { path: 'tour', loadChildren: tourModule},
 
 
-
-  { path: 'createtour', component:AddTourComponent},
   
 
   // { path: 'customerinfo/:id', component: CustomerInfoComponent},

@@ -6,6 +6,7 @@ import { TourRoutingModule } from './tour-routing.module';
 import { LayoutComponent } from './layout.component';
 import { ListToursComponent } from './list-tours.component';
 import { BlogAndTripComponent } from './blog-and-trip.component';
+import { AddTourComponent } from './add-tour.component';
 
 
 
@@ -18,7 +19,8 @@ import { BlogAndTripComponent } from './blog-and-trip.component';
   declarations: [
     LayoutComponent,
     ListToursComponent,
-    BlogAndTripComponent
+    BlogAndTripComponent,
+    AddTourComponent
   ]
 })
 export class TourModule { }

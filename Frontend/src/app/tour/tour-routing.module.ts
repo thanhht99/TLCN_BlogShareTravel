@@ -5,13 +5,15 @@ import { AuthGuard } from '../_helpers';
 import { LayoutComponent } from './layout.component';
 import { ListToursComponent } from './list-tours.component';
 import { BlogAndTripComponent } from './blog-and-trip.component';
+import { AddTourComponent } from './add-tour.component';
 
 const routes: Routes = [
   {
       path: '', component: LayoutComponent,
       children: [
           { path: 'list', component: ListToursComponent },
-          { path: ':id/blog&trip', component: BlogAndTripComponent, canActivate: [AuthGuard]}
+          { path: ':id/blog&trip', component: BlogAndTripComponent, canActivate: [AuthGuard]},
+          { path: ':add', component: AddTourComponent, canActivate: [AuthGuard]}
           //{ path: 'trip', component: BlogAndTripComponent }
       ]
   }

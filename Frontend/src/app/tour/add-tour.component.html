@@ -1,0 +1,117 @@
+<nav *ngIf="account.isTourGuide">
+    <div class="main-content">
+        <div class="container-fluid">
+            <div class="row" class="d-flex justify-content-center align-items-center">
+                <div class="col-md-8">
+                    <div class="card border-primary">
+                        <h1 class="card-header">Add New Tour</h1>
+                        <div class="card-body">
+                            <form [formGroup]="form" (ngSubmit)="createNewTour()">
+                                <div class="form-row">
+                                    <label for="name">Name Tour</label>
+                                    <input type="text " formControlName="name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.name.errors }" />
+                                    <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+                                        <div *ngIf="f.name.errors.required">
+                                            Name Tour is required
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <label for="summary">Summary</label>
+                                    <input type="text " formControlName="summary" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.summary.errors }" />
+                                    <div *ngIf="submitted && f.summary.errors" class="invalid-feedback">
+                                        <div *ngIf="f.summary.errors.required">
+                                            Summary is required
+                                        </div>
+                                        <div *ngIf="f.summary.errors.maxlength">
+                                            Summary up to 100 characters
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <label for="price">Price</label>
+                                    <input type="text " formControlName="price" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.price.errors }" />
+                                    <div *ngIf="submitted && f.price.errors" class="invalid-feedback">
+                                        <div *ngIf="f.price.errors.required">Price is required</div>
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <label for="time">Time</label>
+                                    <input type="text " formControlName="time" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.time.errors }" />
+                                    <div *ngIf="submitted && f.time.errors" class="invalid-feedback">
+                                        <div *ngIf="f.time.errors.required">Time is required</div>
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <label for="departureLocation">Departure Location</label>
+                                    <input type="text " formControlName="departureLocation" class="form-control" [ngClass]="{
+                      'is-invalid': submitted && f.departureLocation.errors
+                    }" />
+                                    <div *ngIf="submitted && f.departureLocation.errors" class="invalid-feedback">
+                                        <div *ngIf="f.departureLocation.errors.required">
+                                            Departure Location is required
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <label>Destination</label>
+                                    <input type="text " formControlName="destination" class="form-control" [ngClass]="{
+                      'is-invalid': submitted && f.destination.errors
+                    }" />
+                                    <div *ngIf="submitted && f.destination.errors" class="invalid-feedback">
+                                        <div *ngIf="f.destination.errors.required">
+                                            Destination is required
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <label>Amount</label>
+                                    <input type="text " formControlName="amount" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.amount.errors }" />
+                                    <div *ngIf="submitted && f.amount.errors" class="invalid-feedback">
+                                        <div *ngIf="f.amount.errors.required">
+                                            Amount is required
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- <div class="form-row">
+                                    <label>Select Image File</label>
+                                    <div class="col-sm-12">
+                                        <div>
+                                            <h6 class="head-title margin-top-8"></h6>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="custom-file">
+                                            <input type="file" class="custom-file-input" id="customFile" name="avatarPath" (change)="onFileSelect($event)" #UploadFileInput />
+    
+                                            <label class="custom-file-label" for="customFile">{{
+                          fileInputLabel || "Choose File"
+                        }}</label>
+                                        </div>
+                                    </div>
+                                </div> -->
+
+                                <div class="form-row">
+                                    <button [disabled]="loading" class="btn btn-success">
+                    <span
+                      *ngIf="loading"
+                      class="spinner-border spinner-border-sm mr-1"
+                    ></span>
+                    Create Tour
+                  </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>

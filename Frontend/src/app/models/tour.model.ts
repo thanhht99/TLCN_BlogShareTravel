@@ -8,5 +8,5 @@ export class Tour {
     amount: Number;
     avatarPath: Text;
     isStatus: Boolean;
-    tourGuideId: String;
+    //tourGuideId: String;
 }
