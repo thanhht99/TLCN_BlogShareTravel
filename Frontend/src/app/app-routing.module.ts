@@ -30,7 +30,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent},
 
   // otherwise redirect to home
-  { path: '**', redirectTo: '' }
+  { path: '**', redirectTo: '/error' }
 ];
 
 @NgModule({

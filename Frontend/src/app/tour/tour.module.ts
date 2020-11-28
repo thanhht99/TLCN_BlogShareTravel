@@ -8,19 +8,24 @@ import { ListToursComponent } from './list-tours.component';
 import { BlogAndTripComponent } from './blog-and-trip.component';
 import { AddTourComponent } from './add-tour.component';
 
-
+import { ErrorComponent } from '../_components';
 
 @NgModule({
+  declarations: [
+    LayoutComponent,
+    ListToursComponent,
+    BlogAndTripComponent,
+    AddTourComponent,
+    ErrorComponent
+  ],
   imports: [
     CommonModule,
     ReactiveFormsModule,
     TourRoutingModule
   ],
-  declarations: [
+  exports: [
     LayoutComponent,
-    ListToursComponent,
-    BlogAndTripComponent,
-    AddTourComponent
   ]
+  
 })
 export class TourModule { }

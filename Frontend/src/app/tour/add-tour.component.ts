@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, ViewChild, ElementRef, Input } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { HttpResponse, HttpClient } from '@angular/common/http';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -8,7 +8,6 @@ import { Tour, Account } from '../models';
 
 import { first } from 'rxjs/operators';
 import { WebRequestService } from '../web-request.service';
-
 
 import * as _ from 'lodash';
 
@@ -27,6 +26,8 @@ export class AddTourComponent implements OnInit {
   loading = false;
   submitted = false;
   account: Account;
+  isTourGuide = true;
+
   constructor(private http: HttpClient,
               private loginService: LoginService,
               private webRequestService: WebRequestService,
@@ -37,6 +38,8 @@ export class AddTourComponent implements OnInit {
               private alertService: AlertService) 
   {
     this.loginService.account.subscribe(x => this.account = x);
+    
+    console.log(this.account.isTourGuide)
   }
 
   ngOnInit(): void {

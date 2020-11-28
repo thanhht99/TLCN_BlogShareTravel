@@ -22,8 +22,8 @@ import { BlogComponent } from './blog/blog.component';
 @NgModule({
   
   imports: [
-    BrowserModule,
     CommonModule,
+    BrowserModule,    
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
@@ -33,8 +33,7 @@ import { BlogComponent } from './blog/blog.component';
     AppComponent,
     AlertComponent,
     HomeComponent,
-    BlogComponent,
-    ErrorComponent
+    BlogComponent
   ],
   exports: [
     BrowserModule,

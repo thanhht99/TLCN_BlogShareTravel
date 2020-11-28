@@ -1,3 +1,5 @@
+<app-error *ngIf="!account.isTourGuide"></app-error>
+
 <nav *ngIf="account.isTourGuide">
     <div class="main-content">
         <div class="container-fluid">
@@ -104,7 +106,7 @@
                       *ngIf="loading"
                       class="spinner-border spinner-border-sm mr-1"
                     ></span>
-                    Create Tour
+                    Create Tour & Choose Image
                   </button>
                                 </div>
                             </form>

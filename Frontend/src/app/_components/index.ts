@@ -1,2 +1,2 @@
 export * from './alert.component';
-export * from './error.component';
+export * from './error/error.component';
