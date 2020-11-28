@@ -12,7 +12,6 @@ import { RegisterComponent } from './account/register.component';
 import { LoginComponent } from './account/login.component';
 import { HomeComponent } from './home/home.component';
 
-import { ErrorComponent } from './_components';
 
 import { AlertComponent } from './_components';
 import { CommonModule } from '@angular/common';

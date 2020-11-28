@@ -92,8 +92,8 @@ router.get('/:id/blog&trip', async(req, res) => {
 // add
 router.post('/add', (req, res, next) => {
 
-    let tourGuideId = 1;
-    if (tourGuideId === null) {
+    let testTourGuideId = req.body.tourGuideId;
+    if (testTourGuideId === null) {
         return res.send("Truy cập bị từ chối!");
     } else {
         let valueTour = new Tour({
@@ -106,7 +106,7 @@ router.post('/add', (req, res, next) => {
             amount: req.body.amount,
             avatarPath: '../../assets/img/tour/default.png',
             isStatus: true,
-            tourGuideId: 1
+            tourGuideId: testTourGuideId
         });
         valueTour.save()
             .then((data) => res.json(data))

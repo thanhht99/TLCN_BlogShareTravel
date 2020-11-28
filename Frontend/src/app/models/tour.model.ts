@@ -1,4 +1,5 @@
 export class Tour {
+    id: String;
     name: String;
     summary: Text;
     price: String;
@@ -8,5 +9,5 @@ export class Tour {
     amount: Number;
     avatarPath: Text;
     isStatus: Boolean;
-    //tourGuideId: String;
+    tourGuideId: String;
 }

@@ -1,0 +1,46 @@
+<app-error *ngIf="!account.isTourGuide"></app-error>
+
+<nav *ngIf="account.isTourGuide">
+    <div class="main-content">
+        <div class="container-fluid">
+            <div class="row" class="d-flex justify-content-center align-items-center">
+                <div class="col-md-8">
+                    <div class="card border-primary">
+                        <h1 class="card-header">Add Image For Tour</h1>
+                        <div class="card-body">
+                            <form [formGroup]="form" (ngSubmit)="addImage()">
+                                <div class="form-row">
+                                    <label>Select Image File</label>
+                                    <div class="col-sm-12">
+                                        <div>
+                                            <h6 class="head-title margin-top-8"></h6>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="file-field input-field">
+                                            <input type="file" class="custom-file-input" id="customFile" name="avatarPath" (change)="onFileSelect($event)" #UploadFileInput />
+
+                                            <label class="custom-file-label" for="customFile">{{
+                        fileInputLabel || "Choose File"
+                      }}</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- <div class="form-row">
+                                    <button [disabled]="loading" class="btn btn-success">
+                    <span
+                      *ngIf="loading"
+                      class="spinner-border spinner-border-sm mr-1"
+                    ></span>
+                    Create Tour & Choose Image
+                  </button>
+                                </div> -->
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
