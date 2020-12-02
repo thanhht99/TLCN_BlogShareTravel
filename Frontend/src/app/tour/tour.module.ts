@@ -9,6 +9,7 @@ import { ListToursComponent } from './list-tours/list-tours.component';
 import { BlogAndTripComponent } from './blog-and-trip/blog-and-trip.component';
 import { AddTourComponent } from './add-tour/add-tour.component';
 import { AddImageComponent } from './add-image/add-image.component';
+import { RegisterTripComponent } from './register-trip/register-trip.component';
 
 import { ErrorComponent } from '../_components';
 
@@ -19,6 +20,7 @@ import { ErrorComponent } from '../_components';
     BlogAndTripComponent,
     AddTourComponent,
     AddImageComponent,
+    RegisterTripComponent,
     ErrorComponent
   ],
   imports: [
