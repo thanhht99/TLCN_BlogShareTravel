@@ -1,0 +1,32 @@
+<div class="card-wrapper">
+    <div class="title">
+        <h2>Customer Info</h2>
+    </div>
+    <div class="img-and-name">
+        <div class="image-place">
+          <img alt="" class="person-image" src="{{customer.avatarPath}}" title="Image Of Name">
+        </div>
+        <div class="information">
+          <div class="person-name">
+              <p>{{customer.name}}</p>
+          </div>
+          <br/>
+          <div class="job-description">Identity: {{customer.identity}}</div>
+          <div class="job-description">Address: {{customer.address}}</div>
+
+          <div class="contacts">
+            <div class="phone-number">
+                <p>
+                  <a href="tel:{{customer.phone}}">Phone: {{customer.phone}}</a>
+                </p>
+            </div>
+            <div class="email">
+                <p>
+                  <a href="{{customer.email}}">Email: {{customer.email}}</a>
+                </p>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>
+

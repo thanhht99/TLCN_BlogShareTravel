@@ -20,6 +20,8 @@ export class TourService {
   private tripSubject: BehaviorSubject<Trip>;
   public trip: Observable<Trip>;
 
+  private imageForTourSubject: BehaviorSubject<Tour>;
+  public imageForTour: Observable<Tour>;
   constructor(private webRequestService: WebRequestService, 
               private router: Router, 
               private http: HttpClient) 
@@ -31,6 +33,13 @@ export class TourService {
     this.tripSubject = new BehaviorSubject<Trip>(JSON.parse(localStorage.getItem('trip')));
     this.trip = this.tripSubject.asObservable();
 
+    this.imageForTourSubject = new BehaviorSubject<Tour>(JSON.parse(localStorage.getItem('imageForTour')));
+    this.imageForTour = this.imageForTourSubject.asObservable();
+
+  }
+
+  public get imageForTourValue(): Tour {
+    return this.imageForTourSubject.value;
   }
 
   public get tourValue(): Tour {
@@ -46,7 +55,6 @@ export class TourService {
       .pipe(map(tour => {
           localStorage.setItem('tour', JSON.stringify(tour));
           this.tourSubject.next(tour);
-          //console.log(tour);
           return tour; 
       }));
   }
@@ -62,7 +70,7 @@ export class TourService {
   }
 
   getTripById(id: number) {
-    return this.http.get<Trip>(`${this.webRequestService.ROOT_URL}/tour/${id}/blog&trip`)
+    return this.http.get<Trip>(`${this.webRequestService.ROOT_URL}/tour/${id}/trip`)
       .pipe(map(trip => {
           localStorage.setItem('trip', JSON.stringify(trip));
           this.tripSubject.next(trip);
@@ -71,13 +79,25 @@ export class TourService {
       }));
   }
 
-  createTour(tour: Tour){   
-    console.log("Dang chay createTour"); 
+  infoTour(id: number) {
+    return this.http.get<Tour>(`${this.webRequestService.ROOT_URL}/tour/info/${id}`)
+      .pipe(map(imageForTour => {
+          localStorage.setItem('imageForTour', JSON.stringify(imageForTour));
+          this.imageForTourSubject.next(imageForTour);
+          return imageForTour; 
+      }));
+  }
+
+  createTour(tour: Tour){
     return this.webRequestService.post('tour/add', tour);
   }
 
-  addImage(image: FormData){  
-    return this.webRequestService.post('tour/addImage', image);
+  addImage(image: FormData, id: number){  
+    return this.http.post<any>(`${this.webRequestService.ROOT_URL}/tour/addImage/${id}`, image);
+  }
+
+  addTrip(trip: Trip, id: number){  
+    return this.http.post<any>(`${this.webRequestService.ROOT_URL}/tour/addTrip/${id}`, trip);
   }
 
 }

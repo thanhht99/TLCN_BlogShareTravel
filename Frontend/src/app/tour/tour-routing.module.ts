@@ -3,8 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { AuthGuard } from '../_helpers';
 
 import { LayoutComponent } from './layout.component';
-import { ListToursComponent } from './list-tours.component';
-import { BlogAndTripComponent } from './blog-and-trip.component';
+import { ListToursComponent } from './list-tours/list-tours.component';
+import { BlogAndTripComponent } from './blog-and-trip/blog-and-trip.component';
 import { AddTourComponent } from './add-tour/add-tour.component';
 import { AddImageComponent } from './add-image/add-image.component';
 
@@ -16,9 +16,7 @@ const routes: Routes = [
       path: '', component: LayoutComponent,
       children: [
           
-          { path: 'list', component: ListToursComponent },
-          
-          
+          { path: 'list', component: ListToursComponent },            
           { path: ':id/blog&trip', component: BlogAndTripComponent, canActivate: [AuthGuard]},
           { path: 'add', component: AddTourComponent, canActivate: [AuthGuard]},
           { path: 'add/image/:id', component: AddImageComponent, canActivate: [AuthGuard]},

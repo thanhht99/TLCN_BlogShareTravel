@@ -9,6 +9,6 @@ export class Trip {
     amount: Number;   
     theRemainingAmount: Number;   
     isStatus: Boolean
-    tourId: String;
+    tourId: Number;
     tourGuideId: String;
 }

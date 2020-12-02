@@ -1,14 +1,40 @@
-<app-error *ngIf="!account.isTourGuide"></app-error>
-
-<nav *ngIf="account.isTourGuide">
+<app-error *ngIf="!account.isTourGuide || !tour"></app-error>
+<nav *ngIf="account.isTourGuide && tour">
     <div class="main-content">
         <div class="container-fluid">
             <div class="row" class="d-flex justify-content-center align-items-center">
                 <div class="col-md-8">
                     <div class="card border-primary">
-                        <h1 class="card-header">Add Image For Tour</h1>
+                        <h1 class="card-header">{{ tour.name }}</h1>
                         <div class="card-body">
                             <form [formGroup]="form" (ngSubmit)="addImage()">
+                                <div class="form-row">
+                                    <label for="summary ">Summary: {{ tour.summary }}</label>
+                                </div>
+
+                                <div class="form-row">
+                                    <label for="price ">Price: {{ tour.price }}</label>
+                                </div>
+
+                                <div class="form-row">
+                                    <label for="time ">Time: {{ tour.time }}</label>
+                                </div>
+
+                                <div class="form-row">
+                                    <label for="departureLocation ">
+                    Departure Location: {{ tour.departureLocation }}
+                  </label>
+                                </div>
+
+                                <div class="form-row">
+                                    <label for="destination ">
+                    Destination: {{ tour.destination }}
+                  </label>
+                                </div>
+
+                                <div class="form-row">
+                                    <label for="amount ">Amount: {{ tour.amount }}</label>
+                                </div>
                                 <div class="form-row">
                                     <label>Select Image File</label>
                                     <div class="col-sm-12">
@@ -17,8 +43,8 @@
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
-                                        <div class="file-field input-field">
-                                            <input type="file" class="custom-file-input" id="customFile" name="avatarPath" (change)="onFileSelect($event)" #UploadFileInput />
+                                        <div class="custom-file">
+                                            <input type="file" class="custom-file-input" id="customFile" name="uploadedImage" (change)="onFileSelect($event)" #UploadFileInput />
 
                                             <label class="custom-file-label" for="customFile">{{
                         fileInputLabel || "Choose File"
@@ -27,15 +53,15 @@
                                     </div>
                                 </div>
 
-                                <!-- <div class="form-row">
+                                <div class="form-row">
                                     <button [disabled]="loading" class="btn btn-success">
                     <span
                       *ngIf="loading"
                       class="spinner-border spinner-border-sm mr-1"
                     ></span>
-                    Create Tour & Choose Image
+                    Update Image
                   </button>
-                                </div> -->
+                                </div>
                             </form>
                         </div>
                     </div>

@@ -1,0 +1,35 @@
+<div class="card-wrapper">
+    <div class="title">
+        <h2>Tour Guide Info</h2>
+    </div>
+    <div class="img-and-name">
+        <div class="image-place">
+          <img alt="Imagem de Carina Ponte, responsável pela área de Heranças em MSF Brasil" class="person-image" src="{{tourguide.avatarPath}}" title="Image Of Name">
+        </div>
+        <div class="information">
+          <div class="person-name">
+              <p>{{tourguide.name}}</p>
+          </div>
+          <br/>
+          
+          <div class="job-description">Gender: {{tourguide.gender}}</div>
+          <div class="job-description">Identity: {{tourguide.identity}}</div>
+          <div class="job-description">Date of birth: {{tourguide.dateOfBirth}}</div>
+          <div class="job-description">Languages: {{tourguide.language}}</div>
+          <div class="job-description">Address: {{tourguide.address}}</div>
+          <div class="job-description">Number of trip: {{tourguide.tripNumber}}</div>
+          <div class="contacts">
+            <div class="phone-number">
+                <p>
+                  <a href="tel:{{tourguide.phone}}">Phone: {{tourguide.phone}}</a>
+                </p>
+            </div>
+            <div class="email">
+                <p>
+                  <a href="{{tourguide.email}}">Email: {{tourguide.email}}</a>
+                </p>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>

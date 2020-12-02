@@ -8,8 +8,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { RegisterComponent } from './account/register.component';
-import { LoginComponent } from './account/login.component';
 import { HomeComponent } from './home/home.component';
 
 

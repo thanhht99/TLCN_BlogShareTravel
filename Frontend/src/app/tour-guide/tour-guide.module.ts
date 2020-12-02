@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 
 import { TourGuideRoutingModule } from './tour-guide-routing.module';
 import { LayoutComponent } from './layout.component';
-import { TourGuideInfoComponent } from './tour-guide-info.component';
+import { TourGuideInfoComponent } from './tour-guide-info/tour-guide-info.component';
 
 
 @NgModule({

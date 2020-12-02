@@ -48,7 +48,10 @@ router.use(cors());
 // list 
 router.get('/list', (req, res) => {
     Tour.findAll({
-
+        where: { isStatus: true },
+        order: [
+            ['amount', 'DESC']
+        ]
     }).then((tours) => {
         res.json(tours);
         //res.send(tours);
@@ -56,6 +59,19 @@ router.get('/list', (req, res) => {
         res.send(err);
     });
 })
+
+// info tour
+router.get('/info/:id', async(req, res) => {
+
+    const idneed = parseInt(req.params.id, 10);
+    const testTour = await Tour.findOne({ where: { id: idneed } });
+    if (!testTour) {
+        res.json(404);
+    } else {
+        res.json(testTour.dataValues);
+        console.log(testTour.dataValues);
+    }
+});
 
 // list trip
 router.get('/trip', (req, res) => {
@@ -69,8 +85,8 @@ router.get('/trip', (req, res) => {
     });
 })
 
-// blog & trip
-router.get('/:id/blog&trip', async(req, res) => {
+// get trip by id
+router.get('/:id/trip', async(req, res) => {
 
     const idneed = parseInt(req.params.id, 10);
     const test = await Trip.findOne({ where: { tourId: idneed } });
@@ -89,6 +105,7 @@ router.get('/:id/blog&trip', async(req, res) => {
     }
 });
 
+
 // add
 router.post('/add', (req, res, next) => {
 
@@ -103,9 +120,9 @@ router.post('/add', (req, res, next) => {
             time: req.body.time,
             departureLocation: req.body.departureLocation,
             destination: req.body.destination,
-            amount: req.body.amount,
+            amount: 50,
             avatarPath: '../../assets/img/tour/default.png',
-            isStatus: true,
+            isStatus: false,
             tourGuideId: testTourGuideId
         });
         valueTour.save()
@@ -120,30 +137,73 @@ router.post('/add', (req, res, next) => {
     })
 });
 
-router.post('/addImage', upload.single('avatarPath'), (req, res, next) => {
-    console.log("--------------BOGY2----------------");
-    console.log(req.body);
-
-    console.log("--------------FILE2----------------");
-    console.log(req);
+router.post('/addImage/:id', upload.single('avatarPath'), async(req, res, next) => {
+    const idneed = parseInt(req.params.id, 10);
+    const tour = await Tour.findOne({ where: { id: idneed } });
+    let testTourGuideId = req.body.tourGuideId;
     const file = req.file
-    console.log(req);
+    console.log(req.file)
+
     if (!file) {
         const error = new Error('Please upload a file')
         error.httpStatusCode = 400
         return next(error)
     }
-    console.log("hello image")
-    res.status(200).send({
-        statusCode: 200,
-        status: 'success',
-        uploadedFile: file
-    })
-
+    if (!tour || testTourGuideId === null) {
+        res.send(404);
+    } else {
+        console.log("hello image")
+        Tour.update({
+            avatarPath: '../../assets/img/tour/' + req.file.filename
+        }, {
+            where: { id: idneed }
+        }).then(() => {
+            res.status(200).send({
+                statusCode: 200,
+                status: 'success',
+                //uploadedFile: file
+            })
+        })
+    }
 }, (error, req, res, next) => {
     res.status(400).send({
         error: error.message
     })
 })
+
+// add trip
+router.post('/addTrip/:id', async(req, res) => {
+    const idneed = parseInt(req.params.id, 10);
+    const testTour = await Tour.findOne({ where: { id: idneed } });
+    let testTourGuideId = req.body.tourGuideId;
+    if (!testTour || testTourGuideId === null) {
+        res.send(404);
+    } else {
+        let valueTrip = new Trip({
+            infoHotel: req.body.infoHotel,
+            infoVehicle: req.body.infoVehicle,
+            startDate: req.body.startDate,
+            endDate: req.body.endDate,
+            price: req.body.price,
+            childrenPrice: req.body.childrenPrice,
+            babyPrice: req.body.babyPrice,
+            amount: 40,
+            theRemainingAmount: 40,
+            isStatus: false,
+            tourId: idneed,
+            tourGuideId: testTour.tourGuideId
+        });
+        valueTrip.save()
+            .then((data) => res.json(data))
+            .catch((error) => res.status(400).send({
+                error: error.message
+            }));
+    }
+}, (error, req, res, next) => {
+    res.status(400).send({
+        error: error.message
+    })
+});
+
 
 module.exports = router;

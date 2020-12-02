@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 
 import { CustomerRoutingModule } from './customer-routing.module';
 import { LayoutComponent } from './layout.component';
-import { CustomerInfoComponent } from './customer-info.component';
+import { CustomerInfoComponent } from './customer-info/customer-info.component';
 
 
 @NgModule({
