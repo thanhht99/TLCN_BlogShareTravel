@@ -48,13 +48,7 @@ export class BlogAndTripComponent implements OnInit {
               // console.log('--------------TRIP-------------');
               // console.log(trip);
               this.trips = trip}
-            ); 
-      this.tourService.infoTour(id)
-            .pipe(first())
-            .subscribe({
-              next: (tour: any) =>{
-              }
-            });     
+            );    
     }); 
     
     this.loginService.account.subscribe(x => this.account = x);

@@ -1,1 +1,148 @@
-<p>register-trip works!</p>
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row" class="d-flex justify-content-center align-items-center">
+            <div class="col-md-8">
+                <div class="card border-primary">
+                    <h1 class="card-header">Register Trip</h1>
+                    <div class="card-body">
+                        <form [formGroup]="form" (ngSubmit)="register()">
+                            <div class="newspaper">
+                                <div class="form-row">
+                                    <label>Name of Subscribers</label>
+                                    <input type="text " formControlName="nameRegister" class="form-control" [ngClass]="{
+                      'is-invalid': submitted && f.nameRegister.errors
+                    }" />
+                                    <div *ngIf="submitted && f.nameRegister.errors" class="invalid-feedback">
+                                        <div *ngIf="f.nameRegister.errors.required">
+                                            Name of Subscribers is required
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <label>Identity</label>
+                                    <input type="text" formControlName="identity" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.identity.errors }" />
+                                    <div *ngIf="submitted && f.identity.errors" class="invalid-feedback">
+                                        <div *ngIf="f.identity.errors.required">
+                                            Identity is required
+                                        </div>
+                                        <div *ngIf="f.identity.errors.minlength">
+                                            Identity must be 9 characters
+                                        </div>
+                                        <div *ngIf="f.identity.errors.maxlength">
+                                            Identity must be 9 characters
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <label>Address</label>
+                                    <input type="text " formControlName="address" class="form-control" [ngClass]="{
+                      'is-invalid': submitted && f.address.errors
+                    }" />
+                                    <div *ngIf="submitted && f.address.errors" class="invalid-feedback">
+                                        <div *ngIf="f.address.errors.required">
+                                            Address is required
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <label for="email">Email</label>
+                                    <input type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+                                    <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                                        <div *ngIf="f.email.errors.required">Email is required</div>
+                                        <div *ngIf="f.email.errors.email">
+                                            Email must be a valid email address
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <label>Phone</label>
+                                    <input type="text" formControlName="phone" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.phone.errors }" />
+                                    <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
+                                        <div *ngIf="f.phone.errors.required">Phone is required</div>
+                                        <div *ngIf="f.phone.errors.minlength">
+                                            Phone must be 9 characters
+                                        </div>
+                                        <div *ngIf="f.phone.errors.maxlength">
+                                            Phone must be 9 characters
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <label>Number of adults</label>
+                                    <input type="number" formControlName="adults" class="form-control" [ngClass]="{
+                      'is-invalid': submitted && f.adults.errors
+                    }" />
+                                    <div *ngIf="submitted && f.adults.errors" class="invalid-feedback">
+                                        <div *ngIf="f.adults.errors.required">
+                                            Number of adults is required
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <label>Number of children</label>
+                                    <input type="number" formControlName="children" class="form-control" [ngClass]="{
+                      'is-invalid': submitted && f.children.errors
+                    }" />
+                                    <div *ngIf="submitted && f.children.errors" class="invalid-feedback">
+                                        <div *ngIf="f.children.errors.required">
+                                            Number of children is required
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <label>Number of baby</label>
+                                    <input type="number" formControlName="baby" class="form-control" [ngClass]="{
+                      'is-invalid': submitted && f.baby.errors
+                    }" />
+                                    <div *ngIf="submitted && f.baby.errors" class="invalid-feedback">
+                                        <div *ngIf="f.baby.errors.required">
+                                            Number of baby is required
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Gender of Subscribers</label>
+                                <div>
+                                    <input id="male" type="radio" value="male" name="gender" formControlName="gender" />
+                                    <label for="male">Male</label>
+                                </div>
+                                <div>
+                                    <input id="female" type="radio" value="female" name="gender" formControlName="gender" />
+                                    <label for="female">Female</label>
+                                </div>
+                                <div *ngIf="submitted && f.gender.errors" class="alert alert-danger">
+                                    <div *ngIf="f.gender.errors.required">
+                                        Gender is required.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <button [disabled]="loading" class="btn btn-primary">
+                  <span
+                    *ngIf="loading"
+                    class="spinner-border spinner-border-sm mr-1"
+                  ></span>
+                  Register
+                </button>
+                                <a routerLink="/tour/1/blog&trip" class="btn btn-danger">Cancel</a
+                >
+              </div>
+              <div class="col-md-5 col-sm-5 col-xs-12"></div>
+              <div class="col-md-7 col-sm-7 col-xs-12"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

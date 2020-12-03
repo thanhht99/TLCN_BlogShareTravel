@@ -8,33 +8,36 @@
                         <h1 class="card-header">{{ tour.name }}</h1>
                         <div class="card-body">
                             <form [formGroup]="form" (ngSubmit)="addImage()">
-                                <div class="form-row">
-                                    <label for="summary ">Summary: {{ tour.summary }}</label>
+                                <div class="newspaper">
+                                    <div class="form-row">
+                                        <label for="summary ">Summary: {{ tour.summary }}</label>
+                                    </div>
+
+                                    <div class="form-row">
+                                        <label for="price ">Price: {{ tour.price }}</label>
+                                    </div>
+
+                                    <div class="form-row">
+                                        <label for="time ">Time: {{ tour.time }}</label>
+                                    </div>
+
+                                    <div class="form-row">
+                                        <label for="departureLocation ">
+                      Departure Location: {{ tour.departureLocation }}
+                    </label>
+                                    </div>
+
+                                    <div class="form-row">
+                                        <label for="destination ">
+                      Destination: {{ tour.destination }}
+                    </label>
+                                    </div>
+
+                                    <div class="form-row">
+                                        <label for="amount ">Amount: {{ tour.amount }}</label>
+                                    </div>
                                 </div>
 
-                                <div class="form-row">
-                                    <label for="price ">Price: {{ tour.price }}</label>
-                                </div>
-
-                                <div class="form-row">
-                                    <label for="time ">Time: {{ tour.time }}</label>
-                                </div>
-
-                                <div class="form-row">
-                                    <label for="departureLocation ">
-                    Departure Location: {{ tour.departureLocation }}
-                  </label>
-                                </div>
-
-                                <div class="form-row">
-                                    <label for="destination ">
-                    Destination: {{ tour.destination }}
-                  </label>
-                                </div>
-
-                                <div class="form-row">
-                                    <label for="amount ">Amount: {{ tour.amount }}</label>
-                                </div>
                                 <div class="form-row">
                                     <label>Select Image File</label>
                                     <div class="col-sm-12">

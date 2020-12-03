@@ -54,7 +54,7 @@
         </div>
     </div>
 
-    <div *ngIf="account.isTourGuide">
+    <div *ngIf="account.isTourGuide && tour.amount > 0">
         <h2>Thêm chuyến đi</h2>
         <form [formGroup]="form" (ngSubmit)="addTrip()">
             <div class="form-row">
@@ -71,51 +71,58 @@
                     <div *ngIf="f.price.errors.required">Price is required</div>
                 </div>
             </div>
-            <div class="form-row">
-                <label>Info Hotel</label>
-                <input type="text " formControlName="infoHotel" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.infoHotel.errors }" />
-                <div *ngIf="submitted && f.infoHotel.errors" class="invalid-feedback">
-                    <div *ngIf="f.infoHotel.errors.required">Info Hotel is required</div>
-                </div>
-            </div>
-            <div class="form-row">
-                <label>Info Vehicle</label>
-                <input type="text " formControlName="infoVehicle" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.infoVehicle.errors }" />
-                <div *ngIf="submitted && f.infoVehicle.errors" class="invalid-feedback">
-                    <div *ngIf="f.infoVehicle.errors.required">
-                        Info Vehicle is required
+            <div class="newspaper">
+                <div class="form-row">
+                    <label>Info Hotel</label>
+                    <input type="text " formControlName="infoHotel" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.infoHotel.errors }" />
+                    <div *ngIf="submitted && f.infoHotel.errors" class="invalid-feedback">
+                        <div *ngIf="f.infoHotel.errors.required">
+                            Info Hotel is required
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="form-row">
-                <label>Start Date</label>
-                <input type="date" formControlName="startDate" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.startDate.errors }" />
-                <div *ngIf="submitted && f.startDate.errors" class="invalid-feedback">
-                    <div *ngIf="f.startDate.errors.required">Start Date is required</div>
-                </div>
-            </div>
-            <div class="form-row">
-                <label>End Date</label>
-                <input type="date" formControlName="endDate" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.endDate.errors }" />
-                <div *ngIf="submitted && f.endDate.errors" class="invalid-feedback">
-                    <div *ngIf="f.endDate.errors.required">End Date is required</div>
-                </div>
-            </div>
-
-            <div class="form-row">
-                <label>Children Price</label>
-                <input type="text " formControlName="childrenPrice" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.childrenPrice.errors }" />
-                <div *ngIf="submitted && f.childrenPrice.errors" class="invalid-feedback">
-                    <div *ngIf="f.childrenPrice.errors.required">
-                        Children Price is required
+                <div class="form-row">
+                    <label>Start Date</label>
+                    <input type="date" formControlName="startDate" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.startDate.errors }" />
+                    <div *ngIf="submitted && f.startDate.errors" class="invalid-feedback">
+                        <div *ngIf="f.startDate.errors.required">
+                            Start Date is required
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="form-row">
-                <label>Baby Price</label>
-                <input type="text " formControlName="babyPrice" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.babyPrice.errors }" />
-                <div *ngIf="submitted && f.babyPrice.errors" class="invalid-feedback">
-                    <div *ngIf="f.babyPrice.errors.required">Baby Price is required</div>
+                <div class="form-row">
+                    <label>Children Price</label>
+                    <input type="text " formControlName="childrenPrice" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.childrenPrice.errors }" />
+                    <div *ngIf="submitted && f.childrenPrice.errors" class="invalid-feedback">
+                        <div *ngIf="f.childrenPrice.errors.required">
+                            Children Price is required
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <label>Info Vehicle</label>
+                    <input type="text " formControlName="infoVehicle" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.infoVehicle.errors }" />
+                    <div *ngIf="submitted && f.infoVehicle.errors" class="invalid-feedback">
+                        <div *ngIf="f.infoVehicle.errors.required">
+                            Info Vehicle is required
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <label>End Date</label>
+                    <input type="date" formControlName="endDate" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.endDate.errors }" />
+                    <div *ngIf="submitted && f.endDate.errors" class="invalid-feedback">
+                        <div *ngIf="f.endDate.errors.required">End Date is required</div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <label>Baby Price</label>
+                    <input type="text " formControlName="babyPrice" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.babyPrice.errors }" />
+                    <div *ngIf="submitted && f.babyPrice.errors" class="invalid-feedback">
+                        <div *ngIf="f.babyPrice.errors.required">
+                            Baby Price is required
+                        </div>
+                    </div>
                 </div>
             </div>
 

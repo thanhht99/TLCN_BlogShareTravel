@@ -194,10 +194,15 @@ router.post('/addTrip/:id', async(req, res) => {
             tourGuideId: testTour.tourGuideId
         });
         valueTrip.save()
-            .then((data) => res.json(data))
+            .then((data) => {
+                console.log(data);
+                Tour.update({ amount: testTour.amount - 1 }, { where: { id: testTour.id } });
+                res.json(data);
+            })
             .catch((error) => res.status(400).send({
                 error: error.message
             }));
+
     }
 }, (error, req, res, next) => {
     res.status(400).send({
