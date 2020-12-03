@@ -10,5 +10,5 @@ export class RegisterTrip {
     children: Number;
     baby: Number;
     tripId: Number;
-    customerId: Number;
+    accountId: Number;
 }

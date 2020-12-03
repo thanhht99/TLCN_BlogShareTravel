@@ -6,19 +6,19 @@ import { HttpResponse, HttpClient } from '@angular/common/http';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { first } from 'rxjs/operators';
-import { WebRequestService } from '../../web-request.service';
+import { WebRequestService } from '../../../web-request.service';
 
-import { TourService, LoginService, AlertService } from '../../_services';
-import { Trip, Tour, Account, TourGuide } from '../../models';
+import { TourService, LoginService, AlertService } from '../../../_services';
+import { Trip, Tour, Account, TourGuide } from '../../../models';
 
 
 @Component({
-  selector: 'app-blog-and-trip',
-  templateUrl: './blog-and-trip.component.html',
-  styleUrls: ['./blog-and-trip.component.scss'],
+  selector: 'app-trip',
+  templateUrl: './trip.component.html',
+  styleUrls: ['./trip.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class BlogAndTripComponent implements OnInit {
+export class TripComponent implements OnInit {
   form: FormGroup;
   price: String;
   tours: Tour;

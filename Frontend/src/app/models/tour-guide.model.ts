@@ -1,5 +1,5 @@
 export class TourGuide {
-    id: String;
+    id: Number;
     name: String;
     email: String;
     gender: String;

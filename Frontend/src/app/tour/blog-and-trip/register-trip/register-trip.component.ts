@@ -3,11 +3,11 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { HttpResponse, HttpClient } from '@angular/common/http';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
-import { TourService, LoginService, AlertService } from '../../_services';
-import { Tour, Account, TourGuide } from '../../models';
+import { TourService, LoginService, AlertService } from '../../../_services';
+import { Tour, Account, TourGuide, RegisterTrip, Customer } from '../../../models';
 
 import { first } from 'rxjs/operators';
-import { WebRequestService } from '../../web-request.service';
+import { WebRequestService } from '../../../web-request.service';
 
 @Component({
   selector: 'app-register-trip',
@@ -18,15 +18,26 @@ import { WebRequestService } from '../../web-request.service';
 export class RegisterTripComponent implements OnInit {
   form: FormGroup;
   tour: Tour;
-  loading = false;
-  submitted = false;
+  registerTrip: RegisterTrip;
   account: Account;
   tourGuide: TourGuide;
+  customer: Customer;
+
+  loading = false;
+  submitted = false;
+  id: Number;
   constructor(private tourService: TourService, 
+              private alertService: AlertService,
+              private loginService: LoginService,
               private router: Router,
               private route: ActivatedRoute,
               private formBuilder: FormBuilder,) 
   { 
+    this.loginService.account.subscribe(x => this.account = x);
+    //console.log(this.account)
+    this.id = this.route.snapshot.params['id'];
+    console.log(this.id)
+
   }
 
   ngOnInit(): void {
@@ -46,7 +57,19 @@ export class RegisterTripComponent implements OnInit {
   get f() { return this.form.controls; }
 
   register(){     
-    console.log(this.form.value);
+    this.submitted = true;
+    this.alertService.clear();
+    if (this.form.invalid) {
+      return;
+    }
+    this.loading = true;
+      
+    this.registerTrip = this.form.value;
+    this.registerTrip.accountId = this.account.id;
+    this.registerTrip.tripId = Number(this.id);
+    
+    console.log('----------this.registerTrip----------');
+    console.log(this.registerTrip);
   }
 
 }

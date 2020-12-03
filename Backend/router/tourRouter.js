@@ -42,6 +42,7 @@ var upload = multer({
 const Account = models.Account;
 const Trip = models.Trip;
 const Tour = models.Tour;
+const RegisterTrip = models.RegisterTrip;
 
 router.use(bodyParser.json());
 router.use(cors());
@@ -195,7 +196,7 @@ router.post('/addTrip/:id', async(req, res) => {
         });
         valueTrip.save()
             .then((data) => {
-                console.log(data);
+                // console.log(data);
                 Tour.update({ amount: testTour.amount - 1 }, { where: { id: testTour.id } });
                 res.json(data);
             })
@@ -203,6 +204,44 @@ router.post('/addTrip/:id', async(req, res) => {
                 error: error.message
             }));
 
+    }
+}, (error, req, res, next) => {
+    res.status(400).send({
+        error: error.message
+    })
+});
+
+// Register Trip
+router.post('/registerTrip', async(req, res) => {
+    const idneed = req.body.tripId;
+    const testTrip = await Trip.findOne({ where: { id: idneed } });
+    let testAccountId = req.body.accountId;
+    if (!testTrip || testAccountId === null) {
+        res.send(404);
+    } else {
+        let valueRegisterTrip = new RegisterTrip({
+            nameRegister: req.body.nameRegister,
+            gender: req.body.gender,
+            identity: req.body.identity,
+            email: req.body.email,
+            phone: req.body.phone,
+            address: req.body.address,
+            adults: req.body.adults,
+            children: req.body.children,
+            baby: req.body.baby,
+            children: req.body.children,
+            tripId: testTrip.id,
+            accountId: testAccountId,
+            isConfirm: false
+        });
+        valueRegisterTrip.save()
+            .then((data) => {
+                console.log(data);
+                res.json(data);
+            })
+            .catch((error) => res.status(400).send({
+                error: error.message
+            }));
     }
 }, (error, req, res, next) => {
     res.status(400).send({

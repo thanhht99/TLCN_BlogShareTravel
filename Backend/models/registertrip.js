@@ -12,7 +12,7 @@ module.exports = (sequelize, DataTypes) => {
         static associate(models) {
             // define association here
             RegisterTrip.belongsTo(models.Trip, { foreignKey: 'tripId' });
-            RegisterTrip.belongsTo(models.Customer, { foreignKey: 'customerId' });
+            RegisterTrip.belongsTo(models.Account, { foreignKey: 'accountId' });
         }
     };
     RegisterTrip.init({
@@ -24,7 +24,8 @@ module.exports = (sequelize, DataTypes) => {
         address: DataTypes.STRING,
         adults: DataTypes.INTEGER,
         children: DataTypes.INTEGER,
-        baby: DataTypes.INTEGER
+        baby: DataTypes.INTEGER,
+        isConfirm: DataTypes.BOOLEAN,
     }, {
         sequelize,
         modelName: 'RegisterTrip',

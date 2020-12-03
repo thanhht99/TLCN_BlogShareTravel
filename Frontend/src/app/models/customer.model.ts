@@ -1,4 +1,5 @@
 export class Customer {
+    id: Number;
     name: String;
     email: String;
     identity: String;

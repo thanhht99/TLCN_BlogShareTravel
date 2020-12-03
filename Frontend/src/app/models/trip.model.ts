@@ -10,5 +10,5 @@ export class Trip {
     theRemainingAmount: Number;   
     isStatus: Boolean
     tourId: Number;
-    tourGuideId: String;
+    tourGuideId: Number;
 }

@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import { Account, Tour, Trip } from '../models';
+import { Account, Tour, Trip, RegisterTrip } from '../models';
 import { WebRequestService } from '../web-request.service';
 
 @Injectable({
@@ -98,6 +98,10 @@ export class TourService {
 
   addTrip(trip: Trip, id: number){  
     return this.http.post<any>(`${this.webRequestService.ROOT_URL}/tour/addTrip/${id}`, trip);
+  }
+
+  registerTrip(registerTrip: RegisterTrip){
+    return this.webRequestService.post('tour/registerTrip', registerTrip);
   }
 
 }
