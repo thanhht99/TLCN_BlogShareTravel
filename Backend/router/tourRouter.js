@@ -237,6 +237,9 @@ router.post('/registerTrip', async(req, res) => {
         valueRegisterTrip.save()
             .then((data) => {
                 console.log(data);
+                Trip.update({
+                    theRemainingAmount: testTrip.theRemainingAmount - (valueRegisterTrip.adults + valueRegisterTrip.children + valueRegisterTrip.baby)
+                }, { where: { id: testTrip.id } });
                 res.json(data);
             })
             .catch((error) => res.status(400).send({

@@ -8,6 +8,7 @@ import { RegisterTripComponent } from './register-trip/register-trip.component';
 
 
 import { ErrorComponent } from '../../_components';
+import { SuccessComponent } from '../../_components';
 
 
 const routes: Routes = [
@@ -16,11 +17,11 @@ const routes: Routes = [
       children: [
                  
         { path: ':id', component: TripComponent, canActivate: [AuthGuard]},
-        // { path: ':id/registerTrip', component: RegisterTripComponent, canActivate: [AuthGuard]},
         { path: ':id/registerTrip/:id', component: RegisterTripComponent, canActivate: [AuthGuard]},
+        { path: 'registerTrip/success', component: SuccessComponent, canActivate: [AuthGuard]},
         
          
-        { path: 'error', component: ErrorComponent},
+        // { path: ':id/success', component: SuccessComponent},
           
           //{ path: 'trip', component: BlogAndTripComponent }
       ]

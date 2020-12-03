@@ -36,7 +36,7 @@ export class RegisterTripComponent implements OnInit {
     this.loginService.account.subscribe(x => this.account = x);
     //console.log(this.account)
     this.id = this.route.snapshot.params['id'];
-    console.log(this.id)
+    // console.log(this.id)
 
   }
 
@@ -70,6 +70,23 @@ export class RegisterTripComponent implements OnInit {
     
     console.log('----------this.registerTrip----------');
     console.log(this.registerTrip);
+
+    this.tourService.registerTrip(this.registerTrip)
+                          .pipe(first())
+                                .subscribe({
+                                    next: (registerTrip: any) => {
+                                      // console.log("------------------------------------");
+                                      // console.log(registerTrip);
+                                      // this.alertService.success('Register successful. Please wait for confirmation from the trip organizer!', { keepAfterRouteChange: true });                                                                                                                                                         
+                                      this.router.navigate(['/tour/blog&trip/registerTrip/success'], { relativeTo: this.route });
+                                    },
+                                    error: er => {
+                                      console.log(er);
+                                      alert(er.error.error);
+                                       // this.alertService.error('Add Tour Failed', { keepAfterRouteChange: true });
+                                      this.loading = false;
+                                    }
+                                });     
   }
 
 }

@@ -30,7 +30,7 @@ import { BlogComponent } from './blog/blog.component';
     AppComponent,
     AlertComponent,
     HomeComponent,
-    BlogComponent,
+    BlogComponent
   ],
   exports: [
     BrowserModule,

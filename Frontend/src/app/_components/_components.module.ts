@@ -5,10 +5,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 
 import { ErrorComponent } from './error/error.component';
+import { SuccessComponent } from './success/success.component';
 
 @NgModule({
   declarations: [
-    ErrorComponent
+    ErrorComponent,
+    SuccessComponent
   ],
   imports: [
     BrowserModule,
@@ -23,7 +25,8 @@ import { ErrorComponent } from './error/error.component';
     ReactiveFormsModule,
     HttpClientModule,
     //error
-    ErrorComponent
+    ErrorComponent,
+    SuccessComponent
   ]
 })
 export class ComponentsModule { }
