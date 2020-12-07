@@ -10,7 +10,7 @@ module.exports = {
                 time: '4 ngày 3 đêm',
                 departureLocation: 'TP. HỒ CHÍ MINH',
                 destination: 'MIỀN TÂY | ĐBSCL',
-                amount: 3,
+                amount: 50,
                 avatarPath: 'https://www.saigontourist.net/uploads/destination/TrongNuoc/Mientay/My-tho-Vinh-tranh-pagoda.jpg',
                 isStatus: true,
                 tourGuideId: 1
@@ -23,7 +23,7 @@ module.exports = {
                 time: '2 ngày 1 đêm',
                 departureLocation: 'TP. HỒ CHÍ MINH',
                 destination: 'HỒ TRÀM',
-                amount: 0,
+                amount: 50,
                 avatarPath: 'https://www.saigontourist.net/uploads/destination/TrongNuoc/Vungtau/ho-tram-outside.jpg',
                 isStatus: true,
                 tourGuideId: 1
@@ -36,7 +36,7 @@ module.exports = {
                 time: '3 ngày 2 đêm',
                 departureLocation: 'TP. HỒ CHÍ MINH',
                 destination: 'PHAN THIẾT',
-                amount: 4,
+                amount: 50,
                 avatarPath: 'https://www.saigontourist.net/uploads/destination/TrongNuoc/Phanthiet/Mui-Ne-beach_1085095151.jpg',
                 isStatus: true,
                 tourGuideId: 1
@@ -49,7 +49,7 @@ module.exports = {
                 time: '4 ngày 3 đêm',
                 departureLocation: 'TP. HỒ CHÍ MINH',
                 destination: 'ĐÀ LẠT',
-                amount: 14,
+                amount: 50,
                 avatarPath: '../../assets/img/tour/dalat1.jpg',
                 isStatus: true,
                 tourGuideId: 1
@@ -62,7 +62,7 @@ module.exports = {
                 time: '5 ngày 4 đêm',
                 departureLocation: 'TP. HỒ CHÍ MINH',
                 destination: 'MIỀN TÂY',
-                amount: 1,
+                amount: 50,
                 avatarPath: '../../assets/img/tour/mientay1.jpg',
                 isStatus: true,
                 tourGuideId: 1
@@ -75,7 +75,7 @@ module.exports = {
                 time: '4 ngày 3 đêm',
                 departureLocation: 'TP. HỒ CHÍ MINH',
                 destination: 'NHA TRANG',
-                amount: 17,
+                amount: 50,
                 avatarPath: '../../assets/img/tour/nhatrang1.jpg',
                 isStatus: true,
                 tourGuideId: 1
@@ -88,7 +88,7 @@ module.exports = {
                 time: '3 ngày 2 đêm',
                 departureLocation: 'TP. HỒ CHÍ MINH',
                 destination: 'ĐÀ LẠT',
-                amount: 7,
+                amount: 50,
                 avatarPath: '../../assets/img/tour/dalat2.jpg',
                 isStatus: true,
                 tourGuideId: 1
@@ -101,7 +101,7 @@ module.exports = {
                 time: '2 ngày 1 đêm',
                 departureLocation: 'TP. HỒ CHÍ MINH',
                 destination: 'TÂY NINH',
-                amount: 10,
+                amount: 50,
                 avatarPath: '../../assets/img/tour/tayninh1.jpg',
                 isStatus: true,
                 tourGuideId: 1

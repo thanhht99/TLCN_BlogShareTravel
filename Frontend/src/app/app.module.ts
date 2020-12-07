@@ -14,8 +14,6 @@ import { HomeComponent } from './home/home.component';
 import { AlertComponent } from './_components';
 import { CommonModule } from '@angular/common';
 
-import { BlogComponent } from './blog/blog.component';
-
 @NgModule({
   
   imports: [
@@ -29,8 +27,7 @@ import { BlogComponent } from './blog/blog.component';
   declarations: [
     AppComponent,
     AlertComponent,
-    HomeComponent,
-    BlogComponent
+    HomeComponent
   ],
   exports: [
     BrowserModule,
