@@ -6,7 +6,6 @@ import { HttpResponse, HttpClient } from '@angular/common/http';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { first } from 'rxjs/operators';
-import { WebRequestService } from '../../../web-request.service';
 
 import { TourService, LoginService, AlertService } from '../../../_services';
 import { Trip, Tour, Account, TourGuide } from '../../../models';
@@ -49,6 +48,7 @@ export class TripComponent implements OnInit {
               // console.log(trip);
               this.trips = trip}
             );    
+            
     }); 
     
     this.loginService.account.subscribe(x => this.account = x);

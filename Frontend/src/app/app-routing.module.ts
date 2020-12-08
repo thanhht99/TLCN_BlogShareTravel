@@ -1,8 +1,8 @@
 import { NgModule , CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AuthGuard } from './_helpers';
 
 import { HomeComponent } from './home/home.component';
-import { AuthGuard } from './_helpers';
 
 import { ErrorComponent } from './_components';
 
@@ -19,7 +19,6 @@ const routes: Routes = [
   { path: 'tourguide', loadChildren: tourguideModule, canActivate: [AuthGuard] },
 
   { path: 'tour', loadChildren: tourModule},
-
 
   { path: 'error', component: ErrorComponent},
 

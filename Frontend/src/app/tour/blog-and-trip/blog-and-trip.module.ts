@@ -6,13 +6,16 @@ import { BlogAndTripRoutingModule } from './blog-and-trip-routing.module';
 import { LayoutComponent } from './layout.component';
 
 import { TripComponent } from './trip/trip.component';
+import { BlogComponent } from './blog/blog.component';
+
 import { RegisterTripComponent } from './register-trip/register-trip.component';
 
 @NgModule({
   declarations: [
     LayoutComponent,
     TripComponent,
-    RegisterTripComponent
+    RegisterTripComponent,
+    BlogComponent
   ],
   imports: [
     CommonModule,
@@ -21,6 +24,9 @@ import { RegisterTripComponent } from './register-trip/register-trip.component';
   ],
   exports: [
     LayoutComponent,
+
+    //blog
+    BlogComponent
   ]
   
 })

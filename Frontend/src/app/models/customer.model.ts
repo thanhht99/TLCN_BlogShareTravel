@@ -5,7 +5,7 @@ export class Customer {
     identity: String;
     address: String;
     phone: String;    
-    avatarPath: Boolean;
+    avatarPath: Text;
     isStatus: Boolean;
     accountId: String;
 }

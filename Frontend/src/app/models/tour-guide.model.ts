@@ -8,7 +8,7 @@ export class TourGuide {
     language: String;
     address: String;
     phone: String;    
-    avatarPath: Boolean;
+    avatarPath: Text;
     tripNumber: Number;
     isStatus: Boolean;
     accountId: String;
