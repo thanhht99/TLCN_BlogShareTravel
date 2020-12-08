@@ -1,3 +1,27 @@
+.info-sgt-box {
+    float: left;
+    width: 100%;
+    padding: 15px;
+}
+.newpaper2 {
+    column-count: 4;
+}
+.footerContent  {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 15px;
+    color: #ffffff;
+    line-height: 21px;
+    margin: 25px 0;
+    margin-top: 25px;
+    margin-right: 0px;
+    margin-bottom: 25px;
+    margin-left: 0px;
+    text-transform: uppercase;
+    font-family: 'Montserrat', 'Open Sans', sans-serif;
+
+}
+
 .footer{
     padding: $padding-general-x 0;
     text-align: center;
@@ -63,7 +87,14 @@
             margin-bottom: 5px;
         }
     }
-
+    .info-sgt-title {
+    float: left;
+    width: 100%;
+    font-size: 13px;
+    line-height: 20px;
+    color: #fff;
+    padding: 10px;
+}
     .footer-brand{
         float: left;
         height: 50px;
