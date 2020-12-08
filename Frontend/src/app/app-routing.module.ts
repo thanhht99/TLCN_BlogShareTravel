@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { AuthGuard } from './_helpers';
 
 import { HomeComponent } from './home/home.component';
-
+import {FooterComponent } from './_components/footer/footer.component'
 import { ErrorComponent } from './_components';
 
 const customerModule = () => import('./customer/customer.module').then(x => x.CustomerModule);
@@ -21,7 +21,7 @@ const routes: Routes = [
   { path: 'tour', loadChildren: tourModule},
 
   { path: 'error', component: ErrorComponent},
-
+{ path: 'footer', component: FooterComponent},
   // { path: 'customerinfo/:id', component: CustomerInfoComponent},
   // { path: 'tourguideinfo/:id', component: TourGuideInfoComponent},
   
