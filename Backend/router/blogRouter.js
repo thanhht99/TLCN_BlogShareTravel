@@ -21,7 +21,7 @@ router.get('/:id', async(req, res) => {
         res.json(404);
     } else {
         res.json(testBlog.dataValues);
-        console.log(testBlog.dataValues);
+        //console.log(testBlog.dataValues);
     }
 });
 

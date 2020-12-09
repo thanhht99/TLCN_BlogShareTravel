@@ -4,6 +4,8 @@ let router = express.Router();
 // Load the models
 let models = require('../models');
 let path = require('path');
+const Sequelize = require('sequelize')
+const collect = require('collect.js');
 
 // upload image
 var fileExtension = require('file-extension')
@@ -50,15 +52,41 @@ router.use(cors());
 router.get('/list', (req, res) => {
     Tour.findAll({
         where: { isStatus: true },
-        order: [
-            ['amount', 'DESC']
-        ]
+        include: [{
+            model: Trip,
+        }],
     }).then((tours) => {
-        res.json(tours);
-        //res.send(tours);
+        for (let i in tours) {
+            const collection = collect(tours[i].Trips);
+            const x = collection.count();
+            tours[i].numberTrip = x;
+            Tour.update({
+                numberTrip: x
+            }, {
+                where: { id: tours[i].id }
+            })
+        }
+        // console.log(x);
+        // tours.Trips = x;
+        // res.json(tours);
     }).catch((err) => {
         res.send(err);
     });
+
+
+
+    Tour.findAll({
+        where: { isStatus: true },
+        order: [
+            ['numberTrip', 'DESC']
+        ]
+    }).then((tours) => {
+        res.json(tours);
+    }).catch((err) => {
+        res.send(err);
+    });
+
+
 })
 
 // info tour

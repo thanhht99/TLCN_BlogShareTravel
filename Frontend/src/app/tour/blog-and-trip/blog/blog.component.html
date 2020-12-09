@@ -1,79 +1,68 @@
+<img class="blog-image" src="{{ tour.avatarPath }}" width="70%" />
 <section>
     <div class="container" style="position: relative">
         <div class="background-description">
-            <h1 class="tour-banner-title">{{tour.name}}</h1>
+            <h1 class="tour-banner-title">{{ tour.name }}</h1>
         </div>
     </div>
 </section>
-<div class="col-xs-12">
+<div class="col-xs-12" *ngIf="blog">
     <div class="commonInfo">
-        <p></p>
         <p>
-            <strong>NGÀY&nbsp;01: TP.HCM - NINH CHỮ&nbsp;</strong><br /> Đón quý khách tại văn phòng Lữ Hành Saigontourist (lúc 06h00 sáng tại 45 Lê Thánh Tôn, Quận 1 hoặc lúc 06h30 sáng tại số 1 Nguyễn Chí Thanh, Quận 5), khởi hành đi Ninh Chữ. Đến Ninh
-            Chữ, đoàn nhận phòng, tự do nghỉ ngơi,
-            <strong> tắm biển Ninh Chữ. </strong>Nghỉ đêm tại Ninh Chữ.
+            <strong *ngIf="blog.day1">NGÀY&nbsp;01: {{ blog.day1 }}&nbsp;</strong>
+            <br /> {{ blog.content1 }}
         </p>
-
-        <p>
-            <strong>NGÀY&nbsp;02: NINH CHỮ - VỊNH VĨNH HY&nbsp;(Ăn sáng, trưa,
-        chiều)</strong
-      ><br />
-      Đoàn theo tỉnh lộ 702 - cung đường ven biển tuyêt đẹp qua
-      <strong>vườn quốc gia Núi Chúa</strong>,
-            <strong>ngắm toàn cảnh vịnh Vĩnh Hy </strong>từ trên cao. Xuống thuyền
-            <strong>ngoạn cảnh vịnh Vĩnh Hy, chiêm ngưỡng quần thể san hô đầy màu sắc bằng
-        tàu đáy kính. </strong
-      >Sau đó du khách tự do tắm biển, thưởng thức các loại hải sản tươi sống
-      (chi phí tự túc). Quý khách ghé tham quan
-      <strong>vườn nho ở Thái An</strong> và mua đặc sản. Đoàn về lại Ninh Chữ nghỉ ngơi. Nghỉ đêm tại Ninh Chữ.
-        </p>
-
-        <p style="text-align: center">
-            <img alt="" src="https://saigontourist.net/uploads/destination/TrongNuoc/Phanrang/vinh-hy-bay-phan-rang.jpg" style="width: 100%" /><strong>Vịnh Vĩnh Hy</strong>
+        <p style="text-align: center" *ngIf="blog.imagePath1">
+            <img alt=" " src="{{ blog.imagePath1 }}" style="width: 100%" />
+            <!-- <strong>Chùa Linh Phước</strong> -->
         </p>
 
         <p>
-            <strong>NGÀY&nbsp;03: NINH CHỮ - ĐÀ LẠT&nbsp;(Ăn sáng, trưa, chiều)</strong
-      ><br />
-      Sau bữa sáng, quý khách trả phòng, xe đưa đoàn đến thăm
-      <strong>Trùng Sơn Cổ Tự </strong>trên núi Đá Chồng, nơi đoàn có thể ngắm nhìn toàn cảnh Ninh Chữ với những cánh đồng, ruộng muối, đầm phá đan xen tạo nên bức tranh nhiều màu sắc... Đoàn dừng chân tham quan
-            <strong>Tháp Chăm Poklong Garai</strong> - một kiến trúc văn hóa đặc sắc của người Chăm được xây dựng vào cuối thế kỷ XIV, nghe về sự tích Đồi Trầu và nhìn ngắm tòan bộ cảnh quan TP. Phan Rang. Khởi hành đi Đà Lạt, đến Đà Lạt, đoàn ghé viếng
-            <strong>chùa Linh Phước.</strong> Xe đưa đoàn đến
-            <strong>Quảng trường Lâm Viên</strong> với không gian rộng lớn, thoáng mát hướng ra hồ Xuân Hương cùng công trình nghệ thuật khối bông hoa dã quỳ và khối nụ hoa Atiso khổng lồ được thiết kế bằng kính màu rất đẹp mắt. Nhận phòng và nghỉ đêm
-            tại Đà Lạt.
+            <strong *ngIf="blog.day2">NGÀY&nbsp;02: {{ blog.day2 }}&nbsp;</strong>
+            <br />{{ blog.content2 }}
         </p>
-
-        <p style="text-align: center">
-            <img alt="" src="https://saigontourist.net/uploads/destination/TrongNuoc/Dalat/The-Linh-Phuoc-Pagoda.jpg" style="width: 100%" /><strong>Chùa Linh Phước</strong>
+        <p style="text-align: center" *ngIf="blog.imagePath2">
+            <img alt=" " src="{{ blog.imagePath2 }}" style="width: 100%" />
         </p>
 
         <p>
-            <strong>NGÀY&nbsp;04: THAM QUAN ĐÀ LẠT (Ăn sáng, trưa, chiều)</strong
-      ><br />
-      Buổi sáng, quý khách đến với<strong>
-        Khu Du Lịch Dalat Fairytale Land &amp; Hầm Rượu Vang Vĩnh Tiến,</strong
-      >
-      tham quan khu vườn cổ tích đầy màu sắc của những chú lùn nằm trong nhà máy
-      sản xuất rượu vang Vĩnh Tiến, tìm hiểu quy trình sản xuất trà thảo dược,
-      rượu vang, Đông Trùng Hạ Thảo và khám phá đường hầm Rượu vang đặc sắc.
-      Tham quan <strong>Nông Trại Cún Puppy Farm</strong> với các chú cún từ nhỏ đến lớn được chăm sóc cẩn thận thật đáng yêu. Buổi chiều, đoàn tham quan
-            <strong> Đường hầm điêu khắc đất đỏ (Đà Lạt Star) -</strong> tái hiện lịch sử Đà Lạt qua hơn 120 năm,<strong> Hồ vô cực</strong> - nơi tình yêu bắt đầu. Tham quan <strong>thác Datanla </strong>(tự túc chi phí tham gia trò chơi máng trượt).
-            Nghỉ đêm tại Đà Lạt.
+            <strong *ngIf="blog.day3">NGÀY&nbsp;03: {{ blog.day3 }}&nbsp;</strong>
+            <br />{{ blog.content3 }}
         </p>
-
-        <p style="text-align: center">
-            <img alt="" src="https://saigontourist.net/uploads/destination/TrongNuoc/Dalat/peaceful-Datanla-Waterfalls_623754233.jpg" style="width: 100%" /><strong>Thác Datanla </strong>
+        <p style="text-align: center" *ngIf="blog.imagePath3">
+            <img alt=" " src="{{ blog.imagePath3 }}" style="width: 100%" />
         </p>
 
         <p>
-            <strong>NGÀY&nbsp;05: ĐÀ LẠT - TP. HỒ CHÍ MINH&nbsp;&nbsp;(Ăn sáng,
-        trưa)</strong
-      ><br />
-      Buổi sáng, xe đưa đoàn đến <strong>chợ Đà Lạt, </strong>quý khách tự do mua sắm. Trả phòng, khởi hành về Tp. HCM. Kết thúc chương trình.<br />
-            <strong>* Ghi chú: Điểm tham quan có thể sắp xếp lại cho phù hợp mà vẫn bảo đảm
-        đầy đủ nội dung của từng chương trình.</strong
-      >
-    </p>
-    <p></p>
-  </div>
+            <strong *ngIf="blog.day4">NGÀY&nbsp;04: {{ blog.day4 }}&nbsp;</strong>
+            <br />{{ blog.content4 }}
+        </p>
+        <p style="text-align: center" *ngIf="blog.imagePath4">
+            <img alt=" " src="{{ blog.imagePath4 }}" style="width: 100%" />
+        </p>
+
+        <p>
+            <strong *ngIf="blog.day5">NGÀY&nbsp;05: {{ blog.day5 }}&nbsp;</strong>
+            <br />{{ blog.content5 }}
+        </p>
+        <p style="text-align: center" *ngIf="blog.imagePath5">
+            <img alt=" " src="{{ blog.imagePath5 }}" style="width: 100%" />
+        </p>
+
+        <p>
+            <strong *ngIf="blog.day6">NGÀY&nbsp;06: {{ blog.day6 }}&nbsp;</strong>
+            <br />{{ blog.content6 }}
+        </p>
+        <p style="text-align: center" *ngIf="blog.imagePath6">
+            <img alt=" " src="{{ blog.imagePath6 }}" style="width: 100%" />
+        </p>
+
+        <p>
+            <strong *ngIf="blog.day7">NGÀY&nbsp;07: {{ blog.day7 }}&nbsp;</strong>
+            <br />{{ blog.content7 }}
+        </p>
+        <p style="text-align: center" *ngIf="blog.imagePath7">
+            <img alt=" " src="{{ blog.imagePath7 }}" style="width: 100%" />
+        </p>
+    </div>
 </div>
