@@ -6,8 +6,13 @@
         </div>
     </div>
 </section>
-<div class="col-xs-12" *ngIf="blog">
-    <div class="commonInfo">
+<div class="col-xs-12">
+    <div class="commonInfo" *ngIf="!status">
+        <br/><br/>
+        <img class="blog-image" src="../../assets/img/nodata.png" width="50%" />
+        <br/><br/>
+    </div>
+    <div class="commonInfo" *ngIf="status">
         <p>
             <strong *ngIf="blog.day1">NGÀY&nbsp;01: {{ blog.day1 }}&nbsp;</strong>
             <br /> {{ blog.content1 }}

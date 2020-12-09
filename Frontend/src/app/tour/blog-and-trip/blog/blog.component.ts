@@ -24,6 +24,8 @@ export class BlogComponent implements OnInit {
   sub: any;
   id: number;
 
+  status: boolean;
+
   constructor(private tourService: TourService, 
               private loginService: LoginService,
               private alertService: AlertService,
@@ -31,14 +33,20 @@ export class BlogComponent implements OnInit {
               private formBuilder: FormBuilder,
               private location: Location) 
   { 
+    this.status = false;
     this.sub = this.route.params.subscribe(params => {
       let id = Number.parseInt(params['id']);
       this.id = id;
       this.tourService.getBlogById(id)
             .pipe(first())
-            .subscribe(blog => {              
+            .subscribe(blog => {       
+              if(typeof blog === 'object'){
+                this.status = true;
+              }              
+              // console.log(this.status);
               this.blog = blog;
-            });               
+            });              
+
     }); 
 
     this.tourService.tour.subscribe(a => this.tours = a);
@@ -52,9 +60,10 @@ export class BlogComponent implements OnInit {
   }
 
   ngOnInit(): void {    
-    //this.tourService.blog.subscribe(a => this.blog = a);
+    this.tourService.blog.subscribe(a => this.blog = a);
     //console.log('--------------blog-------------');
     //console.log(this.blog);
+
   }
 
   pageRefresh() {     

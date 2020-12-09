@@ -52,9 +52,42 @@
                 </div>
             </div>
         </div>
-        <div class="spinner-border" role="status " *ngIf="!trips">
-            <span class="sr-only">Loading...</span>
+        <div class="col-md-12 col-sm-12 col-xs-12 tour-detail-content-col" *ngIf="!trips">
+            <div class="list-inline">
+                <div class="row trip-row">
+                    <div class="col-xs-12"></div>
+                    <div class="col-md-2 col-sm-3 col-xs-12">
+                        <!-- <label>Ngày khởi hành</label> -->
+                        <strong>Chưa có</strong>
+                    </div>
+                    <div class="col-md-2 col-sm-3 col-xs-12">
+                        <!-- <label>Mã Tour</label> -->
+                        <strong style="margin-left: -30px"> </strong>
+                    </div>
+                    <div class="col-md-2 col-sm-2 col-xs-12 price">
+                        <!-- <label>Giá</label> -->
+                        <strong>Chưa có</strong>
+                    </div>
+                    <div class="col-md-2 col-sm-2 col-xs-12 price">
+                        <!-- <label>Giá trẻ em</label> -->
+                        <strong>Chưa có</strong>
+                    </div>
+                    <div class="col-md-2 col-sm-2 col-xs-12 price">
+                        <!-- <label>Giá trẻ sơ sinh</label> -->
+                        <strong>Chưa có</strong>
+                    </div>
+                    <div class="col-md-2 col-sm-12 col-xs-12 packageInfo">
+                        <!-- <label>Đặt/Mua tour</label> -->
+                        <!-- <div class="action-book">
+                            <a class="btn btn-buy-tour"> Mua Tour </a>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
         </div>
+        <!-- <div class="spinner-border" role="status " *ngIf="!trips">
+            <span class="sr-only">Loading...</span>
+        </div> -->
     </div>
 
     <div *ngIf="account.isTourGuide && tour.amount > 0">

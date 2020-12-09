@@ -4,7 +4,7 @@ import { HttpResponse, HttpClient } from '@angular/common/http';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { TourService, LoginService, AlertService } from '../../../_services';
-import { Tour, Account, TourGuide, RegisterTrip, Customer } from '../../../models';
+import { Tour, Account, TourGuide, RegisterTrip, Customer, Trip } from '../../../models';
 
 import { first } from 'rxjs/operators';
 import { WebRequestService } from '../../../web-request.service';
@@ -18,6 +18,8 @@ import { WebRequestService } from '../../../web-request.service';
 export class RegisterTripComponent implements OnInit {
   form: FormGroup;
   tour: Tour;
+  trips: Trip;
+  trip: Trip;
   registerTrip: RegisterTrip;
   account: Account;
   tourGuide: TourGuide;
@@ -37,6 +39,11 @@ export class RegisterTripComponent implements OnInit {
     //console.log(this.account)
     this.id = this.route.snapshot.params['id'];
     // console.log(this.id)
+    this.tourService.trip.subscribe(b => this.trips = b);
+    // console.log(this.trips[0])       
+    this.trip = this.trips[0];
+    // console.log(this.trip)
+
 
   }
 
@@ -68,8 +75,8 @@ export class RegisterTripComponent implements OnInit {
     this.registerTrip.accountId = this.account.id;
     this.registerTrip.tripId = Number(this.id);
     
-    console.log('----------this.registerTrip----------');
-    console.log(this.registerTrip);
+    // console.log('----------this.registerTrip----------');
+    // console.log(this.registerTrip);
 
     this.tourService.registerTrip(this.registerTrip)
                           .pipe(first())
