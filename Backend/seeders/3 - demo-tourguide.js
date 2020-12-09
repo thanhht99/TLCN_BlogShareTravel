@@ -4,7 +4,7 @@ module.exports = {
     up: (queryInterface, Sequelize) => {
         let data = [{
                 name: 'Tour Guide Master',
-                gender: 'Male',
+                gender: 'Nam',
                 identity: '1234567890',
                 dateOfBirth: '26/07/1999',
                 email: 'hoangtienthanh1999@gmail.com',
@@ -18,7 +18,7 @@ module.exports = {
             },
             {
                 name: 'Nguyễn Trung Đức',
-                gender: 'Male',
+                gender: 'Nam',
                 identity: '456415845',
                 dateOfBirth: '21/08/1999',
                 email: 'trungduc.ng@gmail.com',
@@ -32,7 +32,7 @@ module.exports = {
             },
             {
                 name: 'Phan Thị Thắm',
-                gender: 'Female',
+                gender: 'Nữ',
                 identity: '215456154',
                 dateOfBirth: '26/11/1991',
                 email: 'phanthitham@gmail.com',

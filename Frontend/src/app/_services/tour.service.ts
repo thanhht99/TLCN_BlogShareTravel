@@ -62,7 +62,7 @@ export class TourService {
       .pipe(map(tour => {
           localStorage.setItem('tour', JSON.stringify(tour));
           this.tourSubject.next(tour);
-          console.log(tour);
+          // console.log(tour);
           return tour; 
       }));
   }
@@ -92,6 +92,7 @@ export class TourService {
       .pipe(map(blog => {
           localStorage.setItem('blog', JSON.stringify(blog));
           this.blogSubject.next(blog);
+          // console.log(blog);
           return blog; 
       }));
   }
