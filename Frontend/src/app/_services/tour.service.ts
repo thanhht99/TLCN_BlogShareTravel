@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import { Account, Tour, Trip, RegisterTrip } from '../models';
+import { Account, Tour, Trip, RegisterTrip, Blog } from '../models';
 import { WebRequestService } from '../web-request.service';
 
 @Injectable({
@@ -22,6 +22,10 @@ export class TourService {
 
   private imageForTourSubject: BehaviorSubject<Tour>;
   public imageForTour: Observable<Tour>;
+
+  private blogSubject: BehaviorSubject<Blog>;
+  public blog: Observable<Blog>;
+
   constructor(private webRequestService: WebRequestService, 
               private router: Router, 
               private http: HttpClient) 
@@ -35,6 +39,9 @@ export class TourService {
 
     this.imageForTourSubject = new BehaviorSubject<Tour>(JSON.parse(localStorage.getItem('imageForTour')));
     this.imageForTour = this.imageForTourSubject.asObservable();
+
+    this.blogSubject = new BehaviorSubject<Blog>(JSON.parse(localStorage.getItem('blog')));
+    this.blog = this.blogSubject.asObservable();
 
   }
 
@@ -55,6 +62,7 @@ export class TourService {
       .pipe(map(tour => {
           localStorage.setItem('tour', JSON.stringify(tour));
           this.tourSubject.next(tour);
+          console.log(tour);
           return tour; 
       }));
   }
@@ -76,6 +84,15 @@ export class TourService {
           this.tripSubject.next(trip);
           //console.log(trip);
           return trip; 
+      }));
+  }
+
+  getBlogById(id: number) {
+    return this.http.get<Blog>(`${this.webRequestService.ROOT_URL}/blog/${id}`)
+      .pipe(map(blog => {
+          localStorage.setItem('blog', JSON.stringify(blog));
+          this.blogSubject.next(blog);
+          return blog; 
       }));
   }
 

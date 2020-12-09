@@ -7,6 +7,7 @@ export class Tour {
     departureLocation: String;
     destination: String;    
     amount: Number;
+    numberTrip: Number;
     avatarPath: Text;
     isStatus: Boolean;
     tourGuideId: Number;
