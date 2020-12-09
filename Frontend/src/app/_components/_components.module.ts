@@ -6,12 +6,13 @@ import { CommonModule } from '@angular/common';
 import {FooterComponent} from './footer/footer.component';
 import { ErrorComponent } from './error/error.component';
 import { SuccessComponent } from './success/success.component';
-
+import {HeaderComponent} from './header/header.component';
 @NgModule({
   declarations: [
     ErrorComponent,
     SuccessComponent,
-    FooterComponent
+    FooterComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +29,8 @@ import { SuccessComponent } from './success/success.component';
     //error
     ErrorComponent,
     SuccessComponent,
-    FooterComponent
+    FooterComponent,
+    HeaderComponent
   ]
 })
 export class ComponentsModule { }
