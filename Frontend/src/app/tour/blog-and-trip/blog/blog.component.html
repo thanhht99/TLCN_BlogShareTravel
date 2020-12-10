@@ -7,10 +7,38 @@
     </div>
 </section>
 <div class="col-xs-12">
+    <div class="info-tour">
+        <div class="row-info">
+            <div class="row">
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <span class="text-uppercase">Thời gian:</span>
+                    <span class="text-strong">{{ tour.time }}</span>
+                </div>
+                <!-- <div class="col-md-6 col-sm-6 col-xs-12">
+                    <span class="text-uppercase">Phương tiện:</span>
+                    <span class="text-strong"> .... </span>
+                </div> -->
+            </div>
+        </div>
+    </div>
+    <div class="info-tour">
+        <div class="row-info">
+            <div class="row">
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <span class="text-uppercase">Điểm xuất phát:</span>
+                    <span class="text-strong"> {{ tour.departureLocation }} </span>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <span class="text-uppercase">Điểm đến:</span>
+                    <span class="text-strong">{{ tour.destination }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="commonInfo" *ngIf="!status">
-        <br/><br/>
+        <br /><br />
         <img class="blog-image" src="../../assets/img/nodata.png" width="50%" />
-        <br/><br/>
+        <br /><br />
     </div>
     <div class="commonInfo" *ngIf="status">
         <p>

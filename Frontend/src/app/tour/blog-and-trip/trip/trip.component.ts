@@ -30,6 +30,7 @@ export class TripComponent implements OnInit {
   tourGuide: TourGuide;
   sub: any;
   id: number;
+
   constructor(private tourService: TourService, 
               private loginService: LoginService,
               private alertService: AlertService,
@@ -48,6 +49,7 @@ export class TripComponent implements OnInit {
               // console.log(trip);
               this.trips = trip}
             );    
+            
             
     }); 
     

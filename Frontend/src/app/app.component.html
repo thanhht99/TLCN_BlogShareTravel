@@ -1,82 +1,103 @@
 <!-- nav -->
-<nav class="navbar navbar-expand " *ngIf="account">
-    <nav class="nav navbar-nav ">
+<nav class="navbar navbar-expand" *ngIf="account">
+    <nav class="nav navbar-nav">
         <div class="nav-item">
-        <a class ="nav-link nav-brand" href="index.html">
-            <img src="https://htweb.vn/wp-content/uploads/2019/12/Untitled-1.jpg/" style="width:64px;">
-        </a>
-    </div>
-    <!-- <a class ="navbar-brand" href="index.html">
+            <a class="nav-link nav-brand" href="index.html">
+                <img src="https://htweb.vn/wp-content/uploads/2019/12/Untitled-1.jpg/" style="width: 64px" />
+            </a>
+        </div>
+        <!-- <a class ="navbar-brand" href="index.html">
         <img src ="https://htweb.vn/wp-content/uploads/2019/12/Untitled-1.jpg" style="width:64px;">
     </a> -->
-    <div class="navbar-nav">
-        <li>
-        <a class="nav-item nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"><b>Home</b></a>
-        </li>
-    <li>
-    <a
-      class="nav-item nav-link"
-      routerLink="/tour/list"
-      routerLinkActive="active"
-      [routerLinkActiveOptions]="{ exact: true }"
-      ><b>Tour</b>
-    </a>
-    </li>
-    <li>
-        <a *ngIf="account.isCustomer" class="nav-item nav-link" routerLink="/customer/info/{{ account.id }}" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"><b>Info</b></a>
-    </li>
-    <li>
-    <a
-      *ngIf="account.isTourGuide"
-      class="nav-item nav-link"
-      routerLink="/tour/add"
-      routerLinkActive="active"
-      [routerLinkActiveOptions]="{ exact: true }"
-      ><b>Add Tour</b></a>
-    </li>
-    <li>
-    <a
-      *ngIf="account.isTourGuide"
-      class="nav-item nav-link"
-      routerLink="/tourguide/info/{{ account.id }}"
-      routerLinkActive="active"
-      [routerLinkActiveOptions]="{ exact: true }"
-      ><b>Info</b></a
-    >
-    </li>
-    <li>
-    <a class="nav-item nav-link" (click)="logout()"><b>Logout</b></a>
-    </li>
-    </div>
+        <div class="navbar-nav">
+            <li>
+                <a class="nav-item nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"><b>Home</b></a
+        >
+      </li>
+      <li>
+        <a
+          class="nav-item nav-link"
+          routerLink="/tour/list"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          ><b>Tour</b>
+        </a>
+            </li>
+            <li>
+                <a *ngIf="account.isCustomer" class="nav-item nav-link" routerLink="/customer/info/{{ account.id }}" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"><b>Info</b></a
+        >
+      </li>
+      <li>
+        <a
+          *ngIf="account.isTourGuide"
+          class="nav-item nav-link"
+          routerLink="/tour/add"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          ><b>Add Tour</b></a
+        >
+      </li>
+      <li>
+        <a
+          *ngIf="account.isTourGuide"
+          class="nav-item nav-link"
+          routerLink="/tourguide/info/{{ account.id }}"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          ><b>Info</b></a
+        >
+      </li>
+      <li>
+        <a class="nav-item nav-link" (click)="logout()"><b>Logout</b></a>
+            </li>
+        </div>
     </nav>
 </nav>
 
-<nav class="navbar navbar-expand " *ngIf="!account">
-    <nav class="nav navbar-nav ">
-    <div class="nav-item">
-        <a class ="nav-link nav-brand" href="index.html">
-            <img src="https://htweb.vn/wp-content/uploads/2019/12/Untitled-1.jpg/" style="width:64px;">
-        </a>
-    </div>
-    <li>
-        <a class="nav-item nav-link " routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"><b>Home</b></a>
+<nav class="navbar navbar-expand" *ngIf="!account">
+    <nav class="nav navbar-nav">
+        <div class="nav-item">
+            <a class="nav-link nav-brand" href="index.html">
+                <img src="https://htweb.vn/wp-content/uploads/2019/12/Untitled-1.jpg/" style="width: 64px" />
+            </a>
+        </div>
+        <li>
+            <a class="nav-item nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"><b>Home</b></a
+      >
     </li>
     <li>
-        <a class="nav-item nav-link" routerLink="/tour/list" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"><b>Tour</b></a>
+      <a
+        class="nav-item nav-link"
+        routerLink="/tour/list"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        ><b>Tour</b></a
+      >
     </li>
     <li>
-        <a class="nav-item nav-link" routerLink="/account/login" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"><b>Login</b></a>
+      <a
+        class="nav-item nav-link"
+        routerLink="/account/login"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        ><b>Login</b></a
+      >
     </li>
     <li>
-        <a class="nav-item nav-link" routerLink="/account/register" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"><b>Register</b></a>
+      <a
+        class="nav-item nav-link"
+        routerLink="/account/register"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        ><b>Register</b></a
+      >
     </li>
-    </nav>
+  </nav>
 </nav>
 
 <!-- main app container -->
 <div class="app-container" [ngClass]="{ 'bg-light': account }">
-    <alert></alert>
-    <router-outlet></router-outlet>
+  <alert></alert>
+  <router-outlet></router-outlet>
 </div>
-
-<!-- credits -->
+<app-footer></app-footer>

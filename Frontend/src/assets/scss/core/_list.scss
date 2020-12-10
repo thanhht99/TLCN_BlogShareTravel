@@ -1,45 +1,75 @@
 html * {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-box-smoothing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-box-smoothing: border-box;
+}
+
+.col-xs-12 {
+    font-family: 'Montserrat', 'Open Sans', sans-serif;
+    font-size: 14px;
+    line-height: 21px;
+    color: black;
+    font-weight: 400;
+    position: relative;
+    .info-tour {
+        position: relative;
+        float: left;
+        width: 100%;
+        margin-bottom: 15px;
+        position: relative;
+        .row-info {
+            float: left;
+            width: 100%;
+            font-size: 13px;
+            line-height: 26px;
+            padding-right: 6px;
+            .row {
+                margin-right: -15px;
+                margin-left: -15px;
+                .text-strong {
+                    font-weight: 600;
+                    font-size: 14px;
+                    padding-right: 15px;
+                    padding-left: 10px;
+                }
+                .text-uppercase {
+                    float: left;
+                }
+            }
+        }
+    }
 }
 
 .list-tour-detail {
-  float: left;
-  background: #ffeddf;
-  padding: 6px 10px;
-  margin-bottom: 15px;
-  overflow: hidden;
-
-  font-family: "Montserrat", "Open Sans", sans-serif;
-  font-size: 14px;
-  line-height: 21px;
-  color: black;
-  font-weight: 400;
-
-  .trip-row {
-    margin-right: -15px;
-    margin-left: -15px;
-
-    .tour-detail-header-col {
-      padding-top: 10px;
-      margin-bottom: 10px;
-      margin-top: 0px;
-      border-bottom: 1px solid #333;
-      font-weight: 600;
-      text-transform: uppercase;
+    // background: #ffeddf;
+    padding: 6px 10px;
+    margin-bottom: 15px;
+    overflow: hidden;
+    font-family: "Montserrat", "Open Sans", sans-serif;
+    font-size: 14px;
+    line-height: 21px;
+    color: black;
+    font-weight: 400;
+    .trip-row {
+        margin-right: -15px;
+        margin-left: -15px;
+        .tour-detail-header-col {
+            padding-top: 10px;
+            margin-bottom: 10px;
+            margin-top: 0px;
+            border-bottom: 1px solid #333;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        .col-sm-12 {
+            width: 100%;
+            .list-inline {
+                margin: 0;
+                line-height: 32px;
+            }
+            .price {
+                color: #ff891e;
+            }
+        }
     }
-    .col-sm-12 {
-      width: 100%;
-
-      .list-inline {
-        margin: 0;
-        line-height: 32px;
-      }
-
-      .price {
-        color: #ff891e;
-      }
-    }
-  }
 }

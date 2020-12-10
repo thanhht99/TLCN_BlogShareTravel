@@ -11,7 +11,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 
 
-import { AlertComponent } from './_components';
+import { AlertComponent, FooterComponent } from './_components';
 import { CommonModule } from '@angular/common';
 
 @NgModule({
@@ -27,6 +27,7 @@ import { CommonModule } from '@angular/common';
   declarations: [
     AppComponent,
     AlertComponent,
+    FooterComponent,
     HomeComponent
   ],
   exports: [
