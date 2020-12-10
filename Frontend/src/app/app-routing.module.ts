@@ -3,8 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { AuthGuard } from './_helpers';
 
 import { HomeComponent } from './home/home.component';
-import { ErrorComponent, FooterComponent } from './_components';
-import {HeaderComponent} from './_components/header/header.component';
+import { ErrorComponent, FooterComponent, HeaderComponent } from './_components';
 
 const customerModule = () => import('./customer/customer.module').then(x => x.CustomerModule);
 const tourguideModule = () => import('./tour-guide/tour-guide.module').then(x => x.TourGuideModule);
@@ -26,7 +25,7 @@ const routes: Routes = [
   
   // { path: 'customerinfo/:id', component: CustomerInfoComponent},
   // { path: 'tourguideinfo/:id', component: TourGuideInfoComponent},
-  {path : 'header', component: HeaderComponent},
+  
 
 
 

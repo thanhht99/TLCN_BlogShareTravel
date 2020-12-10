@@ -11,7 +11,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 
 
-import { AlertComponent, FooterComponent } from './_components';
+import { AlertComponent, FooterComponent, HeaderComponent } from './_components';
 import { CommonModule } from '@angular/common';
 
 @NgModule({
@@ -28,6 +28,7 @@ import { CommonModule } from '@angular/common';
     AppComponent,
     AlertComponent,
     FooterComponent,
+    HeaderComponent,
     HomeComponent
   ],
   exports: [
