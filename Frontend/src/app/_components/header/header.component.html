@@ -15,7 +15,7 @@
     </a> -->
         <div class="navbar-nav">
             <li>
-                <a class="nav-item nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"><b>Home</b></a
+                <a class="nav-item nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"><b>Trang Chủ</b></a
         >
       </li>
       <li>
@@ -28,7 +28,7 @@
         </a>
             </li>
             <li>
-                <a *ngIf="account.isCustomer" class="nav-item nav-link" routerLink="/customer/info/{{ account.id }}" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"><b>Info</b></a
+                <a *ngIf="account.isCustomer" class="nav-item nav-link" routerLink="/customer/info/{{ account.id }}" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"><b>Thông Tin</b></a
         >
       </li>
       <li>
@@ -38,7 +38,7 @@
           routerLink="/tour/add"
           routerLinkActive="active"
           [routerLinkActiveOptions]="{ exact: true }"
-          ><b>Add Tour</b></a
+          ><b>Thêm Tour</b></a
         >
       </li>
       <li>
@@ -48,11 +48,11 @@
           routerLink="/tourguide/info/{{ account.id }}"
           routerLinkActive="active"
           [routerLinkActiveOptions]="{ exact: true }"
-          ><b>Info</b></a
+          ><b>Thông Tin</b></a
         >
       </li>
       <li>
-        <a class="nav-item nav-link" (click)="logout()"><b>Logout</b></a>
+        <a class="nav-item nav-link" (click)="logout()"><b>Đăng Xuất</b></a>
             </li>
         </div>
     </nav>
@@ -66,7 +66,7 @@
             </a>
         </div>
         <li>
-            <a class="nav-item nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"><b>Home</b></a
+            <a class="nav-item nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"><b>Trang Chủ</b></a
       >
     </li>
     <li>
@@ -84,7 +84,7 @@
         routerLink="/account/login"
         routerLinkActive="active"
         [routerLinkActiveOptions]="{ exact: true }"
-        ><b>Login</b></a
+        ><b>Đăng Nhập</b></a
       >
     </li>
     <li>
@@ -93,7 +93,7 @@
         routerLink="/account/register"
         routerLinkActive="active"
         [routerLinkActiveOptions]="{ exact: true }"
-        ><b>Register</b></a
+        ><b>Đăng Ký</b></a
       >
     </li>
   </nav>
