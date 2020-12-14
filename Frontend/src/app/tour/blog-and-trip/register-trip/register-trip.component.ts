@@ -37,8 +37,8 @@ export class RegisterTripComponent implements OnInit {
               private formBuilder: FormBuilder,) 
   { 
     this.loginService.account.subscribe(x => this.account = x);
-    console.log("------------ACC--------------")
-    console.log(this.account)
+    // console.log("------------ACC--------------")
+    // console.log(this.account)
     this.id = this.route.snapshot.params['id'];
     this.id = Number(this.id);
     // console.log('-------ID trip--------')
@@ -51,8 +51,8 @@ export class RegisterTripComponent implements OnInit {
         this.trip = this.trips[i];
       }
     }
-    console.log("=========TRIP===========")
-    console.log(this.trip)
+    // console.log("=========TRIP===========")
+    // console.log(this.trip)
 
 
     this.tourService.tour.subscribe(a => this.tours = a);
@@ -63,10 +63,8 @@ export class RegisterTripComponent implements OnInit {
         this.tour = this.tours[i];
       }
     }
-    console.log("=========TOUR===========")
-    console.log(this.tour)
-
-    
+    // console.log("=========TOUR===========")
+    // console.log(this.tour)
 
 
   }
@@ -76,12 +74,12 @@ export class RegisterTripComponent implements OnInit {
       nameRegister: ['', Validators.required],
       identity: ['', [Validators.required, Validators.maxLength(9), Validators.minLength(9)]],
       gender: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]],
+      // email: ['', [Validators.required, Validators.email]],
       address: ['', Validators.required],
       phone: ['', [Validators.required, Validators.maxLength(10), Validators.minLength(10)]],
-      adults: ['', Validators.required],
-      children: ['', Validators.required],
-      baby: ['', Validators.required],
+      adults: [1, Validators.required],
+      children: [0, Validators.required],
+      baby: [0, Validators.required],
     });
   }
 
@@ -102,22 +100,42 @@ export class RegisterTripComponent implements OnInit {
     // console.log('----------this.registerTrip----------');
     // console.log(this.registerTrip);
 
-    this.tourService.registerTrip(this.registerTrip)
-                          .pipe(first())
-                                .subscribe({
-                                    next: (registerTrip: any) => {
-                                      // console.log("------------------------------------");
-                                      // console.log(registerTrip);
-                                      // this.alertService.success('Register successful. Please wait for confirmation from the trip organizer!', { keepAfterRouteChange: true });                                                                                                                                                         
-                                      this.router.navigate(['/tour/blog&trip/registerTrip/success'], { relativeTo: this.route });
-                                    },
-                                    error: er => {
-                                      console.log(er);
-                                      alert(er.error.error);
-                                       // this.alertService.error('Add Tour Failed', { keepAfterRouteChange: true });
-                                      this.loading = false;
-                                    }
-                                });     
+    if(this.account.isCustomer){
+      // console.log("=========customer===========")
+      this.customer = this.loginService.customerValue;
+      this.registerTrip.email = this.customer.email;
+      // console.log(this.customer)
+    }
+    if(this.account.isTourGuide){
+      // console.log("=========tourGuide===========")
+      this.tourGuide = this.loginService.tourguideValue;
+      this.registerTrip.email = this.tourGuide.email;
+      // console.log(this.tourGuide)
+    }
+
+    if(this.registerTrip.adults > 0){
+      this.tourService.registerTrip(this.registerTrip)
+      .pipe(first())
+            .subscribe({
+                next: (registerTrip: any) => {
+                  // console.log("------------------------------------");
+                  // console.log(registerTrip);
+                  // this.alertService.success('Register successful. Please wait for confirmation from the trip organizer!', { keepAfterRouteChange: true });                                                                                                                                                         
+                  this.router.navigate(['/tour/list'], { relativeTo: this.route });
+                },
+                error: er => {
+                  // console.log(er);
+                  alert(er.error.error);
+                  this.loading = false;
+                }
+            });  
+    }
+    else{
+      alert('Phải có người lớn theo cùng. Cám ơn!');
+      this.loading = false;
+    }
+
+       
   }
 
 }

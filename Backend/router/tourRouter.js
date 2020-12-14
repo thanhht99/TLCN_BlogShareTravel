@@ -262,17 +262,28 @@ router.post('/registerTrip', async(req, res) => {
             accountId: testAccountId,
             isConfirm: false
         });
-        valueRegisterTrip.save()
-            .then((data) => {
-                console.log(data);
-                Trip.update({
-                    theRemainingAmount: testTrip.theRemainingAmount - (valueRegisterTrip.adults + valueRegisterTrip.children + valueRegisterTrip.baby)
-                }, { where: { id: testTrip.id } });
-                res.json(data);
+        let soLuongDangKi = valueRegisterTrip.adults + valueRegisterTrip.children + valueRegisterTrip.baby;
+        console.log(testTrip.theRemainingAmount)
+        console.log(soLuongDangKi)
+        if (testTrip.theRemainingAmount >= soLuongDangKi) {
+            valueRegisterTrip.save()
+                .then((data) => {
+                    console.log(data);
+                    Trip.update({
+                        theRemainingAmount: testTrip.theRemainingAmount - soLuongDangKi
+                    }, { where: { id: testTrip.id } });
+                    res.json(data);
+                })
+                .catch((error) => res.status(400).send({
+                    error: error.message
+                }));
+        } else {
+            //Số lượng không đủ để đăng kí.
+            res.status(400).send({
+                error: 'Số lượng không đủ để đăng kí.'
             })
-            .catch((error) => res.status(400).send({
-                error: error.message
-            }));
+        }
+
     }
 }, (error, req, res, next) => {
     res.status(400).send({

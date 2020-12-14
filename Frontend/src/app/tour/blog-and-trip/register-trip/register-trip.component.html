@@ -4,7 +4,7 @@
     <div class="main-content">
         <div class="container-fluid">
             <div class="row" class="d-flex justify-content-center align-items-center">
-                <div class="col-md-8">
+                <div class="col-md-12">
                     <div class="card border-primary">
                         <h1 class="card-header">Đăng ký chuyến đi</h1>
                         <div class="card-body">
@@ -16,8 +16,8 @@
                     </p>
                   </label>
                                 </div>
-
-                                <div class="newspaper">
+                                <!--DONG1-->
+                                <div class="newspaper4">
                                     <div class="form-row">
                                         <label>Khởi hành:
                       <p class="form-register-trip">
@@ -27,15 +27,6 @@
                                     </div>
 
                                     <div class="form-row">
-                                        <label>Thời gian:
-                      <p class="form-register-trip">
-                        {{ tour.time }}
-                      </p>
-                    </label>
-                                    </div>
-
-                                    <!-- Cách ngang-->
-                                    <div class="form-row">
                                         <label>Điểm đến:
                       <p class="form-register-trip">
                         {{ tour.destination }}
@@ -44,13 +35,57 @@
                                     </div>
 
                                     <div class="form-row">
-                                        <label>Giá:
-                      <p class="form-register-trip">{{ tour.price }} VNĐ</p>
+                                        <label>Ngày khởi hành:
+                      <p class="form-register-trip">
+                        {{ trip.startDate }}
+                      </p>
+                    </label>
+                                    </div>
+
+                                    <div class="form-row">
+                                        <label>Ngày về:
+                      <p class="form-register-trip">
+                        {{ trip.endDate }}
+                      </p>
                     </label>
                                     </div>
                                 </div>
 
-                                <div class="newspaper">
+                                <!--DONG2-->
+                                <div class="newspaper4">
+                                    <div class="form-row">
+                                        <label>Thời gian:
+                      <p class="form-register-trip">
+                        {{ tour.time }}
+                      </p>
+                    </label>
+                                    </div>
+
+                                    <div class="form-row">
+                                        <label>Khách sạn:
+                      <p class="form-register-trip">
+                        {{ trip.infoHotel }}
+                      </p>
+                    </label>
+                                    </div>
+
+                                    <div class="form-row">
+                                        <label>Phương tiện di chuyển:
+                      <p class="form-register-trip">
+                        {{ trip.infoVehicle }}
+                      </p>
+                    </label>
+                                    </div>
+
+                                    <div class="form-row">
+                                        <label>
+                      <p class="form-register-trip"></p>
+                    </label>
+                                    </div>
+                                </div>
+
+                                <!--DONG3-->
+                                <div class="newspaper4">
                                     <div class="form-row">
                                         <label>Tên người đăng ký</label>
                                         <input type="text " formControlName="nameRegister" class="form-control" [ngClass]="{
@@ -59,6 +94,22 @@
                                         <div *ngIf="submitted && f.nameRegister.errors" class="invalid-feedback">
                                             <div *ngIf="f.nameRegister.errors.required">
                                                 Tên người đăng ký thì bắt buộc
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-row">
+                                        <label>SĐT</label>
+                                        <input type="text" formControlName="phone" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.phone.errors }" />
+                                        <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
+                                            <div *ngIf="f.phone.errors.required">
+                                                SĐT thì bắt buộc
+                                            </div>
+                                            <div *ngIf="f.phone.errors.minlength">
+                                                SĐT phải có 10 ký tự
+                                            </div>
+                                            <div *ngIf="f.phone.errors.maxlength">
+                                                SĐT phải có 10 ký tự
                                             </div>
                                         </div>
                                     </div>
@@ -92,38 +143,41 @@
                                             </div>
                                         </div>
                                     </div>
+                                </div>
 
+                                <!--DONG4-->
+                                <div class="newspaper4">
                                     <div class="form-row">
-                                        <label for="email">Email</label>
-                                        <input type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
-                                        <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
-                                            <div *ngIf="f.email.errors.required">
-                                                Email thì bắt buộc
-                                            </div>
-                                            <div *ngIf="f.email.errors.email">
-                                                Email không hợp lệ.
-                                            </div>
-                                        </div>
+                                        <label>Giá người lớn:
+                      <p class="form-register-trip">{{ trip.price }} VNĐ</p>
+                    </label>
                                     </div>
 
                                     <div class="form-row">
-                                        <label>SĐT</label>
-                                        <input type="text" formControlName="phone" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.phone.errors }" />
-                                        <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
-                                            <div *ngIf="f.phone.errors.required">
-                                                SĐT thì bắt buộc
-                                            </div>
-                                            <div *ngIf="f.phone.errors.minlength">
-                                                SĐT phải có 10 ký tự
-                                            </div>
-                                            <div *ngIf="f.phone.errors.maxlength">
-                                                SĐT phải có 10 ký tự
-                                            </div>
-                                        </div>
+                                        <label>Giá trẻ em:
+                      <p class="form-register-trip">
+                        {{ trip.childrenPrice }} VNĐ
+                      </p>
+                    </label>
                                     </div>
 
                                     <div class="form-row">
-                                        <label>Số lượng người lớn</label>
+                                        <label>Giá em bé:
+                      <p class="form-register-trip">{{ trip.babyPrice }} VNĐ</p>
+                    </label>
+                                    </div>
+
+                                    <div class="form-row">
+                                        <label>
+                      <p class="form-register-trip"></p>
+                    </label>
+                                    </div>
+                                </div>
+
+                                <!--DONG5-->
+                                <div class="newspaper4">
+                                    <div class="form-row">
+                                        <label>Người lớn</label>
                                         <input type="number" min="0" formControlName="adults" class="form-control" [ngClass]="{
                         'is-invalid': submitted && f.adults.errors
                       }" />
@@ -135,7 +189,7 @@
                                     </div>
 
                                     <div class="form-row">
-                                        <label>Số lượng trẻ em</label>
+                                        <label>Trẻ em</label>
                                         <input type="number" min="0" formControlName="children" class="form-control" [ngClass]="{
                         'is-invalid': submitted && f.children.errors
                       }" />
@@ -147,7 +201,7 @@
                                     </div>
 
                                     <div class="form-row">
-                                        <label>Số lượng em bé</label>
+                                        <label>Em bé</label>
                                         <input type="number" min="0" formControlName="baby" class="form-control" [ngClass]="{
                         'is-invalid': submitted && f.baby.errors
                       }" />

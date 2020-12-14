@@ -13,6 +13,8 @@ import { HomeComponent } from './home/home.component';
 
 import { AlertComponent, FooterComponent, HeaderComponent } from './_components';
 import { CommonModule } from '@angular/common';
+import { ListRegisterTripComponent } from './list-register-trip/list-register-trip.component';
+import { CustomerEditComponent } from './customer-edit/customer-edit.component';
 
 @NgModule({
   
@@ -29,7 +31,9 @@ import { CommonModule } from '@angular/common';
     AlertComponent,
     FooterComponent,
     HeaderComponent,
-    HomeComponent
+    HomeComponent,
+    ListRegisterTripComponent,
+    CustomerEditComponent
   ],
   exports: [
     BrowserModule,
