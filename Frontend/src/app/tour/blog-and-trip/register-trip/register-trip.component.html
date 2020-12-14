@@ -9,6 +9,47 @@
                         <h1 class="card-header">Đăng ký chuyến đi</h1>
                         <div class="card-body">
                             <form [formGroup]="form" (ngSubmit)="register()">
+                                <div class="form-row">
+                                    <label>Tên Tour:
+                    <p class="form-register-trip">
+                      {{ tour.name }}
+                    </p>
+                  </label>
+                                </div>
+
+                                <div class="newspaper">
+                                    <div class="form-row">
+                                        <label>Khởi hành:
+                      <p class="form-register-trip">
+                        {{ tour.departureLocation }}
+                      </p>
+                    </label>
+                                    </div>
+
+                                    <div class="form-row">
+                                        <label>Thời gian:
+                      <p class="form-register-trip">
+                        {{ tour.time }}
+                      </p>
+                    </label>
+                                    </div>
+
+                                    <!-- Cách ngang-->
+                                    <div class="form-row">
+                                        <label>Điểm đến:
+                      <p class="form-register-trip">
+                        {{ tour.destination }}
+                      </p>
+                    </label>
+                                    </div>
+
+                                    <div class="form-row">
+                                        <label>Giá:
+                      <p class="form-register-trip">{{ tour.price }} VNĐ</p>
+                    </label>
+                                    </div>
+                                </div>
+
                                 <div class="newspaper">
                                     <div class="form-row">
                                         <label>Tên người đăng ký</label>

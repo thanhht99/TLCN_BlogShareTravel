@@ -17,6 +17,7 @@ import { WebRequestService } from '../../../web-request.service';
 })
 export class RegisterTripComponent implements OnInit {
   form: FormGroup;
+  tours: Tour;
   tour: Tour;
   trips: Trip;
   trip: Trip;
@@ -27,7 +28,7 @@ export class RegisterTripComponent implements OnInit {
 
   loading = false;
   submitted = false;
-  id: Number;
+  id: number;
   constructor(private tourService: TourService, 
               private alertService: AlertService,
               private loginService: LoginService,
@@ -36,13 +37,36 @@ export class RegisterTripComponent implements OnInit {
               private formBuilder: FormBuilder,) 
   { 
     this.loginService.account.subscribe(x => this.account = x);
-    //console.log(this.account)
+    console.log("------------ACC--------------")
+    console.log(this.account)
     this.id = this.route.snapshot.params['id'];
+    this.id = Number(this.id);
+    // console.log('-------ID trip--------')
     // console.log(this.id)
     this.tourService.trip.subscribe(b => this.trips = b);
-    // console.log(this.trips[0])       
-    this.trip = this.trips[0];
-    // console.log(this.trip)
+    // console.log(this.trips)
+    for(let i in this.trips) {
+      if(this.trips[i].id === this.id)
+      { 
+        this.trip = this.trips[i];
+      }
+    }
+    console.log("=========TRIP===========")
+    console.log(this.trip)
+
+
+    this.tourService.tour.subscribe(a => this.tours = a);
+    // console.log(this.tours)
+    for(let i in this.tours) {
+      if(this.tours[i].id === this.trip.tourId)
+      { 
+        this.tour = this.tours[i];
+      }
+    }
+    console.log("=========TOUR===========")
+    console.log(this.tour)
+
+    
 
 
   }

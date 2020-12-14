@@ -118,7 +118,7 @@ module.exports = {
                 avatarPath: '../../assets/img/tour/danang1.jpg',
                 isStatus: true,
                 tourGuideId: 2
-            
+
             },
             {
                 //10
@@ -383,7 +383,7 @@ module.exports = {
             {
                 //30
                 name: 'DU LỊCH HỒ CHÍ MINH - LỄ HỘI ÁO DÀI [KH TỪ CẦN THƠ]',
-                summary: 'ễ hội Áo dài lần 7 - 2020 với chủ đề Tôi yêu áo dài Việt Nam cũng là sự kiện mở đầu...',
+                summary: 'Lễ hội Áo dài lần 7 - 2020 với chủ đề Tôi yêu áo dài Việt Nam cũng là sự kiện mở đầu...',
                 price: '739.000',
                 time: '1 ngày',
                 departureLocation: 'TP. HỒ CHÍ MINH',
@@ -394,7 +394,7 @@ module.exports = {
                 tourGuideId: 1
             },
 
-            
+
         ];
         data.map(item => {
             item.createdAt = Sequelize.literal('NOW()');

@@ -30,6 +30,7 @@ module.exports = {
                 tourId: 1,
                 tourGuideId: 2
             },
+
             // ToudId: 2
             {
                 day1: 'TP. HỒ CHÍ MINH - HỒ TRÀM (Ăn trưa, chiều)',
@@ -57,6 +58,7 @@ module.exports = {
                 tourId: 2,
                 tourGuideId: 1
             },
+
             // ToudId: 3
             {
                 day1: 'TP. HCM - PHAN THIẾT (Ăn sáng, trưa, chiều)',
@@ -86,141 +88,6 @@ module.exports = {
             },
 
 
-            // ToudId: 1
-            {
-                day1: 'CẦN THƠ – HÀ NỘI – HÒA BÌNH – MỘC CHÂU (Ăn trưa, tối)',
-                content1: 'Buổi sáng, quý khách tập trung tại Ga đi trong nước - Sân bay Cần Thơ. Hướng dẫn viên Lữ hành Saigontourist đón quý khách và hỗ trợ làm thủ tục. Khởi hành ra Hà Nội (chuyến bay VNA lúc 08:40)',
-                imagePath1: '../../assets/img/blog/tour4_day1.jpg',
-                day2: 'MỘC CHÂU – NINH BÌNH (Ăn sáng, trưa, tối)',
-                content2: 'Tham quan đồi chè Mộc Châu, rừng Thông Bản Áng. Đoàn dừng chân nghỉ ngơi tại Thung Khe - đèo Đá Trắng. Tiếp tục về Ninh Bình, thăm cố đô Hoa Lư. Nghỉ đêm tại Ninh Bình.',
-                imagePath2: '../../assets/img/blog/tour4_day2.jpg',
-                day3: ' NINH BÌNH – HÀ NỘI (Ăn sáng, trưa, tối) ',
-                content3: 'Buổi sáng, đoàn đến tham quan Khu du lịch Tràng An - KDL nằm trong quần thể danh thắng Tràng An đã được UNESCO công nhận di sản hỗn hợp đầu tiên của Việt Nam và khu vực Đông Nam Á (đạt cả hai tiêu chí về văn hóa và thiên nhiên) vào ngày 25/6/2014',
-                imagePath3: '../../assets/img/blog/tour4_day3.jpg',
-                day4: 'HÀ NỘI – CẦN THƠ (Ăn sáng, trưa) ',
-                content4: 'Buổi sáng, HDV đưa đoàn đến viếng lăng Chủ tịch Hồ Chí Minh. Tham quan khu di tích Phủ chủ tịch – viếng chùa Trấn Quốc.',
-                imagePath4: '',
-                day5: '',
-                content5: '',
-                imagePath5: '',
-                day6: '',
-                content6: '',
-                imagePath6: '',
-                day7: '',
-                content7: '',
-                imagePath7: '',
-                isStatus: true,
-                tourId: 1,
-                tourGuideId: 2
-            },
-            // ToudId: 2
-            {
-                day1: 'TP. HỒ CHÍ Minh - CÁI BÈ - CẦN THƠ (Ăn sáng, trưa, chiều)',
-                content1: 'Buổi sáng, quý khách tập trung tại văn phòng Saigontourist. Xe và hướng dẫn viên của Lữ hành Saigontourist đón khách (lúc 06h00 sáng tại 45 Lê Thánh Tôn, Quận 1 hoặc lúc 06h30 sáng tại số 1 Nguyễn Chí Thanh, Quận 5), khởi hành đi Cần Thơ',
-                imagePath1: '../../assets/img/blog/tour5_day1.jpg',
-                day2: 'CẦN THƠ - CHÂU ĐỐC (Ăn sáng, trưa, chiều)',
-                content2: 'Buổi sáng, tham quan Cầu Tình Yêu. Viếng Thiền viện Trúc Lâm Phương Nam - thiền viện lớn nhất miền Tây.',
-                imagePath2: '../../assets/img/blog/tour5_day2.jpg',
-                day3: ' CHÂU ĐỐC - TP. HỒ CHÍ Minh (Ăn sáng, trưa) ',
-                content3: 'Buổi sáng  trả phòng viếng Miếu Bà Chúa Xứ, Tây An cổ tự, Lăng Thoại Ngọc Hầu - danh nhân có công khai mở đất An Giang, Chùa Hang - ngôi chùa gắn liền với truyền thuyết 2 con rắn lớn biết nghe kinh Phật.',
-                imagePath3: '../../assets/img/blog/tour5_day3.jpg',
-                day4: ' ',
-                content4: '',
-                imagePath4: '',
-                day5: '',
-                content5: '',
-                imagePath5: '',
-                day6: '',
-                content6: '',
-                imagePath6: '',
-                day7: '',
-                content7: '',
-                imagePath7: '',
-                isStatus: true,
-                tourId: 2,
-                tourGuideId: 2
-            },
-            // ToudId: 3
-            {
-                day1: 'TP.HCM - NINH CHỮ (Ăn sáng, trưa, chiều)',
-                content1: 'Đón quý khách tại văn phòng Lữ Hành Saigontourist (lúc 06h00 sáng tại 45 Lê Thánh Tôn, Quận 1 hoặc lúc 06h30 sáng tại số 1 Nguyễn Chí Thanh, Quận 5), khởi hành đi Ninh Chữ. Đến Ninh Chữ, đoàn nhận phòng, tự do nghỉ ngơi, tắm biển Ninh Chữ. Nghỉ đêm tại Ninh Chữ.',
-                imagePath1: '../../assets/img/blog/tour6_day1.jpg',
-                day2: 'NINH CHỮ - VỊNH VĨNH HY (Ăn sáng, trưa, chiều)',
-                content2: 'Đoàn theo tỉnh lộ 702 - cung đường ven biển tuyêt đẹp qua vườn quốc gia Núi Chúa, ngắm toàn cảnh vịnh Vĩnh Hy từ trên cao. Xuống thuyền ngoạn cảnh vịnh Vĩnh Hy, chiêm ngưỡng quần thể san hô đầy màu sắc bằng tàu đáy kính.',
-                imagePath2: '../../assets/img/blog/tour6_day2.jpg',
-                day3: ' NINH CHỮ - ĐÀ LẠT (Ăn sáng, trưa, chiều) ',
-                content3: 'Sau bữa sáng, quý khách trả phòng, xe đưa đoàn đến thăm Trùng Sơn Cổ Tự trên núi Đá Chồng, nơi đoàn có thể ngắm nhìn toàn cảnh Ninh Chữ với những cánh đồng, ruộng muối, đầm phá đan xen tạo nên bức tranh nhiều màu sắc....',
-                imagePath3: '../../assets/img/blog/tour6_day3.jpg',
-                day4: ' THAM QUAN ĐÀ LẠT (Ăn sáng, trưa, chiều)',
-                content4: 'Buổi sáng, quý khách đến với Khu Du Lịch Dalat Fairytale Land & Hầm Rượu Vang Vĩnh Tiến, tham quan khu vườn cổ tích đầy màu sắc của những chú lùn nằm trong nhà máy sản xuất rượu vang Vĩnh Tiến, tìm hiểu quy trình sản xuất trà thảo dược, rượu vang, Đông Trùng Hạ Thảo và khám phá đường hầm Rượu vang đặc sắc',
-                imagePath4: '../../assets/img/blog/tour6_day4.jpg',
-                day5: 'ĐÀ LẠT - TP. HỒ CHÍ MINH  (Ăn sáng, trưa)',
-                content5: 'Buổi sáng, xe đưa đoàn đến chợ Đà Lạt, quý khách tự do mua sắm. Trả phòng, khởi hành về Tp. HCM. Kết thúc chương trình.',
-                imagePath5: '',
-                day6: '',
-                content6: '',
-                imagePath6: '',
-                day7: '',
-                content7: '',
-                imagePath7: '',
-                isStatus: true,
-                tourId: 3,
-                tourGuideId: 3
-            },
-            // ToudId: 2
-            {
-                day1: 'THAM QUAN BUÔN MA THUỘT (Ăn ba bữa) ',
-                content1: '06h30 Đoàn dùng điểm tâm sáng tại nhà hàng,09h30 Đến Buôn Ma Thuột dừng tham quan Thác D’ray Nur - Cách trung tâm Tp. Buôn Ma Thuột khoảng 25km về phía nam',
-                imagePath1: '../../assets/img/blog/tour7_day1.jpg',
-                day2: 'BUÔN MA THUỘT – ĐÀ LẠT(Ăn ba bữa)',
-                content2: '06h30 Đoàn dùng điểm tâm sáng tại khách sạn – Làm thủ tục trả phòng,08h00 Quý khách Viếng thăm Chùa Sắc Tứ Khải Đoan – ngôi chùa đầu tiên đặt nền móng cho Phật giáo tại Tây Nguyên với kiến trúc độc đáo, được trùng tu và xây dựng lại từ năm 2012 với quy mô rất hoành tráng.',
-                imagePath2: '../../assets/img/blog/tour7_day2.jpg',
-                day3: ' KHÁM PHÁ ĐÀ LẠT (Ăn ba bữa) ',
-                content3: '06h30 Đoàn dùng điểm tâm sáng tại khách sạn ,08h00 Đoàn tham quan Cánh đồng hoa cẩm tú cầu & đồi chè Cầu Đất – Hai điểm tham quan mới và hấp dẫn nhiều du khách đến với Đà Lạt hiện nay.Sau đó  viếng Chùa Linh Phước (Chùa ve chai) .',
-                imagePath3: '../../assets/img/blog/tour7_day3.jpg',
-                day4: 'ĐÀ LẠT – CẦN THƠ (Ăn ba bữa) ',
-                content4: '06h30 Đoàn dùng điểm tâm sáng tại khách sạn – Làm thủ tục trả phòng,08h00 Khởi hành về lại Cần Thơ. Trên đường về dừng tham quan và chụp ảnh lưu niệm tại Thác Pongour – được mệnh danh là Nam thiên Đệ Nhất Thác.',
-                imagePath4: '',
-                day5: '',
-                content5: '',
-                imagePath5: '',
-                day6: '',
-                content6: '',
-                imagePath6: '',
-                day7: '',
-                content7: '',
-                imagePath7: '',
-                isStatus: true,
-                tourId: 2,
-                tourGuideId: 2
-            },
-            // ToudId: 1
-            {
-                day1: 'CẦN THƠ – PHÚ QUỐC  (Ăn ba bữa) ',
-                content1: '02h30 Xe và hướng dẫn viên đón khách tại văn phòng Lữ hành Saigontourist. Khởi hành đi bến tàu Rạch Giá,06h00 Dùng điểm tâm sáng. Lên tàu đi Phú Quốc chuyến 07h20,09h50 Đến Phú Quốc, xe đón đoàn tham quan Suối Tranh.',
-                imagePath1: '../../assets/img/blog/tour8_day1.jpg',
-                day2: 'KHÁM PHÁ ĐẢO NGỌC PHÚ QUỐC  (Ăn sáng, trưa)',
-                content2: '06h30 Đoàn dùng điểm tâm sáng tại khách sạn,07h30 Quý khách tham quan Dinh Cậu ngắm ngọn hải đăng  Dương Đông trong buổi sáng biển đảo đầy thơ mộng.',
-                imagePath2: '../../assets/img/blog/tour8_day2.jpg',
-                day3: ' PHÚ QUỐC – CẦN THƠ (Ăn ba bữa) ',
-                content3: '06h30 Đoàn dùng điểm tâm sáng tại khách sạn,07h30 Xe đưa đoàn tham quan Chợ Dương Đông, mua đặc sản về làm quà cho người thân.11h00 Đoàn dùng cơm trưa. Trả phòng..',
-                imagePath3: '',
-                day4: '',
-                content4: '',
-                imagePath4: '',
-                day5: '',
-                content5: '',
-                imagePath5: '',
-                day6: '',
-                content6: '',
-                imagePath6: '',
-                day7: '',
-                content7: '',
-                imagePath7: '',
-                isStatus: true,
-                tourId: 1,
-                tourGuideId: 2
-            },
         ];
         data.map(item => {
             item.createdAt = Sequelize.literal('NOW()');

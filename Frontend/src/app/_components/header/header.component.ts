@@ -12,7 +12,6 @@ export class HeaderComponent implements OnInit {
   constructor(private loginService: LoginService) 
   {
     this.loginService.account.subscribe(x => this.account = x);
-
   }
 
   ngOnInit(): void {
