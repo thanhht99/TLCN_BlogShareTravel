@@ -4,30 +4,38 @@
     </div>
     <div class="img-and-name">
         <div class="image-place">
-            <img alt="" class="person-image" src="{{customer.avatarPath}}" title="Image Of Name">
+            <img alt="" class="person-image" src="{{ customer.avatarPath }}" title="Image Of Name" />
         </div>
         <div class="information">
             <div class="person-name">
-               <p>{{customer.name}}</p>
+                <p>{{ customer.name }}</p>
             </div>
-            <br/>
-            <div class="job-description">Danh Tính : {{customer.identity}}</div>
-            <div class="job-description">Địa Chỉ: {{customer.address}}</div>
+            <br />
+            <div class="job-description">Danh Tính : {{ customer.identity }}</div>
+            <div class="job-description">Địa Chỉ: {{ customer.address }}</div>
 
             <div class="contacts">
                 <div class="phone-number">
                     <p>
-                        <a href="tel:{{customer.phone}}">SĐT : {{customer.phone}}</a>
+                        <a href="tel:{{ customer.phone }}">SĐT : {{ customer.phone }}</a>
                     </p>
                 </div>
                 <div class="email">
                     <p>
-                        <a href="{{customer.email}}">Email: {{customer.email}}</a>
+                        <a href="{{ customer.email }}">Email: {{ customer.email }}</a>
                     </p>
                 </div>
-                <div class="btn btn-primary"  style="width: 150px ; height: 50px; margin-left: 450px"><h5><b>Cập Nhật</b></h5></div>
+                <div class="btn btn-primary" style="width: 150px; height: 50px; margin-left: 450px">
+                    <h5><b>Cập Nhật</b></h5>
+                </div>
             </div>
         </div>
     </div>
 </div>
-<div class="btn btn-primary"  style="width: 250px ; height: 50px;"><h5><b>Danh Sách Chuyến Đi</b></h5></div>
+<div class="btn btn-primary" style="width: 250px; height: 50px">
+    <h5>
+        <b routerLink="/customer/info/{{ account.id }}/listRegisterTrip">
+      Danh Sách Chuyến Đi
+    </b>
+    </h5>
+</div>

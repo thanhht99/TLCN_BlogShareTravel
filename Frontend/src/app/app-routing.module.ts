@@ -12,6 +12,7 @@ const accountModule = () => import('./account/account.module').then(x => x.Accou
 const tourModule = () => import('./tour/tour.module').then(x => x.TourModule);
 
 
+
 const routes: Routes = [
   { path: 'account', loadChildren: accountModule },
   { path: 'customer', loadChildren: customerModule, canActivate: [AuthGuard] },

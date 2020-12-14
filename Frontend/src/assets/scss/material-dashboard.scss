@@ -15,12 +15,11 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-@import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
 @import "core/variables";
 @import "core/mixins";
 @import "~bootstrap/scss/bootstrap";
-
 // Core Components
 @import "core/buttons";
 @import "core/checkboxes";
@@ -42,24 +41,20 @@
 @import "core/fixed-plugin";
 @import "core/tables";
 @import "core/misc";
-
 @import "core/reboot";
 @import "core/row";
 @import "core/list";
 @import "core/home";
 @import "core/customerinfo";
 @import "core/header";
-
+@import "core/trip";
 @import "core/cards";
 @import "core/cards/card-stats";
 @import "core/cards/card-profile";
 @import "core/cards/card-plain";
-
 //plugin scss
 @import "core/plugins/animate";
 @import "core/plugins/chartist";
 @import "core/plugins/perfect-scrollbar";
-
 @import "core/responsive";
-
 @import "core/angular-modal.scss";

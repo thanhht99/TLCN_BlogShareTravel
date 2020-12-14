@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
 import { LoginService } from '../../_services/login.service';
-import { Customer } from '../../models';
+import { Customer,Account } from '../../models';
 
 @Component({
   selector: 'app-customer-info',
@@ -12,6 +12,7 @@ import { Customer } from '../../models';
 export class CustomerInfoComponent implements OnInit {
 
   customer: Customer;
+  account: Account;
   id: string;
   
   constructor(private loginService: LoginService, 
@@ -19,6 +20,8 @@ export class CustomerInfoComponent implements OnInit {
               private route: ActivatedRoute) 
   {
       this.customer = this.loginService.customerValue;
+      this.account = this.loginService.accountValue;
+      // console.log(this.account)
   }
 
   ngOnInit(): void {

@@ -9,6 +9,8 @@ export class RegisterTrip {
     adults: Number;
     children: Number;
     baby: Number;
+    totalMoney: String;
+    maTour: Number;
     tripId: Number;
     accountId: Number;
 }

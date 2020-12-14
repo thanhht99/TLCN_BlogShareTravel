@@ -25,6 +25,8 @@ module.exports = (sequelize, DataTypes) => {
         adults: DataTypes.INTEGER,
         children: DataTypes.INTEGER,
         baby: DataTypes.INTEGER,
+        totalMoney: DataTypes.STRING,
+        maTour: DataTypes.INTEGER,
         isConfirm: DataTypes.BOOLEAN,
     }, {
         sequelize,

@@ -260,6 +260,7 @@ router.post('/registerTrip', async(req, res) => {
             children: req.body.children,
             tripId: testTrip.id,
             accountId: testAccountId,
+            maTour: req.body.maTour,
             isConfirm: false
         });
         let soLuongDangKi = valueRegisterTrip.adults + valueRegisterTrip.children + valueRegisterTrip.baby;
