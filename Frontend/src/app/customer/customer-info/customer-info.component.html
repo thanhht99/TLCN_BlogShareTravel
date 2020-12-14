@@ -1,6 +1,6 @@
 <div class="card-wrapper">
     <div class="title">
-        <h1>Customer Info</h1>
+        <h1>Thông Tin Khách Hàng</h1>
     </div>
     <div class="img-and-name">
         <div class="image-place">
@@ -8,16 +8,16 @@
         </div>
         <div class="information">
             <div class="person-name">
-                <p>{{customer.name}}</p>
+               <p>{{customer.name}}</p>
             </div>
             <br/>
-            <div class="job-description">Identity: {{customer.identity}}</div>
-            <div class="job-description">Address: {{customer.address}}</div>
+            <div class="job-description">Danh Tính : {{customer.identity}}</div>
+            <div class="job-description">Địa Chỉ: {{customer.address}}</div>
 
             <div class="contacts">
                 <div class="phone-number">
                     <p>
-                        <a href="tel:{{customer.phone}}">Phone: {{customer.phone}}</a>
+                        <a href="tel:{{customer.phone}}">SĐT : {{customer.phone}}</a>
                     </p>
                 </div>
                 <div class="email">
@@ -25,7 +25,9 @@
                         <a href="{{customer.email}}">Email: {{customer.email}}</a>
                     </p>
                 </div>
+                <div class="btn btn-primary"  style="width: 150px ; height: 50px; margin-left: 450px"><h5><b>Cập Nhật</b></h5></div>
             </div>
         </div>
     </div>
 </div>
+<div class="btn btn-primary"  style="width: 250px ; height: 50px;"><h5><b>Danh Sách Chuyến Đi</b></h5></div>
