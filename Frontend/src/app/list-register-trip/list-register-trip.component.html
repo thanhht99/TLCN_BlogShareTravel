@@ -1,39 +1,30 @@
-<h2>Chuyến đi đã đặt</h2>
+<h2>Chuyến đi đã được duyệt</h2>
 <div class="row trip-row">
-    <div class="tbl-header">
-        <table cellpadding="0" cellspacing="0" border="0">
-            <thead>
-                <tr>
-                    <th>Mã Tour</th>
-                    <th>Ngày Khởi hành</th>
-                    <th>Ngày về</th>
-                    <th>Khởi hành</th>
-                    <th>Điểm đến</th>
-                    <th>Chi tiết</th>
-                </tr>
-            </thead>
-        </table>
-    </div>
-    <div class="tbl-content" *ngFor="let trip of trips">
-        <table cellpadding="0" cellspacing="0" border="0">
-            <tbody>
-                <tr>
-                    <td>{{ trip.startDate }}</td>
-                    <td>{{ trip.endDate }}</td>
-                    <td>
-                        {{ trip.tourId }}{{ tour.tourGuideId }}{{ trip.id }}{{ trip.tourGuideId }}
-                    </td>
-                    <td>{{ trip.infoHotel }}</td>
-                    <td>{{ trip.infoVehicle }}</td>
-                    <td>{{ trip.price }}</td>
-                    <td>{{ trip.childrenPrice }}</td>
-                    <td>{{ trip.babyPrice }}</td>
-                    <td>{{ trip.theRemainingAmount }}</td>
-                    <td>
-                        <a href="/tour/blog&trip/{{ trip.tourId }}/registerTrip/{{
-                trip.id
-              }}" *ngIf="trip.theRemainingAmount > 0">Mua tour</a
-            >
+  <div class="tbl-header">
+    <table cellpadding="0" cellspacing="0" border="0">
+      <thead>
+        <tr>
+          <th>Mã Tour</th>
+          <th>Ngày đi</th>
+          <th>Ngày về</th>
+          <th>Khởi hành</th>
+          <th>Điểm đến</th>
+          <th>Chi tiết</th>
+        </tr>
+      </thead>
+    </table>
+  </div>
+  <div class="tbl-content" *ngFor="let listChuaDuyet of listChuaDuyets">
+    <table cellpadding="0" cellspacing="0" border="0">
+      <tbody>
+        <tr>
+          <td>{{ listChuaDuyet.maTour }}</td>
+          <td>{{ listChuaDuyet.Trip.startDate }}</td>
+          <td>{{ listChuaDuyet.Trip.endDate }}</td>
+          <td>{{ listChuaDuyet.Trip.Tour.departureLocation }}</td>
+          <td>{{ listChuaDuyet.Trip.Tour.destination }}</td>
+          <td>
+            <a href=""> Chi tiết </a>
           </td>
         </tr>
       </tbody>
@@ -41,22 +32,40 @@
   </div>
 </div>
 
-<h2>Chuyến đi đợi duyệt</h2>
-<table class="rwd-table">
-  <tr>
-    <th>Mã Tour</th>
-    <th>Ngày Khởi hành</th>
-    <th>Ngày về</th>
-    <th>Khởi hành</th>
-    <th>Điểm đến</th>
-    <th>Thanh toán</th>
-  </tr>
-  <tr>
-    <td data-th="Movie Title">Star Wars</td>
-    <td data-th="Genre">Adventure, Sci-fi</td>
-    <td data-th="Year">1977</td>
-    <td data-th="Gross">$460,935,665</td>
-    <td data-th="Gross">$460,935,665</td>
-    <td></td>
-  </tr>
-</table>
+<h2>Chuyến đi chưa được duyệt</h2>
+<div class="row trip-row">
+  <div class="tbl-header">
+    <table cellpadding="0" cellspacing="0" border="0">
+      <thead>
+        <tr>
+          <th>Mã Tour</th>
+          <th>Ngày đi</th>
+          <th>Ngày về</th>
+          <th>Khởi hành</th>
+          <th>Điểm đến</th>
+          <th>Thanh toán</th>
+          <th>Chi tiết</th>
+        </tr>
+      </thead>
+    </table>
+  </div>
+  <div class="tbl-content" *ngFor="let listChuaDuyet of listChuaDuyets">
+    <table cellpadding="0" cellspacing="0" border="0">
+      <tbody>
+        <tr>
+          <td>{{ listChuaDuyet.maTour }}</td>
+          <td>{{ listChuaDuyet.Trip.startDate }}</td>
+          <td>{{ listChuaDuyet.Trip.endDate }}</td>
+          <td>{{ listChuaDuyet.Trip.Tour.departureLocation }}</td>
+          <td>{{ listChuaDuyet.Trip.Tour.destination }}</td>
+          <td>
+            <a href=""> Thanh toán </a>
+          </td>
+          <td>
+            <a href=""> Chi tiết </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

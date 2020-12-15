@@ -38,235 +38,187 @@
                         <td>
                             <a href="/tour/blog&trip/{{ trip.tourId }}/registerTrip/{{
                   trip.id
-                }}" *ngIf="trip.theRemainingAmount > 0">Mua tour</a
-              >
-            </td>
-          </tr>
-        </tbody>
-      </table>
+                }}" *ngIf="trip.theRemainingAmount > 0">
+                Mua tour
+                </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
-  </div>
 
-  <!-- <div class="spinner-border" role="status " *ngIf="!trips">
+    <!-- <div class="spinner-border" role="status " *ngIf="!trips">
             <span class="sr-only">Loading...</span>
         </div> -->
 </div>
 <div *ngIf="account.isTourGuide && tour.amount > 0">
-  <h2>Thêm chuyến đi</h2>
-  <form [formGroup]="form" (ngSubmit)="addTrip()">
-    <div class="form-row">
-      <label>Tour Guide Id: {{ tourGuide.id }}</label>
-      <input
-        type="text "
-        formControlName="tourId"
-        class="form-control"
-        value="{{ tourGuide.id }}"
-        [ngClass]="{ 'is-invalid': submitted && f.tourId.errors }"
-        hidden
-      />
-      <div *ngIf="submitted && f.tourId.errors" class="invalid-feedback">
-        <div *ngIf="f.tourId.errors.required">Tour Id is required</div>
-      </div>
-    </div>
-    <div class="form-row">
-      <label>Price: {{ tour.price }}</label>
-      <input
-        type="text "
-        formControlName="price"
-        class="form-control"
-        [ngClass]="{ 'is-invalid': submitted && f.price.errors }"
-        hidden
-      />
-      <div *ngIf="submitted && f.price.errors" class="invalid-feedback">
-        <div *ngIf="f.price.errors.required">Price is required</div>
-      </div>
-    </div>
-    <div class="newspaper">
-      <div class="form-row">
-        <label>Info Hotel</label>
-        <input
-          type="text "
-          formControlName="infoHotel"
-          class="form-control"
-          [ngClass]="{ 'is-invalid': submitted && f.infoHotel.errors }"
-        />
-        <div *ngIf="submitted && f.infoHotel.errors" class="invalid-feedback">
-          <div *ngIf="f.infoHotel.errors.required">Info Hotel is required</div>
+    <h2>Thêm chuyến đi</h2>
+    <form [formGroup]="form" (ngSubmit)="addTrip()">
+        <div class="form-row">
+            <label>Tour Guide Id: {{ tourGuide.id }}</label>
+            <input type="text " formControlName="tourId" class="form-control" value="{{ tourGuide.id }}" [ngClass]="{ 'is-invalid': submitted && f.tourId.errors }" hidden />
+            <div *ngIf="submitted && f.tourId.errors" class="invalid-feedback">
+                <div *ngIf="f.tourId.errors.required">Tour Id is required</div>
+            </div>
         </div>
-      </div>
-      <div class="form-row">
-        <label>Start Date</label>
-        <input
-          type="date"
-          formControlName="startDate"
-          class="form-control"
-          [ngClass]="{ 'is-invalid': submitted && f.startDate.errors }"
-        />
-        <div *ngIf="submitted && f.startDate.errors" class="invalid-feedback">
-          <div *ngIf="f.startDate.errors.required">Start Date is required</div>
+        <div class="form-row">
+            <label>Price: {{ tour.price }}</label>
+            <input type="text " formControlName="price" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.price.errors }" hidden />
+            <div *ngIf="submitted && f.price.errors" class="invalid-feedback">
+                <div *ngIf="f.price.errors.required">Price is required</div>
+            </div>
         </div>
-      </div>
-      <div class="form-row">
-        <label>Children Price</label>
-        <input
-          type="text "
-          formControlName="childrenPrice"
-          class="form-control"
-          [ngClass]="{ 'is-invalid': submitted && f.childrenPrice.errors }"
-        />
-        <div
-          *ngIf="submitted && f.childrenPrice.errors"
-          class="invalid-feedback"
-        >
-          <div *ngIf="f.childrenPrice.errors.required">
-            Children Price is required
-          </div>
+        <div class="newspaper">
+            <div class="form-row">
+                <label>Info Hotel</label>
+                <input type="text " formControlName="infoHotel" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.infoHotel.errors }" />
+                <div *ngIf="submitted && f.infoHotel.errors" class="invalid-feedback">
+                    <div *ngIf="f.infoHotel.errors.required">Info Hotel is required</div>
+                </div>
+            </div>
+            <div class="form-row">
+                <label>Start Date</label>
+                <input type="date" formControlName="startDate" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.startDate.errors }" />
+                <div *ngIf="submitted && f.startDate.errors" class="invalid-feedback">
+                    <div *ngIf="f.startDate.errors.required">Start Date is required</div>
+                </div>
+            </div>
+            <div class="form-row">
+                <label>Children Price</label>
+                <input type="text " formControlName="childrenPrice" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.childrenPrice.errors }" />
+                <div *ngIf="submitted && f.childrenPrice.errors" class="invalid-feedback">
+                    <div *ngIf="f.childrenPrice.errors.required">
+                        Children Price is required
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <label>Info Vehicle</label>
+                <input type="text " formControlName="infoVehicle" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.infoVehicle.errors }" />
+                <div *ngIf="submitted && f.infoVehicle.errors" class="invalid-feedback">
+                    <div *ngIf="f.infoVehicle.errors.required">
+                        Info Vehicle is required
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <label>End Date</label>
+                <input type="date" formControlName="endDate" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.endDate.errors }" />
+                <div *ngIf="submitted && f.endDate.errors" class="invalid-feedback">
+                    <div *ngIf="f.endDate.errors.required">End Date is required</div>
+                </div>
+            </div>
+            <div class="form-row">
+                <label>Baby Price</label>
+                <input type="text " formControlName="babyPrice" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.babyPrice.errors }" />
+                <div *ngIf="submitted && f.babyPrice.errors" class="invalid-feedback">
+                    <div *ngIf="f.babyPrice.errors.required">Baby Price is required</div>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="form-row">
-        <label>Info Vehicle</label>
-        <input
-          type="text "
-          formControlName="infoVehicle"
-          class="form-control"
-          [ngClass]="{ 'is-invalid': submitted && f.infoVehicle.errors }"
-        />
-        <div *ngIf="submitted && f.infoVehicle.errors" class="invalid-feedback">
-          <div *ngIf="f.infoVehicle.errors.required">
-            Info Vehicle is required
-          </div>
-        </div>
-      </div>
-      <div class="form-row">
-        <label>End Date</label>
-        <input
-          type="date"
-          formControlName="endDate"
-          class="form-control"
-          [ngClass]="{ 'is-invalid': submitted && f.endDate.errors }"
-        />
-        <div *ngIf="submitted && f.endDate.errors" class="invalid-feedback">
-          <div *ngIf="f.endDate.errors.required">End Date is required</div>
-        </div>
-      </div>
-      <div class="form-row">
-        <label>Baby Price</label>
-        <input
-          type="text "
-          formControlName="babyPrice"
-          class="form-control"
-          [ngClass]="{ 'is-invalid': submitted && f.babyPrice.errors }"
-        />
-        <div *ngIf="submitted && f.babyPrice.errors" class="invalid-feedback">
-          <div *ngIf="f.babyPrice.errors.required">Baby Price is required</div>
-        </div>
-      </div>
-    </div>
-    <div class="form-row">
-      <button [disabled]="loading" class="btn btn-success">
+        <div class="form-row">
+            <button [disabled]="loading" class="btn btn-success">
         <span
           *ngIf="loading"
           class="spinner-border spinner-border-sm mr-1"
         ></span>
         Add Trip
       </button>
-    </div>
-  </form>
+        </div>
+    </form>
 </div>
 <!-- Contenedor Principal -->
 <div class="comments-container">
-  <ul id="comments-list" class="comments-list">
-    <li>
-      <div class="comment-main-level">
-        <!-- Avatar -->
-        <div class="comment-avatar">
-          <img
-            src="http://i9.photobucket.com/albums/a88/creaticode/avatar_1_zps8e1c80cd.jpg"
-            alt=""
-          />
-        </div>
-        <!-- Contenedor del Comentario -->
-        <div class="comment-box">
-          <div class="comment-head">
-            <h6 class="comment-name by-author">
-              <a href="http://creaticode.com/blog">Agustin Ortiz</a>
+    <ul id="comments-list" class="comments-list">
+        <li>
+            <div class="comment-main-level">
+                <!-- Avatar -->
+                <div class="comment-avatar">
+                    <img src="http://i9.photobucket.com/albums/a88/creaticode/avatar_1_zps8e1c80cd.jpg" alt="" />
+                </div>
+                <!-- Contenedor del Comentario -->
+                <div class="comment-box">
+                    <div class="comment-head">
+                        <h6 class="comment-name by-author">
+                            <a href="http://creaticode.com/blog">Agustin Ortiz</a>
+                        </h6>
+                        <span>hace 20 minutos</span>
+                        <i class="fa fa-reply"></i>
+                        <i class="fa fa-heart"></i>
+                    </div>
+                    <div class="comment-content">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit omnis animi et iure laudantium vitae, praesentium optio, sapiente distinctio illo?
+                    </div>
+                </div>
+            </div>
+            <!-- Respuestas de los comentarios -->
+            <ul class="comments-list reply-list">
+                <li>
+                    <!-- Avatar -->
+                    <div class="comment-avatar">
+                        <img src="http://i9.photobucket.com/albums/a88/creaticode/avatar_2_zps7de12f8b.jpg" alt="" />
+                    </div>
+                    <!-- Contenedor del Comentario -->
+                    <div class="comment-box">
+                        <div class="comment-head">
+                            <h6 class="comment-name">
+                                <a href="http://creaticode.com/blog">Lorena Rojero</a>
                             </h6>
-                            <span>hace 20 minutos</span>
+                            <span>hace 10 minutos</span>
                             <i class="fa fa-reply"></i>
                             <i class="fa fa-heart"></i>
-        </div>
-        <div class="comment-content">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit omnis animi et iure laudantium vitae, praesentium optio, sapiente distinctio illo?
-        </div>
-    </div>
-</div>
-<!-- Respuestas de los comentarios -->
-<ul class="comments-list reply-list">
-    <li>
-        <!-- Avatar -->
-        <div class="comment-avatar">
-            <img src="http://i9.photobucket.com/albums/a88/creaticode/avatar_2_zps7de12f8b.jpg" alt="" />
-        </div>
-        <!-- Contenedor del Comentario -->
-        <div class="comment-box">
-            <div class="comment-head">
-                <h6 class="comment-name">
-                    <a href="http://creaticode.com/blog">Lorena Rojero</a>
-                </h6>
-                <span>hace 10 minutos</span>
-                <i class="fa fa-reply"></i>
-                <i class="fa fa-heart"></i>
-            </div>
-            <div class="comment-content">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit omnis animi et iure laudantium vitae, praesentium optio, sapiente distinctio illo?
-            </div>
-        </div>
-    </li>
+                        </div>
+                        <div class="comment-content">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit omnis animi et iure laudantium vitae, praesentium optio, sapiente distinctio illo?
+                        </div>
+                    </div>
+                </li>
 
-    <li>
-        <!-- Avatar -->
-        <div class="comment-avatar">
-            <img src="http://i9.photobucket.com/albums/a88/creaticode/avatar_1_zps8e1c80cd.jpg" alt="" />
-        </div>
-        <!-- Contenedor del Comentario -->
-        <div class="comment-box">
-            <div class="comment-head">
-                <h6 class="comment-name by-author">
-                    <a href="http://creaticode.com/blog">Agustin Ortiz</a>
-                </h6>
-                <span>hace 10 minutos</span>
-                <i class="fa fa-reply"></i>
-                <i class="fa fa-heart"></i>
-            </div>
-            <div class="comment-content">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit omnis animi et iure laudantium vitae, praesentium optio, sapiente distinctio illo?
-            </div>
-        </div>
-    </li>
-</ul>
-</li>
+                <li>
+                    <!-- Avatar -->
+                    <div class="comment-avatar">
+                        <img src="http://i9.photobucket.com/albums/a88/creaticode/avatar_1_zps8e1c80cd.jpg" alt="" />
+                    </div>
+                    <!-- Contenedor del Comentario -->
+                    <div class="comment-box">
+                        <div class="comment-head">
+                            <h6 class="comment-name by-author">
+                                <a href="http://creaticode.com/blog">Agustin Ortiz</a>
+                            </h6>
+                            <span>hace 10 minutos</span>
+                            <i class="fa fa-reply"></i>
+                            <i class="fa fa-heart"></i>
+                        </div>
+                        <div class="comment-content">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit omnis animi et iure laudantium vitae, praesentium optio, sapiente distinctio illo?
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </li>
 
-<li>
-    <div class="comment-main-level">
-        <!-- Avatar -->
-        <div class="comment-avatar">
-            <img src="http://i9.photobucket.com/albums/a88/creaticode/avatar_2_zps7de12f8b.jpg" alt="" />
-        </div>
-        <!-- Contenedor del Comentario -->
-        <div class="comment-box">
-            <div class="comment-head">
-                <h6 class="comment-name">
-                    <a href="http://creaticode.com/blog">Lorena Rojero</a>
-                </h6>
-                <span>hace 10 minutos</span>
-                <i class="fa fa-reply"></i>
-                <i class="fa fa-heart"></i>
+        <li>
+            <div class="comment-main-level">
+                <!-- Avatar -->
+                <div class="comment-avatar">
+                    <img src="http://i9.photobucket.com/albums/a88/creaticode/avatar_2_zps7de12f8b.jpg" alt="" />
+                </div>
+                <!-- Contenedor del Comentario -->
+                <div class="comment-box">
+                    <div class="comment-head">
+                        <h6 class="comment-name">
+                            <a href="http://creaticode.com/blog">Lorena Rojero</a>
+                        </h6>
+                        <span>hace 10 minutos</span>
+                        <i class="fa fa-reply"></i>
+                        <i class="fa fa-heart"></i>
+                    </div>
+                    <div class="comment-content">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit omnis animi et iure laudantium vitae, praesentium optio, sapiente distinctio illo?
+                    </div>
+                </div>
             </div>
-            <div class="comment-content">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit omnis animi et iure laudantium vitae, praesentium optio, sapiente distinctio illo?
-            </div>
-        </div>
-    </div>
-</li>
-</ul>
+        </li>
+    </ul>
 </div>

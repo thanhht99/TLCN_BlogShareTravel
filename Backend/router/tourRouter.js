@@ -264,12 +264,12 @@ router.post('/registerTrip', async(req, res) => {
             isConfirm: false
         });
         let soLuongDangKi = valueRegisterTrip.adults + valueRegisterTrip.children + valueRegisterTrip.baby;
-        console.log(testTrip.theRemainingAmount)
-        console.log(soLuongDangKi)
+        // console.log(testTrip.theRemainingAmount)
+        // console.log(soLuongDangKi)
         if (testTrip.theRemainingAmount >= soLuongDangKi) {
             valueRegisterTrip.save()
                 .then((data) => {
-                    console.log(data);
+                    // console.log(data);
                     Trip.update({
                         theRemainingAmount: testTrip.theRemainingAmount - soLuongDangKi
                     }, { where: { id: testTrip.id } });

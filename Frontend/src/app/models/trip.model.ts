@@ -1,4 +1,5 @@
 export class Trip {
+    id: Number;
     infoHotel: String;
     infoVehicle: String;
     startDate: String;
@@ -10,5 +11,6 @@ export class Trip {
     theRemainingAmount: Number;   
     isStatus: Boolean
     tourId: Number;
-    tourGuideId: Number;
+    tourGuideId: Number;    
+    Tour: Object;
 }

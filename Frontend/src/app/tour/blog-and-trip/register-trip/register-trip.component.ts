@@ -95,8 +95,13 @@ export class RegisterTripComponent implements OnInit {
       
     this.registerTrip = this.form.value;
     this.registerTrip.accountId = this.account.id;
+    let ma = String(this.trip.tourId) + String(this.tour.tourGuideId) + String(this.trip.id) + String(this.trip.tourGuideId);
+    // console.log('///////////////////////////');
+    // console.log(ma);
     this.registerTrip.tripId = Number(this.id);
-    
+    this.registerTrip.maTour = Number(ma);
+    // console.log('--------------------------')
+    // console.log(this.registerTrip.maTour);
     // console.log('----------this.registerTrip----------');
     // console.log(this.registerTrip);
 
@@ -121,7 +126,7 @@ export class RegisterTripComponent implements OnInit {
                   // console.log("------------------------------------");
                   // console.log(registerTrip);
                   // this.alertService.success('Register successful. Please wait for confirmation from the trip organizer!', { keepAfterRouteChange: true });                                                                                                                                                         
-                  this.router.navigate(['/tour/list'], { relativeTo: this.route });
+                  this.router.navigate([`/customer/info/${this.account.id}/listRegisterTrip` ], { relativeTo: this.route });
                 },
                 error: er => {
                   // console.log(er);

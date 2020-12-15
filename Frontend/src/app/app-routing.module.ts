@@ -19,6 +19,7 @@ const routes: Routes = [
   { path: 'tourguide', loadChildren: tourguideModule, canActivate: [AuthGuard] },
 
   { path: 'tour', loadChildren: tourModule},
+  
   {path:'edittour',component: CustomerEditComponent},
   { path: 'error', component: ErrorComponent},
 

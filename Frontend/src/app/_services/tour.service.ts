@@ -26,6 +26,9 @@ export class TourService {
   private blogSubject: BehaviorSubject<Blog>;
   public blog: Observable<Blog>;
 
+  private registertripChuaDuyetSubject: BehaviorSubject<RegisterTrip>;
+  public registertripChuaDuyet: Observable<RegisterTrip>;
+
   constructor(private webRequestService: WebRequestService, 
               private router: Router, 
               private http: HttpClient) 
@@ -43,6 +46,9 @@ export class TourService {
     this.blogSubject = new BehaviorSubject<Blog>(JSON.parse(localStorage.getItem('blog')));
     this.blog = this.blogSubject.asObservable();
 
+    this.registertripChuaDuyetSubject = new BehaviorSubject<RegisterTrip>(JSON.parse(localStorage.getItem('registertripChuaDuyet')));
+    this.registertripChuaDuyet = this.registertripChuaDuyetSubject.asObservable();
+
   }
 
   public get imageForTourValue(): Tour {
@@ -55,6 +61,10 @@ export class TourService {
 
   public get tripValue(): Trip {
     return this.tripSubject.value;
+  }
+
+  public get registertripChuaDuyetValue(): RegisterTrip {
+    return this.registertripChuaDuyetSubject.value;
   }
 
   listTour() {
@@ -74,6 +84,15 @@ export class TourService {
           this.tripSubject.next(trip);
           //console.log(trip);
           return trip; 
+      }));
+  }
+
+  listTripChuaDuyet(id: number) {
+    return this.http.get<RegisterTrip>(`${this.webRequestService.ROOT_URL}/registerTrip/listChuaDuyet/${id}`)
+      .pipe(map(registertripChuaDuyet => {
+          localStorage.setItem('registertripChuaDuyet', JSON.stringify(registertripChuaDuyet));
+          this.registertripChuaDuyetSubject.next(registertripChuaDuyet);
+          return registertripChuaDuyet; 
       }));
   }
 
@@ -121,5 +140,7 @@ export class TourService {
   registerTrip(registerTrip: RegisterTrip){
     return this.webRequestService.post('tour/registerTrip', registerTrip);
   }
+
+
 
 }
