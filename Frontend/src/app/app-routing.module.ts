@@ -5,6 +5,7 @@ import { AuthGuard } from './_helpers';
 import { HomeComponent } from './home/home.component';
 import { ErrorComponent, FooterComponent, HeaderComponent } from './_components';
 import {CustomerEditComponent} from './customer-edit/customer-edit.component';
+import {DetailRegisterTripComponent} from './detail-register-trip/detail-register-trip.component';
 const customerModule = () => import('./customer/customer.module').then(x => x.CustomerModule);
 const tourguideModule = () => import('./tour-guide/tour-guide.module').then(x => x.TourGuideModule);
 const accountModule = () => import('./account/account.module').then(x => x.AccountModule);
@@ -19,7 +20,7 @@ const routes: Routes = [
   { path: 'tourguide', loadChildren: tourguideModule, canActivate: [AuthGuard] },
 
   { path: 'tour', loadChildren: tourModule},
-  
+  {path :'detail', component:DetailRegisterTripComponent},
   {path:'edittour',component: CustomerEditComponent},
   { path: 'error', component: ErrorComponent},
 

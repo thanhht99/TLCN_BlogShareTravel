@@ -14,7 +14,7 @@ export class CustomerInfoComponent implements OnInit {
   customer: Customer;
   account: Account;
   id: number;
-  
+ 
   constructor(private loginService: LoginService, 
               private router: Router,
               private route: ActivatedRoute) 
