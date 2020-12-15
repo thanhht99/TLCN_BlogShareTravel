@@ -7,5 +7,5 @@ export class Customer {
     phone: String;    
     avatarPath: Text;
     isStatus: Boolean;
-    accountId: String;
+    accountId: Number;
 }

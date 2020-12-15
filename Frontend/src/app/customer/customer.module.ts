@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { CustomerRoutingModule } from './customer-routing.module';
 import { LayoutComponent } from './layout.component';
 import { CustomerInfoComponent } from './customer-info/customer-info.component';
+import { CustomerEditComponent } from './customer-edit/customer-edit.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { CustomerInfoComponent } from './customer-info/customer-info.component';
   ],
   declarations: [
     LayoutComponent,
-    CustomerInfoComponent
+    CustomerInfoComponent,
+    CustomerEditComponent
   ]
 })
 export class CustomerModule { }

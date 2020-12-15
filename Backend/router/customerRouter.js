@@ -22,36 +22,33 @@ router.use(bodyParser.json());
 
 
 // info 
-router.get('/info/:id', async (req, res) => {
+router.get('/info/:id', async(req, res) => {
     const idneed = parseInt(req.params.id, 10);
-    const testuser = await Customer.findOne({where:{accountId: idneed}});
-    if (!testuser){
+    const testuser = await Customer.findOne({ where: { accountId: idneed } });
+    if (!testuser) {
         res.send(404);
-    }
-    else {
+    } else {
         res.send(testuser);
-    } 
+    }
 })
 
 // update
-router.patch('/info/update/:id', async (req, res) => {
-    const idneed = parseInt(req.params.id, 10);
-    const testuser = await Customer.findOne({where:{accountId: idneed}});
-    if (!testuser){
+router.post('/info/update', async(req, res) => {
+    console.log(req.body)
+    const idneed = req.body.accountId;
+    const testuser = await Customer.findOne({ where: { accountId: idneed } });
+    if (!testuser) {
         res.send(404);
-    }
-    else {
-        Customer.update(
-            {identity: req.body.identity,
-             address: req.body.address,
-             phone: req.body.phone,
-             avatarPath: req.body.avatarPath
-            },
-            {where: {accountId : idneed}}
-        ).then(()=>{
-            res.send(200);
+    } else {
+        await Customer.update({
+            identity: req.body.cmnd,
+            address: req.body.address,
+            phone: req.body.phone,
+            email: req.body.email
+        }, { where: { accountId: idneed } }).then((data) => {
+            res.json(data);
         })
-    } 
+    }
 })
 
 

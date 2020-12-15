@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
-import { LoginService } from '../../_services/login.service';
+import { LoginService, CustomerService } from '../../_services';
 import { Customer,Account } from '../../models';
 
 @Component({
@@ -16,11 +16,12 @@ export class CustomerInfoComponent implements OnInit {
   id: number;
  
   constructor(private loginService: LoginService, 
+              private customerService: CustomerService, 
               private router: Router,
               private route: ActivatedRoute) 
   {
-      this.customer = this.loginService.customerValue;
-      this.account = this.loginService.accountValue;
+    this.customer = this.customerService.customerValue;
+    this.account = this.loginService.accountValue;
       // console.log(this.account)
   }
 

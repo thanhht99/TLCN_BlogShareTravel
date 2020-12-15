@@ -1,0 +1,64 @@
+<div class="classv" *ngIf="account.isCustomer">
+    <div class="card border-primary">
+        <h1 class="card-header">Chỉnh sửa thông tin</h1>
+        <div class="card-body">
+            <form [formGroup]="form" (ngSubmit)="edit()">
+                <div class="form-row">
+                    <label>CMND/CCCD</label>
+                    <input type="text" formControlName="cmnd" class="form-control" [ngClass]="{
+              'is-invalid': submitted && f.cmnd.errors
+            }" />
+                    <div *ngIf="submitted && f.cmnd.errors" class="invalid-feedback">
+                        <div *ngIf="f.cmnd.errors.required">CMND/CCCD thì bắt buộc</div>
+                        <div *ngIf="f.cmnd.errors.minlength">
+                            CMND/CCCD từ 9 đến 12 ký tự
+                        </div>
+                        <div *ngIf="f.cmnd.errors.maxlength">
+                            CMND/CCCD từ 9 đến 12 ký tự
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <label>Địa Chỉ</label>
+                    <input type="text" formControlName="address" class="form-control" [ngClass]="{
+              'is-invalid': submitted && f.address.errors
+            }" />
+                    <div *ngIf="submitted && f.address.errors" class="invalid-feedback">
+                        <div *ngIf="f.address.errors.required">Địa chỉ thì bắt buộc</div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <label>SĐT</label>
+                    <input type="text" formControlName="phone" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.phone.errors }" />
+                    <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
+                        <div *ngIf="f.phone.errors.required">SĐT thì bắt buộc</div>
+                        <div *ngIf="f.phone.errors.minlength">SĐT phải có 10 ký tự</div>
+                        <div *ngIf="f.phone.errors.maxlength">SĐT phải có 10 ký tự</div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <label>Email</label>
+                    <input type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+                    <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                        <div *ngIf="f.email.errors.required">Email thì bắt buộc</div>
+                        <div *ngIf="f.email.errors.email">
+                            Email phải là một địa chỉ email hợp lệ
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <button class="btn btn-primary">
+            <span
+              *ngIf="loading"
+              class="spinner-border spinner-border-sm mr-1"
+            ></span>
+            Lưu thông tin
+          </button>
+                    <a routerLink="/customer/info/{{ account.id }}" class="btn btn-danger">Hủy</a
+          >
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
