@@ -28,19 +28,20 @@
             </div>
         </div>
     </div>
-    <div class="btnn">
-        <div class="btn btn-primary">
-            <h5>
-                <b routerLink="/customer/info/{{ account.id }}/update"> Cập Nhật </b>
-            </h5>
+    <div class="container btnn">
+        <div type="button" class="btn btn-primary">Cập Nhật</div>
+    
+        <div  type="button" class="btn btn-info" >
+                <b routerLink="/customer/info/{{ account.id }}/update"> Sửa </b>
         </div>
+    
     </div>
 </div>
 
-<div type="button" class="btn btn-danger" style="width: 250px; height: 50px; margin-left: 9px">
-    <h5>
+<button type="button" class="btn btn-primary" style=" margin-left: 9px">
+    
         <b routerLink="/customer/info/{{ account.id }}/listRegisterTrip">
       Danh Sách Chuyến Đi
     </b>
-    </h5>
-</div>
+    
+</button>
