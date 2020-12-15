@@ -28,7 +28,7 @@ router.get('/info/:id', async(req, res) => {
     if (!testuser) {
         res.send(404);
     } else {
-        res.send(testuser);
+        res.json(testuser);
     }
 })
 

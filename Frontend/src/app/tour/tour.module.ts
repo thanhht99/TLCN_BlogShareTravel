@@ -10,6 +10,8 @@ import { AddTourComponent } from './add-tour/add-tour.component';
 import { AddImageComponent } from './add-image/add-image.component';
 
 import { ErrorComponent } from '../_components';
+import { JwPaginationModule } from 'jw-angular-pagination';
+
 
 @NgModule({
   declarations: [
@@ -21,7 +23,8 @@ import { ErrorComponent } from '../_components';
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    TourRoutingModule
+    TourRoutingModule,
+    JwPaginationModule
   ],
   exports: [
     LayoutComponent,
