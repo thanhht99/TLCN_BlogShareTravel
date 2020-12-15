@@ -13,7 +13,7 @@ export class CustomerInfoComponent implements OnInit {
 
   customer: Customer;
   account: Account;
-  id: string;
+  id: number;
   
   constructor(private loginService: LoginService, 
               private router: Router,
@@ -25,7 +25,7 @@ export class CustomerInfoComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.id = this.route.snapshot.params['id'];
+    // this.id = this.route.snapshot.params['id'];
 
     //this.customer = this.loginService.infoCustomer(this.id);
   }
