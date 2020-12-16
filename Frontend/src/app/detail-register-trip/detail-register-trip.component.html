@@ -1,16 +1,21 @@
 <div class="classdetails" *ngIf="account">
     <div class="card border-primary">
-        <h1 class="card-header">Chi Tiết Đăng Ký Chuyến Đi</h1>
+        <h1 class="card-header">{{ detail.Trip.Tour.name }}</h1>
         <div class="card-body">
             <form class="row g-3">
                 <div class="col-md-6">
-                    <label>Tên Khách Hàng: </label>
-                    <p class="form-register-trip">
-                        {{ detail.nameRegister }}
-                    </p>
+                    <label><strong>Mã Tour: </strong>{{ detail.maTour }}</label>
                 </div>
                 <div class="col-md-6">
-                    <label><strong>Giới Tính: </strong>{{ detail.gender }}</label>
+                    <label><strong>Phương Tiện: </strong>{{ detail.Trip.infoVehicle }}</label>
+                </div>
+
+                <div class="col-md-6">
+                    <label><strong>Tên Khách Hàng: </strong>{{ detail.nameRegister }}</label
+          >
+        </div>
+        <div class="col-md-6">
+          <label><strong>Giới Tính: </strong>{{ detail.gender }}</label>
                 </div>
                 <div class="col-md-6">
                     <label><strong>CMND/CCCD: </strong> {{ detail.identity }}</label>
@@ -22,63 +27,56 @@
                     <label><strong>SĐT: </strong>{{ detail.phone }}</label>
                 </div>
                 <div class="col-md-6">
-                    <label>Địa Chỉ:</label>
+                    <label><strong>Địa Chỉ: </strong>{{ detail.address }}</label>
+                </div>
+
+                <div class="col-md-6">
+                    <label><strong>Điểm Khởi Hành: </strong>{{ detail.Trip.Tour.departureLocation }}</label>
                 </div>
                 <div class="col-md-6">
-                    <label>Người lớn:</label>
+                    <label><strong>Điểm Đến: </strong>{{ detail.Trip.Tour.destination }}</label>
                 </div>
                 <div class="col-md-6">
-                    <label>Trẻ Con:</label>
+                    <label><strong>Ngày Đi: </strong>{{ detail.Trip.startDate }}</label>
                 </div>
                 <div class="col-md-6">
-                    <label>Em Bé:</label>
+                    <label><strong>Ngày Về: </strong>{{ detail.Trip.endDate }}</label>
                 </div>
                 <div class="col-md-6">
-                    <label>Mã Tour:</label>
+                    <label><strong>Thời Gian: </strong>{{ detail.Trip.Tour.time }}</label>
                 </div>
                 <div class="col-md-6">
-                    <label>Tên Tour:</label>
+                    <label><strong>Khách Sạn: </strong>{{ detail.Trip.infoHotel }}</label>
+                </div>
+
+                <div class="col-md-6">
+                    <label><strong>Giá người lớn: </strong>{{ detail.Trip.price }} VNĐ</label>
                 </div>
                 <div class="col-md-6">
-                    <label>Điểm Bắt Đầu:</label>
+                    <label><strong>Số Lượng: </strong>{{ detail.adults }}</label>
                 </div>
                 <div class="col-md-6">
-                    <label>Điểm Kết Thúc:</label>
+                    <label><strong>Giá trẻ em: </strong>{{ detail.Trip.childrenPrice }} VNĐ</label>
                 </div>
                 <div class="col-md-6">
-                    <label>Giá Tour:</label>
+                    <label><strong>Số Lượng: </strong>{{ detail.children }}</label>
                 </div>
                 <div class="col-md-6">
-                    <label>Thời Gian:</label>
+                    <label><strong>Giá em bé: </strong>{{ detail.Trip.babyPrice }} VNĐ</label>
                 </div>
                 <div class="col-md-6">
-                    <label>Thông Tin Khách Sạn:</label>
+                    <label><strong>Số Lượng: </strong>{{ detail.baby }}</label>
                 </div>
+
                 <div class="col-md-6">
-                    <label>Phương Tiện:</label>
-                </div>
-                <div class="col-md-6">
-                    <label>Ngày Đi:</label>
-                </div>
-                <div class="col-md-6">
-                    <label>Ngày Về:</label>
-                </div>
-                <div class="col-md-6">
-                    <label for="priceadults ">Giá Người Lớn:</label>
-                </div>
-                <div class="col-md-6">
-                    <label for="childrenPrice ">Giá Trẻ Em:</label>
-                </div>
-                <div class="col-md-6">
-                    <label for="babyPrice ">Giá Em Bé:</label>
-                </div>
-                <div class="col-md-6">
-                    <label for="totalAmount ">Tổng Tiền:</label>
+                    <label><strong>Tổng Tiền: </strong>{{ detail.totalMoney }} VNĐ</label>
                 </div>
             </form>
             <div class="form-row">
-                <a routerLink="/customer/info/{{ account.id }}/listRegisterTrip " class="btn btn-danger">Quay lại</a
-        >
+                <div type="button" class="btn btn-danger">
+                    <b routerLink="/customer/info/{{ account.id }}/listRegisterTrip">Quay Lại</b
+          >
+        </div>
       </div>
     </div>
   </div>

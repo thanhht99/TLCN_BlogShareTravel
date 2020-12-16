@@ -14,7 +14,7 @@ router.get('/listChuaDuyet/:id', async(req, res) => {
     RegisterTrip.findAll({
         where: { isConfirm: false, accountId: idneed },
         order: [
-            ['maTour', 'ASC'] //tăng
+            ['id', 'ASC'] //tăng
         ],
         include: [{
             model: Trip,
@@ -35,7 +35,7 @@ router.get('/listDaDuyet/:id', async(req, res) => {
     RegisterTrip.findAll({
         where: { isConfirm: true, accountId: idneed },
         order: [
-            ['maTour', 'ASC'] //tăng
+            ['id', 'ASC'] //tăng
         ],
         include: [{
             model: Trip,

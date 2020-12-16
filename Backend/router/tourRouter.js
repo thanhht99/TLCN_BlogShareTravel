@@ -258,6 +258,7 @@ router.post('/registerTrip', async(req, res) => {
             children: req.body.children,
             baby: req.body.baby,
             children: req.body.children,
+            totalMoney: req.body.totalMoney,
             tripId: testTrip.id,
             accountId: testAccountId,
             maTour: req.body.maTour,

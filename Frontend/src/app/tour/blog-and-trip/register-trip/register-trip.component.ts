@@ -29,6 +29,9 @@ export class RegisterTripComponent implements OnInit {
   loading = false;
   submitted = false;
   id: number;
+  giaNguoiLon: number;
+  giaTreEm: number;
+  giaEmBe: number;
   constructor(private tourService: TourService, 
               private alertService: AlertService,
               private loginService: LoginService,
@@ -53,7 +56,12 @@ export class RegisterTripComponent implements OnInit {
     }
     // console.log("=========TRIP===========")
     // console.log(this.trip)
-
+    let a = this.trip.price.split('.').join('');
+    this.giaNguoiLon = Number(a);
+    let b = this.trip.childrenPrice.split('.').join('');
+    this.giaTreEm = Number(b);
+    let c = this.trip.babyPrice.split('.').join('');
+    this.giaEmBe = Number(c);
 
     this.tourService.tour.subscribe(a => this.tours = a);
     // console.log(this.tours)
@@ -98,10 +106,14 @@ export class RegisterTripComponent implements OnInit {
     let ma = String(this.trip.tourId) + String(this.tour.tourGuideId) + String(this.trip.id) + String(this.trip.tourGuideId);
     // console.log('///////////////////////////');
     // console.log(ma);
+
     this.registerTrip.tripId = Number(this.id);
-    this.registerTrip.maTour = Number(ma);
-    // console.log('--------------------------')
-    // console.log(this.registerTrip.maTour);
+    this.registerTrip.maTour = Number(ma); 
+    let total = Number(this.registerTrip.adults)*this.giaNguoiLon + Number(this.registerTrip.children)*this.giaTreEm + Number(this.registerTrip.baby)*this.giaEmBe;
+    let total2 = total.toLocaleString();
+    total2 = total2.split(',').join('.');
+    this.registerTrip.totalMoney = total2;
+
     // console.log('----------this.registerTrip----------');
     // console.log(this.registerTrip);
 
@@ -125,7 +137,7 @@ export class RegisterTripComponent implements OnInit {
                 next: (registerTrip: any) => {
                   // console.log("------------------------------------");
                   // console.log(registerTrip);
-                  // this.alertService.success('Register successful. Please wait for confirmation from the trip organizer!', { keepAfterRouteChange: true });                                                                                                                                                         
+                  this.alertService.success('Đăng ký thành công. Vui lòng thanh toán và chờ đợi người tổ chức chuyến đi xác nhận! (Nhấn nút cập nhật để xem chuyến đi mới đăng ký)', { keepAfterRouteChange: true });                                                                                                                                                         
                   this.router.navigate([`/customer/info/${this.account.id}/listRegisterTrip` ], { relativeTo: this.route });
                 },
                 error: er => {

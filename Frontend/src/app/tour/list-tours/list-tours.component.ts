@@ -38,10 +38,10 @@ export class ListToursComponent implements OnInit {
             });   
 
     this.tours = this.tourService.tourValue;
-    console.log("------tour-----")
-    console.log(this.tours)
-    console.log("------tours-----")
-    console.log(this.tours)
+    // console.log("------tour-----")
+    // console.log(this.tours)
+    // console.log("------tours-----")
+    // console.log(this.tours)
 
     // this.tourArray = [this.tours];
     // console.log("------tourArray-----")

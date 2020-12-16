@@ -32,7 +32,7 @@ export class DetailRegisterTripComponent implements OnInit {
     this.sub = this.route.params.subscribe(params => {
       let id = Number.parseInt(params['id']);
       this.id = id;
-      console.log(this.id)
+      // console.log(this.id)
     });
 
     this.listChuaDuyets = this.tourService.registertripChuaDuyetValue;
@@ -54,8 +54,8 @@ export class DetailRegisterTripComponent implements OnInit {
         this.detail = this.listDaDuyets[i];
       }      
     }
-    console.log('--------------detail-------------');
-    console.log(this.detail);
+    // console.log('--------------detail-------------');
+    // console.log(this.detail);
 
 
 
