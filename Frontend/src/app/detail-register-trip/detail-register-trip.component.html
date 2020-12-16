@@ -4,77 +4,80 @@
         <div class="card-body">
             <form class="row g-3">
                 <div class="col-md-6">
-                    <label for="nameRegister">Tên Khách Hàng: </label>
+                    <label>Tên Khách Hàng: </label>
+                    <p class="form-register-trip">
+                        {{ detail.nameRegister }}
+                    </p>
                 </div>
                 <div class="col-md-6">
-                    <label for="gender">Giới Tính:</label>
+                    <label><strong>Giới Tính: </strong>{{ detail.gender }}</label>
                 </div>
                 <div class="col-md-6">
-                    <label for="identity">CMND/CCCD:</label>
+                    <label><strong>CMND/CCCD: </strong> {{ detail.identity }}</label>
                 </div>
                 <div class="col-md-6">
-                    <label for="email">Email:</label>
+                    <label><strong>Email: </strong> {{ detail.email }}</label>
                 </div>
                 <div class="col-md-6">
-                    <label for="phone">SĐT:</label>
+                    <label><strong>SĐT: </strong>{{ detail.phone }}</label>
                 </div>
                 <div class="col-md-6">
-                    <label for="address">Địa Chỉ:</label>
+                    <label>Địa Chỉ:</label>
                 </div>
                 <div class="col-md-6">
-                    <label for="adults">Người lớn:</label>
+                    <label>Người lớn:</label>
                 </div>
                 <div class="col-md-6">
-                    <label for="children">Trẻ Con:</label>
+                    <label>Trẻ Con:</label>
                 </div>
                 <div class="col-md-6">
-                    <label for="baby">Em Bé:</label>
+                    <label>Em Bé:</label>
                 </div>
                 <div class="col-md-6">
-                    <label for="maTour">Mã Tour:</label>
+                    <label>Mã Tour:</label>
                 </div>
                 <div class="col-md-6">
-                    <label for="name">Tên Tour:</label>
+                    <label>Tên Tour:</label>
                 </div>
                 <div class="col-md-6">
-                    <label for="departureLocation">Điểm Bắt Đầu:</label>
+                    <label>Điểm Bắt Đầu:</label>
                 </div>
                 <div class="col-md-6">
-                    <label for="destination">Điểm Kết Thúc:</label>
+                    <label>Điểm Kết Thúc:</label>
                 </div>
                 <div class="col-md-6">
-                    <label for="price">Giá Tour:</label>
+                    <label>Giá Tour:</label>
                 </div>
                 <div class="col-md-6">
-                    <label for="time">Thời Gian:</label>
+                    <label>Thời Gian:</label>
                 </div>
                 <div class="col-md-6">
-                    <label for="infoHotel">Thông Tin Khách Sạn:</label>
+                    <label>Thông Tin Khách Sạn:</label>
                 </div>
                 <div class="col-md-6">
-                    <label for="infoVehicle">Phương Tiện:</label>
+                    <label>Phương Tiện:</label>
                 </div>
                 <div class="col-md-6">
-                    <label for="startDate">Ngày Đi:</label>
+                    <label>Ngày Đi:</label>
                 </div>
                 <div class="col-md-6">
-                    <label for="endDate">Ngày Về:</label>
+                    <label>Ngày Về:</label>
                 </div>
                 <div class="col-md-6">
-                    <label for="priceadults">Giá Người Lớn:</label>
+                    <label for="priceadults ">Giá Người Lớn:</label>
                 </div>
                 <div class="col-md-6">
-                    <label for="childrenPrice">Giá Trẻ Em:</label>
+                    <label for="childrenPrice ">Giá Trẻ Em:</label>
                 </div>
                 <div class="col-md-6">
-                    <label for="babyPrice">Giá Em Bé:</label>
+                    <label for="babyPrice ">Giá Em Bé:</label>
                 </div>
                 <div class="col-md-6">
-                    <label for="totalAmount">Tổng Tiền:</label>
+                    <label for="totalAmount ">Tổng Tiền:</label>
                 </div>
             </form>
             <div class="form-row">
-                <a routerLink="/customer/info/{{ account.id }}/listRegisterTrip" class="btn btn-danger">Quay lại</a
+                <a routerLink="/customer/info/{{ account.id }}/listRegisterTrip " class="btn btn-danger">Quay lại</a
         >
       </div>
     </div>

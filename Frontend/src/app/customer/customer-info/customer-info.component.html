@@ -29,19 +29,22 @@
         </div>
     </div>
     <div class="container btnn">
-        <div type="button" class="btn btn-primary">Cập Nhật</div>
-    
-        <div  type="button" class="btn btn-info" >
-                <b routerLink="/customer/info/{{ account.id }}/update"> Sửa </b>
+
+        <div type="button" class="btn btn-info">
+            <!-- <b routerLink="/customer/info/{{ account.id }}/update">  </b> -->
+
+            <b routerLink="/customer/info/{{ account.id }}" (click)="reloadPage()">Cập Nhật</b
+      >
+    </div>
+
+    <div type="button" class="btn btn-warning">
+      <b routerLink="/customer/info/{{ account.id }}/update"> Sửa </b>
         </div>
-    
     </div>
 </div>
 
-<button type="button" class="btn btn-primary" style=" margin-left: 9px">
-    
-        <b routerLink="/customer/info/{{ account.id }}/listRegisterTrip">
-      Danh Sách Chuyến Đi
-    </b>
-    
+<button type="button" class="btn btn-primary" style="margin-left: 9px">
+  <b routerLink="/customer/info/{{ account.id }}/listRegisterTrip">
+    Danh Sách Chuyến Đi
+  </b>
 </button>

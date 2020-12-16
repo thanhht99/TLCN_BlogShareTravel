@@ -1,9 +1,9 @@
 <div type="button" class="btn btn-info">
-     <b>Cập Nhật</b>
+    <b routerLink="/customer/info/{{ account.id }}/listRegisterTrip" (click)="reloadPage()">Cập Nhật</b>
 </div>
 
 <div type="button" class="btn btn-danger">
-    <b>Quay Lại</b>
+    <b routerLink="/customer/info/{{ account.id }}">Quay Lại</b>
 </div>
 <h2>Chuyến đi đã được duyệt</h2>
 <div class="row trip-row">
@@ -21,17 +21,17 @@
             </thead>
         </table>
     </div>
-    <div class="tbl-content" *ngFor="let listChuaDuyet of listChuaDuyets">
+    <div class="tbl-content" *ngFor="let listDaDuyet of listDaDuyets">
         <table cellpadding="0" cellspacing="0" border="0">
             <tbody>
                 <tr>
-                    <td>{{ listChuaDuyet.maTour }}</td>
-                    <td>{{ listChuaDuyet.Trip.startDate }}</td>
-                    <td>{{ listChuaDuyet.Trip.endDate }}</td>
-                    <td>{{ listChuaDuyet.Trip.Tour.departureLocation }}</td>
-                    <td>{{ listChuaDuyet.Trip.Tour.destination }}</td>
+                    <td>{{ listDaDuyet.maTour }}</td>
+                    <td>{{ listDaDuyet.Trip.startDate }}</td>
+                    <td>{{ listDaDuyet.Trip.endDate }}</td>
+                    <td>{{ listDaDuyet.Trip.Tour.departureLocation }}</td>
+                    <td>{{ listDaDuyet.Trip.Tour.destination }}</td>
                     <td>
-                        <a routerLink="/customer/info/{{ account.id }}/registerTrip/{{ listChuaDuyet.id }}"> Chi tiết </a>
+                        <a routerLink="/customer/info/{{ account.id }}/registerTrip/{{ listDaDuyet.id }}"> Chi tiết </a>
                     </td>
                 </tr>
             </tbody>

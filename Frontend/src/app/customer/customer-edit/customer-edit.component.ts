@@ -42,8 +42,8 @@ export class CustomerEditComponent implements OnInit {
       this.customerService.infoCustomer(this.id)
           .pipe(first())
           .subscribe(lists => {
-            console.log('--------------lists-------------');
-            console.log(lists);
+            // console.log('--------------lists-------------');
+            // console.log(lists);
             }
           );         
     });
@@ -64,7 +64,7 @@ export class CustomerEditComponent implements OnInit {
       phone: [this.customer.phone, [Validators.required, Validators.maxLength(10), Validators.minLength(10)]],
     });
 
-    this.id = this.route.snapshot.params['id'];
+    // this.id = this.route.snapshot.params['id'];
     // console.log(this.id)
   }
 
@@ -80,14 +80,14 @@ export class CustomerEditComponent implements OnInit {
 
     this.customer = this.form.value;
     this.customer.accountId = Number(this.id);
-    console.log(this.customer);
+    // console.log(this.customer);
     this.customerService.updateCustomer(this.customer)
                             .pipe(first())
                                   .subscribe({
                                       next: (data) => {
-                                          this.alertService.success('Cập nhật thành công. Vui lòng nhấn nút cập nhật để xem thông tin vừa cập nhật!', { keepAfterRouteChange: true });
-                                          // console.log(data);
-                                          this.router.navigate([`/customer/info/${this.account.id}`]);
+                                        this.router.navigate([`/customer/info/${this.account.id}`]);
+                                        this.alertService.success('Cập nhật thành công. Vui lòng nhấn nút cập nhật để xem thông tin vừa cập nhật!', { keepAfterRouteChange: true });
+                                        // console.log(data);
                                       },
                                       error: error => {
                                           this.alertService.error('Cập nhật thất bại.!', { keepAfterRouteChange: true });

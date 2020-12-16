@@ -23,12 +23,32 @@ router.get('/listChuaDuyet/:id', async(req, res) => {
             }]
         }]
     }).then((registertrips) => {
-        console.log(registertrips);
+        // console.log(registertrips);
         res.json(registertrips);
     }).catch((err) => {
         res.send(err);
     });
 })
 
+router.get('/listDaDuyet/:id', async(req, res) => {
+    const idneed = parseInt(req.params.id, 10);
+    RegisterTrip.findAll({
+        where: { isConfirm: true, accountId: idneed },
+        order: [
+            ['maTour', 'ASC'] //tăng
+        ],
+        include: [{
+            model: Trip,
+            include: [{
+                model: Tour
+            }]
+        }]
+    }).then((registertrips) => {
+        // console.log(registertrips);
+        res.json(registertrips);
+    }).catch((err) => {
+        res.send(err);
+    });
+})
 
 module.exports = router;

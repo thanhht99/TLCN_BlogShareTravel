@@ -23,6 +23,7 @@ export class ListRegisterTripComponent implements OnInit {
   tourGuide: TourGuide;
   customer: Customer;
   listChuaDuyets: RegisterTrip;
+  listDaDuyets: RegisterTrip;
   id: number;
   sub: any;
   constructor(private tourService: TourService, 
@@ -40,29 +41,45 @@ export class ListRegisterTripComponent implements OnInit {
     // console.log("--------------TOURGUIDE---------------")
     // console.log(this.tourGuide)
     this.account = this.loginService.accountValue;
-    console.log("--------------account---------------")
-    console.log(this.account)
+    // console.log("--------------account---------------")
+    // console.log(this.account)
 
     this.sub = this.route.params.subscribe(params => {
       let id = Number.parseInt(params['id']);
       this.id = id;
-      console.log(this.id)
+      // console.log(this.id)
       this.tourService.listTripChuaDuyet(this.id)
           .pipe(first())
           .subscribe(lists => {
             // console.log('--------------lists-------------');
             // console.log(lists);
             }
-          );         
+          );    
+
+      this.tourService.listTripDaDuyet(this.id)
+          .pipe(first())
+          .subscribe(lists => {
+            // console.log('--------------lists-------------');
+            // console.log(lists);
+            }
+          );       
     }); 
     this.listChuaDuyets = this.tourService.registertripChuaDuyetValue;
-    console.log('--------------this.listChuaDuyet-------------');
-    console.log(this.listChuaDuyets);
+    // console.log('--------------listChuaDuyet-------------');
+    // console.log(this.listChuaDuyets);
+
+    this.listDaDuyets = this.tourService.registertripDaDuyetValue;
+    // console.log('--------------listDaDuyets-------------');
+    // console.log(this.listDaDuyets);
 
   }
 
   ngOnInit(): void {
 
+  }
+
+  reloadPage(){
+    window.location.reload();
   }
 
 }
