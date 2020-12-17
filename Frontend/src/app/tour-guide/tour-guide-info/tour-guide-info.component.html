@@ -1,6 +1,6 @@
 <div class="card-wrapper">
     <div class="title">
-        <h1>Tour Guide Info</h1>
+        <h1>Thông Tin Hướng Dẫn Viên</h1>
     </div>
     <div class="img-and-name">
         <div class="image-place">
@@ -12,16 +12,16 @@
             </div>
             <br/>
 
-            <div class="job-description">Gender: {{tourguide.gender}}</div>
-            <div class="job-description">Identity: {{tourguide.identity}}</div>
-            <div class="job-description">Date of birth: {{tourguide.dateOfBirth}}</div>
-            <div class="job-description">Languages: {{tourguide.language}}</div>
-            <div class="job-description">Address: {{tourguide.address}}</div>
-            <div class="job-description">Number of trip: {{tourguide.tripNumber}}</div>
+            <div class="job-description">Giới Tính: {{tourguide.gender}}</div>
+            <div class="job-description">CMND/CCCD: {{tourguide.identity}}</div>
+            <div class="job-description">Ngày Sinh: {{tourguide.dateOfBirth}}</div>
+            <div class="job-description">Ngôn Ngữ:  {{tourguide.language}}</div>
+            <div class="job-description">Địa Chỉ: {{tourguide.address}}</div>
+            <div class="job-description">Số chuyến đi: {{tourguide.tripNumber}}</div>
             <div class="contacts">
                 <div class="phone-number">
                     <p>
-                        <a href="tel:{{tourguide.phone}}">Phone: {{tourguide.phone}}</a>
+                        <a href="tel:{{tourguide.phone}}">SĐT: {{tourguide.phone}}</a>
                     </p>
                 </div>
                 <div class="email">
@@ -32,4 +32,13 @@
             </div>
         </div>
     </div>
+    <div class="container btnn">
+        <div type="button" class="btn btn-info"><b>Cập Nhật</b></div>
+        <div type="button" class="btn btn-warning"><b>Sửa</b></div>
+    </div>
+
+</div>
+<div class="container">
+<button type="button" class="btn btn-primary"style ="margin-left:-5px"><b>Danh Sách Tour</b></button>
+<button type="button" class="btn btn-primary" style ="margin-left: 15px;"><b>Hướng Dẫn Chuyến Đi </b></button>
 </div>
