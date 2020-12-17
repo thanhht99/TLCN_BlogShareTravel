@@ -71,8 +71,8 @@ export class TripComponent implements OnInit {
       startDate: ['', Validators.required],
       endDate: ['', Validators.required],
       price: [this.tour.price.toString(), Validators.required],
-      childrenPrice: ['', Validators.required],
-      babyPrice: ['', Validators.required],
+      childrenPrice: [this.tour.price.toString(), Validators.required],
+      babyPrice: [0, Validators.required],
       tourId: [this.tourGuide.id.toString(), Validators.required]
     });  
     

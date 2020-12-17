@@ -6,6 +6,7 @@ import { LayoutComponent } from './layout.component';
 import { TripComponent } from './trip/trip.component';
 import { BlogComponent } from './blog/blog.component';
 import { RegisterTripComponent } from './register-trip/register-trip.component';
+import { AddBlogComponent } from './add-blog/add-blog.component';
 
 
 import { ErrorComponent } from '../../_components';
@@ -17,7 +18,7 @@ const routes: Routes = [
       path: '', component: LayoutComponent,
       children: [
         { path: ':id', component: TripComponent, canActivate: [AuthGuard]},
-
+        { path: ':id/addBlog', component: AddBlogComponent, canActivate: [AuthGuard]},
         { path: ':id/registerTrip/:id', component: RegisterTripComponent, canActivate: [AuthGuard]},
         { path: 'registerTrip/success', component: SuccessComponent, canActivate: [AuthGuard]},
 

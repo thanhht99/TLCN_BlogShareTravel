@@ -35,7 +35,7 @@ import { DetailRegisterTripComponent } from './detail-register-trip/detail-regis
     HeaderComponent,
     HomeComponent,
     ListRegisterTripComponent,
-    DetailRegisterTripComponent
+    DetailRegisterTripComponent,
   ],
   exports: [
     BrowserModule,

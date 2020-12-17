@@ -39,63 +39,69 @@
         <br /><br />
         <img class="blog-image" src="../../assets/img/noel.gif" width="50%" />
         <br /><br />
+        <div class="form-row" *ngIf="account.isTourGuide">
+            <a class="btn btn-success" style="position: absolute; top: 50%" routerLink="/tour/blog&trip/{{ tour.id }}/addBlog">Thêm Blog</a
+      >
     </div>
-    <div class="commonInfo" *ngIf="status">
-        <p>
-            <strong *ngIf="blog.day1">NGÀY&nbsp;01: {{ blog.day1 }}&nbsp;</strong>
-            <br /> {{ blog.content1 }}
-        </p>
-        <p style="text-align: center" *ngIf="blog.imagePath1">
-            <img alt=" " src="{{ blog.imagePath1 }}" style="width: 100%" />
-            <!-- <strong>Chùa Linh Phước</strong> -->
-        </p>
+    <br /><br />
+  </div>
+  <div class="commonInfo" *ngIf="status">
+    <p>
+      <strong *ngIf="blog.day1">NGÀY&nbsp;01: {{ blog.day1 }}&nbsp;</strong>
+      <br />
+      {{ blog.content1 }}
+    </p>
+    <p style="text-align: center" *ngIf="blog.imagePath1">
+      <img alt=" " src="{{ blog.imagePath1 }}" style="width: 100%" />
+      <!-- <strong>Chùa Linh Phước</strong> -->
+    </p>
 
-        <p>
-            <strong *ngIf="blog.day2">NGÀY&nbsp;02: {{ blog.day2 }}&nbsp;</strong>
-            <br />{{ blog.content2 }}
-        </p>
-        <p style="text-align: center" *ngIf="blog.imagePath2">
-            <img alt=" " src="{{ blog.imagePath2 }}" style="width: 100%" />
-        </p>
+    <p>
+      <strong *ngIf="blog.day2">NGÀY&nbsp;02: {{ blog.day2 }}&nbsp;</strong>
+      <br />{{ blog.content2 }}
+    </p>
+    <p style="text-align: center" *ngIf="blog.imagePath2">
+      <img alt=" " src="{{ blog.imagePath2 }}" style="width: 100%" />
+    </p>
 
-        <p>
-            <strong *ngIf="blog.day3">NGÀY&nbsp;03: {{ blog.day3 }}&nbsp;</strong>
-            <br />{{ blog.content3 }}
-        </p>
-        <p style="text-align: center" *ngIf="blog.imagePath3">
-            <img alt=" " src="{{ blog.imagePath3 }}" style="width: 100%" />
-        </p>
+    <p>
+      <strong *ngIf="blog.day3">NGÀY&nbsp;03: {{ blog.day3 }}&nbsp;</strong>
+      <br />{{ blog.content3 }}
+    </p>
+    <p style="text-align: center" *ngIf="blog.imagePath3">
+      <img alt=" " src="{{ blog.imagePath3 }}" style="width: 100%" />
+    </p>
 
-        <p>
-            <strong *ngIf="blog.day4">NGÀY&nbsp;04: {{ blog.day4 }}&nbsp;</strong>
-            <br />{{ blog.content4 }}
-        </p>
-        <p style="text-align: center" *ngIf="blog.imagePath4">
-            <img alt=" " src="{{ blog.imagePath4 }}" style="width: 100%" />
-        </p>
+    <p>
+      <strong *ngIf="blog.day4">NGÀY&nbsp;04: {{ blog.day4 }}&nbsp;</strong>
+      <br />{{ blog.content4 }}
+    </p>
+    <p style="text-align: center" *ngIf="blog.imagePath4">
+      <img alt=" " src="{{ blog.imagePath4 }}" style="width: 100%" />
+    </p>
 
-        <p>
-            <strong *ngIf="blog.day5">NGÀY&nbsp;05: {{ blog.day5 }}&nbsp;</strong>
-            <br />{{ blog.content5 }}
-        </p>
-        <p style="text-align: center" *ngIf="blog.imagePath5">
-            <img alt=" " src="{{ blog.imagePath5 }}" style="width: 100%" />
-        </p>
+    <p>
+      <strong *ngIf="blog.day5">NGÀY&nbsp;05: {{ blog.day5 }}&nbsp;</strong>
+      <br />{{ blog.content5 }}
+    </p>
+    <p style="text-align: center" *ngIf="blog.imagePath5">
+      <img alt=" " src="{{ blog.imagePath5 }}" style="width: 100%" />
+    </p>
 
-        <p>
-            <strong *ngIf="blog.day6">NGÀY&nbsp;06: {{ blog.day6 }}&nbsp;</strong>
-            <br />{{ blog.content6 }}
-        </p>
-        <p style="text-align: center" *ngIf="blog.imagePath6">
-            <img alt=" " src="{{ blog.imagePath6 }}" style="width: 100%" />
-        </p>
+    <p>
+      <strong *ngIf="blog.day6">NGÀY&nbsp;06: {{ blog.day6 }}&nbsp;</strong>
+      <br />{{ blog.content6 }}
+    </p>
+    <p style="text-align: center" *ngIf="blog.imagePath6">
+      <img alt=" " src="{{ blog.imagePath6 }}" style="width: 100%" />
+    </p>
 
-        <p>
-            <strong *ngIf="blog.day7">NGÀY&nbsp;07: {{ blog.day7 }}&nbsp;</strong>
-            <br />{{ blog.content7 }}
-        </p>
-        <p style="text-align: center" *ngIf="blog.imagePath7">
-            <img alt=" " src="{{ blog.imagePath7 }}" style="width: 100%" />
-        </p>
-    </div>
+    <p>
+      <strong *ngIf="blog.day7">NGÀY&nbsp;07: {{ blog.day7 }}&nbsp;</strong>
+      <br />{{ blog.content7 }}
+    </p>
+    <p style="text-align: center" *ngIf="blog.imagePath7">
+      <img alt=" " src="{{ blog.imagePath7 }}" style="width: 100%" />
+    </p>
+  </div>
 </div>

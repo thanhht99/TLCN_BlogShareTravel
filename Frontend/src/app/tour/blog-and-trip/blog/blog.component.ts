@@ -34,6 +34,8 @@ export class BlogComponent implements OnInit {
               private location: Location) 
   { 
     this.status = false;
+    this.loginService.account.subscribe(x => this.account = x);
+
     this.sub = this.route.params.subscribe(params => {
       let id = Number.parseInt(params['id']);
       this.id = id;

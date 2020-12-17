@@ -7,6 +7,7 @@ import { LayoutComponent } from './layout.component';
 
 import { TripComponent } from './trip/trip.component';
 import { BlogComponent } from './blog/blog.component';
+import { AddBlogComponent } from './add-blog/add-blog.component';
 
 import { RegisterTripComponent } from './register-trip/register-trip.component';
 
@@ -15,7 +16,8 @@ import { RegisterTripComponent } from './register-trip/register-trip.component';
     LayoutComponent,
     TripComponent,
     RegisterTripComponent,
-    BlogComponent
+    BlogComponent,
+    AddBlogComponent
   ],
   imports: [
     CommonModule,

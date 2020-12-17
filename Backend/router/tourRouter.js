@@ -225,7 +225,10 @@ router.post('/addTrip/:id', async(req, res) => {
         valueTrip.save()
             .then((data) => {
                 // console.log(data);
-                Tour.update({ amount: testTour.amount - 1 }, { where: { id: testTour.id } });
+                Tour.update({
+                    amount: testTour.amount - 1,
+                    numberTrip: testTour.numberTrip + 1
+                }, { where: { id: testTour.id } });
                 res.json(data);
             })
             .catch((error) => res.status(400).send({
