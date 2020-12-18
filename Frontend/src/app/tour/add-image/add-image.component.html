@@ -10,36 +10,36 @@
                             <form [formGroup]="form" (ngSubmit)="addImage()">
                                 <div class="newspaper">
                                     <div class="form-row">
-                                        <label for="summary ">Summary: {{ tour.summary }}</label>
+                                        <label for="summary ">Tóm Tắt: {{ tour.summary }}</label>
                                     </div>
 
                                     <div class="form-row">
-                                        <label for="price ">Price: {{ tour.price }}</label>
+                                        <label for="price ">Giá Bán: {{ tour.price }}</label>
                                     </div>
 
                                     <div class="form-row">
-                                        <label for="time ">Time: {{ tour.time }}</label>
+                                        <label for="time ">Thời Gian: {{ tour.time }}</label>
                                     </div>
 
                                     <div class="form-row">
                                         <label for="departureLocation ">
-                      Departure Location: {{ tour.departureLocation }}
+                      Địa điểm Khởi Hành: {{ tour.departureLocation }}
                     </label>
                                     </div>
 
                                     <div class="form-row">
                                         <label for="destination ">
-                      Destination: {{ tour.destination }}
+                      Nơi Đến: {{ tour.destination }}
                     </label>
                                     </div>
 
                                     <div class="form-row">
-                                        <label for="amount ">Amount: {{ tour.amount }}</label>
+                                        <label for="amount ">Số Tiền: {{ tour.amount }}</label>
                                     </div>
                                 </div>
 
                                 <div class="form-row">
-                                    <label>Select Image File</label>
+                                    <label>Chọn tệp hình ảnh</label>
                                     <div class="col-sm-12">
                                         <div>
                                             <h6 class="head-title margin-top-8"></h6>
@@ -62,7 +62,7 @@
                       *ngIf="loading"
                       class="spinner-border spinner-border-sm mr-1"
                     ></span>
-                    Update Image
+                    Cập nhật hình ảnh
                   </button>
                                 </div>
                             </form>

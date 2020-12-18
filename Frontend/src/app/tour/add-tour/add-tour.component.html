@@ -6,68 +6,68 @@
             <div class="row" class="d-flex justify-content-center align-items-center">
                 <div class="col-md-8">
                     <div class="card border-primary">
-                        <h1 class="card-header">Add New Tour</h1>
+                        <h1 class="card-header">Thêm Tour Mới</h1>
                         <div class="card-body">
                             <form [formGroup]="form" (ngSubmit)="createNewTour()">
                                 <div class="newspaper">
                                     <div class="form-row">
-                                        <label for="name">Name Tour</label>
+                                        <label for="name">Tên Tour</label>
                                         <input type="text " formControlName="name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.name.errors }" />
                                         <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
                                             <div *ngIf="f.name.errors.required">
-                                                Name Tour is required
+                                                Tên Tour là bắt buộc
                                             </div>
                                         </div>
                                     </div>
                                     <div class="form-row">
-                                        <label for="summary">Summary</label>
+                                        <label for="summary">Tóm Tắt</label>
                                         <input type="text " formControlName="summary" class="form-control" [ngClass]="{
                         'is-invalid': submitted && f.summary.errors
                       }" />
                                         <div *ngIf="submitted && f.summary.errors" class="invalid-feedback">
                                             <div *ngIf="f.summary.errors.required">
-                                                Summary is required
+                                                Tóm tắt là bắt buộc
                                             </div>
                                             <div *ngIf="f.summary.errors.maxlength">
-                                                Summary up to 100 characters
+                                               Tóm tắt tối đa 100 ký tự
                                             </div>
                                         </div>
                                     </div>
                                     <div class="form-row">
-                                        <label for="price">Price</label>
+                                        <label for="price">Giá</label>
                                         <input type="text " formControlName="price" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.price.errors }" />
                                         <div *ngIf="submitted && f.price.errors" class="invalid-feedback">
                                             <div *ngIf="f.price.errors.required">
-                                                Price is required
+                                                Giá là bắt buộc
                                             </div>
                                         </div>
                                     </div>
                                     <div class="form-row">
-                                        <label for="time">Time</label>
+                                        <label for="time">Thời Gian</label>
                                         <input type="text " formControlName="time" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.time.errors }" />
                                         <div *ngIf="submitted && f.time.errors" class="invalid-feedback">
-                                            <div *ngIf="f.time.errors.required">Time is required</div>
+                                            <div *ngIf="f.time.errors.required">Thời gian là bắt buộc</div>
                                         </div>
                                     </div>
                                     <div class="form-row">
-                                        <label for="departureLocation">Departure Location</label>
+                                        <label for="departureLocation">Địa điểm Khởi hành</label>
                                         <input type="text " formControlName="departureLocation" class="form-control" [ngClass]="{
                         'is-invalid': submitted && f.departureLocation.errors
                       }" />
                                         <div *ngIf="submitted && f.departureLocation.errors" class="invalid-feedback">
                                             <div *ngIf="f.departureLocation.errors.required">
-                                                Departure Location is required
+                                                Địa điểm Khởi hành là bắt buộc
                                             </div>
                                         </div>
                                     </div>
                                     <div class="form-row">
-                                        <label>Destination</label>
+                                        <label>Nơi Đến</label>
                                         <input type="text " formControlName="destination" class="form-control" [ngClass]="{
                         'is-invalid': submitted && f.destination.errors
                       }" />
                                         <div *ngIf="submitted && f.destination.errors" class="invalid-feedback">
                                             <div *ngIf="f.destination.errors.required">
-                                                Destination is required
+                                               Nơi Đến là bắt buộc
                                             </div>
                                         </div>
                                     </div>
@@ -78,7 +78,7 @@
                       *ngIf="loading"
                       class="spinner-border spinner-border-sm mr-1"
                     ></span>
-                    Create Tour & Choose Image
+                    Tạo chuyến tham quan và chọn hình ảnh
                   </button>
                                 </div>
                             </form>
