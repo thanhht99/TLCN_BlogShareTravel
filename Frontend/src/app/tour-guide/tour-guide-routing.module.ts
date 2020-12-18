@@ -4,6 +4,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { LayoutComponent } from './layout.component';
 import { TourGuideInfoComponent } from './tour-guide-info/tour-guide-info.component';
 import { ListTourComponent } from '../list-tour/list-tour.component';
+import { ListRegisterTripComponent } from '../list-register-trip/list-register-trip.component';
+import { TourGuideEditComponent } from './tour-guide-edit/tour-guide-edit.component';
 
 
 const routes: Routes = [
@@ -11,7 +13,9 @@ const routes: Routes = [
         path: '', component: LayoutComponent,
         children: [
             { path: 'info/:id', component: TourGuideInfoComponent },
+            { path: 'info/:id/update', component: TourGuideEditComponent },
             { path: 'info/:id/listTour', component: ListTourComponent },
+            { path: 'info/:id/listRegisterTrip', component: ListRegisterTripComponent },
 
         ]
     }

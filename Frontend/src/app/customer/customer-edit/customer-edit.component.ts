@@ -2,6 +2,7 @@ import { Component, OnInit, ViewEncapsulation, Input } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { HttpResponse, HttpClient } from '@angular/common/http';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { DatePipe, Location  } from '@angular/common';
 
 import { CustomerService, LoginService, AlertService } from '../../_services';
 import { Tour, Account, TourGuide, RegisterTrip, Customer, Trip } from '../../models';
@@ -28,7 +29,8 @@ export class CustomerEditComponent implements OnInit {
               private loginService: LoginService,
               private router: Router,
               private route: ActivatedRoute,
-              private formBuilder: FormBuilder) 
+              private formBuilder: FormBuilder,
+              private location: Location) 
   { 
     
     this.account = this.loginService.accountValue;
@@ -66,6 +68,10 @@ export class CustomerEditComponent implements OnInit {
 
     // this.id = this.route.snapshot.params['id'];
     // console.log(this.id)
+  }
+
+  cancel() {
+    this.location.back(); // <-- go back to previous location on cancel
   }
 
   get f() { return this.form.controls; }

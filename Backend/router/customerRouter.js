@@ -34,7 +34,7 @@ router.get('/info/:id', async(req, res) => {
 
 // update
 router.post('/info/update', async(req, res) => {
-    console.log(req.body)
+    // console.log(req.body)
     const idneed = req.body.accountId;
     const testuser = await Customer.findOne({ where: { accountId: idneed } });
     if (!testuser) {

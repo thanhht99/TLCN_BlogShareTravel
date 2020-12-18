@@ -82,4 +82,8 @@ export class ListRegisterTripComponent implements OnInit {
     window.location.reload();
   }
 
+  cancel() {
+    this.location.back(); // <-- go back to previous location on cancel
+  }
+
 }

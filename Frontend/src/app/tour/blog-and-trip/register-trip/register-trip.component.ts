@@ -32,6 +32,7 @@ export class RegisterTripComponent implements OnInit {
   giaNguoiLon: number;
   giaTreEm: number;
   giaEmBe: number;
+  role: boolean;
   constructor(private tourService: TourService, 
               private alertService: AlertService,
               private loginService: LoginService,
@@ -121,12 +122,14 @@ export class RegisterTripComponent implements OnInit {
       // console.log("=========customer===========")
       this.customer = this.loginService.customerValue;
       this.registerTrip.email = this.customer.email;
+      this.role = true;
       // console.log(this.customer)
     }
     if(this.account.isTourGuide){
       // console.log("=========tourGuide===========")
       this.tourGuide = this.loginService.tourguideValue;
       this.registerTrip.email = this.tourGuide.email;
+      this.role = false;
       // console.log(this.tourGuide)
     }
 
@@ -138,7 +141,13 @@ export class RegisterTripComponent implements OnInit {
                   // console.log("------------------------------------");
                   // console.log(registerTrip);
                   this.alertService.success('Đăng ký thành công. Vui lòng thanh toán và chờ đợi người tổ chức chuyến đi xác nhận! (Nhấn nút cập nhật để xem chuyến đi mới đăng ký)', { keepAfterRouteChange: true });                                                                                                                                                         
-                  this.router.navigate([`/customer/info/${this.account.id}/listRegisterTrip` ], { relativeTo: this.route });
+                  if(this.role)
+                  { 
+                    this.router.navigate([`/customer/info/${this.account.id}/listRegisterTrip` ], { relativeTo: this.route });
+                  }
+                  else{
+                    this.router.navigate([`/tourguide/info/${this.account.id}/listRegisterTrip` ], { relativeTo: this.route });
+                  }
                 },
                 error: er => {
                   // console.log(er);
