@@ -85,9 +85,82 @@ router.get('/list', (req, res) => {
     }).catch((err) => {
         res.send(err);
     });
-
-
 })
+
+// list home limit:9
+router.get('/listHome', (req, res) => {
+    Tour.findAll({
+        where: { isStatus: true },
+        include: [{
+            model: Trip,
+        }],
+    }).then((tours) => {
+        for (let i in tours) {
+            const collection = collect(tours[i].Trips);
+            const x = collection.count();
+            tours[i].numberTrip = x;
+            Tour.update({
+                numberTrip: x
+            }, {
+                where: { id: tours[i].id }
+            })
+        }
+    }).catch((err) => {
+        res.send(err);
+    });
+
+    Tour.findAll({
+        where: { isStatus: true },
+        order: [
+            ['numberTrip', 'DESC']
+        ],
+        limit: 9
+    }).then((tours) => {
+        res.json(tours);
+    }).catch((err) => {
+        res.send(err);
+    });
+})
+
+// get list tour Da Duyet by id
+router.get('/:id/listDaDuyet', async(req, res) => {
+    const idneed = parseInt(req.params.id, 10);
+    const test = await Tour.findAll({ where: { tourGuideId: idneed, isStatus: true } });
+    if (!test) {
+        res.send(404);
+    } else {
+        Tour.findAll({
+            where: { tourGuideId: idneed, isStatus: true },
+            order: [
+                ['id', 'ASC'] //tăng
+            ],
+        }).then((tours) => {
+            res.json(tours);
+        }).catch((err) => {
+            res.send(err);
+        });
+    }
+});
+
+// get list tour Chua Duyet by id
+router.get('/:id/listChuaDuyet', async(req, res) => {
+    const idneed = parseInt(req.params.id, 10);
+    const test = await Tour.findAll({ where: { tourGuideId: idneed, isStatus: false } });
+    if (!test) {
+        res.send(404);
+    } else {
+        Tour.findAll({
+            where: { tourGuideId: idneed, isStatus: false },
+            order: [
+                ['id', 'ASC'] //tăng
+            ],
+        }).then((tours) => {
+            res.json(tours);
+        }).catch((err) => {
+            res.send(err);
+        });
+    }
+});
 
 // info tour
 router.get('/info/:id', async(req, res) => {

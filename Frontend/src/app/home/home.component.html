@@ -1,5 +1,5 @@
 <!-- Carousel -->
-<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel"style="margin-top :-100px">
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="margin-top: -100px">
     <ol class="carousel-indicators">
         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
         <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -26,242 +26,272 @@
     </a>
 </div>
 
-
 <!-- Card Product -->
 <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
+    <!--Controls-->
 
-      <!--Controls-->
-      
-        <a class="carousel-control-prev" href="#multi-item-example" data-slide="prev" role="button"><i class="fa fa-chevron-left"></i></a>
-        <a class="carousel-control-next" href="#multi-item-example" data-slide="next" role="button"><i class="fa fa-chevron-right"></i></a>
-      
-      <!--/.Controls-->
+    <a class="carousel-control-prev" href="#multi-item-example" data-slide="prev" role="button"><i class="fa fa-chevron-left"></i
+  ></a>
+    <a class="carousel-control-next" href="#multi-item-example" data-slide="next" role="button"><i class="fa fa-chevron-right"></i
+  ></a>
 
-      <!--Indicators-->
-      <ol class="carousel-indicators">
+    <!--/.Controls-->
+
+    <!--Indicators-->
+    <ol class="carousel-indicators">
         <li data-target="#multi-item-example" data-slide-to="0" class="active"></li>
         <li data-target="#multi-item-example" data-slide-to="1"></li>
         <li data-target="#multi-item-example" data-slide-to="2"></li>
-      </ol>
-      <!--/.Indicators-->
+    </ol>
+    <!--/.Indicators-->
 
-      <!--Slides-->
-      <div class="carousel-inner" role="listbox">
-
+    <!--Slides-->
+    <div class="carousel-inner" role="listbox">
+        <br /><br />
+        <h2 class="size-24 text-center mb25 bold">Tour nổi bật</h2>
         <!--First slide-->
         <div class="carousel-item active">
-
-          <div class="row">
-            <div class="col-md-4">
-              <div class="card mb-2">
-                <img class="card-img-top" src="../../assets/img/carousel/Datlat.jpg"
-                  alt="Card image cap" style ="height:200px">
-                <div class="card-body">
-                  <h4 class="card-title"><b>Tour Đà Lạt</b></h4>
-                  <p class="card-text">Tham quan Quảng trường Lâm Viên với không gian rộng lớn, thoáng mát hướng ra hồ Xuân Hương.</p>
-                  <a class="btn btn-primary">Đặt tour</a>
+            <div class="row">
+                <!-- <div class="col-md-4 clearfix d-none d-md-block">
+                    <div class="card mb-2">
+                        <img class="card-img-top" src="{{ tours[0].avatarPath }}" alt="Card image cap" style="height: 200px" />
+                        <div class="card-body">
+                            <h4 class="card-title">
+                                <b>Tour {{ tours[0].destination }}</b>
+                            </h4>
+                            <p class="card-text">
+                                {{ tours[0].summary }}
+                            </p>
+                            <a href="/tour/blog&trip/{{ tours[0].id }}" data-url="/tour/blog&trip/{{ tours[0].id }}" class="btn btn-primary">
+                Đặt tour
+              </a>
+                        </div>
+                    </div>
                 </div>
-              </div>
-            </div>
 
-            <div class="col-md-4 clearfix d-none d-md-block">
-              <div class="card mb-2">
-                <img class="card-img-top" src="../../assets/img/carousel/Banahill.jpg"
-                  alt="Card image cap" style ="height:200px">
-                <div class="card-body">
-                  <h4 class="card-title"><b>Tour Bà Nà Hill</b></h4>
-                  <p class="card-text">Tham quan Kinh Thành Huế - Hoàng Cung của 13 vị Vua Triều Nguyễn, Tham quan Phố Cổ Hội An.</p>
-                  <a class="btn btn-primary">Đặt tour</a>
+                <div class="col-md-4 clearfix d-none d-md-block">
+                    <div class="card mb-2">
+                        <img class="card-img-top" src="{{ tours[1].avatarPath }}" alt="Card image cap" style="height: 200px" />
+                        <div class="card-body">
+                            <h4 class="card-title">
+                                <b>Tour {{ tours[1].destination }}</b>
+                            </h4>
+                            <p class="card-text">
+                                {{ tours[1].summary }}
+                            </p>
+                            <a href="/tour/blog&trip/{{ tours[1].id }}" data-url="/tour/blog&trip/{{ tours[1].id }}" class="btn btn-primary">
+                Đặt tour
+              </a>
+                        </div>
+                    </div>
+                </div> -->
+                <div class="col-md-4">
+                    <div class="card mb-2">
+                        <img class="card-img-top" src="../../assets/img/carousel/Danang.jpg" alt="Card image cap" style="height: 200px" />
+                        <div class="card-body">
+                            <h4 class="card-title"><b>Tour Đà Nẵng</b></h4>
+                            <p class="card-text">
+                                Buổi chiều khởi hành tham quan Phố cổ Hội An với các công trình tiêu biểu: Chùa Cầu Nhật Bản, chùa Ông.
+                            </p>
+                            <a class="btn btn-primary">Đặt tour</a>
+                        </div>
+                    </div>
                 </div>
-              </div>
-            </div>
 
-            <div class="col-md-4 clearfix d-none d-md-block">
-              <div class="card mb-2">
-                <img class="card-img-top" src="../../assets/img/carousel/Nhatrang.png"
-                  alt="Card image cap" style ="height:200px">
-                <div class="card-body">
-                  <h4 class="card-title"><b>Tour Nha Trang</b></h4>
-                  <p class="card-text">Tham quan Chùa Từ Vân hay còn gọi là Chùa Ốc, ngôi chùa làm từ vỏ ốc “độc nhất vô nhị ở Việt Nam”.</p>
-                  <a class="btn btn-primary">Đặt tour</a>
+                <div class="col-md-4 clearfix d-none d-md-block">
+                    <div class="card mb-2">
+                        <img class="card-img-top" src="../../assets/img/carousel/Vungtau.jpg" alt="Card image cap" style="height: 200px" />
+                        <div class="card-body">
+                            <h4 class="card-title"><b>Tour Vũng Tàu</b></h4>
+                            <p class="card-text">
+                                Vũng Tàu luôn là một điểm đến dành cho du khách bốn phương , phong cảnh trữ tình,công trình kiến trúc tôn giáo tầm cỡ.
+                            </p>
+                            <a class="btn btn-primary">Đặt tour</a>
+                        </div>
+                    </div>
                 </div>
-              </div>
+                <div class="col-md-4 clearfix d-none d-md-block">
+                    <div class="card mb-2">
+                        <img class="card-img-top" src="../../assets/img/carousel/Nhatrang.png" alt="Card image cap" style="height: 200px" />
+                        <div class="card-body">
+                            <h4 class="card-title"><b>Tour Nha Trang</b></h4>
+                            <p class="card-text">
+                                Tham quan Chùa Từ Vân hay còn gọi là Chùa Ốc, ngôi chùa làm từ vỏ ốc “độc nhất vô nhị ở Việt Nam”.
+                            </p>
+                            <a class="btn btn-primary">Đặt tour</a>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-
         </div>
         <!--/.First slide-->
 
         <!--Second slide-->
         <div class="carousel-item">
-
-          <div class="row">
-            <div class="col-md-4">
-              <div class="card mb-2">
-                <img class="card-img-top" src="../../assets/img/carousel/Danang.jpg"
-                  alt="Card image cap"style ="height:200px">
-                <div class="card-body">
-                  <h4 class="card-title"><b>Tour Đà Nẵng</b></h4>
-                  <p class="card-text">Buổi chiều khởi hành tham quan Phố cổ Hội An với các công trình tiêu biểu: Chùa Cầu Nhật Bản, chùa Ông.</p>
-                  <a class="btn btn-primary">Đặt tour</a>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card mb-2">
+                        <img class="card-img-top" src="../../assets/img/carousel/Danang.jpg" alt="Card image cap" style="height: 200px" />
+                        <div class="card-body">
+                            <h4 class="card-title"><b>Tour Đà Nẵng</b></h4>
+                            <p class="card-text">
+                                Buổi chiều khởi hành tham quan Phố cổ Hội An với các công trình tiêu biểu: Chùa Cầu Nhật Bản, chùa Ông.
+                            </p>
+                            <a class="btn btn-primary">Đặt tour</a>
+                        </div>
+                    </div>
                 </div>
-              </div>
-            </div>
 
-            <div class="col-md-4 clearfix d-none d-md-block">
-              <div class="card mb-2">
-                <img class="card-img-top" src="../../assets/img/carousel/Vungtau.jpg"
-                  alt="Card image cap" style ="height:200px">
-                <div class="card-body">
-                  <h4 class="card-title"><b>Tour Vũng Tàu</b></h4>
-                  <p class="card-text">Vũng Tàu luôn là một điểm đến dành cho du khách bốn phương , phong cảnh trữ tình,công trình kiến trúc tôn giáo tầm cỡ.</p>
-                  <a class="btn btn-primary">Đặt tour</a>
+                <div class="col-md-4 clearfix d-none d-md-block">
+                    <div class="card mb-2">
+                        <img class="card-img-top" src="../../assets/img/carousel/Vungtau.jpg" alt="Card image cap" style="height: 200px" />
+                        <div class="card-body">
+                            <h4 class="card-title"><b>Tour Vũng Tàu</b></h4>
+                            <p class="card-text">
+                                Vũng Tàu luôn là một điểm đến dành cho du khách bốn phương , phong cảnh trữ tình,công trình kiến trúc tôn giáo tầm cỡ.
+                            </p>
+                            <a class="btn btn-primary">Đặt tour</a>
+                        </div>
+                    </div>
                 </div>
-              </div>
-            </div>
 
-            <div class="col-md-4 clearfix d-none d-md-block">
-              <div class="card mb-2">
-                <img class="card-img-top" src="../../assets/img/carousel/NinhBinh.jpg"
-                  alt="Card image cap" style ="height:200px">
-                <div class="card-body">
-                  <h4 class="card-title"><b>Tour Ninh Bình</b></h4>
-                  <p class="card-text">Ngắm hồ Tam Chúc, viếng chùa Tam Chúc ,quần thể khu tâm linh kỳ vọng là lớn nhất thế giới khi hoàn thành vào năm 2048.</p>
-                  <a class="btn btn-primary">Đặt tour</a>
+                <div class="col-md-4 clearfix d-none d-md-block">
+                    <div class="card mb-2">
+                        <img class="card-img-top" src="../../assets/img/carousel/NinhBinh.jpg" alt="Card image cap" style="height: 200px" />
+                        <div class="card-body">
+                            <h4 class="card-title"><b>Tour Ninh Bình</b></h4>
+                            <p class="card-text">
+                                Ngắm hồ Tam Chúc, viếng chùa Tam Chúc ,quần thể khu tâm linh kỳ vọng là lớn nhất thế giới khi hoàn thành vào năm 2048.
+                            </p>
+                            <a class="btn btn-primary">Đặt tour</a>
+                        </div>
+                    </div>
                 </div>
-              </div>
             </div>
-          </div>
-
         </div>
         <!--/.Second slide-->
 
         <!--Third slide-->
         <div class="carousel-item">
-
-          <div class="row">
-            <div class="col-md-4">
-              <div class="card mb-2">
-                <img class="card-img-top" src="../../assets/img/carousel/PhuQuoc.jpg"
-                  alt="Card image cap" style ="height:200px">
-                <div class="card-body">
-                  <h4 class="card-title">Tour Phú Quốc</h4>
-                  <p class="card-text">Tắm biển Bãi Sao (hoặc bãi Ông Lang tùy điều kiện thời tiết) - một trong những bãi biển đẹp nhất tại Phú Quốc.</p>
-                  <a class="btn btn-primary">Đặt tour</a>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card mb-2">
+                        <img class="card-img-top" src="../../assets/img/carousel/PhuQuoc.jpg" alt="Card image cap" style="height: 200px" />
+                        <div class="card-body">
+                            <h4 class="card-title">Tour Phú Quốc</h4>
+                            <p class="card-text">
+                                Tắm biển Bãi Sao (hoặc bãi Ông Lang tùy điều kiện thời tiết) - một trong những bãi biển đẹp nhất tại Phú Quốc.
+                            </p>
+                            <a class="btn btn-primary">Đặt tour</a>
+                        </div>
+                    </div>
                 </div>
-              </div>
-            </div>
 
-            <div class="col-md-4 clearfix d-none d-md-block">
-              <div class="card mb-2">
-                <img class="card-img-top" src="../../assets/img/carousel/Sapa.jpg"
-                  alt="Card image cap" style ="height:200px">
-                <div class="card-body">
-                  <h4 class="card-title"><b>Tour Sapa</b></h4>
-                  <p class="card-text">Thăm quần thể di tích Bạch Đằng Giang với đền thờ các vị anh hùng dân tộc: vua Lê Đại Hành, Ngô Quyền, Trần Hưng Đạo.</p>
-                  <a class="btn btn-primary">Đặt tour</a>
+                <div class="col-md-4 clearfix d-none d-md-block">
+                    <div class="card mb-2">
+                        <img class="card-img-top" src="../../assets/img/carousel/Sapa.jpg" alt="Card image cap" style="height: 200px" />
+                        <div class="card-body">
+                            <h4 class="card-title"><b>Tour Sapa</b></h4>
+                            <p class="card-text">
+                                Thăm quần thể di tích Bạch Đằng Giang với đền thờ các vị anh hùng dân tộc: vua Lê Đại Hành, Ngô Quyền, Trần Hưng Đạo.
+                            </p>
+                            <a class="btn btn-primary">Đặt tour</a>
+                        </div>
+                    </div>
                 </div>
-              </div>
-            </div>
 
-            <div class="col-md-4 clearfix d-none d-md-block">
-              <div class="card mb-2">
-                <img class="card-img-top" src="../../assets/img/carousel/Vinh ha long.jpg"
-                  alt="Card image cap" style ="height:200px">
-                <div class="card-body">
-                  <h4 class="card-title"><b>Tour Vịnh Hạ Long</b></h4>
-                  <p class="card-text">Du lịch Vịnh Hạ Long một trong Bảy kỳ quan thiên nhiên thế giới , Thế giới công nhận là di sản thiên nhiên thế giới.</p>
-                  <a class="btn btn-primary">Đặt tour</a>
+                <div class="col-md-4 clearfix d-none d-md-block">
+                    <div class="card mb-2">
+                        <img class="card-img-top" src="../../assets/img/carousel/Vinh ha long.jpg" alt="Card image cap" style="height: 200px" />
+                        <div class="card-body">
+                            <h4 class="card-title"><b>Tour Vịnh Hạ Long</b></h4>
+                            <p class="card-text">
+                                Du lịch Vịnh Hạ Long một trong Bảy kỳ quan thiên nhiên thế giới , Thế giới công nhận là di sản thiên nhiên thế giới.
+                            </p>
+                            <a class="btn btn-primary">Đặt tour</a>
+                        </div>
+                    </div>
                 </div>
-              </div>
             </div>
-          </div>
-
         </div>
         <!--/.Third slide-->
-
-      </div>
-      <!--/.Slides-->
-
     </div>
-    <!--/.Carousel Wrapper-->
-
-
-
-
+    <!--/.Slides-->
+</div>
+<!--/.Carousel Wrapper-->
 
 <!-- Commitment-->
-<div class = "commitment">
-        <div class = "container">
-          <h2 class = "size-24 text-center mb25 bold" > Cam kết từ chúng tôi</h2>
-          <div class ="commitment__group">
-            <div class ="commitment__row">
-              <div class ="commitment__col">
-                <div class = "commitment__item">
-                  <div class = "commitment__icon">
-                    <img src="../../assets/img/Icon/Balo.png">
-                  </div>
-                  <div class = "commitment__text">
-                    <p class = " mb0 semibold">Giá vé tốt </p>
-                  </div>
+<div class="commitment">
+    <div class="container">
+        <h2 class="size-24 text-center mb25 bold">Cam kết từ chúng tôi</h2>
+        <div class="commitment__group">
+            <div class="commitment__row">
+                <div class="commitment__col">
+                    <div class="commitment__item">
+                        <div class="commitment__icon">
+                            <img src="../../assets/img/Icon/Balo.png" />
+                        </div>
+                        <div class="commitment__text">
+                            <p class="mb0 semibold">Giá vé tốt</p>
+                        </div>
+                    </div>
                 </div>
-              </div>
-              <div class ="commitment__col">
-                <div class = "commitment__item">
-                  <div class = "commitment__icon">
-                    <img src="../../assets/img/Icon/Bando.png">
-                  </div>
-                  <div class = "commitment__text">
-                    <p class = " mb0 semibold">Khả năng săn vé cao</p>
-                  </div>
+                <div class="commitment__col">
+                    <div class="commitment__item">
+                        <div class="commitment__icon">
+                            <img src="../../assets/img/Icon/Bando.png" />
+                        </div>
+                        <div class="commitment__text">
+                            <p class="mb0 semibold">Khả năng săn vé cao</p>
+                        </div>
+                    </div>
                 </div>
-              </div>
-              <div class ="commitment__col">
-                <div class = "commitment__item">
-                  <div class = "commitment__icon">
-                    <img src="../../assets/img/Icon/mayanh.png">
-                  </div>
-                  <div class = "commitment__text">
-                    <p class = " mb0 semibold">Giá phòng giảm sâu</p>
-                  </div>
+                <div class="commitment__col">
+                    <div class="commitment__item">
+                        <div class="commitment__icon">
+                            <img src="../../assets/img/Icon/mayanh.png" />
+                        </div>
+                        <div class="commitment__text">
+                            <p class="mb0 semibold">Giá phòng giảm sâu</p>
+                        </div>
+                    </div>
                 </div>
-              </div>
             </div>
-            <div class = "commitment__row">
-              <div class ="commitment__col">
-                <div class = "commitment__item">
-                  <div class = "commitment__icon">
-                    <img src="../../assets/img/Icon/maybay.png">
-                  </div>
-                  <div class = "commitment__text">
-                    <p class = " mb0 semibold">Cam kết giá tốt nhất</p>
-                  </div>
+            <div class="commitment__row">
+                <div class="commitment__col">
+                    <div class="commitment__item">
+                        <div class="commitment__icon">
+                            <img src="../../assets/img/Icon/maybay.png" />
+                        </div>
+                        <div class="commitment__text">
+                            <p class="mb0 semibold">Cam kết giá tốt nhất</p>
+                        </div>
+                    </div>
                 </div>
-              </div>
-              <div class ="commitment__col">
-                <div class = "commitment__item">
-                  <div class = "commitment__icon">
-                    <img src="../../assets/img/Icon/passport.png">
-                  </div>
-                  <div class = "commitment__text">
-                    <p class = " mb0 semibold">Combo tự động</p>
-                  </div>
+                <div class="commitment__col">
+                    <div class="commitment__item">
+                        <div class="commitment__icon">
+                            <img src="../../assets/img/Icon/passport.png" />
+                        </div>
+                        <div class="commitment__text">
+                            <p class="mb0 semibold">Combo tự động</p>
+                        </div>
+                    </div>
                 </div>
-              </div>
-              <div class ="commitment__col">
-                <div class = "commitment__item">
-                  <div class = "commitment__icon">
-                    <img src="../../assets/img/Icon/Vemaybay.png">
-                  </div>
-                  <div class = "commitment__text">
-                    <p class = " mb0 semibold">Cập nhật Tour liên tục</p>
-                  </div>
+                <div class="commitment__col">
+                    <div class="commitment__item">
+                        <div class="commitment__icon">
+                            <img src="../../assets/img/Icon/Vemaybay.png" />
+                        </div>
+                        <div class="commitment__text">
+                            <p class="mb0 semibold">Cập nhật Tour liên tục</p>
+                        </div>
+                    </div>
                 </div>
-              </div>
             </div>
-          </div>
         </div>
     </div>
+</div>
 
 <div id="main-hero">
     <div id="hero">

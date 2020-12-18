@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { first } from 'rxjs/operators';
 
-import { LoginService } from '../_services/login.service';
-import { Account } from '../models';
+import { LoginService, TourService } from '../_services';
+import { Tour, Account } from '../models';
 
 @Component({
   selector: 'app-home',
@@ -11,12 +12,23 @@ import { Account } from '../models';
 export class HomeComponent implements OnInit {
 
   account: Account;
-
-  constructor(private loginService: LoginService) {
+  tours: Tour;
+  constructor(private loginService: LoginService,
+              private tourService: TourService,) 
+  {
       this.account = this.loginService.accountValue;
   }
 
   ngOnInit(): void {
+    this.tourService.listHome()
+            .pipe(first())
+            .subscribe((tour) => {
+              this.tours = tour
+            });   
+
+    this.tours = this.tourService.tourValue;
+    console.log(this.tours);
+    console.log(this.tours[0]);
   }
 
 }

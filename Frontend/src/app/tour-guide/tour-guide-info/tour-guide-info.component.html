@@ -15,7 +15,7 @@
             <div class="job-description">Giới Tính: {{tourguide.gender}}</div>
             <div class="job-description">CMND/CCCD: {{tourguide.identity}}</div>
             <div class="job-description">Ngày Sinh: {{tourguide.dateOfBirth}}</div>
-            <div class="job-description">Ngôn Ngữ:  {{tourguide.language}}</div>
+            <div class="job-description">Ngôn Ngữ: {{tourguide.language}}</div>
             <div class="job-description">Địa Chỉ: {{tourguide.address}}</div>
             <div class="job-description">Số chuyến đi: {{tourguide.tripNumber}}</div>
             <div class="contacts">
@@ -33,12 +33,14 @@
         </div>
     </div>
     <div class="container btnn">
-        <div type="button" class="btn btn-info"><b>Cập Nhật</b></div>
-        <div type="button" class="btn btn-warning"><b>Sửa</b></div>
+        <div type="button" class="btn btn-info">
+            <b routerLink="/tourguide/info/{{ account.id }}" (click)="reloadPage()">Cập Nhật</b
+      >
+    </div>        <div type="button" class="btn btn-warning"><b>Sửa</b></div>
     </div>
 
 </div>
 <div class="container">
-<button type="button" class="btn btn-primary"style ="margin-left:-5px"><b>Danh Sách Tour</b></button>
-<button type="button" class="btn btn-primary" style ="margin-left: 15px;"><b>Hướng Dẫn Chuyến Đi </b></button>
+    <button type="button" class="btn btn-primary" style="margin-left:-5px"><b routerLink="/tourguide/info/{{ account.id }}/listTour">Danh Sách Tour</b></button>
+    <button type="button" class="btn btn-primary" style="margin-left: 15px;"><b>Hướng Dẫn Chuyến Đi </b></button>
 </div>

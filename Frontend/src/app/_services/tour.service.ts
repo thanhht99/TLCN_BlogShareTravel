@@ -17,6 +17,12 @@ export class TourService {
   private tourSubject: BehaviorSubject<Tour>;
   public tour: Observable<Tour>;
 
+  private tourDaDuyetSubject: BehaviorSubject<Tour>;
+  public tourDaDuyet: Observable<Tour>;
+
+  private tourChuaDuyetSubject: BehaviorSubject<Tour>;
+  public tourChuaDuyet: Observable<Tour>;
+
   private tripSubject: BehaviorSubject<Trip>;
   public trip: Observable<Trip>;
 
@@ -39,6 +45,12 @@ export class TourService {
 
     this.tourSubject = new BehaviorSubject<Tour>(JSON.parse(localStorage.getItem('tour')));
     this.tour = this.tourSubject.asObservable();
+
+    this.tourDaDuyetSubject = new BehaviorSubject<Tour>(JSON.parse(localStorage.getItem('tourDaDuyet')));
+    this.tourDaDuyet = this.tourDaDuyetSubject.asObservable();
+    
+    this.tourChuaDuyetSubject = new BehaviorSubject<Tour>(JSON.parse(localStorage.getItem('tourChuaDuyet')));
+    this.tourChuaDuyet = this.tourChuaDuyetSubject.asObservable();
 
     this.tripSubject = new BehaviorSubject<Trip>(JSON.parse(localStorage.getItem('trip')));
     this.trip = this.tripSubject.asObservable();
@@ -65,6 +77,14 @@ export class TourService {
     return this.tourSubject.value;
   }
 
+  public get tourDaDuyetValue(): Tour {
+    return this.tourDaDuyetSubject.value;
+  }
+
+  public get tourChuaDuyetValue(): Tour {
+    return this.tourChuaDuyetSubject.value;
+  }
+
   public get tripValue(): Trip {
     return this.tripSubject.value;
   }
@@ -83,6 +103,15 @@ export class TourService {
           localStorage.setItem('tour', JSON.stringify(tour));
           this.tourSubject.next(tour);
           // console.log(tour);
+          return tour; 
+      }));
+  }
+
+  listHome() {
+    return this.http.get<Tour>(`${this.webRequestService.ROOT_URL}/tour/listHome`)
+      .pipe(map(tour => {
+          localStorage.setItem('tour', JSON.stringify(tour));
+          this.tourSubject.next(tour);
           return tour; 
       }));
   }
@@ -112,6 +141,24 @@ export class TourService {
           localStorage.setItem('registertripDaDuyet', JSON.stringify(registertripDaDuyet));
           this.registertripDaDuyetSubject.next(registertripDaDuyet);
           return registertripDaDuyet; 
+      }));
+  }
+
+  listTourDaDuyet(id: number) {
+    return this.http.get<Tour>(`${this.webRequestService.ROOT_URL}/tour/${id}/listDaDuyet`)
+      .pipe(map(tourDaDuyet => {
+          localStorage.setItem('tourDaDuyet', JSON.stringify(tourDaDuyet));
+          this.tourDaDuyetSubject.next(tourDaDuyet);
+          return tourDaDuyet; 
+      }));
+  }
+
+  listTourChuaDuyet(id: number) {
+    return this.http.get<Tour>(`${this.webRequestService.ROOT_URL}/tour/${id}/listChuaDuyet`)
+      .pipe(map(tourChuaDuyet => {
+          localStorage.setItem('tourChuaDuyet', JSON.stringify(tourChuaDuyet));
+          this.tourChuaDuyetSubject.next(tourChuaDuyet);
+          return tourChuaDuyet; 
       }));
   }
 
