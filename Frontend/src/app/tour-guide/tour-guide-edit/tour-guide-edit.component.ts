@@ -37,7 +37,7 @@ export class TourGuideEditComponent implements OnInit {
     this.sub = this.route.params.subscribe(params => {
       let id = Number.parseInt(params['id']);
       this.id = id;
-      console.log(this.id)
+      // console.log(this.id)
       this.tourGuideService.infoTourGuide(this.id)
           .pipe(first())
           .subscribe(lists => {
@@ -76,12 +76,12 @@ export class TourGuideEditComponent implements OnInit {
 
     this.tourGuide = this.form.value;
     this.tourGuide.accountId = Number(this.id);
-    console.log(this.tourGuide);
-    this.customerService.updateCustomer(this.tourGuide)
+    // console.log(this.tourGuide);
+    this.tourGuideService.updateTourGuide(this.tourGuide)
                             .pipe(first())
                                   .subscribe({
                                       next: (data) => {
-                                        //this.router.navigate([`/tourguide/info/${this.account.id}`]);
+                                        this.router.navigate([`/tourguide/info/${this.account.id}`]);
                                         this.alertService.success('Cập nhật thành công. Vui lòng nhấn nút cập nhật để xem thông tin vừa cập nhật!', { keepAfterRouteChange: true });
                                         // console.log(data);
                                       },

@@ -41,7 +41,7 @@ export class ListTourComponent implements OnInit {
     if(this.account.isTourGuide)
     { 
       this.id = Number(this.tourGuide.id);
-      console.log(this.id);
+      // console.log(this.id);
       this.tourService.listTourChuaDuyet(this.id)
           .pipe(first())
           .subscribe(lists => {
@@ -59,12 +59,12 @@ export class ListTourComponent implements OnInit {
           );
     }
     this.listChuaDuyets = this.tourService.tourChuaDuyetValue;
-    console.log('--------------listChuaDuyet-------------');
-    console.log(this.listChuaDuyets);
+    // console.log('--------------listChuaDuyet-------------');
+    // console.log(this.listChuaDuyets);
 
     this.listDaDuyets = this.tourService.tourDaDuyetValue;
-    console.log('--------------listChuaDuyet-------------');
-    console.log(this.listChuaDuyets);
+    // console.log('--------------listChuaDuyet-------------');
+    // console.log(this.listChuaDuyets);
     
 
   }
@@ -74,6 +74,10 @@ export class ListTourComponent implements OnInit {
 
   reloadPage(){
     window.location.reload();
+  }
+
+  cancel() {
+    this.location.back(); // <-- go back to previous location on cancel
   }
 
 }

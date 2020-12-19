@@ -17,6 +17,7 @@ import { CommonModule } from '@angular/common';
 import { ListRegisterTripComponent } from './list-register-trip/list-register-trip.component';
 import { DetailRegisterTripComponent } from './detail-register-trip/detail-register-trip.component';
 import { ListTourComponent } from './list-tour/list-tour.component';
+import { DetailTourComponent } from './detail-tour/detail-tour.component';
 
 @NgModule({
   
@@ -38,6 +39,7 @@ import { ListTourComponent } from './list-tour/list-tour.component';
     ListRegisterTripComponent,
     DetailRegisterTripComponent,
     ListTourComponent,
+    DetailTourComponent,
   ],
   exports: [
     BrowserModule,

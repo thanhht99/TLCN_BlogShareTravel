@@ -171,7 +171,7 @@ router.get('/info/:id', async(req, res) => {
         res.json(404);
     } else {
         res.json(testTour.dataValues);
-        console.log(testTour.dataValues);
+        // console.log(testTour.dataValues);
     }
 });
 

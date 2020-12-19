@@ -1,0 +1,78 @@
+<div type="button" class="btn btn-info" *ngIf="account.isTourGuide">
+    <b routerLink="/tourguide/info/{{ account.id }}/tour/{{ id }}" (click)="reloadPage()">Cập Nhật</b
+  >
+</div>
+
+<div type="button" class="btn btn-danger">
+  <b (click)="cancel()">Quay Lại</b>
+</div>
+
+<div class="classdetails" *ngIf="account.isTourGuide">
+    <div class="card border-primary">
+        <h1 class="card-header">{{ tour.name }}</h1>
+
+        <div class="card-body">
+            <div class="form-row">
+                <label>
+          <strong>Mô tả: </strong>
+          {{ tour.summary }}
+        </label>
+            </div>
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <label>
+            <strong>Điểm Khởi Hành: </strong>
+            {{ tour.departureLocation }}
+          </label>
+                </div>
+
+                <div class="col-md-6">
+                    <label>
+            <strong>Điểm Đến: </strong>
+            {{ tour.destination }}
+          </label>
+                </div>
+
+                <div class="col-md-6">
+                    <label>
+            <strong>Thời Gian: </strong>
+            {{ tour.time }}
+          </label>
+                </div>
+
+                <div class="col-md-6">
+                    <label>
+            <strong>Giá tiền: </strong>
+            {{ tour.price }} VNĐ
+          </label>
+                </div>
+
+                <div class="col-md-6">
+                    <label><strong>Ngày tạo: </strong>{{ tour.updatedAt }}</label>
+                </div>
+
+                <div class="col-md-6">
+                    <label><strong>Số chuyến đi: </strong>
+            {{ tour.numberTrip }}
+          </label>
+                </div>
+
+                <div class="col-md-6" *ngIf="tour.isStatus">
+                    <label><strong>Trạng thái: </strong>
+            Đã hoàn chỉnh
+          </label>
+                </div>
+
+                <div class="col-md-6" *ngIf="!tour.isStatus">
+                    <label><strong>Trạng thái: </strong>
+            Chưa hoàn chỉnh
+          </label>
+                </div>
+            </div>
+            <br />
+            <div type="button" class="btn btn-success">
+                <b>Thêm hình ảnh</b>
+            </div>
+        </div>
+    </div>
+</div>

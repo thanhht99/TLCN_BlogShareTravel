@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CustomerService, LoginService, AlertService, TourService } from '../_services';
 import { Tour, Account, TourGuide, RegisterTrip, Customer, Trip } from '../models';
 import { Router, ActivatedRoute } from '@angular/router';
+import { DatePipe, Location  } from '@angular/common';
 
 @Component({
   selector: 'app-detail-register-trip',
@@ -24,7 +25,8 @@ export class DetailRegisterTripComponent implements OnInit {
               private alertService: AlertService,
               private loginService: LoginService,
               private router: Router,
-              private route: ActivatedRoute,) 
+              private route: ActivatedRoute,
+              private location: Location) 
   { 
     this.account = this.loginService.accountValue;
     // console.log("--------------account---------------")
@@ -67,6 +69,10 @@ export class DetailRegisterTripComponent implements OnInit {
 
   reloadPage(){
     window.location.reload();
+  }
+
+  cancel() {
+    this.location.back(); // <-- go back to previous location on cancel
   }
 
 }

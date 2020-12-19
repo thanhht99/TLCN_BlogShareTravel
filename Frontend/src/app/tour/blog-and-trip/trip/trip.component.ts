@@ -26,10 +26,12 @@ export class TripComponent implements OnInit {
   submitted = false;
   trips: Trip;
   trip: Trip;
+  tripArray: Array<Trip>;
   account: Account;
   tourGuide: TourGuide;
   sub: any;
   id: number;
+  items = [];
 
   constructor(private tourService: TourService, 
               private loginService: LoginService,
@@ -52,7 +54,8 @@ export class TripComponent implements OnInit {
             
             
     }); 
-    
+    this.trips = this.tourService.tripValue;
+    // console.log(this.trips)
     this.loginService.account.subscribe(x => this.account = x);
     this.loginService.tourguide.subscribe(a => this.tourGuide = a);
     this.tourService.tour.subscribe(a => this.tours = a);
@@ -82,7 +85,12 @@ export class TripComponent implements OnInit {
 
   pageRefresh() {     
     location.reload();
- }
+  }
+
+  onChangePage(tripArray: Array<Trip>) {
+    // update current page of items
+    this.tripArray = tripArray;
+  } 
 
   addTrip() {
     this.submitted = true;

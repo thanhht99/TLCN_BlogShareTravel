@@ -1,12 +1,12 @@
-<div type="button" class="btn btn-info">
+<div type="button" class="btn btn-info" *ngIf="account.isTourGuide">
     <b routerLink="/tourguide/info/{{ account.id }}/listTour" (click)="reloadPage()">Cập Nhật</b>
 </div>
 
 <div type="button" class="btn btn-danger">
-    <b routerLink="/tourguide/info/{{ account.id }}">Quay Lại</b>
+    <b (click)="cancel()">Quay Lại</b>
 </div>
 <h2>Tour đã hoàn chỉnh</h2>
-<div class="row trip-row">
+<div class="row trip-row" *ngIf="account.isTourGuide">
     <div class="tbl-header">
         <table cellpadding="0" cellspacing="0" border="0">
             <thead>
@@ -33,7 +33,7 @@
                     <td>{{ listDaDuyet.price }} VNĐ</td>
                     <td>{{ listDaDuyet.numberTrip }}</td>
                     <td>
-                        <a routerLink="#"> Chi tiết </a>
+                        <a routerLink="/tourguide/info/{{ account.id }}/tour/{{ listDaDuyet.id }}"> Chi tiết </a>
                     </td>
                 </tr>
             </tbody>
@@ -42,7 +42,7 @@
 </div>
 
 <h2>Tour chưa được hoàn chỉnh</h2>
-<div class="row trip-row">
+<div class="row trip-row" *ngIf="account.isTourGuide">
     <div class="tbl-header">
         <table cellpadding="0" cellspacing="0" border="0">
             <thead>
@@ -69,7 +69,7 @@
                     <td>{{ listChuaDuyet.price }} VNĐ</td>
                     <td>{{ listChuaDuyet.numberTrip }}</td>
                     <td>
-                        <a routerLink="#"> Chi tiết </a>
+                        <a routerLink="/tourguide/info/{{ account.id }}/tour/{{ listChuaDuyet.id }}"> Chi tiết </a>
                     </td>
                 </tr>
             </tbody>

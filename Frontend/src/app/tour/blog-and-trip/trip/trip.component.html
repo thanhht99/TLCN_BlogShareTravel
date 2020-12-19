@@ -20,7 +20,7 @@
                 </thead>
             </table>
         </div>
-        <div class="tbl-content" *ngFor="let trip of trips">
+        <div class="tbl-content" *ngFor="let trip of tripArray">
             <table cellpadding="0" cellspacing="0" border="0">
                 <tbody>
                     <tr>
@@ -40,17 +40,18 @@
                   trip.id
                 }}" *ngIf="trip.theRemainingAmount > 0">
                 Mua tour
-                </a>
+              </a>
                         </td>
                     </tr>
                 </tbody>
             </table>
         </div>
+        <div class="card text-center m-3">
+            <div class="card-footer pb-0 pt-3">
+                <jw-pagination [items]="trips" (changePage)="onChangePage($event)"></jw-pagination>
+            </div>
+        </div>
     </div>
-
-    <!-- <div class="spinner-border" role="status " *ngIf="!trips">
-            <span class="sr-only">Loading...</span>
-        </div> -->
 </div>
 <div *ngIf="account.isTourGuide && tour.amount > 0">
     <h2>Thêm chuyến đi</h2>

@@ -13,7 +13,7 @@ import { first } from 'rxjs/operators';
 })
 export class TourGuideInfoComponent implements OnInit {
 
-  tourguide: TourGuide;
+  tourGuide: TourGuide;
   account: Account;
   id: number;
   sub: any;
@@ -39,7 +39,7 @@ export class TourGuideInfoComponent implements OnInit {
           );         
     });
 
-    this.tourguide = this.tourGuideService.tourGuideValue;
+    this.tourGuide = this.tourGuideService.tourGuideValue;
   }
 
   ngOnInit(): void {

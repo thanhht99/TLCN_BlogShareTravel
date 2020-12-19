@@ -11,4 +11,5 @@ export class Tour {
     avatarPath: Text;
     isStatus: Boolean;
     tourGuideId: Number;
+    updatedAt: String;
 }

@@ -34,6 +34,7 @@ router.get('/info/:id', async(req, res) => {
 
 // update
 router.post('/info/update', async(req, res) => {
+    console.log(req.body)
     const idneed = req.body.accountId;
     const test = await TourGuide.findOne({ where: { accountId: idneed } });
     if (!test) {
@@ -45,7 +46,7 @@ router.post('/info/update', async(req, res) => {
             address: req.body.address,
             phone: req.body.phone,
             email: req.body.email
-        }, { where: { accountId: idneed } }).then(() => {
+        }, { where: { accountId: idneed } }).then((data) => {
             res.json(data);
         })
     }

@@ -29,6 +29,7 @@ export class ListToursComponent implements OnInit {
   { 
     this.loginService.account.subscribe(x => this.account = x);
     this.start = true;
+
   }
   ngOnInit(): void {
     this.tourService.listTour()
@@ -38,6 +39,8 @@ export class ListToursComponent implements OnInit {
             });   
 
     this.tours = this.tourService.tourValue;
+    // console.log(this.tours)
+
     // console.log("------tour-----")
     // console.log(this.tours)
     // console.log("------tours-----")
@@ -54,6 +57,6 @@ export class ListToursComponent implements OnInit {
   onChangePage(tourArray: Array<Tour>) {
     // update current page of items
     this.tourArray = tourArray;
-} 
+  } 
 
 }

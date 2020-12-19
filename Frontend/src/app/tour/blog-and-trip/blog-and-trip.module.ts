@@ -10,6 +10,7 @@ import { BlogComponent } from './blog/blog.component';
 import { AddBlogComponent } from './add-blog/add-blog.component';
 
 import { RegisterTripComponent } from './register-trip/register-trip.component';
+import { JwPaginationModule } from 'jw-angular-pagination';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { RegisterTripComponent } from './register-trip/register-trip.component';
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    BlogAndTripRoutingModule
+    BlogAndTripRoutingModule,
+    JwPaginationModule
   ],
   exports: [
     LayoutComponent,
