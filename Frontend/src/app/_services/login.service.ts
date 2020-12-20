@@ -65,22 +65,22 @@ export class LoginService {
     this.router.navigate(['/account/login']);
   }
 
-  infoCustomer(id: number) {
-    return this.http.get<Customer>(`${this.webRequestService.ROOT_URL}/customer/info/${id}`)
-      .pipe(map(customer => {
-          localStorage.setItem('customer', JSON.stringify(customer));
-          this.customerSubject.next(customer);
-          return customer; 
-      }));
-  }
+  // infoCustomer(id: number) {
+  //   return this.http.get<Customer>(`${this.webRequestService.ROOT_URL}/customer/info/${id}`)
+  //     .pipe(map(customer => {
+  //         localStorage.setItem('customer', JSON.stringify(customer));
+  //         this.customerSubject.next(customer);
+  //         return customer; 
+  //     }));
+  // }
 
-  infoTourGuide(id: number) {
-    return this.http.get<TourGuide>(`${this.webRequestService.ROOT_URL}/tourguide/info/${id}`)
-      .pipe(map(tourguide => {
-          localStorage.setItem('tourguide', JSON.stringify(tourguide));
-          this.tourguideSubject.next(tourguide);
-          return tourguide; 
-      }));
-  }
+  // infoTourGuide(id: number) {
+  //   return this.http.get<TourGuide>(`${this.webRequestService.ROOT_URL}/tourguide/info/${id}`)
+  //     .pipe(map(tourguide => {
+  //         localStorage.setItem('tourguide', JSON.stringify(tourguide));
+  //         this.tourguideSubject.next(tourguide);
+  //         return tourguide; 
+  //     }));
+  // }
 
 }

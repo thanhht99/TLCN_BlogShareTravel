@@ -8,25 +8,27 @@
         </div>
         <div class="information">
             <div class="person-name">
-                <p>{{tourGuide.name}}</p>
+                <p>{{ tourGuide.name }}</p>
             </div>
-            <br/>
+            <br />
 
-            <div class="job-description">Giới Tính: {{tourGuide.gender}}</div>
-            <div class="job-description">CMND/CCCD: {{tourGuide.identity}}</div>
-            <div class="job-description">Ngày Sinh: {{tourGuide.dateOfBirth}}</div>
-            <div class="job-description">Ngôn Ngữ: {{tourGuide.language}}</div>
-            <div class="job-description">Địa Chỉ: {{tourGuide.address}}</div>
-            <div class="job-description">Số chuyến đi: {{tourGuide.tripNumber}}</div>
+            <div class="job-description">Giới Tính: {{ tourGuide.gender }}</div>
+            <div class="job-description">CMND/CCCD: {{ tourGuide.identity }}</div>
+            <div class="job-description">Ngày Sinh: {{ tourGuide.dateOfBirth }}</div>
+            <div class="job-description">Ngôn Ngữ: {{ tourGuide.language }}</div>
+            <div class="job-description">Địa Chỉ: {{ tourGuide.address }}</div>
+            <div class="job-description">
+                Số chuyến đi: {{ tourGuide.tripNumber }}
+            </div>
             <div class="contacts">
                 <div class="phone-number">
                     <p>
-                        <a href="tel:{{tourGuide.phone}}">SĐT: {{tourGuide.phone}}</a>
+                        <a href="tel:{{ tourGuide.phone }}">SĐT: {{ tourGuide.phone }}</a>
                     </p>
                 </div>
                 <div class="email">
                     <p>
-                        <a href="{{tourGuide.email}}">Email: {{tourGuide.email}}</a>
+                        <a href="{{ tourGuide.email }}">Email: {{ tourGuide.email }}</a>
                     </p>
                 </div>
             </div>
@@ -36,16 +38,22 @@
         <div type="button" class="btn btn-info">
             <b routerLink="/tourguide/info/{{ account.id }}" (click)="reloadPage()">Cập Nhật</b
       >
-    </div>        <div type="button" class="btn btn-warning"><b routerLink="/tourguide/info/{{ account.id }}/update">Sửa</b></div>
     </div>
-
+    <div type="button" class="btn btn-warning">
+      <b routerLink="/tourguide/info/{{ account.id }}/update">Sửa</b>
+        </div>
+    </div>
 </div>
 <div class="container">
     <button type="button" class="btn btn-primary" style="margin-left: 9px">
-        <b routerLink="/tourguide/info/{{ account.id }}/listRegisterTrip">
-          Danh Sách Chuyến Đi
-        </b>
-      </button>
-    <button type="button" class="btn btn-primary" style="margin-left: 15px"><b routerLink="/tourguide/info/{{ account.id }}/listTour">Danh Sách Tour</b></button>
-    <button type="button" class="btn btn-primary" style="margin-left: 15px;"><b>Hướng Dẫn Chuyến Đi </b></button>
+    <b routerLink="/tourguide/info/{{ account.id }}/listRegisterTrip">
+      Danh Sách Chuyến Đi
+    </b>
+  </button>
+    <button type="button" class="btn btn-primary" style="margin-left: 15px">
+    <b routerLink="/tourguide/info/{{ account.id }}/listTour">Danh Sách Tour</b>
+  </button>
+    <button type="button" class="btn btn-primary" style="margin-left: 15px">
+    <b>Hướng Dẫn Chuyến Đi </b>
+  </button>
 </div>

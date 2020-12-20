@@ -5,7 +5,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { BehaviorSubject, Observable } from 'rxjs';
 
-import { LoginService } from '../../_services/login.service';
+import { LoginService, TourGuideService, CustomerService } from '../../_services';
 import { Account } from '../../models/account.model';
 import { first } from 'rxjs/operators';
 import { AlertService } from '../../_services';
@@ -25,6 +25,8 @@ export class LoginComponent implements OnInit {
   public account: Observable<Account>;
 
   constructor(  private loginService: LoginService,
+                private tourGuideService: TourGuideService, 
+                private customerService: CustomerService,
                 private router: Router,
                 private route: ActivatedRoute,
                 private formBuilder: FormBuilder,
@@ -77,7 +79,7 @@ export class LoginComponent implements OnInit {
                   //console.log(account);
                   
                   this.router.navigate(['/home'], { relativeTo: this.route });
-                  this.loginService.infoCustomer(account.id)
+                  this.customerService.infoCustomer(account.id)
                     .pipe(first())
                     .subscribe({
                     next: (data: any) =>{
@@ -91,7 +93,7 @@ export class LoginComponent implements OnInit {
                 if(account.isTourGuide == true)
                 {
                   this.router.navigate(['/home'], { relativeTo: this.route });
-                  this.loginService.infoTourGuide(account.id)
+                  this.tourGuideService.infoTourGuide(account.id)
                     .pipe(first())
                     .subscribe({
                     next: (data: any) =>{
