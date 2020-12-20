@@ -25,6 +25,8 @@ export class ListTourComponent implements OnInit {
   customer: Customer;
   listChuaDuyets: Tour;
   listDaDuyets: Tour;
+  listChuaDuyetsArray: Array<Tour>;
+  listDaDuyetsArray: Array<Tour>;
   id: number;
   sub: any;
 
@@ -68,6 +70,17 @@ export class ListTourComponent implements OnInit {
     
 
   }
+
+  onChangePage(listDaDuyetsArray: Array<Tour>) {
+    // update current page of items
+    this.listDaDuyetsArray = listDaDuyetsArray;
+    // console.log(this.listDaDuyetsArray)
+  } 
+
+  onChangePage2(listChuaDuyetsArray: Array<Tour>) {
+    // update current page of items
+    this.listChuaDuyetsArray = listChuaDuyetsArray;
+  } 
 
   ngOnInit(): void {
   }

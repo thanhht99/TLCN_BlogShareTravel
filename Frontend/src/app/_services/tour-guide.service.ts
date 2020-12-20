@@ -12,7 +12,7 @@ import { map } from 'rxjs/operators';
     providedIn: 'root'
   })
   export class TourGuideService {
-    public tourguides: TourGuide[];
+    public tourGuides: TourGuide[];
 
     private tourGuideSubject: BehaviorSubject<TourGuide>;
     public tourGuide: Observable<TourGuide>;

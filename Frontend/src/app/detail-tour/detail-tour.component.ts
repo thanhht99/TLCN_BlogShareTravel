@@ -26,6 +26,9 @@ export class DetailTourComponent implements OnInit {
   sub: any;
   listChuaDuyets: Tour;
   listDaDuyets: Tour;
+
+  trips: Trip;
+  tripArray: Array<Trip>;
   constructor(private tourGuideService: TourGuideService, 
               private alertService: AlertService,
               private tourService: TourService,
@@ -40,7 +43,18 @@ export class DetailTourComponent implements OnInit {
     this.sub = this.route.params.subscribe(params => {
       let id = Number.parseInt(params['id']);
       this.id = id;
-      console.log(this.id)      
+      // console.log(this.id)    
+      
+      try{
+        this.tourService.getTripById(id)
+        .pipe(first())
+        .subscribe(trip => {
+          this.trips = trip
+          }
+        );
+      }catch{
+        this.trips = null;
+      }  
     });
 
     this.listChuaDuyets = this.tourService.tourChuaDuyetValue;
@@ -63,12 +77,12 @@ export class DetailTourComponent implements OnInit {
       }      
     }
     this.tour.updatedAt = new DatePipe('en-US').transform(this.tour.updatedAt, 'dd/MM/yyyy');
-    console.log(this.tour)
-
-
-
-
+    // console.log(this.tour)
   }
+
+  onChangePage(tripArray: Array<Trip>) {
+    this.tripArray = tripArray;
+  } 
 
   ngOnInit(): void {
   }

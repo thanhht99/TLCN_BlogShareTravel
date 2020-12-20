@@ -38,7 +38,7 @@ export class CustomerInfoComponent implements OnInit {
     });
 
     this.customer = this.customerService.customerValue;
-
+    // console.log(this.customer);
   }
 
   ngOnInit(): void {

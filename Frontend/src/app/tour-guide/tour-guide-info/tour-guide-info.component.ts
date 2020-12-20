@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { DatePipe, Location  } from '@angular/common';
-
 import { LoginService, TourGuideService } from '../../_services';
 import { TourGuide,Account } from '../../models';
 import { first } from 'rxjs/operators';
@@ -21,25 +19,26 @@ export class TourGuideInfoComponent implements OnInit {
   constructor(private loginService: LoginService,
               private tourGuideService: TourGuideService, 
               private router: Router,
-              private route: ActivatedRoute,
-              private location: Location) 
+              private route: ActivatedRoute) 
   {
     this.account = this.loginService.accountValue;
+    console.log(this.account)
 
     this.sub = this.route.params.subscribe(params => {
       let id = Number.parseInt(params['id']);
       this.id = id;
-      // console.log(this.id)
+      console.log(this.id)
       this.tourGuideService.infoTourGuide(this.id)
           .pipe(first())
           .subscribe(lists => {
-            // console.log('--------------lists-------------');
-            // console.log(lists);
+            console.log('--------------lists-------------');
+            console.log(lists);
             }
           );         
     });
 
     this.tourGuide = this.tourGuideService.tourGuideValue;
+    console.log(this.tourGuide);
   }
 
   ngOnInit(): void {
@@ -48,10 +47,6 @@ export class TourGuideInfoComponent implements OnInit {
 
   reloadPage(){
     window.location.reload();
-  }
-
-  cancel() {
-    this.location.back(); // <-- go back to previous location on cancel
   }
 
 }

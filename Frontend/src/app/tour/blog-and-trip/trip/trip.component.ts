@@ -32,6 +32,7 @@ export class TripComponent implements OnInit {
   sub: any;
   id: number;
   items = [];
+  checkPage: boolean;
 
   constructor(private tourService: TourService, 
               private loginService: LoginService,
@@ -44,21 +45,26 @@ export class TripComponent implements OnInit {
     this.sub = this.route.params.subscribe(params => {
       let id = Number.parseInt(params['id']);
       this.id = id;
-      this.tourService.getTripById(id)
-            .pipe(first())
-            .subscribe(trip => {
-              // console.log('--------------TRIP-------------');
-              // console.log(trip);
-              this.trips = trip}
-            );    
-            
-            
+
+      try{
+        this.tourService.getTripById(id)
+        .pipe(first())
+        .subscribe(trip => {
+          this.trips = trip
+          this.checkPage = true;
+          // console.log(this.checkPage);
+          }
+        );
+      }catch{
+        this.trips = null;
+        this.checkPage = false;
+        // console.log(this.checkPage);
+      }                    
     }); 
-    this.trips = this.tourService.tripValue;
-    // console.log(this.trips)
     this.loginService.account.subscribe(x => this.account = x);
     this.loginService.tourguide.subscribe(a => this.tourGuide = a);
     this.tourService.tour.subscribe(a => this.tours = a);
+    // console.log(this.tours)
     for(let i in this.tours) {
       if(this.tours[i].id === this.id)
       { 
@@ -67,18 +73,21 @@ export class TripComponent implements OnInit {
     }
   }
   ngOnInit(): void {   
-
-    this.form = this.formBuilder.group({
-      infoHotel: ['', Validators.required],
-      infoVehicle: ['', Validators.required],
-      startDate: ['', Validators.required],
-      endDate: ['', Validators.required],
-      price: [this.tour.price.toString(), Validators.required],
-      childrenPrice: [this.tour.price.toString(), Validators.required],
-      babyPrice: [0, Validators.required],
-      tourId: [this.tourGuide.id.toString(), Validators.required]
-    });  
+    if(this.account.isTourGuide)
+    { 
+      this.form = this.formBuilder.group({
+        infoHotel: ['', Validators.required],
+        infoVehicle: ['', Validators.required],
+        startDate: ['', Validators.required],
+        endDate: ['', Validators.required],
+        price: [this.tour.price.toString(), Validators.required],
+        childrenPrice: [this.tour.price.toString(), Validators.required],
+        babyPrice: [0, Validators.required],
+        tourId: [this.tourGuide.id.toString(), Validators.required]
+      });  
+    }
     
+
   }
 
   get f() { return this.form.controls; }
@@ -89,7 +98,9 @@ export class TripComponent implements OnInit {
 
   onChangePage(tripArray: Array<Trip>) {
     // update current page of items
+    // console.log(this.trips)
     this.tripArray = tripArray;
+    // console.log(this.tripArray)
   } 
 
   addTrip() {

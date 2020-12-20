@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { map, catchError } from 'rxjs/operators';
 
 import { Account, Tour, Trip, RegisterTrip, Blog } from '../models';
 import { WebRequestService } from '../web-request.service';
@@ -167,9 +167,14 @@ export class TourService {
       .pipe(map(trip => {
           localStorage.setItem('trip', JSON.stringify(trip));
           this.tripSubject.next(trip);
-          //console.log(trip);
+          // console.log(trip);
           return trip; 
       }));
+      // catchError((error) => {
+      //     this.tourChuaDuyetSubject.next(null);
+      //     console.log(error);
+      //     return error; 
+      // }));
   }
 
   getBlogById(id: number) {

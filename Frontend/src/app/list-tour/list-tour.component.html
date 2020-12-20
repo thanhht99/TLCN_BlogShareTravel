@@ -22,7 +22,7 @@
             </thead>
         </table>
     </div>
-    <div class="tbl-content" *ngFor="let listDaDuyet of listDaDuyets">
+    <div class="tbl-content" *ngFor="let listDaDuyet of listDaDuyetsArray">
         <table cellpadding="0" cellspacing="0" border="0">
             <tbody>
                 <tr>
@@ -38,6 +38,11 @@
                 </tr>
             </tbody>
         </table>
+    </div>
+</div>
+<div class="card text-center m-3">
+    <div class="card-footer pb-0 pt-3">
+        <jw-pagination [items]="listDaDuyets" (changePage)="onChangePage($event)"></jw-pagination>
     </div>
 </div>
 
@@ -58,7 +63,7 @@
             </thead>
         </table>
     </div>
-    <div class="tbl-content" *ngFor="let listChuaDuyet of listChuaDuyets">
+    <div class="tbl-content" *ngFor="let listChuaDuyet of listChuaDuyetsArray">
         <table cellpadding="0" cellspacing="0" border="0">
             <tbody>
                 <tr>
@@ -74,5 +79,10 @@
                 </tr>
             </tbody>
         </table>
+    </div>
+</div>
+<div class="card text-center m-3">
+    <div class="card-footer pb-0 pt-3">
+        <jw-pagination [items]="listChuaDuyets" (changePage)="onChangePage2($event)"></jw-pagination>
     </div>
 </div>

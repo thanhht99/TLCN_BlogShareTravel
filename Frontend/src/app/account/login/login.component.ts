@@ -80,7 +80,9 @@ export class LoginComponent implements OnInit {
                   this.loginService.infoCustomer(account.id)
                     .pipe(first())
                     .subscribe({
-                    next: (data: any) =>{console.log(data);},
+                    next: (data: any) =>{
+                      // console.log(data);
+                    },
                     error: error => {
                       this.alertService.error('Customer not found', { keepAfterRouteChange: true });
                     }
@@ -92,7 +94,9 @@ export class LoginComponent implements OnInit {
                   this.loginService.infoTourGuide(account.id)
                     .pipe(first())
                     .subscribe({
-                    next: (data: any) =>{},
+                    next: (data: any) =>{
+                      // console.log(data);
+                    },
                     error: error => {
                       this.alertService.error('Tour Guide not found', { keepAfterRouteChange: true });
                     }

@@ -29,8 +29,6 @@ export class DetailRegisterTripComponent implements OnInit {
               private location: Location) 
   { 
     this.account = this.loginService.accountValue;
-    // console.log("--------------account---------------")
-    // console.log(this.account)
     this.sub = this.route.params.subscribe(params => {
       let id = Number.parseInt(params['id']);
       this.id = id;

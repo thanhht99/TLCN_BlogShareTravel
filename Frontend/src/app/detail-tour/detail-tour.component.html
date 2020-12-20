@@ -9,7 +9,7 @@
 
 <div class="classdetails" *ngIf="account.isTourGuide">
     <div class="card border-primary">
-        <h1 class="card-header">{{ tour.name }}</h1>
+        <h1 class="tour-banner-title" style="width: 96%">{{ tour.name }}</h1>
 
         <div class="card-body">
             <div class="form-row">
@@ -70,9 +70,57 @@
                 </div>
             </div>
             <br />
-            <div type="button" class="btn btn-success">
+            <div type="button" class="btn btn-success" style="margin-left: 15px" *ngIf="!tour.isStatus">
                 <b>Thêm hình ảnh</b>
             </div>
+        </div>
+    </div>
+</div>
+
+<h2>Danh sách các chuyến đi</h2>
+<div class="row trip-row">
+    <div class="tbl-header">
+        <table cellpadding="0" cellspacing="0" border="0">
+            <thead>
+                <tr>
+                    <th>Khởi hành</th>
+                    <th>Ngày về</th>
+                    <th>Mã Tour</th>
+                    <th>Khách sạn</th>
+                    <th>Phương tiện</th>
+                    <th>Giá</th>
+                    <th>Giá trẻ em</th>
+                    <th>Giá em bé</th>
+                    <th>SL còn lại</th>
+                    <th>Mua Tour</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+    <div class="tbl-content" *ngFor="let trip of tripArray">
+        <table cellpadding="0" cellspacing="0" border="0">
+            <tbody>
+                <tr>
+                    <td>{{ trip.startDate }}</td>
+                    <td>{{ trip.endDate }}</td>
+                    <td>
+                        {{ trip.tourId }}{{ tour.tourGuideId }}{{ trip.id }}{{ trip.tourGuideId }}
+                    </td>
+                    <td>{{ trip.infoHotel }}</td>
+                    <td>{{ trip.infoVehicle }}</td>
+                    <td>{{ trip.price }}</td>
+                    <td>{{ trip.childrenPrice }}</td>
+                    <td>{{ trip.babyPrice }}</td>
+                    <td>{{ trip.theRemainingAmount }}</td>
+                    <td>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="card text-center m-3">
+        <div class="card-footer pb-0 pt-3">
+            <jw-pagination [items]="trips" (changePage)="onChangePage($event)"></jw-pagination>
         </div>
     </div>
 </div>

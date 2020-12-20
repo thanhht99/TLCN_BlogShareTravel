@@ -8,6 +8,7 @@ const Account = models.Account;
 const Trip = models.Trip;
 const Tour = models.Tour;
 const RegisterTrip = models.RegisterTrip;
+const TourGuide = models.TourGuide;
 
 router.get('/listChuaDuyet/:id', async(req, res) => {
     const idneed = parseInt(req.params.id, 10);
@@ -21,6 +22,8 @@ router.get('/listChuaDuyet/:id', async(req, res) => {
             model: Trip,
             include: [{
                 model: Tour
+            }, {
+                model: TourGuide
             }]
         }]
     }).then((registertrips) => {
@@ -42,6 +45,8 @@ router.get('/listDaDuyet/:id', async(req, res) => {
             model: Trip,
             include: [{
                 model: Tour
+            }, {
+                model: TourGuide
             }]
         }]
     }).then((registertrips) => {

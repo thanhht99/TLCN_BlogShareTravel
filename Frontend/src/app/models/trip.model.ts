@@ -1,3 +1,6 @@
+import {Tour} from './tour.model';
+import {TourGuide} from './tour-guide.model';
+
 export class Trip {
     id: Number;
     infoHotel: String;
@@ -12,5 +15,6 @@ export class Trip {
     isStatus: Boolean
     tourId: Number;
     tourGuideId: Number;    
-    Tour: Object;
+    Tour: Tour;
+    TourGuide: TourGuide;
 }

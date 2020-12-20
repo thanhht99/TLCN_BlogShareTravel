@@ -194,7 +194,7 @@ router.get('/:id/trip', async(req, res) => {
     const test = await Trip.findOne({ where: { tourId: idneed } });
 
     if (!test) {
-        res.send(404);
+        res.status(404).json("No found");
     } else {
         //console.log("--------------------TRIP------------------");
         Trip.findAll({
