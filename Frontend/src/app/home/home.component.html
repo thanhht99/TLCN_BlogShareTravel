@@ -16,11 +16,11 @@
             <img style="height: 100%" src="http://1.bp.blogspot.com/-pwLWraH2PP4/VgFBT1iwEmI/AAAAAAABCPQ/20tpdhXDfbM/s1600/halong-bay-landscape-in-vietnam-island-wallpaper-1920x1080.jpg" class="d-block w-100" alt="..." />
         </div>
     </div>
-    <a class="carousel-control-prev "  href="#carouselExampleIndicators" role="button" data-slide="prev" >
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="sr-only">Previous</span>
     </a>
-    <a class="carousel-control-next " href="#carouselExampleIndicators" role="button" data-slide="next" >
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="sr-only">Next</span>
     </a>
@@ -52,7 +52,7 @@
         <!--First slide-->
         <div class="carousel-item active">
             <div class="row">
-                <!-- <div class="col-md-4 clearfix d-none d-md-block">
+                <div class="col-md-4 clearfix d-none d-md-block">
                     <div class="card mb-2">
                         <img class="card-img-top" src="{{ tours[0].avatarPath }}" alt="Card image cap" style="height: 200px" />
                         <div class="card-body">
@@ -62,7 +62,7 @@
                             <p class="card-text">
                                 {{ tours[0].summary }}
                             </p>
-                            <a href="/tour/blog&trip/{{ tours[0].id }}" data-url="/tour/blog&trip/{{ tours[0].id }}" class="btn btn-primary">
+                            <a href="/tour/blog&trip/{{ tours[0].id }}" class="btn btn-primary">
                 Đặt tour
               </a>
                         </div>
@@ -79,46 +79,26 @@
                             <p class="card-text">
                                 {{ tours[1].summary }}
                             </p>
-                            <a href="/tour/blog&trip/{{ tours[1].id }}" data-url="/tour/blog&trip/{{ tours[1].id }}" class="btn btn-primary">
+                            <a href="/tour/blog&trip/{{ tours[1].id }}" class="btn btn-primary">
                 Đặt tour
               </a>
-                        </div>
-                    </div>
-                </div> -->
-                <div class="col-md-4">
-                    <div class="card mb-2">
-                        <img class="card-img-top" src="../../assets/img/carousel/Danang.jpg" alt="Card image cap" style="height: 200px" />
-                        <div class="card-body">
-                            <h4 class="card-title"><b>Tour Đà Nẵng</b></h4>
-                            <p class="card-text">
-                                Buổi chiều khởi hành tham quan Phố cổ Hội An với các công trình tiêu biểu: Chùa Cầu Nhật Bản, chùa Ông.
-                            </p>
-                            <a class="btn btn-primary">Đặt tour</a>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-md-4 clearfix d-none d-md-block">
                     <div class="card mb-2">
-                        <img class="card-img-top" src="../../assets/img/carousel/Vungtau.jpg" alt="Card image cap" style="height: 200px" />
+                        <img class="card-img-top" src="{{ tours[2].avatarPath }}" alt="Card image cap" style="height: 200px" />
                         <div class="card-body">
-                            <h4 class="card-title"><b>Tour Vũng Tàu</b></h4>
+                            <h4 class="card-title">
+                                <b>Tour {{ tours[2].destination }}</b>
+                            </h4>
                             <p class="card-text">
-                                Vũng Tàu luôn là một điểm đến dành cho du khách bốn phương , phong cảnh trữ tình,công trình kiến trúc tôn giáo tầm cỡ.
+                                {{ tours[2].summary }}
                             </p>
-                            <a class="btn btn-primary">Đặt tour</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 clearfix d-none d-md-block">
-                    <div class="card mb-2">
-                        <img class="card-img-top" src="../../assets/img/carousel/Nhatrang.png" alt="Card image cap" style="height: 200px" />
-                        <div class="card-body">
-                            <h4 class="card-title"><b>Tour Nha Trang</b></h4>
-                            <p class="card-text">
-                                Tham quan Chùa Từ Vân hay còn gọi là Chùa Ốc, ngôi chùa làm từ vỏ ốc “độc nhất vô nhị ở Việt Nam”.
-                            </p>
-                            <a class="btn btn-primary">Đặt tour</a>
+                            <a href="/tour/blog&trip/{{ tours[2].id }}" class="btn btn-primary">
+                Đặt tour
+              </a>
                         </div>
                     </div>
                 </div>
@@ -129,41 +109,53 @@
         <!--Second slide-->
         <div class="carousel-item">
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-4 clearfix d-none d-md-block">
                     <div class="card mb-2">
-                        <img class="card-img-top" src="../../assets/img/carousel/Danang.jpg" alt="Card image cap" style="height: 200px" />
+                        <img class="card-img-top" src="{{ tours[3].avatarPath }}" alt="Card image cap" style="height: 200px" />
                         <div class="card-body">
-                            <h4 class="card-title"><b>Tour Đà Nẵng</b></h4>
+                            <h4 class="card-title">
+                                <b>Tour {{ tours[3].destination }}</b>
+                            </h4>
                             <p class="card-text">
-                                Buổi chiều khởi hành tham quan Phố cổ Hội An với các công trình tiêu biểu: Chùa Cầu Nhật Bản, chùa Ông.
+                                {{ tours[3].summary }}
                             </p>
-                            <a class="btn btn-primary">Đặt tour</a>
+                            <a href="/tour/blog&trip/{{ tours[3].id }}" class="btn btn-primary">
+                Đặt tour
+              </a>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-md-4 clearfix d-none d-md-block">
                     <div class="card mb-2">
-                        <img class="card-img-top" src="../../assets/img/carousel/Vungtau.jpg" alt="Card image cap" style="height: 200px" />
+                        <img class="card-img-top" src="{{ tours[4].avatarPath }}" alt="Card image cap" style="height: 200px" />
                         <div class="card-body">
-                            <h4 class="card-title"><b>Tour Vũng Tàu</b></h4>
+                            <h4 class="card-title">
+                                <b>Tour {{ tours[4].destination }}</b>
+                            </h4>
                             <p class="card-text">
-                                Vũng Tàu luôn là một điểm đến dành cho du khách bốn phương , phong cảnh trữ tình,công trình kiến trúc tôn giáo tầm cỡ.
+                                {{ tours[4].summary }}
                             </p>
-                            <a class="btn btn-primary">Đặt tour</a>
+                            <a href="/tour/blog&trip/{{ tours[4].id }}" class="btn btn-primary">
+                Đặt tour
+              </a>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-md-4 clearfix d-none d-md-block">
                     <div class="card mb-2">
-                        <img class="card-img-top" src="../../assets/img/carousel/NinhBinh.jpg" alt="Card image cap" style="height: 200px" />
+                        <img class="card-img-top" src="{{ tours[5].avatarPath }}" alt="Card image cap" style="height: 200px" />
                         <div class="card-body">
-                            <h4 class="card-title"><b>Tour Ninh Bình</b></h4>
+                            <h4 class="card-title">
+                                <b>Tour {{ tours[5].destination }}</b>
+                            </h4>
                             <p class="card-text">
-                                Ngắm hồ Tam Chúc, viếng chùa Tam Chúc ,quần thể khu tâm linh kỳ vọng là lớn nhất thế giới khi hoàn thành vào năm 2048.
+                                {{ tours[5].summary }}
                             </p>
-                            <a class="btn btn-primary">Đặt tour</a>
+                            <a href="/tour/blog&trip/{{ tours[5].id }}" class="btn btn-primary">
+                Đặt tour
+              </a>
                         </div>
                     </div>
                 </div>
@@ -174,41 +166,53 @@
         <!--Third slide-->
         <div class="carousel-item">
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-4 clearfix d-none d-md-block">
                     <div class="card mb-2">
-                        <img class="card-img-top" src="../../assets/img/carousel/PhuQuoc.jpg" alt="Card image cap" style="height: 200px" />
+                        <img class="card-img-top" src="{{ tours[6].avatarPath }}" alt="Card image cap" style="height: 200px" />
                         <div class="card-body">
-                            <h4 class="card-title">Tour Phú Quốc</h4>
+                            <h4 class="card-title">
+                                <b>Tour {{ tours[6].destination }}</b>
+                            </h4>
                             <p class="card-text">
-                                Tắm biển Bãi Sao (hoặc bãi Ông Lang tùy điều kiện thời tiết) - một trong những bãi biển đẹp nhất tại Phú Quốc.
+                                {{ tours[6].summary }}
                             </p>
-                            <a class="btn btn-primary">Đặt tour</a>
+                            <a href="/tour/blog&trip/{{ tours[6].id }}" class="btn btn-primary">
+                Đặt tour
+              </a>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-md-4 clearfix d-none d-md-block">
                     <div class="card mb-2">
-                        <img class="card-img-top" src="../../assets/img/carousel/Sapa.jpg" alt="Card image cap" style="height: 200px" />
+                        <img class="card-img-top" src="{{ tours[7].avatarPath }}" alt="Card image cap" style="height: 200px" />
                         <div class="card-body">
-                            <h4 class="card-title"><b>Tour Sapa</b></h4>
+                            <h4 class="card-title">
+                                <b>Tour {{ tours[7].destination }}</b>
+                            </h4>
                             <p class="card-text">
-                                Thăm quần thể di tích Bạch Đằng Giang với đền thờ các vị anh hùng dân tộc: vua Lê Đại Hành, Ngô Quyền, Trần Hưng Đạo.
+                                {{ tours[7].summary }}
                             </p>
-                            <a class="btn btn-primary">Đặt tour</a>
+                            <a href="/tour/blog&trip/{{ tours[7].id }}" class="btn btn-primary">
+                Đặt tour
+              </a>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-md-4 clearfix d-none d-md-block">
                     <div class="card mb-2">
-                        <img class="card-img-top" src="../../assets/img/carousel/Vinh ha long.jpg" alt="Card image cap" style="height: 200px" />
+                        <img class="card-img-top" src="{{ tours[8].avatarPath }}" alt="Card image cap" style="height: 200px" />
                         <div class="card-body">
-                            <h4 class="card-title"><b>Tour Vịnh Hạ Long</b></h4>
+                            <h4 class="card-title">
+                                <b>Tour {{ tours[8].destination }}</b>
+                            </h4>
                             <p class="card-text">
-                                Du lịch Vịnh Hạ Long một trong Bảy kỳ quan thiên nhiên thế giới , Thế giới công nhận là di sản thiên nhiên thế giới.
+                                {{ tours[8].summary }}
                             </p>
-                            <a class="btn btn-primary">Đặt tour</a>
+                            <a href="/tour/blog&trip/{{ tours[8].id }}" class="btn btn-primary">
+                Đặt tour
+              </a>
                         </div>
                     </div>
                 </div>

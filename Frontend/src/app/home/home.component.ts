@@ -26,9 +26,8 @@ export class HomeComponent implements OnInit {
               this.tours = tour
             });   
 
-    this.tours = this.tourService.tourValue;
-    console.log(this.tours);
-    console.log(this.tours[0]);
+    this.tours = this.tourService.tourHomeValue;
+    // console.log(this.tours);
   }
 
 }

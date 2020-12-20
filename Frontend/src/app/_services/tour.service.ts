@@ -14,6 +14,9 @@ import { WebRequestService } from '../web-request.service';
 export class TourService {
   public tours: Tour[];
 
+  private tourHomeSubject: BehaviorSubject<Tour>;
+  public tourHome: Observable<Tour>;
+
   private tourSubject: BehaviorSubject<Tour>;
   public tour: Observable<Tour>;
 
@@ -42,6 +45,8 @@ export class TourService {
               private router: Router, 
               private http: HttpClient) 
   { 
+    this.tourHomeSubject = new BehaviorSubject<Tour>(JSON.parse(localStorage.getItem('tourHome')));
+    this.tourHome = this.tourHomeSubject.asObservable();
 
     this.tourSubject = new BehaviorSubject<Tour>(JSON.parse(localStorage.getItem('tour')));
     this.tour = this.tourSubject.asObservable();
@@ -77,6 +82,10 @@ export class TourService {
     return this.tourSubject.value;
   }
 
+  public get tourHomeValue(): Tour {
+    return this.tourHomeSubject.value;
+  }
+
   public get tourDaDuyetValue(): Tour {
     return this.tourDaDuyetSubject.value;
   }
@@ -109,10 +118,10 @@ export class TourService {
 
   listHome() {
     return this.http.get<Tour>(`${this.webRequestService.ROOT_URL}/tour/listHome`)
-      .pipe(map(tour => {
-          localStorage.setItem('tour', JSON.stringify(tour));
-          this.tourSubject.next(tour);
-          return tour; 
+      .pipe(map(tourHome => {
+          localStorage.setItem('tourHome', JSON.stringify(tourHome));
+          this.tourHomeSubject.next(tourHome);
+          return tourHome; 
       }));
   }
 
