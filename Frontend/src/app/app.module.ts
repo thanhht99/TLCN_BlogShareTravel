@@ -14,10 +14,10 @@ import { HomeComponent } from './home/home.component';
 
 import { AlertComponent, FooterComponent, HeaderComponent } from './_components';
 import { CommonModule } from '@angular/common';
-import { ListRegisterTripComponent } from './list-register-trip/list-register-trip.component';
-import { DetailRegisterTripComponent } from './detail-register-trip/detail-register-trip.component';
-import { ListTourComponent } from './list-tour/list-tour.component';
-import { DetailTourComponent } from './detail-tour/detail-tour.component';
+import { ListRegisterTripComponent } from './list/list-register-trip/list-register-trip.component';
+import { DetailRegisterTripComponent } from './detail/detail-register-trip/detail-register-trip.component';
+import { ListTourComponent } from './list/list-tour/list-tour.component';
+import { DetailTourComponent } from './detail/detail-tour/detail-tour.component';
 
 @NgModule({
   

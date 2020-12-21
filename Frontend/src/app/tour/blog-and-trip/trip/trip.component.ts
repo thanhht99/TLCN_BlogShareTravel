@@ -7,7 +7,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { first } from 'rxjs/operators';
 
-import { TourService, LoginService, AlertService } from '../../../_services';
+import { TourService, LoginService, AlertService, TourGuideService } from '../../../_services';
 import { Trip, Tour, Account, TourGuide } from '../../../models';
 
 
@@ -37,6 +37,7 @@ export class TripComponent implements OnInit {
   constructor(private tourService: TourService, 
               private loginService: LoginService,
               private alertService: AlertService,
+              private tourGuideService: TourGuideService, 
               private router: Router,
               private route: ActivatedRoute,
               private formBuilder: FormBuilder,
@@ -62,7 +63,7 @@ export class TripComponent implements OnInit {
       }                    
     }); 
     this.loginService.account.subscribe(x => this.account = x);
-    this.loginService.tourguide.subscribe(a => this.tourGuide = a);
+    this.tourGuide = this.tourGuideService.tourGuideValue;
     this.tourService.tour.subscribe(a => this.tours = a);
     // console.log(this.tours)
     for(let i in this.tours) {

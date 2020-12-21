@@ -4,11 +4,11 @@ import { HttpResponse, HttpClient } from '@angular/common/http';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { DatePipe, Location  } from '@angular/common';
 
-import { TourGuideService, TourService, AlertService,CustomerService,LoginService } from '../_services';
-import { Tour, Account, TourGuide, RegisterTrip, Customer, Trip } from '../models';
+import { TourGuideService, TourService, AlertService,CustomerService,LoginService } from '../../_services';
+import { Tour, Account, TourGuide, RegisterTrip, Customer, Trip } from '../../models';
 
 import { first } from 'rxjs/operators';
-import { WebRequestService } from '../web-request.service';
+import { WebRequestService } from '../../web-request.service';
 
 @Component({
   selector: 'app-detail-tour',
@@ -83,6 +83,10 @@ export class DetailTourComponent implements OnInit {
   onChangePage(tripArray: Array<Trip>) {
     this.tripArray = tripArray;
   } 
+
+  addImage(){
+    this.router.navigate(['/tour/add/image', this.tour.id], { relativeTo: this.route });
+  }
 
   ngOnInit(): void {
   }

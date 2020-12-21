@@ -6,8 +6,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { first } from 'rxjs/operators';
 
-import { TourService, LoginService, AlertService } from '../_services';
-import { Trip, Tour, Account, TourGuide, Customer, RegisterTrip } from '../models';
+import { TourService, LoginService, AlertService } from '../../_services';
+import { Trip, Tour, Account, TourGuide, Customer, RegisterTrip } from '../../models';
 
 @Component({
   selector: 'app-list-register-trip',
@@ -24,6 +24,8 @@ export class ListRegisterTripComponent implements OnInit {
   customer: Customer;
   listChuaDuyets: RegisterTrip;
   listDaDuyets: RegisterTrip;
+  listChuaDuyetsArray: Array<RegisterTrip>;
+  listDaDuyetsArray: Array<RegisterTrip>;
   id: number;
   sub: any;
   constructor(private tourService: TourService, 
@@ -62,8 +64,26 @@ export class ListRegisterTripComponent implements OnInit {
             // console.log('--------------lists-------------');
             // console.log(lists);
             }
-          );       
+          );      
     }); 
+    
+
+  }
+
+  onChangePage(listDaDuyetsArray: Array<RegisterTrip>) {
+    // update current page of items
+    this.listDaDuyetsArray = listDaDuyetsArray;
+    // console.log(this.listDaDuyetsArray)
+  } 
+
+  onChangePage2(listChuaDuyetsArray: Array<RegisterTrip>) {
+    // update current page of items
+    this.listChuaDuyetsArray = listChuaDuyetsArray;
+  } 
+
+  ngOnInit(): void {
+    
+
     this.listChuaDuyets = this.tourService.registertripChuaDuyetValue;
     // console.log('--------------listChuaDuyet-------------');
     // console.log(this.listChuaDuyets);
@@ -71,11 +91,6 @@ export class ListRegisterTripComponent implements OnInit {
     this.listDaDuyets = this.tourService.registertripDaDuyetValue;
     // console.log('--------------listDaDuyets-------------');
     // console.log(this.listDaDuyets);
-
-  }
-
-  ngOnInit(): void {
-
   }
 
   reloadPage(){

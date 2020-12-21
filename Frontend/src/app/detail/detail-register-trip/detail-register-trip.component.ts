@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { CustomerService, LoginService, AlertService, TourService } from '../_services';
-import { Tour, Account, TourGuide, RegisterTrip, Customer, Trip } from '../models';
+import { CustomerService, LoginService, AlertService, TourService } from '../../_services';
+import { Tour, Account, TourGuide, RegisterTrip, Customer, Trip } from '../../models';
 import { Router, ActivatedRoute } from '@angular/router';
 import { DatePipe, Location  } from '@angular/common';
 

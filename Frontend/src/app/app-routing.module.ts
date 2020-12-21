@@ -5,7 +5,7 @@ import { AuthGuard } from './_helpers';
 import { HomeComponent } from './home/home.component';
 import { ErrorComponent, FooterComponent, HeaderComponent } from './_components';
 
-import {DetailRegisterTripComponent} from './detail-register-trip/detail-register-trip.component';
+import {DetailRegisterTripComponent} from './detail/detail-register-trip/detail-register-trip.component';
 const customerModule = () => import('./customer/customer.module').then(x => x.CustomerModule);
 const tourguideModule = () => import('./tour-guide/tour-guide.module').then(x => x.TourGuideModule);
 const accountModule = () => import('./account/account.module').then(x => x.AccountModule);

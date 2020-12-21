@@ -3,11 +3,11 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { LayoutComponent } from './layout.component';
 import { TourGuideInfoComponent } from './tour-guide-info/tour-guide-info.component';
-import { ListTourComponent } from '../list-tour/list-tour.component';
-import { ListRegisterTripComponent } from '../list-register-trip/list-register-trip.component';
+import { ListTourComponent } from '../list/list-tour/list-tour.component';
+import { ListRegisterTripComponent } from '../list/list-register-trip/list-register-trip.component';
 import { TourGuideEditComponent } from './tour-guide-edit/tour-guide-edit.component';
-import { DetailTourComponent } from '../detail-tour/detail-tour.component';
-import { DetailRegisterTripComponent } from '../detail-register-trip/detail-register-trip.component';
+import { DetailTourComponent } from '../detail/detail-tour/detail-tour.component';
+import { DetailRegisterTripComponent } from '../detail/detail-register-trip/detail-register-trip.component';
 
 
 const routes: Routes = [

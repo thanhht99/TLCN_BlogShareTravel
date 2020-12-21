@@ -29,7 +29,7 @@
                                                 Tóm tắt là bắt buộc
                                             </div>
                                             <div *ngIf="f.summary.errors.maxlength">
-                                               Tóm tắt tối đa 100 ký tự
+                                                Tóm tắt tối đa 100 ký tự
                                             </div>
                                         </div>
                                     </div>
@@ -37,16 +37,16 @@
                                         <label for="price">Giá</label>
                                         <input type="text " formControlName="price" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.price.errors }" />
                                         <div *ngIf="submitted && f.price.errors" class="invalid-feedback">
-                                            <div *ngIf="f.price.errors.required">
-                                                Giá là bắt buộc
-                                            </div>
+                                            <div *ngIf="f.price.errors.required">Giá là bắt buộc</div>
                                         </div>
                                     </div>
                                     <div class="form-row">
                                         <label for="time">Thời Gian</label>
                                         <input type="text " formControlName="time" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.time.errors }" />
                                         <div *ngIf="submitted && f.time.errors" class="invalid-feedback">
-                                            <div *ngIf="f.time.errors.required">Thời gian là bắt buộc</div>
+                                            <div *ngIf="f.time.errors.required">
+                                                Thời gian là bắt buộc
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="form-row">
@@ -67,7 +67,7 @@
                       }" />
                                         <div *ngIf="submitted && f.destination.errors" class="invalid-feedback">
                                             <div *ngIf="f.destination.errors.required">
-                                               Nơi Đến là bắt buộc
+                                                Nơi Đến là bắt buộc
                                             </div>
                                         </div>
                                     </div>
@@ -78,7 +78,7 @@
                       *ngIf="loading"
                       class="spinner-border spinner-border-sm mr-1"
                     ></span>
-                    Tạo chuyến tham quan và chọn hình ảnh
+                    Tiếp theo
                   </button>
                                 </div>
                             </form>

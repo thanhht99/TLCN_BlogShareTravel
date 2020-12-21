@@ -71,7 +71,9 @@
             </div>
             <br />
             <div type="button" class="btn btn-success" style="margin-left: 15px" *ngIf="!tour.isStatus">
-                <b>Thêm hình ảnh</b>
+                <b (click)="addImage()">
+                    Thêm hình ảnh
+                </b>
             </div>
         </div>
     </div>

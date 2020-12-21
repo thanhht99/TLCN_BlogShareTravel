@@ -4,42 +4,53 @@
         <div class="container-fluid">
             <div class="row" class="d-flex justify-content-center align-items-center">
                 <div class="col-md-8">
-                    <div class="card border-primary">
-                        <h1 class="card-header">{{ tour.name }}</h1>
+                    <div class="card border-primary" style="width: 110%">
+                        <h1 class="tour-banner-title">{{ tour.name }}</h1>
                         <div class="card-body">
                             <form [formGroup]="form" (ngSubmit)="addImage()">
-                                <div class="newspaper">
-                                    <div class="form-row">
-                                        <label for="summary ">Tóm Tắt: {{ tour.summary }}</label>
-                                    </div>
-
-                                    <div class="form-row">
-                                        <label for="price ">Giá Bán: {{ tour.price }}</label>
-                                    </div>
-
-                                    <div class="form-row">
-                                        <label for="time ">Thời Gian: {{ tour.time }}</label>
-                                    </div>
-
-                                    <div class="form-row">
-                                        <label for="departureLocation ">
-                      Địa điểm Khởi Hành: {{ tour.departureLocation }}
-                    </label>
-                                    </div>
-
-                                    <div class="form-row">
-                                        <label for="destination ">
-                      Nơi Đến: {{ tour.destination }}
-                    </label>
-                                    </div>
-
-                                    <div class="form-row">
-                                        <label for="amount ">Số Tiền: {{ tour.amount }}</label>
-                                    </div>
+                                <div class="form-row">
+                                    <label>
+                    <strong>Tóm Tắt: </strong>
+                    {{ tour.summary }}
+                  </label>
+                                </div>
+                                <div class="form-row">
+                                    <label>
+                    <strong>Giá Bán: </strong>
+                    {{ tour.price }} VNĐ
+                  </label>
                                 </div>
 
                                 <div class="form-row">
-                                    <label>Chọn tệp hình ảnh</label>
+                                    <label>
+                    <strong>Thời Gian: </strong>
+                    {{ tour.time }}
+                  </label>
+                                </div>
+
+                                <div class="form-row">
+                                    <label>
+                    <strong>Khởi Hành: </strong>
+                    {{ tour.departureLocation }}
+                  </label>
+                                </div>
+
+                                <div class="form-row">
+                                    <label>
+                    <strong>Nơi Đến: </strong>
+                    {{ tour.destination }}
+                  </label>
+                                </div>
+
+                                <div class="form-row">
+                                    <label>
+                    <strong>Số Lượng: </strong>
+                    {{ tour.amount }}
+                  </label>
+                                </div>
+
+                                <div class="form-row">
+                                    <label><strong>Chọn tệp hình ảnh</strong></label>
                                     <div class="col-sm-12">
                                         <div>
                                             <h6 class="head-title margin-top-8"></h6>

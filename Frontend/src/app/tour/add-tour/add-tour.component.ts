@@ -79,7 +79,7 @@ export class AddTourComponent implements OnInit {
                                     next: (tour: any) => {
                                       // console.log("------------------------------------");
                                       // console.log(tour);
-                                      this.alertService.success('Add Tour successful. Please add a image to complete create tour!', { keepAfterRouteChange: true });                                                                                                                   
+                                      this.alertService.success('Thêm chuyến tham quan thành công. Vui lòng thêm hình ảnh để hoàn thành việc tạo chuyến tham quan!', { keepAfterRouteChange: true });                                                                                                                   
                                       this.tourService.infoTour(tour.id)
                                         .pipe(first())
                                         .subscribe({

@@ -1,13 +1,18 @@
 <div type="button" class="btn btn-info" *ngIf="account.isCustomer">
-    <b routerLink="/customer/info/{{ account.id }}/listRegisterTrip" (click)="reloadPage()">Cập Nhật</b>
+    <b routerLink="/customer/info/{{ account.id }}/listRegisterTrip" (click)="reloadPage()">Cập Nhật</b
+  >
 </div>
 
 <div type="button" class="btn btn-info" *ngIf="account.isTourGuide">
-    <b routerLink="/tourguide/info/{{ account.id }}/listRegisterTrip" (click)="reloadPage()">Cập Nhật</b>
+  <b
+    routerLink="/tourguide/info/{{ account.id }}/listRegisterTrip"
+    (click)="reloadPage()"
+    >Cập Nhật</b
+  >
 </div>
 
 <div type="button" class="btn btn-danger">
-    <b (click)="cancel()">Quay Lại</b>
+  <b (click)="cancel()">Quay Lại</b>
 </div>
 <h2>Chuyến đi đã được duyệt</h2>
 <div class="row trip-row" *ngIf="account.isCustomer">
@@ -25,7 +30,7 @@
             </thead>
         </table>
     </div>
-    <div class="tbl-content" *ngFor="let listDaDuyet of listDaDuyets">
+    <div class="tbl-content" *ngFor="let listDaDuyet of listDaDuyetsArray">
         <table cellpadding="0" cellspacing="0" border="0">
             <tbody>
                 <tr>
@@ -35,7 +40,11 @@
                     <td>{{ listDaDuyet.Trip.Tour.departureLocation }}</td>
                     <td>{{ listDaDuyet.Trip.Tour.destination }}</td>
                     <td>
-                        <a routerLink="/customer/info/{{ account.id }}/registerTrip/{{ listDaDuyet.id }}"> Chi tiết </a>
+                        <a routerLink="/customer/info/{{ account.id }}/registerTrip/{{
+                listDaDuyet.id
+              }}">
+              Chi tiết
+            </a>
                     </td>
                     <!-- <td *ngIf="account.isTourGuide">
                         <a routerLink="/tourguide/info/{{ account.id }}/registerTrip/{{ listDaDuyet.id }}"> Chi tiết </a>
@@ -43,6 +52,11 @@
                 </tr>
             </tbody>
         </table>
+    </div>
+    <div class="card text-center m-3">
+        <div class="card-footer pb-0 pt-3">
+            <jw-pagination [items]="listDaDuyets" (changePage)="onChangePage($event)"></jw-pagination>
+        </div>
     </div>
 </div>
 
@@ -61,7 +75,7 @@
             </thead>
         </table>
     </div>
-    <div class="tbl-content" *ngFor="let listDaDuyet of listDaDuyets">
+    <div class="tbl-content" *ngFor="let listDaDuyet of listDaDuyetsArray">
         <table cellpadding="0" cellspacing="0" border="0">
             <tbody>
                 <tr>
@@ -71,11 +85,20 @@
                     <td>{{ listDaDuyet.Trip.Tour.departureLocation }}</td>
                     <td>{{ listDaDuyet.Trip.Tour.destination }}</td>
                     <td>
-                        <a routerLink="/tourguide/info/{{ account.id }}/registerTrip/{{ listDaDuyet.id }}"> Chi tiết </a>
+                        <a routerLink="/tourguide/info/{{ account.id }}/registerTrip/{{
+                listDaDuyet.id
+              }}">
+              Chi tiết
+            </a>
                     </td>
                 </tr>
             </tbody>
         </table>
+    </div>
+    <div class="card text-center m-3">
+        <div class="card-footer pb-0 pt-3">
+            <jw-pagination [items]="listDaDuyets" (changePage)="onChangePage($event)"></jw-pagination>
+        </div>
     </div>
 </div>
 
@@ -96,7 +119,7 @@
             </thead>
         </table>
     </div>
-    <div class="tbl-content" *ngFor="let listChuaDuyet of listChuaDuyets">
+    <div class="tbl-content" *ngFor="let listChuaDuyet of listChuaDuyetsArray">
         <table cellpadding="0" cellspacing="0" border="0">
             <tbody>
                 <tr>
@@ -109,11 +132,20 @@
                         <a href=""> Thanh toán </a>
                     </td>
                     <td>
-                        <a routerLink="/customer/info/{{ account.id }}/registerTrip/{{ listChuaDuyet.id }}"> Chi tiết </a>
+                        <a routerLink="/customer/info/{{ account.id }}/registerTrip/{{
+                listChuaDuyet.id
+              }}">
+              Chi tiết
+            </a>
                     </td>
                 </tr>
             </tbody>
         </table>
+    </div>
+    <div class="card text-center m-3">
+        <div class="card-footer pb-0 pt-3">
+            <jw-pagination [items]="listChuaDuyets" (changePage)="onChangePage2($event)"></jw-pagination>
+        </div>
     </div>
 </div>
 
@@ -133,7 +165,7 @@
             </thead>
         </table>
     </div>
-    <div class="tbl-content" *ngFor="let listChuaDuyet of listChuaDuyets">
+    <div class="tbl-content" *ngFor="let listChuaDuyet of listChuaDuyetsArray">
         <table cellpadding="0" cellspacing="0" border="0">
             <tbody>
                 <tr>
@@ -146,10 +178,19 @@
                         <a href=""> Thanh toán </a>
                     </td>
                     <td>
-                        <a routerLink="/tourguide/info/{{ account.id }}/registerTrip/{{ listChuaDuyet.id }}"> Chi tiết </a>
+                        <a routerLink="/tourguide/info/{{ account.id }}/registerTrip/{{
+                listChuaDuyet.id
+              }}">
+              Chi tiết
+            </a>
                     </td>
                 </tr>
             </tbody>
         </table>
+    </div>
+    <div class="card text-center m-3">
+        <div class="card-footer pb-0 pt-3">
+            <jw-pagination [items]="listChuaDuyets" (changePage)="onChangePage2($event)"></jw-pagination>
+        </div>
     </div>
 </div>

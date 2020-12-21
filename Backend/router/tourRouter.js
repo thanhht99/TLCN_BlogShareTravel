@@ -256,7 +256,8 @@ router.post('/addImage/:id', upload.single('avatarPath'), async(req, res, next) 
     } else {
         console.log("hello image")
         Tour.update({
-            avatarPath: '../../assets/img/tour/' + req.file.filename
+            avatarPath: '../../assets/img/tour/' + req.file.filename,
+            isStatus: true
         }, {
             where: { id: idneed }
         }).then(() => {

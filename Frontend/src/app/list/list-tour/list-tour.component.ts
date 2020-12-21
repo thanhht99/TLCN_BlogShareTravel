@@ -6,8 +6,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { first } from 'rxjs/operators';
 
-import { TourService, LoginService, AlertService } from '../_services';
-import { Trip, Tour, Account, TourGuide, Customer, RegisterTrip } from '../models';
+import { TourService, LoginService, AlertService, TourGuideService } from '../../_services';
+import { Trip, Tour, Account, TourGuide, Customer, RegisterTrip } from '../../models';
 
 @Component({
   selector: 'app-list-tour',
@@ -32,13 +32,14 @@ export class ListTourComponent implements OnInit {
 
   constructor(private tourService: TourService, 
               private loginService: LoginService,
+              private tourGuideService: TourGuideService,
               private alertService: AlertService,
               private router: Router,
               private route: ActivatedRoute,
               private formBuilder: FormBuilder,
               private location: Location) 
   { 
-    this.tourGuide = this.loginService.tourguideValue;
+    this.tourGuide = this.tourGuideService.tourGuideValue;
     this.account = this.loginService.accountValue;
     if(this.account.isTourGuide)
     { 

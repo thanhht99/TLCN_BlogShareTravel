@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { LoginService, TourGuideService } from '../../_services';
+import { LoginService, TourGuideService, TourService } from '../../_services';
 import { TourGuide,Account } from '../../models';
 import { first } from 'rxjs/operators';
 
@@ -17,6 +17,7 @@ export class TourGuideInfoComponent implements OnInit {
   sub: any;
 
   constructor(private loginService: LoginService,
+              private tourService: TourService,
               private tourGuideService: TourGuideService, 
               private router: Router,
               private route: ActivatedRoute) 
@@ -47,6 +48,24 @@ export class TourGuideInfoComponent implements OnInit {
 
   reloadPage(){
     window.location.reload();
+  }
+
+  dschuyendi(){    
+    this.router.navigate([`/tourguide/info/${this.id}/listRegisterTrip`], { relativeTo: this.route });  
+    this.tourService.listTripChuaDuyet(this.id)
+          .pipe(first())
+          .subscribe(lists => {
+            // console.log('--------------lists-------------');
+            // console.log(lists);
+            }
+          ); 
+    this.tourService.listTripDaDuyet(this.id)
+          .pipe(first())
+          .subscribe(lists => {
+            // console.log('--------------lists-------------');
+            // console.log(lists);
+            }
+          );
   }
 
 }
