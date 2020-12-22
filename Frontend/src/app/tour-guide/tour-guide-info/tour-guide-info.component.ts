@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { LoginService, TourGuideService, TourService } from '../../_services';
 import { TourGuide,Account } from '../../models';
@@ -7,7 +7,8 @@ import { first } from 'rxjs/operators';
 @Component({
   selector: 'app-tour-guide-info',
   templateUrl: './tour-guide-info.component.html',
-  styleUrls: ['./tour-guide-info.component.scss']
+  styleUrls: ['./tour-guide-info.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class TourGuideInfoComponent implements OnInit {
 
@@ -51,21 +52,25 @@ export class TourGuideInfoComponent implements OnInit {
   }
 
   dschuyendi(){    
-    this.router.navigate([`/tourguide/info/${this.id}/listRegisterTrip`], { relativeTo: this.route });  
     this.tourService.listTripChuaDuyet(this.id)
           .pipe(first())
-          .subscribe(lists => {
-            // console.log('--------------lists-------------');
-            // console.log(lists);
+          .subscribe({
+            next: () => {
+            },
+            error: er => {
+              alert(er.error.error);
             }
-          ); 
+          });
     this.tourService.listTripDaDuyet(this.id)
           .pipe(first())
-          .subscribe(lists => {
-            // console.log('--------------lists-------------');
-            // console.log(lists);
+          .subscribe({
+            next: () => {
+              this.router.navigate([`/tourguide/info/${this.id}/listRegisterTrip`], { relativeTo: this.route });  
+            },
+            error: er => {
+              alert(er.error.error);
             }
-          );
+          });
   }
 
 }

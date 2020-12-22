@@ -79,8 +79,8 @@
     </div>
 </div>
 
-<h2>Danh sách các chuyến đi</h2>
-<div class="row trip-row">
+<h2 *ngIf="tour.isStatus">Danh sách các chuyến đi</h2>
+<div class="row trip-row" *ngIf="tour.isStatus">
     <div class="tbl-header">
         <table cellpadding="0" cellspacing="0" border="0">
             <thead>

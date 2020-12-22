@@ -82,8 +82,8 @@ export class AddImageComponent implements OnInit {
       this.tourService.addImage(formData, this.id)
                       .subscribe({
                         next: () => {
-                          this.alertService.success('Update image successfully!', { keepAfterRouteChange: true }); 
-                          this.router.navigate(['/tour/list'], { relativeTo: this.route });
+                          this.alertService.success('Tạo tour thành công. (Nhấn nút cập nhật để xem tour mới tạo)', { keepAfterRouteChange: true });                                                                                                                                                         
+                          this.router.navigate([`/tourguide/info/${this.account.id}/listTour`], { relativeTo: this.route });
                         },
                         error: er => {
                           alert(er.error.error);
