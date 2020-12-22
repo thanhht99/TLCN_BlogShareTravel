@@ -28,7 +28,7 @@ module.exports = {
                 isStatus: true,
                 tourGuideId: 1
             },
-            
+            {
                 //3
                 name: 'DU LỊCH PHAN THIẾT - MŨI NÉ - LÀNG CHÀI XƯA',
                 summary: 'Tham quan đồi cát vàng tác động của gió biển tạo nên những hình dạng rất tuyệt vời...',
