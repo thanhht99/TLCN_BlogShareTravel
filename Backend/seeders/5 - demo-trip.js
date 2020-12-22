@@ -28,7 +28,7 @@ module.exports = {
                 theRemainingAmount: 40,
                 isStatus: true,
                 tourId: 8,
-                tourGuideId: 1
+                tourGuideId: 2
             },
             {
                 infoHotel: 'Vinpearl Tây Ninh',
@@ -42,7 +42,7 @@ module.exports = {
                 theRemainingAmount: 40,
                 isStatus: true,
                 tourId: 8,
-                tourGuideId: 1
+                tourGuideId: 3
             },
             //1
             {
@@ -57,7 +57,7 @@ module.exports = {
                 theRemainingAmount: 40,
                 isStatus: true,
                 tourId: 3,
-                tourGuideId: 2
+                tourGuideId: 1
             },
             //2
             {
@@ -87,7 +87,7 @@ module.exports = {
                 theRemainingAmount: 40,
                 isStatus: true,
                 tourId: 3,
-                tourGuideId: 1
+                tourGuideId: 3
             },
             //4
             {
@@ -132,7 +132,7 @@ module.exports = {
                 theRemainingAmount: 40,
                 isStatus: true,
                 tourId: 3,
-                tourGuideId: 2
+                tourGuideId: 3
             },
             //7
             {
@@ -162,7 +162,7 @@ module.exports = {
                 theRemainingAmount: 40,
                 isStatus: true,
                 tourId: 3,
-                tourGuideId: 1
+                tourGuideId: 2
             },
             //9
             {
@@ -192,7 +192,7 @@ module.exports = {
                 theRemainingAmount: 40,
                 isStatus: true,
                 tourId: 3,
-                tourGuideId: 3
+                tourGuideId: 1
             },
             //11
             {
@@ -207,7 +207,7 @@ module.exports = {
                 theRemainingAmount: 40,
                 isStatus: true,
                 tourId: 3,
-                tourGuideId: 3
+                tourGuideId: 2
             },
             //12
             {
@@ -237,7 +237,7 @@ module.exports = {
                 theRemainingAmount: 40,
                 isStatus: true,
                 tourId: 3,
-                tourGuideId: 2
+                tourGuideId: 1
             },
             //14
             {
@@ -267,7 +267,7 @@ module.exports = {
                 theRemainingAmount: 40,
                 isStatus: true,
                 tourId: 3,
-                tourGuideId: 1
+                tourGuideId: 2
             },
             //16
             {
@@ -282,7 +282,7 @@ module.exports = {
                 theRemainingAmount: 40,
                 isStatus: true,
                 tourId: 3,
-                tourGuideId: 2
+                tourGuideId: 3
             },
             //17
             {
@@ -327,7 +327,7 @@ module.exports = {
                 theRemainingAmount: 40,
                 isStatus: true,
                 tourId: 3,
-                tourGuideId: 1
+                tourGuideId: 3
             },
             //20
             {
@@ -372,7 +372,7 @@ module.exports = {
                 theRemainingAmount: 40,
                 isStatus: true,
                 tourId: 4,
-                tourGuideId: 1
+                tourGuideId: 2
             },
             //3
             {
@@ -387,7 +387,7 @@ module.exports = {
                 theRemainingAmount: 40,
                 isStatus: true,
                 tourId: 4,
-                tourGuideId: 1
+                tourGuideId: 2
             },
             //4
             {
@@ -402,7 +402,7 @@ module.exports = {
                 theRemainingAmount: 40,
                 isStatus: true,
                 tourId: 4,
-                tourGuideId: 1
+                tourGuideId: 3
             },
             //5
             {
@@ -417,7 +417,7 @@ module.exports = {
                 theRemainingAmount: 40,
                 isStatus: true,
                 tourId: 4,
-                tourGuideId: 1
+                tourGuideId: 3
             },
             //6
             {
@@ -432,7 +432,7 @@ module.exports = {
                 theRemainingAmount: 40,
                 isStatus: true,
                 tourId: 4,
-                tourGuideId: 1
+                tourGuideId: 2
             },
             //7
             {
@@ -462,7 +462,7 @@ module.exports = {
                 theRemainingAmount: 40,
                 isStatus: true,
                 tourId: 4,
-                tourGuideId: 1
+                tourGuideId: 3
             },
             //9
             {
@@ -477,7 +477,7 @@ module.exports = {
                 theRemainingAmount: 40,
                 isStatus: true,
                 tourId: 4,
-                tourGuideId: 1
+                tourGuideId: 2
             },
             //10
             {
@@ -507,7 +507,7 @@ module.exports = {
                 theRemainingAmount: 40,
                 isStatus: true,
                 tourId: 4,
-                tourGuideId: 1
+                tourGuideId: 2
             },
             //12
             {
@@ -522,7 +522,7 @@ module.exports = {
                 theRemainingAmount: 40,
                 isStatus: true,
                 tourId: 4,
-                tourGuideId: 1
+                tourGuideId: 2
             },
             //13
             {
@@ -537,7 +537,7 @@ module.exports = {
                 theRemainingAmount: 40,
                 isStatus: true,
                 tourId: 4,
-                tourGuideId: 1
+                tourGuideId: 3
             },
             //14
             {
@@ -552,7 +552,7 @@ module.exports = {
                 theRemainingAmount: 40,
                 isStatus: true,
                 tourId: 4,
-                tourGuideId: 1
+                tourGuideId: 3
             },
             //15
             {
@@ -597,7 +597,7 @@ module.exports = {
                 theRemainingAmount: 40,
                 isStatus: true,
                 tourId: 4,
-                tourGuideId: 1
+                tourGuideId: 3
             },
             //18
             {
@@ -612,7 +612,7 @@ module.exports = {
                 theRemainingAmount: 40,
                 isStatus: true,
                 tourId: 4,
-                tourGuideId: 1
+                tourGuideId: 2
             },
             //19
             {
@@ -627,7 +627,7 @@ module.exports = {
                 theRemainingAmount: 40,
                 isStatus: true,
                 tourId: 4,
-                tourGuideId: 1
+                tourGuideId: 2
             },
             //20
             {
@@ -642,7 +642,7 @@ module.exports = {
                 theRemainingAmount: 40,
                 isStatus: true,
                 tourId: 4,
-                tourGuideId: 1
+                tourGuideId: 3
             },
         ];
         data.map(item => {

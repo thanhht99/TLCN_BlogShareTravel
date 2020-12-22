@@ -2,6 +2,7 @@ import { Component, OnInit, ViewEncapsulation, Input } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { HttpResponse, HttpClient } from '@angular/common/http';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { DatePipe, Location  } from '@angular/common';
 
 import { TourService, LoginService, AlertService } from '../../../_services';
 import { Tour, Account, TourGuide, RegisterTrip, Customer, Trip } from '../../../models';
@@ -38,7 +39,8 @@ export class RegisterTripComponent implements OnInit {
               private loginService: LoginService,
               private router: Router,
               private route: ActivatedRoute,
-              private formBuilder: FormBuilder,) 
+              private formBuilder: FormBuilder,
+              private location: Location) 
   { 
     this.loginService.account.subscribe(x => this.account = x);
     // console.log("------------ACC--------------")
@@ -93,6 +95,10 @@ export class RegisterTripComponent implements OnInit {
   }
 
   get f() { return this.form.controls; }
+
+  cancel() {
+    this.location.back(); // <-- go back to previous location on cancel
+  }
 
   register(){     
     this.submitted = true;
