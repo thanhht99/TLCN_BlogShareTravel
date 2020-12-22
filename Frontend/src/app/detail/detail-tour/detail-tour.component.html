@@ -94,7 +94,7 @@
                     <th>Giá trẻ em</th>
                     <th>Giá em bé</th>
                     <th>SL còn lại</th>
-                    <th>Mua Tour</th>
+                    <th>Hướng dẫn viên</th>
                 </tr>
             </thead>
         </table>
@@ -115,6 +115,7 @@
                     <td>{{ trip.babyPrice }}</td>
                     <td>{{ trip.theRemainingAmount }}</td>
                     <td>
+                        {{ trip.TourGuide.name }}({{ trip.TourGuide.id }})
                     </td>
                 </tr>
             </tbody>

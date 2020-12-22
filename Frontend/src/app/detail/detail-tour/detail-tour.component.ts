@@ -49,7 +49,8 @@ export class DetailTourComponent implements OnInit {
         this.tourService.getTripById(id)
         .pipe(first())
         .subscribe(trip => {
-          this.trips = trip
+          // console.log(trip);
+          this.trips = trip;
           }
         );
       }catch{
@@ -93,6 +94,10 @@ export class DetailTourComponent implements OnInit {
 
   cancel() {
     this.location.back(); // <-- go back to previous location on cancel
+  }
+
+  reloadPage(){
+    window.location.reload();
   }
 
 }
