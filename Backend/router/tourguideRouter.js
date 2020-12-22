@@ -7,6 +7,7 @@ var bcrypt = require('bcrypt');
 
 const Account = models.Account;
 const TourGuide = models.TourGuide;
+const Trip = models.Trip;
 
 //const User = models.User;
 const {
@@ -51,6 +52,28 @@ router.post('/info/update', async(req, res) => {
         })
     }
 })
+
+// get trip by id tourGuideId
+router.get('/:id/trip', async(req, res) => {
+
+    const idneed = parseInt(req.params.id, 10);
+    const test = await Trip.findOne({ where: { tourGuideId: idneed } });
+    if (!test) {
+        res.json(404);
+    } else {
+        Trip.findAll({
+            where: { tourGuideId: idneed },
+            order: [
+                ['id', 'ASC']
+                // tăng ASC
+            ]
+        }).then((trips) => {
+            res.json(trips);
+        }).catch((err) => {
+            res.send(err);
+        });
+    }
+});
 
 
 module.exports = router;

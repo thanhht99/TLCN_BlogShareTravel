@@ -17,7 +17,9 @@ import { CommonModule } from '@angular/common';
 import { ListRegisterTripComponent } from './list/list-register-trip/list-register-trip.component';
 import { DetailRegisterTripComponent } from './detail/detail-register-trip/detail-register-trip.component';
 import { ListTourComponent } from './list/list-tour/list-tour.component';
+import { ListTripByIdComponent } from './list/list-trip-by-id/list-trip-by-id.component';
 import { DetailTourComponent } from './detail/detail-tour/detail-tour.component';
+import { DetailTripComponent } from './detail/detail-trip/detail-trip.component';
 
 @NgModule({
   
@@ -40,6 +42,8 @@ import { DetailTourComponent } from './detail/detail-tour/detail-tour.component'
     DetailRegisterTripComponent,
     ListTourComponent,
     DetailTourComponent,
+    DetailTripComponent,
+    ListTripByIdComponent,
   ],
   exports: [
     BrowserModule,

@@ -51,6 +51,10 @@ export class TourGuideInfoComponent implements OnInit {
     window.location.reload();
   }
 
+  dsChuyenDiDuocHuongDan(){
+    this.router.navigate([`/tourguide/info/${this.id}/listTrip`], { relativeTo: this.route });  
+  }
+
   dschuyendi(){    
     this.tourService.listTripChuaDuyet(this.id)
           .pipe(first())

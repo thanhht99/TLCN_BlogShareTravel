@@ -45,6 +45,7 @@ const Account = models.Account;
 const Trip = models.Trip;
 const Tour = models.Tour;
 const RegisterTrip = models.RegisterTrip;
+const TourGuide = models.TourGuide;
 
 router.use(bodyParser.json());
 router.use(cors());
@@ -187,7 +188,7 @@ router.get('/trip', (req, res) => {
     });
 })
 
-// get trip by id
+// get trip by id tour
 router.get('/:id/trip', async(req, res) => {
 
     const idneed = parseInt(req.params.id, 10);
@@ -198,7 +199,14 @@ router.get('/:id/trip', async(req, res) => {
     } else {
         //console.log("--------------------TRIP------------------");
         Trip.findAll({
-            where: { tourId: idneed }
+            where: { tourId: idneed },
+            order: [
+                ['id', 'ASC']
+                // tăng ASC
+            ],
+            include: [{
+                model: TourGuide
+            }]
         }).then((trips) => {
             res.json(trips);
         }).catch((err) => {

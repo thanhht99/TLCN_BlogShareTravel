@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { LayoutComponent } from './layout.component';
 import { TourGuideInfoComponent } from './tour-guide-info/tour-guide-info.component';
 import { ListTourComponent } from '../list/list-tour/list-tour.component';
+import { ListTripByIdComponent } from '../list/list-trip-by-id/list-trip-by-id.component';
 import { ListRegisterTripComponent } from '../list/list-register-trip/list-register-trip.component';
 import { TourGuideEditComponent } from './tour-guide-edit/tour-guide-edit.component';
 import { DetailTourComponent } from '../detail/detail-tour/detail-tour.component';
@@ -19,6 +20,7 @@ const routes: Routes = [
             { path: 'info/:id/listTour', component: ListTourComponent },
             { path: 'info/:id/tour/:id', component: DetailTourComponent },
             { path: 'info/:id/listRegisterTrip', component: ListRegisterTripComponent },
+            { path: 'info/:id/listTrip', component: ListTripByIdComponent },
             { path: 'info/:id/registerTrip/:id', component: DetailRegisterTripComponent }
 
         ]
