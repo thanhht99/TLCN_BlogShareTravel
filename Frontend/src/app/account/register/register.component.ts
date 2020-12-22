@@ -89,12 +89,12 @@ export class RegisterComponent implements OnInit {
                             .pipe(first())
                                   .subscribe({
                                       next: (data) => {
-                                          this.alertService.success('Registration successful. Please check your mail. Thank you!', { keepAfterRouteChange: true });
+                                          this.alertService.success('Đăng ký thành công. Xin vui lòng kiểm tra email của bạn. Cảm ơn bạn!', { keepAfterRouteChange: true });
                                           console.log(data);
                                           this.router.navigate(['/account/login'], { relativeTo: this.route });
                                       },
                                       error: error => {
-                                          this.alertService.error('Registration failed', { keepAfterRouteChange: true });
+                                          this.alertService.error('Đăng ký không thành công', { keepAfterRouteChange: true });
                                           this.loading = false;
                                       }
                                   });
