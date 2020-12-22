@@ -57,7 +57,7 @@
     <h2>Thêm chuyến đi</h2>
     <form [formGroup]="form" (ngSubmit)="addTrip()">
         <div class="form-row">
-            <label>Tour Guide Id: {{ tourGuide.id }}</label>
+            <label>Id Hướng dẫn viên: {{ tourGuide.id }}</label>
             <input type="text " formControlName="tourId" class="form-control" value="{{ tourGuide.id }}" [ngClass]="{ 'is-invalid': submitted && f.tourId.errors }" hidden />
             <div *ngIf="submitted && f.tourId.errors" class="invalid-feedback">
                 <div *ngIf="f.tourId.errors.required">Tour Id is required</div>
@@ -72,49 +72,49 @@
         </div>
         <div class="newspaper">
             <div class="form-row">
-                <label>Info Hotel</label>
+                <label>Thông Tin Khách Sạn</label>
                 <input type="text " formControlName="infoHotel" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.infoHotel.errors }" />
                 <div *ngIf="submitted && f.infoHotel.errors" class="invalid-feedback">
-                    <div *ngIf="f.infoHotel.errors.required">Info Hotel is required</div>
+                    <div *ngIf="f.infoHotel.errors.required">Thông tin khách sạn là bắt buộc</div>
                 </div>
             </div>
             <div class="form-row">
-                <label>Start Date</label>
+                <label>Ngày bắt đầu</label>
                 <input type="date" formControlName="startDate" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.startDate.errors }" />
                 <div *ngIf="submitted && f.startDate.errors" class="invalid-feedback">
-                    <div *ngIf="f.startDate.errors.required">Start Date is required</div>
+                    <div *ngIf="f.startDate.errors.required">Ngày bắt đầu là bắt buộc</div>
                 </div>
             </div>
             <div class="form-row">
-                <label>Children Price</label>
+                <label>Giá Trẻ Em</label>
                 <input type="text " formControlName="childrenPrice" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.childrenPrice.errors }" />
                 <div *ngIf="submitted && f.childrenPrice.errors" class="invalid-feedback">
                     <div *ngIf="f.childrenPrice.errors.required">
-                        Children Price is required
+                        Giá Trẻ Em là bắt buộc
                     </div>
                 </div>
             </div>
             <div class="form-row">
-                <label>Info Vehicle</label>
+                <label>Thông Tin Xe</label>
                 <input type="text " formControlName="infoVehicle" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.infoVehicle.errors }" />
                 <div *ngIf="submitted && f.infoVehicle.errors" class="invalid-feedback">
                     <div *ngIf="f.infoVehicle.errors.required">
-                        Info Vehicle is required
+                        Thông Tin Xe là bắt buộc
                     </div>
                 </div>
             </div>
             <div class="form-row">
-                <label>End Date</label>
+                <label>Ngày Kết Thúc</label>
                 <input type="date" formControlName="endDate" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.endDate.errors }" />
                 <div *ngIf="submitted && f.endDate.errors" class="invalid-feedback">
-                    <div *ngIf="f.endDate.errors.required">End Date is required</div>
+                    <div *ngIf="f.endDate.errors.required">Ngày Kết Thúc là bắt buộc</div>
                 </div>
             </div>
             <div class="form-row">
-                <label>Baby Price</label>
+                <label>Giá Trẻ Em</label>
                 <input type="text " formControlName="babyPrice" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.babyPrice.errors }" />
                 <div *ngIf="submitted && f.babyPrice.errors" class="invalid-feedback">
-                    <div *ngIf="f.babyPrice.errors.required">Baby Price is required</div>
+                    <div *ngIf="f.babyPrice.errors.required">Giá Trẻ Em là bắt buộc</div>
                 </div>
             </div>
         </div>
@@ -124,7 +124,7 @@
           *ngIf="loading"
           class="spinner-border spinner-border-sm mr-1"
         ></span>
-        Add Trip
+        Thêm Chuyến Đi
       </button>
         </div>
     </form>

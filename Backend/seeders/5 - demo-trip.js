@@ -2,7 +2,7 @@
 
 module.exports = {
     up: (queryInterface, Sequelize) => {
-        let data = [{
+        let data = [ {
                 infoHotel: 'Bạc Liêu',
                 infoVehicle: 'Đi về bằng xe',
                 startDate: '21/11/2020',
@@ -11,7 +11,7 @@ module.exports = {
                 childrenPrice: '1.940.000',
                 babyPrice: '0',
                 amount: 40,
-                theRemainingAmount: 40,
+                theRemainingAmount: 24,
                 isStatus: true,
                 tourId: 1,
                 tourGuideId: 1
@@ -25,7 +25,7 @@ module.exports = {
                 childrenPrice: '940.000',
                 babyPrice: '0',
                 amount: 40,
-                theRemainingAmount: 40,
+                theRemainingAmount: 0,
                 isStatus: true,
                 tourId: 8,
                 tourGuideId: 2
@@ -39,7 +39,7 @@ module.exports = {
                 childrenPrice: '940.000',
                 babyPrice: '0',
                 amount: 40,
-                theRemainingAmount: 40,
+                theRemainingAmount: 27,
                 isStatus: true,
                 tourId: 8,
                 tourGuideId: 3

@@ -175,7 +175,7 @@ module.exports = {
             {
                 //14
                 name: 'DU LỊCH VINH - NINH BÌNH - HÀ NỘI',
-                summary: ' Hành trình tham quan kỉ niệm 130 năm chủ tịch Hồ Chí Minh...',
+                summary: ' Hành trình tham quan kỉ niệm 130 năm chủ tịch Hồ Chí Minh xung quanh Vinh...',
                 price: '5.879.000',
                 time: '4 ngày 3 đêm',
                 departureLocation: ' NGHỆ AN',
