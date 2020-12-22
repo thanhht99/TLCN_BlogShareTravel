@@ -5,7 +5,7 @@ module.exports = {
         let data = [{
                 //1
                 name: 'DU LỊCH MỸ THO - CẦN THƠ - CÀ MAU - BẠC LIÊU - SÓC TRĂNG',
-                summary: 'Đến Mỹ Tho thưởng thức trái cây theo mùa, nghe nhạc tài tử...',
+                summary: 'Tham quan chợ nổi Cái Răng - một chợ nổi lớn của Đồng Bằng sông Cửu Long...',
                 price: '3.879.000',
                 time: '4 ngày 3 đêm',
                 departureLocation: 'TP. HỒ CHÍ MINH',
@@ -18,7 +18,7 @@ module.exports = {
             {
                 //2
                 name: 'DU LỊCH HỒ TRÀM - TRẢI NGHIỆM ĐẲNG CẤP 5 SAO THE GRAND HO TRAM STRIP',
-                summary: 'Trải nghiệm dịch vụ 5 sao cao cấp tại The Grand Ho Tram Strip...',
+                summary: 'Với khu vực bãi biển riêng trên dải bãi biển Hồ Tràm, The Grand Ho Tram Resort & Casino là resort...',
                 price: '2.379.000',
                 time: '2 ngày 1 đêm',
                 departureLocation: 'TP. HỒ CHÍ MINH',
@@ -28,10 +28,10 @@ module.exports = {
                 isStatus: true,
                 tourGuideId: 1
             },
-            {
+            
                 //3
                 name: 'DU LỊCH PHAN THIẾT - MŨI NÉ - LÀNG CHÀI XƯA',
-                summary: 'Tham quan đồi cát vàng...',
+                summary: 'Tham quan đồi cát vàng tác động của gió biển tạo nên những hình dạng rất tuyệt vời...',
                 price: '2.379.000',
                 time: '3 ngày 2 đêm',
                 departureLocation: 'TP. HỒ CHÍ MINH',
@@ -57,7 +57,7 @@ module.exports = {
             {
                 //5
                 name: 'DU LỊCH SÓC TRĂNG - BẠC LIÊU - CÀ MAU - HÀ TIÊN - CHÂU ĐỐC- SA ĐÉC',
-                summary: 'Tham quan chụp ảnh tại nhà máy Điện gió Bạc Liêu. - Chụp ảnh...',
+                summary: 'Khu dinh thự Công tử Bạc Liêu -  tìm hiểu cuộc đời của Hắc công tử Trần Trinh Huy nổi tiếng...',
                 price: '5.129.000',
                 time: '5 ngày 4 đêm',
                 departureLocation: 'TP. HỒ CHÍ MINH',
@@ -70,7 +70,7 @@ module.exports = {
             {
                 //6
                 name: 'DU LỊCH SÓC TRĂNG - BẠC LIÊU - CÀ MAU - HÀ TIÊN - CHÂU ĐỐC- SA ĐÉC',
-                summary: 'Tham quan khu du lịch Hòn Lao - đảo Khỉ, khu du lịch sinh...',
+                summary: 'Tham quan Khu dinh thự Công tử Bạc Liêu,cuộc đời của Hắc công tử nổi tiếng giàu có, ăn chơi...',
                 price: '2.979.000',
                 time: '4 ngày 3 đêm',
                 departureLocation: 'TP. HỒ CHÍ MINH',
@@ -83,7 +83,7 @@ module.exports = {
             {
                 //7
                 name: 'DU LỊCH ĐÀ LẠT - HỒ TUYỀN LÂM - ĐƯỜNG HẦM ĐIÊU KHẮC',
-                summary: 'Tham quan Đường hầm điêu khắc đất đỏ (Đà Lạt Star)...',
+                summary: 'Tham quan phân viện sinh học Đà Lạt, chụp hình tại Đồi chè Cầu Đất ...',
                 price: '2.379.000',
                 time: '3 ngày 2 đêm',
                 departureLocation: 'TP. HỒ CHÍ MINH',
@@ -149,7 +149,7 @@ module.exports = {
             {
                 //12
                 name: 'HUẾ - QUẢNG BÌNH - ĐỘNG THIÊN ĐƯỜNG - ĐÀ NẴNG - HỘI AN',
-                summary: 'Đắm mình trong không gian cổ kính của Kinh Thành Huế....',
+                summary: ' Tham quan bán đảo Sơn Trà và cảng Tiên Sa, viếng chùa Linh Ứng Bãi Bụt ....',
                 price: '10.619.000',
                 time: '4 ngày 3 đêm',
                 departureLocation: 'TP. HỒ CHÍ MINH',
@@ -188,7 +188,7 @@ module.exports = {
             {
                 //15
                 name: 'DU LỊCH QUY NHƠN - TUY HÒA - EO GIÓ - KHU DÃ NGOẠI TRUNG LƯƠNG - QUẢNG ĐỨC XƯA',
-                summary: ' Viếng khu tâm linh Linh Phong Phật Pháp....',
+                summary: 'Tham quan khu du lịch Ghềnh Ráng – Tiên Sa-Đồi thi nhân Hàn Mạc Tử, Bãi tắm Hoàng Hậu...',
                 price: '3.879.000',
                 time: '3 ngày 2 đêm',
                 departureLocation: 'TP. HỒ CHÍ MINH',
@@ -214,7 +214,7 @@ module.exports = {
             {
                 //17
                 name: 'DU LỊCH QUY NHƠN',
-                summary: 'Quy Nhơn là một địa điểm khá đa dạng về cảnh quan ...',
+                summary: 'Tham quan khu du lịch Ghềnh Ráng – Tiên Sa- Đồi thi nhân Hàn Mạc Tử, Dốc Mộng Cầm ...',
                 price: '5.990.000',
                 time: '4 ngày 3 đêm',
                 departureLocation: 'HÀ NỘI',
@@ -227,7 +227,7 @@ module.exports = {
             {
                 //18
                 name: ' DU LỊCH BUÔN MA THUỘT - BUÔN ĐÔN - PLEIKU - KOMTUM ',
-                summary: 'Tham quan thác Dray Nur - ngọn thác hùng vỹ của Tây Nguyên...',
+                summary: 'Tham quan Bảo tàng thế giới Cà phê - được thiết kế theo kiến trúc nhà dài Tây nguyên độc đáo....',
                 price: '4.879.000',
                 time: '5 ngày 4 đêm',
                 departureLocation: 'TP. HỒ CHÍ MINH',
@@ -240,7 +240,7 @@ module.exports = {
             {
                 //19
                 name: 'DU LỊCH BẢO LỘC - HỒ TÀ ĐÙNG - ĐẮK NÔNG - KHU BẢO TỒN THIÊN NHIÊN NẬM NUNG',
-                summary: 'Tham quan nhà máy sản xuất trà và đồi chè Tâm Châu....',
+                summary: 'Dừng chân tại Tà Đùng top view homestay hay còn gọi là “nhà Chú Đông” ... ',
                 price: '2.679.0000',
                 time: '3 ngày 2 đêm',
                 departureLocation: 'TP. HỒ CHÍ MINH',
@@ -253,7 +253,7 @@ module.exports = {
             {
                 //20
                 name: 'DU LỊCH BUÔN MA THUỘT - BUÔN ĐÔN - PLEIKU - KOMTUM',
-                summary: 'Tham quan thác D’ray Nur hùng vĩ...',
+                summary: 'Tham quan Thác D’ray Nur ngọn thác hùng vĩ và thơ mộng của mảnh đất Tây Nguyên...',
                 price: '5.339.000',
                 time: '5 ngày 4 đêm',
                 departureLocation: 'TP. HỒ CHÍ MINH',
@@ -305,7 +305,7 @@ module.exports = {
             {
                 //24
                 name: 'DU LỊCH HẢI PHÒNG - HẠ LONG - NINH BÌNH - HÀ NAM - HÀ NỘI - SAPA - ĐỀN HÙNG',
-                summary: 'Ngắm hồ Tam Chúc, viếng chùa Tam Chúc - quần thể ...',
+                summary: 'Chiêm ngưỡng động Thiên Cung, các hòn Đỉnh Hương - Trống Mái (Gà Chọi)- Chó Đá...',
                 price: '9.839.000',
                 time: '6 ngày 5 đêm',
                 departureLocation: 'TP. HỒ CHÍ MINH',
@@ -318,7 +318,7 @@ module.exports = {
             {
                 //25
                 name: 'DU LỊCH HÀ NỘI - NINH BÌNH - NAM ĐỊNH - HẠ LONG',
-                summary: 'Tham quan Khu du lịch Tràng An - nơi có cảnh quan ngoạn mục ...',
+                summary: 'Tham quan Khu du lịch Tràng An - nơi có cảnh quan ngoạn mục với hệ thống sông...',
                 price: '6.479.000',
                 time: '4 ngày 3 đêm',
                 departureLocation: 'TP. HỒ CHÍ MINH',
@@ -357,7 +357,7 @@ module.exports = {
             {
                 //28
                 name: 'DU LỊCH HÀ NỘI - HÒA BÌNH - MỘC CHÂU - NINH BÌNH',
-                summary: ' Tham quan nhà máy thủy điện Hòa Bình...',
+                summary: 'Xuống thuyền men theo dòng sông Ngô Đồng uốn lượn qua các vách núi ...',
                 price: '10.464.000',
                 time: '4 ngày 3 đêm',
                 departureLocation: 'TP. HỒ CHÍ MINH',
@@ -370,7 +370,7 @@ module.exports = {
             {
                 //29
                 name: 'DU LỊCH HỒ CHÍ MINH - VĨNH LONG',
-                summary: ' Trải nghiệm một đêm tại homestay Út Trinh...',
+                summary: 'Tham quan các làng nghề :đan lục bình, làm bánh tráng rế, may nón đệm/cối...',
                 price: '1.879.000',
                 time: '2 ngày 1 đêm',
                 departureLocation: 'TP. HỒ CHÍ MINH',
