@@ -8,6 +8,7 @@ var bcrypt = require('bcrypt');
 const Account = models.Account;
 const TourGuide = models.TourGuide;
 const Trip = models.Trip;
+const Tour = models.Tour;
 
 //const User = models.User;
 const {
@@ -66,7 +67,10 @@ router.get('/:id/trip', async(req, res) => {
             order: [
                 ['id', 'ASC']
                 // tăng ASC
-            ]
+            ],
+            include: [{
+                model: Tour
+            }]
         }).then((trips) => {
             res.json(trips);
         }).catch((err) => {

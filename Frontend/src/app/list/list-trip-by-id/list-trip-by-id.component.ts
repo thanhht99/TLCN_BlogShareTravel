@@ -50,10 +50,18 @@ export class ListTripByIdComponent implements OnInit {
             }
           );
     }
+
+    this.listTrips = this.tourGuideService.listTripValue;
+
+
   }
 
   ngOnInit(): void {
   }
+
+  onChangePage(listTripsArray: Array<Trip>) {
+    this.listTripsArray = listTripsArray;
+  } 
 
   reloadPage(){
     window.location.reload();
