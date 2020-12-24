@@ -9,6 +9,7 @@ import { ListRegisterTripComponent } from '../list/list-register-trip/list-regis
 import { TourGuideEditComponent } from './tour-guide-edit/tour-guide-edit.component';
 import { DetailTourComponent } from '../detail/detail-tour/detail-tour.component';
 import { DetailRegisterTripComponent } from '../detail/detail-register-trip/detail-register-trip.component';
+import { DetailTripComponent } from '../detail/detail-trip/detail-trip.component';
 
 
 const routes: Routes = [
@@ -21,6 +22,7 @@ const routes: Routes = [
             { path: 'info/:id/tour/:id', component: DetailTourComponent },
             { path: 'info/:id/listRegisterTrip', component: ListRegisterTripComponent },
             { path: 'info/:id/listTrip', component: ListTripByIdComponent },
+            { path: 'info/:id/detailTrip/:id', component: DetailTripComponent },
             { path: 'info/:id/registerTrip/:id', component: DetailRegisterTripComponent }
 
         ]

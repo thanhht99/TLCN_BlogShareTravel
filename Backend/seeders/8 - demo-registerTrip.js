@@ -14,7 +14,9 @@ module.exports = {
                 baby: 3,
                 totalMoney: '9.698.000',
                 maTour: 1111,
-                isConfirm: false
+                isConfirm: false,
+                accountId: 3,
+                tripId: 1
             },
             {
                 nameRegister: 'Phạm Dĩ Bằng',
@@ -28,7 +30,9 @@ module.exports = {
                 baby: 0,
                 totalMoney: '13.577.000',
                 maTour: 1111,
-                isConfirm: false
+                isConfirm: false,
+                accountId: 6,
+                tripId: 1
             },
             {
                 nameRegister: 'Hoàng Tiến Thành',
@@ -42,7 +46,9 @@ module.exports = {
                 baby: 2,
                 totalMoney: '15.516.000',
                 maTour: 1111,
-                isConfirm: false
+                isConfirm: false,
+                accountId: 7,
+                tripId: 1
             },
             {
                 nameRegister: 'Đào Sơn Tùng',
@@ -56,7 +62,9 @@ module.exports = {
                 baby: 2,
                 totalMoney: '4.698.000',
                 maTour: 8122,
-                isConfirm: false
+                isConfirm: false,
+                accountId: 7,
+                tripId: 2
             },
             {
                 nameRegister: 'Nguyễn Trọng Luật',
@@ -70,7 +78,9 @@ module.exports = {
                 baby: 3,
                 totalMoney: '11.275.000',
                 maTour: 8122,
-                isConfirm: false
+                isConfirm: false,
+                accountId: 3,
+                tripId: 2
             },
             {
                 nameRegister: 'Phan Xuân Tuấn Anh',
@@ -84,7 +94,9 @@ module.exports = {
                 baby: 5,
                 totalMoney: '15.973.000',
                 maTour: 8122,
-                isConfirm: false
+                isConfirm: false,
+                accountId: 2,
+                tripId: 2
             },
             {
                 nameRegister: 'Nguyễn Hứa Huy',
@@ -98,7 +110,9 @@ module.exports = {
                 baby: 2,
                 totalMoney: '12.215.000',
                 maTour: 8122,
-                isConfirm: false
+                isConfirm: false,
+                accountId: 6,
+                tripId: 2
             },
             {
                 nameRegister: 'Nguyễn Thanh Trúc',
@@ -112,7 +126,9 @@ module.exports = {
                 baby: 0,
                 totalMoney: '6.577.000',
                 maTour: 8133,
-                isConfirm: false
+                isConfirm: false,
+                accountId: 6,
+                tripId: 3
             },
             {
                 nameRegister: 'Phạm Thị Thanh Mỹ',
@@ -126,7 +142,9 @@ module.exports = {
                 baby: 0,
                 totalMoney: '4.698.000',
                 maTour: 8133,
-                isConfirm: false
+                isConfirm: false,
+                accountId: 7,
+                tripId: 3
             },
             {
                 nameRegister: 'Nguyễn Ngọc Kiều Vy',
@@ -140,7 +158,9 @@ module.exports = {
                 baby: 0,
                 totalMoney: '9.396.000',
                 maTour: 8133,
-                isConfirm: false
+                isConfirm: false,
+                accountId: 4,
+                tripId: 3
             }
         ];
         data.map(item => {

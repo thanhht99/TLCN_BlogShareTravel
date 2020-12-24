@@ -45,8 +45,8 @@ export class ListTripByIdComponent implements OnInit {
       this.tourGuideService.listTripByTourGuideId(this.id)
           .pipe(first())
           .subscribe(lists => {
-            console.log('--------------lists-------------');
-            console.log(lists);
+            // console.log('--------------lists-------------');
+            // console.log(lists);
             }
           );
     }

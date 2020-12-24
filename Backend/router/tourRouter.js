@@ -215,7 +215,6 @@ router.get('/:id/trip', async(req, res) => {
     }
 });
 
-
 // add
 router.post('/add', (req, res, next) => {
 
@@ -286,6 +285,7 @@ router.post('/addImage/:id', upload.single('avatarPath'), async(req, res, next) 
 router.post('/addTrip/:id', async(req, res) => {
     const idneed = parseInt(req.params.id, 10);
     const testTour = await Tour.findOne({ where: { id: idneed } });
+    // console.log(req.body)
     let testTourGuideId = req.body.tourGuideId;
     if (!testTour || testTourGuideId === null) {
         res.send(404);
@@ -300,10 +300,12 @@ router.post('/addTrip/:id', async(req, res) => {
             babyPrice: req.body.babyPrice,
             amount: 40,
             theRemainingAmount: 40,
-            isStatus: false,
+            isStatus: true,
             tourId: idneed,
-            tourGuideId: testTour.tourGuideId
+            tourGuideId: req.body.tourGuideId
         });
+        // console.log('-----------------------------------------------')
+        // console.log(valueTrip)
         valueTrip.save()
             .then((data) => {
                 // console.log(data);

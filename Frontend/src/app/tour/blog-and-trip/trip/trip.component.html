@@ -57,14 +57,14 @@
     <h2>Thêm chuyến đi</h2>
     <form [formGroup]="form" (ngSubmit)="addTrip()">
         <div class="form-row">
-            <label>Id Hướng dẫn viên: {{ tourGuide.id }}</label>
+            <label>Mã Hướng dẫn viên: {{ tourGuide.id }}</label>
             <input type="text " formControlName="tourId" class="form-control" value="{{ tourGuide.id }}" [ngClass]="{ 'is-invalid': submitted && f.tourId.errors }" hidden />
             <div *ngIf="submitted && f.tourId.errors" class="invalid-feedback">
                 <div *ngIf="f.tourId.errors.required">Tour Id is required</div>
             </div>
         </div>
         <div class="form-row">
-            <label>Price: {{ tour.price }}</label>
+            <label>Giá: {{ tour.price }} VNĐ</label>
             <input type="text " formControlName="price" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.price.errors }" hidden />
             <div *ngIf="submitted && f.price.errors" class="invalid-feedback">
                 <div *ngIf="f.price.errors.required">Price is required</div>
@@ -72,10 +72,10 @@
         </div>
         <div class="newspaper">
             <div class="form-row">
-                <label>Thông Tin Khách Sạn</label>
+                <label>Khách sạn</label>
                 <input type="text " formControlName="infoHotel" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.infoHotel.errors }" />
                 <div *ngIf="submitted && f.infoHotel.errors" class="invalid-feedback">
-                    <div *ngIf="f.infoHotel.errors.required">Thông tin khách sạn là bắt buộc</div>
+                    <div *ngIf="f.infoHotel.errors.required">Khách sạn là bắt buộc</div>
                 </div>
             </div>
             <div class="form-row">
@@ -86,20 +86,20 @@
                 </div>
             </div>
             <div class="form-row">
-                <label>Giá Trẻ Em</label>
+                <label>Giá trẻ em</label>
                 <input type="text " formControlName="childrenPrice" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.childrenPrice.errors }" />
                 <div *ngIf="submitted && f.childrenPrice.errors" class="invalid-feedback">
                     <div *ngIf="f.childrenPrice.errors.required">
-                        Giá Trẻ Em là bắt buộc
+                        Giá trẻ em là bắt buộc
                     </div>
                 </div>
             </div>
             <div class="form-row">
-                <label>Thông Tin Xe</label>
+                <label>Phương tiện di chuyển</label>
                 <input type="text " formControlName="infoVehicle" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.infoVehicle.errors }" />
                 <div *ngIf="submitted && f.infoVehicle.errors" class="invalid-feedback">
                     <div *ngIf="f.infoVehicle.errors.required">
-                        Thông Tin Xe là bắt buộc
+                        Phương tiện di chuyển là bắt buộc
                     </div>
                 </div>
             </div>
@@ -111,10 +111,10 @@
                 </div>
             </div>
             <div class="form-row">
-                <label>Giá Trẻ Em</label>
+                <label>Giá em bé</label>
                 <input type="text " formControlName="babyPrice" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.babyPrice.errors }" />
                 <div *ngIf="submitted && f.babyPrice.errors" class="invalid-feedback">
-                    <div *ngIf="f.babyPrice.errors.required">Giá Trẻ Em là bắt buộc</div>
+                    <div *ngIf="f.babyPrice.errors.required">Giá em bé là bắt buộc</div>
                 </div>
             </div>
         </div>
@@ -185,7 +185,7 @@
                     <div class="comment-box">
                         <div class="comment-head">
                             <h6 class="comment-name by-author">
-                                <a >Agustin Ortiz</a>
+                                <a>Agustin Ortiz</a>
                             </h6>
                             <span>hace 10 minutos</span>
                             <i class="fa fa-reply"></i>
@@ -209,7 +209,7 @@
                 <div class="comment-box">
                     <div class="comment-head">
                         <h6 class="comment-name">
-                            <a >Lorena Rojero</a>
+                            <a>Lorena Rojero</a>
                         </h6>
                         <span>hace 10 minutos</span>
                         <i class="fa fa-reply"></i>

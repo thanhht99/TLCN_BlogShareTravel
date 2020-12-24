@@ -35,7 +35,9 @@
                     <td>{{ listTrip.Tour.departureLocation }}</td>
                     <td>{{ listTrip.Tour.destination }}</td>
                     <td>{{ listTrip.Tour.price }} VNĐ</td>
-                    <td></td>
+                    <td>
+                        <a routerLink="/tourguide/info/{{ account.id }}/detailTrip/{{ listTrip.id }}"> Chi tiết </a>
+                    </td>
                 </tr>
             </tbody>
         </table>

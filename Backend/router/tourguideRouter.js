@@ -9,6 +9,8 @@ const Account = models.Account;
 const TourGuide = models.TourGuide;
 const Trip = models.Trip;
 const Tour = models.Tour;
+const RegisterTrip = models.RegisterTrip;
+const Customer = models.Customer;
 
 //const User = models.User;
 const {
@@ -64,6 +66,68 @@ router.get('/:id/trip', async(req, res) => {
     } else {
         Trip.findAll({
             where: { tourGuideId: idneed },
+            order: [
+                ['id', 'ASC']
+                // tăng ASC
+            ],
+            include: [{
+                model: Tour
+            }]
+        }).then((trips) => {
+            res.json(trips);
+        }).catch((err) => {
+            res.send(err);
+        });
+    }
+});
+
+// get ds khách hàng đăng ký tour
+router.get('/detailTrip/:id', async(req, res) => {
+
+    const idneed = parseInt(req.params.id, 10);
+    const test = await RegisterTrip.findOne({ where: { tripId: idneed } });
+    if (!test) {
+        res.json(404);
+    } else {
+        RegisterTrip.findAll({
+            where: { tripId: idneed },
+            order: [
+                ['id', 'ASC']
+                // tăng ASC
+            ],
+            include: [{
+                model: Account,
+                include: [{
+                    model: Customer
+                }, {
+                    model: TourGuide
+                }]
+            }, {
+                model: Trip,
+                include: [{
+                    model: Tour
+                }, {
+                    model: TourGuide
+                }]
+            }]
+        }).then((trips) => {
+            res.json(trips);
+        }).catch((err) => {
+            res.send(err);
+        });
+    }
+});
+
+// get trip by id 
+router.get('/detailTripById/:id', async(req, res) => {
+
+    const idneed = parseInt(req.params.id, 10);
+    const test = await Trip.findOne({ where: { id: idneed } });
+    if (!test) {
+        res.json(404);
+    } else {
+        Trip.findOne({
+            where: { id: idneed },
             order: [
                 ['id', 'ASC']
                 // tăng ASC

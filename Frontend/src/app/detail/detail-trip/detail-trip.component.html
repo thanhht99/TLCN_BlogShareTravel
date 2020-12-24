@@ -1,1 +1,231 @@
-<p>detail-trip works!</p>
+<div type="button" class="btn btn-info" *ngIf="account.isTourGuide">
+    <b routerLink="/tourguide/info/{{ account.id }}/tour/{{ id }}" (click)="reloadPage()">Cập Nhật</b
+  >
+</div>
+
+<div type="button" class="btn btn-danger">
+  <b (click)="cancel()">Quay Lại</b>
+</div>
+
+<div class="classdetails" *ngIf="account.isTourGuide && status">
+    <div class="card border-primary">
+        <h1 class="tour-banner-title" style="width: 96%">
+            {{ registerTrips[0].Trip.Tour.name }}
+        </h1>
+
+        <div class="card-body">
+            <div class="form-row">
+                <label>
+          <strong>Mô tả: </strong>
+          {{ registerTrips[0].Trip.Tour.summary }}
+        </label>
+            </div>
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <label>
+            <strong>Điểm Khởi Hành: </strong>
+            {{ registerTrips[0].Trip.Tour.departureLocation }}
+          </label>
+                </div>
+
+                <div class="col-md-6">
+                    <label>
+            <strong>Điểm Đến: </strong>
+            {{ registerTrips[0].Trip.Tour.destination }}
+          </label>
+                </div>
+
+                <div class="col-md-6">
+                    <label>
+            <strong>Thời Gian: </strong>
+            {{ registerTrips[0].Trip.Tour.time }}
+          </label>
+                </div>
+
+                <div class="col-md-6">
+                    <label>
+            <strong>Giá tiền: </strong>
+            {{ registerTrips[0].Trip.Tour.price }} VNĐ
+          </label>
+                </div>
+
+                <div class="col-md-6">
+                    <label>
+            <strong>Khách sạn: </strong>
+            {{ registerTrips[0].Trip.infoHotel }}
+          </label>
+                </div>
+
+                <div class="col-md-6">
+                    <label><strong>Phương tiện di chuyển: </strong>
+            {{ registerTrips[0].Trip.infoVehicle }}
+          </label>
+                </div>
+
+                <div class="col-md-6">
+                    <label><strong>Ngày đi: </strong>
+            {{ registerTrips[0].Trip.startDate }}
+          </label>
+                </div>
+
+                <div class="col-md-6">
+                    <label><strong>Ngày về: </strong>
+            {{ registerTrips[0].Trip.endDate }}
+          </label>
+                </div>
+
+                <div class="col-md-6">
+                    <label><strong>Số lượng hành khách: </strong>
+            {{ registerTrips[0].Trip.amount }}
+          </label>
+                </div>
+
+                <div class="col-md-6">
+                    <label><strong>Đã đăng ký: </strong>
+            {{
+              registerTrips[0].Trip.amount -
+                registerTrips[0].Trip.theRemainingAmount
+            }}
+          </label>
+                </div>
+
+                <div class="col-md-6">
+                    <label><strong>Còn trống: </strong>
+            {{ registerTrips[0].Trip.theRemainingAmount }}
+          </label>
+                </div>
+            </div>
+            <br />
+        </div>
+    </div>
+</div>
+
+<div class="classdetails" *ngIf="account.isTourGuide && !status">
+    <div class="card border-primary">
+        <h1 class="tour-banner-title" style="width: 96%">
+            {{ trips.Tour.name }}
+        </h1>
+
+        <div class="card-body">
+            <div class="form-row">
+                <label>
+          <strong>Mô tả: </strong>
+          {{ trips.Tour.summary }}
+        </label>
+            </div>
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <label>
+            <strong>Điểm Khởi Hành: </strong>
+            {{ trips.Tour.departureLocation }}
+          </label>
+                </div>
+
+                <div class="col-md-6">
+                    <label>
+            <strong>Điểm Đến: </strong>
+            {{ trips.Tour.destination }}
+          </label>
+                </div>
+
+                <div class="col-md-6">
+                    <label>
+            <strong>Thời Gian: </strong>
+            {{ trips.Tour.time }}
+          </label>
+                </div>
+
+                <div class="col-md-6">
+                    <label>
+            <strong>Giá tiền: </strong>
+            {{ trips.Tour.price }} VNĐ
+          </label>
+                </div>
+
+                <div class="col-md-6">
+                    <label>
+            <strong>Khách sạn: </strong>
+            {{ trips.infoHotel }}
+          </label>
+                </div>
+
+                <div class="col-md-6">
+                    <label><strong>Phương tiện di chuyển: </strong>
+            {{ trips.infoVehicle }}
+          </label>
+                </div>
+
+                <div class="col-md-6">
+                    <label><strong>Ngày đi: </strong>
+            {{ trips.startDate }}
+          </label>
+                </div>
+
+                <div class="col-md-6">
+                    <label><strong>Ngày về: </strong>
+            {{ trips.endDate }}
+          </label>
+                </div>
+
+                <div class="col-md-6">
+                    <label><strong>Số lượng hành khách: </strong>
+            {{ trips.amount }}
+          </label>
+                </div>
+
+                <div class="col-md-6">
+                    <label><strong>Đã đăng ký: </strong>
+            {{
+                trips.amount -
+                trips.theRemainingAmount
+            }}
+          </label>
+                </div>
+
+                <div class="col-md-6">
+                    <label><strong>Còn trống: </strong>
+            {{ trips.theRemainingAmount }}
+          </label>
+                </div>
+            </div>
+            <br />
+        </div>
+    </div>
+</div>
+
+<h2 *ngIf="account.isTourGuide && status">Danh sách khách hàng</h2>
+<div class="row trip-row" *ngIf="account.isTourGuide && status">
+    <div class="tbl-header">
+        <table cellpadding="0" cellspacing="0" border="0">
+            <thead>
+                <tr>
+                    <th>Tên</th>
+                    <th>SĐT</th>
+                    <th>Địa chỉ</th>
+                    <th>Người lớn</th>
+                    <th>Trẻ em</th>
+                    <th>Em bé</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+    <div class="tbl-content" *ngFor="let registerTrip of registerTripArray">
+        <table cellpadding="0" cellspacing="0" border="0">
+            <tbody>
+                <tr>
+                    <td>{{ registerTrip.nameRegister }}</td>
+                    <td>{{ registerTrip.phone }}</td>
+                    <td>{{ registerTrip.address }}</td>
+                    <td>{{ registerTrip.adults }}</td>
+                    <td>{{ registerTrip.children }}</td>
+                    <td>{{ registerTrip.baby }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="card text-center m-3">
+        <div class="card-footer pb-0 pt-3">
+            <jw-pagination [items]="registerTrips" (changePage)="onChangePage($event)"></jw-pagination>
+        </div>
+    </div>
+</div>

@@ -1,3 +1,4 @@
+import { Account } from "./account.model";
 import {Trip} from './trip.model';
 
 export class RegisterTrip {
@@ -16,4 +17,5 @@ export class RegisterTrip {
     tripId: Number;
     accountId: Number;
     Trip: Trip;  
+    Account: Account;
 }
