@@ -1,6 +1,9 @@
+<div class="search-hero">
+    <input class="form-control" type="text" name="tourName" [(ngModel)]="tourName" (ngModelChange)="search()" autocomplete="off" placeholder="&#61442; Tìm kiếm tên tour" />
+</div>
 <table class="table table-striped">
     <tbody>
-        <tr *ngFor="let tour of tourArray">
+        <tr *ngFor="let tour of tours | filter:tourName | paginate: { itemsPerPage: 10, currentPage:p};">
             <div class="row">
                 <!-- Tour List -->
                 <div class="col-sm-12 col-xs-12">
@@ -54,9 +57,10 @@
             <td colspan="4" class="text-center"></td>
         </tr>
     </tbody>
-    <div class="card text-center m-3">
+    <!-- <div class="card text-center m-3">
         <div class="card-footer pb-0 pt-3">
             <jw-pagination [items]="tours" (changePage)="onChangePage($event)"></jw-pagination>
         </div>
-    </div>
+    </div> -->
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
 </table>

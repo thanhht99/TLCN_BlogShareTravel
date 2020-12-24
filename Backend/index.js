@@ -44,6 +44,8 @@ app.use('/blog', require('./router/blogRouter'));
 
 app.use('/registerTrip', require('./router/registerTripRouter'));
 
+app.use('/sort', require('./router/sortRouter'));
+
 app.get('/sync', (req, res) => {
     let models = require('./models');
     models.sequelize.sync()

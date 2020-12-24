@@ -4,7 +4,9 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { JwPaginationModule } from 'jw-angular-pagination';
-
+// search module
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { NgxPaginationModule } from 'ngx-pagination';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -30,7 +32,9 @@ import { DetailTripComponent } from './detail/detail-trip/detail-trip.component'
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    JwPaginationModule
+    JwPaginationModule,
+    Ng2SearchPipeModule,
+    NgxPaginationModule
   ],
   declarations: [
     AppComponent,

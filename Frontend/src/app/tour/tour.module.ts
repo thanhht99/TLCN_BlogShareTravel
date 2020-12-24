@@ -12,6 +12,11 @@ import { AddImageComponent } from './add-image/add-image.component';
 import { ErrorComponent } from '../_components';
 import { JwPaginationModule } from 'jw-angular-pagination';
 
+// search module
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { FormsModule } from '@angular/forms';
+import { NgxPaginationModule } from 'ngx-pagination';
+
 
 @NgModule({
   declarations: [
@@ -24,7 +29,10 @@ import { JwPaginationModule } from 'jw-angular-pagination';
     CommonModule,
     ReactiveFormsModule,
     TourRoutingModule,
-    JwPaginationModule
+    JwPaginationModule,
+    Ng2SearchPipeModule,
+    FormsModule,
+    NgxPaginationModule
   ],
   exports: [
     LayoutComponent,
