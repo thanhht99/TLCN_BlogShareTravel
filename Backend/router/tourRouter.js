@@ -338,7 +338,7 @@ router.post('/registerTrip', async(req, res) => {
     } else {
         let valueRegisterTrip = new RegisterTrip({
             nameRegister: req.body.nameRegister,
-            gender: req.body.gender,
+            // gender: req.body.gender,
             identity: req.body.identity,
             email: req.body.email,
             phone: req.body.phone,
@@ -380,6 +380,24 @@ router.post('/registerTrip', async(req, res) => {
     res.status(400).send({
         error: error.message
     })
+});
+
+// Khóa tour
+router.get('/khoaTrip/:id', async(req, res) => {
+
+    const idneed = parseInt(req.params.id, 10);
+    const test = await Trip.findOne({ where: { id: idneed } });
+    if (!test) {
+        res.json(404);
+    } else {
+        await Trip.update({
+            isStatus: false,
+            isCondition: true,
+        }, { where: { id: idneed } }, { new: true }).then((data) => {
+            console.log(data);
+            // res.json(data);
+        })
+    }
 });
 
 

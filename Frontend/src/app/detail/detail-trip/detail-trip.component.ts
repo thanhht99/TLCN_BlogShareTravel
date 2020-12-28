@@ -68,7 +68,7 @@ export class DetailTripComponent implements OnInit {
             if(typeof registerTrips === 'object'){
               this.status = true;
               this.registerTrips = registerTrips;
-              // console.log(registerTrips);
+              console.log(registerTrips);
             } 
             else{
               this.tourGuideService.getDetailTripById(id)
@@ -76,6 +76,7 @@ export class DetailTripComponent implements OnInit {
               .subscribe(trip => {
                   if(typeof trip === 'object'){
                     this.trips = trip;
+                    console.log(trip)
                   } 
                   else{                    
                   }
@@ -116,6 +117,12 @@ export class DetailTripComponent implements OnInit {
   duyet(event) {
     console.log(event.target.id);
     this.tourGuideService.duyetKhachhang(event.target.id).pipe(first()).subscribe();
+    window.location.reload();
+  }
+
+  khoa(event) {
+    console.log(event.target.id);
+    this.tourGuideService.khoaTrip(event.target.id).pipe(first()).subscribe();
     window.location.reload();
   }
 

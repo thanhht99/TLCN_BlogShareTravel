@@ -79,12 +79,12 @@ export class RegisterTripComponent implements OnInit {
     }
 
 
-    // console.log("-------------TESST------------------");
-    // console.log(this.nameRegister);
-    // console.log(this.address);
-    // console.log(this.identity);
-    // console.log(this.phone);
-    // console.log(this.gender);
+    console.log("-------------TESST------------------");
+    console.log(this.nameRegister);
+    console.log(this.address);
+    console.log(this.identity);
+    console.log(this.phone);
+    console.log(this.gender);
     
 
 
@@ -127,7 +127,7 @@ export class RegisterTripComponent implements OnInit {
     this.form = this.formBuilder.group({
       nameRegister: [this.nameRegister, Validators.required],
       identity: [this.identity, [Validators.required, Validators.maxLength(9), Validators.minLength(9)]],
-      gender: [this.gender, Validators.required],
+      // gender: [this.gender, Validators.required],
       // email: ['', [Validators.required, Validators.email]],
       address: [this.address, Validators.required],
       phone: [this.phone, [Validators.required, Validators.maxLength(10), Validators.minLength(10)]],

@@ -122,8 +122,13 @@ import { map } from 'rxjs/operators';
     }
 
     duyetKhachhang(id: number){
-      console.log(id);
+      // console.log(id);
       return this.http.get(`${this.webRequestService.ROOT_URL}/registerTrip/duyet/${id}`);
+    }
+
+    khoaTrip(id: number){
+      console.log(id);
+      return this.http.get(`${this.webRequestService.ROOT_URL}/tour/khoaTrip/${id}`);
     }
 
 
