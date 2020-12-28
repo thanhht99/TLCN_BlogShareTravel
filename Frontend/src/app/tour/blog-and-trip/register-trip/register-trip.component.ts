@@ -4,7 +4,7 @@ import { HttpResponse, HttpClient } from '@angular/common/http';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { DatePipe, Location  } from '@angular/common';
 
-import { TourService, LoginService, AlertService } from '../../../_services';
+import { TourService, LoginService, AlertService, TourGuideService, CustomerService } from '../../../_services';
 import { Tour, Account, TourGuide, RegisterTrip, Customer, Trip } from '../../../models';
 
 import { first } from 'rxjs/operators';
@@ -34,17 +34,60 @@ export class RegisterTripComponent implements OnInit {
   giaTreEm: number;
   giaEmBe: number;
   role: boolean;
+
+  nameRegister: String;
+  address: String;
+  identity: String;
+  gender: String;
+  phone: String;
+
   constructor(private tourService: TourService, 
               private alertService: AlertService,
               private loginService: LoginService,
+              private customerService: CustomerService,
+              private tourGuideService: TourGuideService,
               private router: Router,
               private route: ActivatedRoute,
               private formBuilder: FormBuilder,
               private location: Location) 
   { 
     this.loginService.account.subscribe(x => this.account = x);
-    // console.log("------------ACC--------------")
-    // console.log(this.account)
+    this.tourGuide = this.tourGuideService.tourGuideValue;
+
+    console.log("------------ACC--------------")
+    console.log(this.account)
+
+    if(this.account.isCustomer){
+      // console.log("=========customer===========")
+      this.customer = this.customerService.customerValue;
+      // console.log(this.customer);
+      this.nameRegister = this.customer.name;
+      this.address = this.customer.address;
+      this.identity = this.customer.identity;
+      this.phone = this.customer.phone;
+      this.gender = this.customer.gender;
+    }
+    if(this.account.isTourGuide){
+      // console.log("=========tourGuide===========")
+      this.tourGuide = this.tourGuideService.tourGuideValue;
+      // console.log(this.tourGuide)
+      this.nameRegister = this.tourGuide.name;
+      this.address = this.tourGuide.address;
+      this.identity = this.tourGuide.identity;
+      this.phone = this.tourGuide.phone;
+      this.gender = this.tourGuide.gender;
+    }
+
+
+    // console.log("-------------TESST------------------");
+    // console.log(this.nameRegister);
+    // console.log(this.address);
+    // console.log(this.identity);
+    // console.log(this.phone);
+    // console.log(this.gender);
+    
+
+
     this.id = this.route.snapshot.params['id'];
     this.id = Number(this.id);
     // console.log('-------ID trip--------')
@@ -82,12 +125,12 @@ export class RegisterTripComponent implements OnInit {
 
   ngOnInit(): void {
     this.form = this.formBuilder.group({
-      nameRegister: ['', Validators.required],
-      identity: ['', [Validators.required, Validators.maxLength(9), Validators.minLength(9)]],
-      gender: ['', Validators.required],
+      nameRegister: [this.nameRegister, Validators.required],
+      identity: [this.identity, [Validators.required, Validators.maxLength(9), Validators.minLength(9)]],
+      gender: [this.gender, Validators.required],
       // email: ['', [Validators.required, Validators.email]],
-      address: ['', Validators.required],
-      phone: ['', [Validators.required, Validators.maxLength(10), Validators.minLength(10)]],
+      address: [this.address, Validators.required],
+      phone: [this.phone, [Validators.required, Validators.maxLength(10), Validators.minLength(10)]],
       adults: [1, Validators.required],
       children: [0, Validators.required],
       baby: [0, Validators.required],
@@ -125,18 +168,18 @@ export class RegisterTripComponent implements OnInit {
     // console.log(this.registerTrip);
 
     if(this.account.isCustomer){
-      // console.log("=========customer===========")
-      this.customer = this.loginService.customerValue;
+      console.log("=========customer===========")
+      this.customer = this.customerService.customerValue;
       this.registerTrip.email = this.customer.email;
       this.role = true;
-      // console.log(this.customer)
+      console.log(this.customer)
     }
     if(this.account.isTourGuide){
-      // console.log("=========tourGuide===========")
-      this.tourGuide = this.loginService.tourguideValue;
+      console.log("=========tourGuide===========")
+      this.tourGuide = this.tourGuideService.tourGuideValue;
       this.registerTrip.email = this.tourGuide.email;
       this.role = false;
-      // console.log(this.tourGuide)
+      console.log(this.tourGuide)
     }
 
     if(this.registerTrip.adults > 0){

@@ -167,7 +167,7 @@ router.get('/:id/listChuaDuyet', async(req, res) => {
 router.get('/info/:id', async(req, res) => {
 
     const idneed = parseInt(req.params.id, 10);
-    const testTour = await Tour.findOne({ where: { id: idneed } });
+    const testTour = await Tour.findOne({ where: { id: idneed, isStatus: true } });
     if (!testTour) {
         res.json(404);
     } else {
@@ -192,14 +192,16 @@ router.get('/trip', (req, res) => {
 router.get('/:id/trip', async(req, res) => {
 
     const idneed = parseInt(req.params.id, 10);
-    const test = await Trip.findOne({ where: { tourId: idneed } });
-
+    const test = await Trip.findOne({ where: { tourId: idneed, isStatus: true } });
     if (!test) {
         res.status(404).json("No found");
     } else {
         //console.log("--------------------TRIP------------------");
         Trip.findAll({
-            where: { tourId: idneed },
+            // where: { tourId: idneed, theRemainingAmount: { $gt: 0 } },
+            where: {
+                tourId: idneed,
+            },
             order: [
                 ['id', 'ASC']
                 // tăng ASC

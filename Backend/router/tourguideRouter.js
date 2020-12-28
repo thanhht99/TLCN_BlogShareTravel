@@ -60,7 +60,7 @@ router.post('/info/update', async(req, res) => {
 router.get('/:id/trip', async(req, res) => {
 
     const idneed = parseInt(req.params.id, 10);
-    const test = await Trip.findOne({ where: { tourGuideId: idneed } });
+    const test = await Trip.findOne({ where: { tourGuideId: idneed, isStatus: true } });
     if (!test) {
         res.json(404);
     } else {
@@ -85,12 +85,49 @@ router.get('/:id/trip', async(req, res) => {
 router.get('/detailTrip/:id', async(req, res) => {
 
     const idneed = parseInt(req.params.id, 10);
-    const test = await RegisterTrip.findOne({ where: { tripId: idneed } });
+    const test = await RegisterTrip.findOne({ where: { tripId: idneed, isConfirm: false } });
     if (!test) {
         res.json(404);
     } else {
         RegisterTrip.findAll({
-            where: { tripId: idneed },
+            where: { tripId: idneed, isConfirm: false },
+            order: [
+                ['id', 'ASC']
+                // tăng ASC
+            ],
+            include: [{
+                model: Account,
+                include: [{
+                    model: Customer
+                }, {
+                    model: TourGuide
+                }]
+            }, {
+                model: Trip,
+                include: [{
+                    model: Tour
+                }, {
+                    model: TourGuide
+                }]
+            }]
+        }).then((trips) => {
+            res.json(trips);
+        }).catch((err) => {
+            res.send(err);
+        });
+    }
+});
+
+// get ds khách hàng đăng ký tour đã thanh toán
+router.get('/detailTripDaThanhToan/:id', async(req, res) => {
+
+    const idneed = parseInt(req.params.id, 10);
+    const test = await RegisterTrip.findOne({ where: { tripId: idneed, isConfirm: true } });
+    if (!test) {
+        res.json(404);
+    } else {
+        RegisterTrip.findAll({
+            where: { tripId: idneed, isConfirm: true },
             order: [
                 ['id', 'ASC']
                 // tăng ASC

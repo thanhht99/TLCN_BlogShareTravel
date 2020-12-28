@@ -23,6 +23,9 @@ import { map } from 'rxjs/operators';
     private listDetailTripSubject: BehaviorSubject<RegisterTrip>;
     public listDetailTrip: Observable<RegisterTrip>;
 
+    private listDetailTripDaThanhToanSubject: BehaviorSubject<RegisterTrip>;
+    public listDetailTripDaThanhToan: Observable<RegisterTrip>;
+
     private detailTripByIdSubject: BehaviorSubject<Trip>;
     public detailTripById: Observable<Trip>;
 
@@ -39,6 +42,9 @@ import { map } from 'rxjs/operators';
       this.listDetailTripSubject = new BehaviorSubject<RegisterTrip>(JSON.parse(localStorage.getItem('listDetailTrip')));
       this.listDetailTrip = this.listDetailTripSubject.asObservable();
 
+      this.listDetailTripDaThanhToanSubject = new BehaviorSubject<RegisterTrip>(JSON.parse(localStorage.getItem('listDetailTripDaThanhToan')));
+      this.listDetailTripDaThanhToan = this.listDetailTripDaThanhToanSubject.asObservable();
+
       this.detailTripByIdSubject = new BehaviorSubject<Trip>(JSON.parse(localStorage.getItem('detailTripById')));
       this.detailTripById = this.detailTripByIdSubject.asObservable();
     }
@@ -53,6 +59,10 @@ import { map } from 'rxjs/operators';
 
     public get listDetailTripValue(): RegisterTrip {
       return this.listDetailTripSubject.value;
+    }
+
+    public get listDetailTripDaThanhToanValue(): RegisterTrip {
+      return this.listDetailTripDaThanhToanSubject.value;
     }
 
     public get detailTripByIdValue(): Trip {
@@ -82,6 +92,7 @@ import { map } from 'rxjs/operators';
     }
 
     listKhachHangDangKyTour(id: number) {
+      this.listDetailTripSubject.next(null);
       return this.http.get<RegisterTrip>(`${this.webRequestService.ROOT_URL}/tourguide/detailTrip/${id}`)
         .pipe(map(listDetailTrip => {
             localStorage.setItem('listDetailTrip', JSON.stringify(listDetailTrip));
@@ -90,7 +101,18 @@ import { map } from 'rxjs/operators';
         }));
     }
 
+    listKhachHangDangKyTourDaThanhToan(id: number) {
+      this.listDetailTripDaThanhToanSubject.next(null);
+      return this.http.get<RegisterTrip>(`${this.webRequestService.ROOT_URL}/tourguide/detailTripDaThanhToan/${id}`)
+        .pipe(map(listDetailTripDaThanhToan => {
+            localStorage.setItem('listDetailTripDaThanhToan', JSON.stringify(listDetailTripDaThanhToan));
+            this.listDetailTripDaThanhToanSubject.next(listDetailTripDaThanhToan);
+            return listDetailTripDaThanhToan; 
+        }));
+    }
+
     getDetailTripById(id: number) {
+      this.detailTripByIdSubject.next(null);
       return this.http.get<Trip>(`${this.webRequestService.ROOT_URL}/tourguide/detailTripById/${id}`)
         .pipe(map(detailTripById => {
             localStorage.setItem('detailTripById', JSON.stringify(detailTripById));
@@ -98,4 +120,14 @@ import { map } from 'rxjs/operators';
             return detailTripById; 
         }));
     }
+
+    duyetKhachhang(id: number){
+      console.log(id);
+      return this.http.get(`${this.webRequestService.ROOT_URL}/registerTrip/duyet/${id}`);
+    }
+
+
+
+
+
   }

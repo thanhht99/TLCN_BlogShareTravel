@@ -38,9 +38,7 @@ export class ListToursComponent implements OnInit {
             .subscribe((tour) => {
               this.tours = tour
             });   
-
     this.tours = this.tourService.tourValue;
-
   }
 
   onChangePage(tourArray: Array<Tour>) {

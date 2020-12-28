@@ -24,10 +24,13 @@ export class DetailTripComponent implements OnInit {
   id: number;
   sub: any;
   status: boolean;
+  status2: boolean;
 
   trips: Trip;
   registerTrips: RegisterTrip;
   registerTripArray: Array<RegisterTrip>;
+  registerTripDaThanhToans: RegisterTrip;
+  registerTripDaThanhToanArray: Array<RegisterTrip>;
   constructor(private tourGuideService: TourGuideService, 
               private alertService: AlertService,
               private tourService: TourService,
@@ -39,11 +42,25 @@ export class DetailTripComponent implements OnInit {
               private location: Location) 
   { 
     this.status = false;
+    this.status2 = false;
     this.account = this.loginService.accountValue;
     this.sub = this.route.params.subscribe(params => {
       let id = Number.parseInt(params['id']);
       this.id = id;
       // console.log(this.id)
+      
+      this.tourGuideService.listKhachHangDangKyTourDaThanhToan(id)
+        .pipe(first())
+        .subscribe(registerTripDaThanhToans => {
+            if(typeof registerTripDaThanhToans === 'object'){
+              this.status2 = true;
+              this.registerTripDaThanhToans = registerTripDaThanhToans;
+              // console.log(registerTripDaThanhToans);
+            } 
+            else{
+            }
+          }
+        );
       
       this.tourGuideService.listKhachHangDangKyTour(id)
         .pipe(first())
@@ -84,6 +101,10 @@ export class DetailTripComponent implements OnInit {
     this.registerTripArray = registerTripArray;
   } 
 
+  onChangePage2(registerTripDaThanhToanArray: Array<RegisterTrip>) {
+    this.registerTripDaThanhToanArray = registerTripDaThanhToanArray;
+  } 
+
   cancel() {
     this.location.back(); // <-- go back to previous location on cancel
   }
@@ -91,6 +112,11 @@ export class DetailTripComponent implements OnInit {
   reloadPage(){
     window.location.reload();
   }
-  
+
+  duyet(event) {
+    console.log(event.target.id);
+    this.tourGuideService.duyetKhachhang(event.target.id).pipe(first()).subscribe();
+    window.location.reload();
+  }
 
 }

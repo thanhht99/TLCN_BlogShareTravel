@@ -82,7 +82,9 @@
                 <label>Ngày bắt đầu</label>
                 <input type="date" formControlName="startDate" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.startDate.errors }" />
                 <div *ngIf="submitted && f.startDate.errors" class="invalid-feedback">
-                    <div *ngIf="f.startDate.errors.required">Ngày bắt đầu là bắt buộc</div>
+                    <div *ngIf="f.startDate.errors.required">
+                        Ngày bắt đầu là bắt buộc
+                    </div>
                 </div>
             </div>
             <div class="form-row">

@@ -2,255 +2,250 @@
 
 <nav *ngIf="account">
     <div class="main-content">
-        <div class="container-fluid">
-            <div class="row" class="d-flex justify-content-center align-items-center">
-                <div class="col-md-12">
-                    <div class="card border-primary">
-                        <h1 class="card-header">Đăng ký chuyến đi</h1>
-                        <div class="card-body">
-                            <form [formGroup]="form" (ngSubmit)="register()">
-                                <div class="form-row">
-                                    <label>Tên Tour:
-                    <p class="form-register-trip">
-                      {{ tour.name }}
-                    </p>
-                  </label>
-                                </div>
-                                <!--DONG1-->
-                                <div class="newspaper4">
-                                    <div class="form-row">
-                                        <label>Khởi hành:
-                      <p class="form-register-trip">
-                        {{ tour.departureLocation }}
-                      </p>
-                    </label>
-                                    </div>
+        <div class="card border-primary">
+            <h1 class="card-header">Đăng ký chuyến đi</h1>
+            <div class="card-body">
+                <form [formGroup]="form" (ngSubmit)="register()">
+                    <div class="form-row">
+                        <label>Tên Tour:
+        <p class="form-register-trip">
+          {{ tour.name }}
+        </p>
+      </label>
+                    </div>
+                    <!--DONG1-->
+                    <div class="newspaper4">
+                        <div class="form-row">
+                            <label>Khởi hành:
+          <p class="form-register-trip">
+            {{ tour.departureLocation }}
+          </p>
+        </label>
+                        </div>
 
-                                    <div class="form-row">
-                                        <label>Điểm đến:
-                      <p class="form-register-trip">
-                        {{ tour.destination }}
-                      </p>
-                    </label>
-                                    </div>
+                        <div class="form-row">
+                            <label>Điểm đến:
+          <p class="form-register-trip">
+            {{ tour.destination }}
+          </p>
+        </label>
+                        </div>
 
-                                    <div class="form-row">
-                                        <label>Ngày khởi hành:
-                      <p class="form-register-trip">
-                        {{ trip.startDate }}
-                      </p>
-                    </label>
-                                    </div>
+                        <div class="form-row">
+                            <label>Ngày khởi hành:
+          <p class="form-register-trip">
+            {{ trip.startDate }}
+          </p>
+        </label>
+                        </div>
 
-                                    <div class="form-row">
-                                        <label>Ngày về:
-                      <p class="form-register-trip">
-                        {{ trip.endDate }}
-                      </p>
-                    </label>
-                                    </div>
-                                </div>
-
-                                <!--DONG2-->
-                                <div class="newspaper4">
-                                    <div class="form-row">
-                                        <label>Thời gian:
-                      <p class="form-register-trip">
-                        {{ tour.time }}
-                      </p>
-                    </label>
-                                    </div>
-
-                                    <div class="form-row">
-                                        <label>Khách sạn:
-                      <p class="form-register-trip">
-                        {{ trip.infoHotel }}
-                      </p>
-                    </label>
-                                    </div>
-
-                                    <div class="form-row">
-                                        <label>Phương tiện di chuyển:
-                      <p class="form-register-trip">
-                        {{ trip.infoVehicle }}
-                      </p>
-                    </label>
-                                    </div>
-
-                                    <div class="form-row">
-                                        <label>Mã Tour:
-                      <p class="form-register-trip">
-                        {{ trip.tourId }}{{ tour.tourGuideId }}{{ trip.id
-                        }}{{ trip.tourGuideId }}
-                      </p>
-                    </label>
-                                    </div>
-                                </div>
-
-                                <!--DONG3-->
-                                <div class="newspaper4">
-                                    <div class="form-row">
-                                        <label>Tên người đăng ký</label>
-                                        <input type="text " formControlName="nameRegister" class="form-control" [ngClass]="{
-                        'is-invalid': submitted && f.nameRegister.errors
-                      }" />
-                                        <div *ngIf="submitted && f.nameRegister.errors" class="invalid-feedback">
-                                            <div *ngIf="f.nameRegister.errors.required">
-                                                Tên người đăng ký thì bắt buộc
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-row">
-                                        <label>SĐT</label>
-                                        <input type="text" formControlName="phone" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.phone.errors }" />
-                                        <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
-                                            <div *ngIf="f.phone.errors.required">
-                                                SĐT thì bắt buộc
-                                            </div>
-                                            <div *ngIf="f.phone.errors.minlength">
-                                                SĐT phải có 10 ký tự
-                                            </div>
-                                            <div *ngIf="f.phone.errors.maxlength">
-                                                SĐT phải có 10 ký tự
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-row">
-                                        <label>CMND/CCCD</label>
-                                        <input type="text" formControlName="identity" class="form-control" [ngClass]="{
-                        'is-invalid': submitted && f.identity.errors
-                      }" />
-                                        <div *ngIf="submitted && f.identity.errors" class="invalid-feedback">
-                                            <div *ngIf="f.identity.errors.required">
-                                                CMND/CCCD thì bắt buộc.
-                                            </div>
-                                            <div *ngIf="f.identity.errors.minlength">
-                                                CMND/CCCD phải có 9 ký tự.
-                                            </div>
-                                            <div *ngIf="f.identity.errors.maxlength">
-                                                CMND/CCCD phải có 9 ký tự.
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-row">
-                                        <label>Địa chỉ</label>
-                                        <input type="text " formControlName="address" class="form-control" [ngClass]="{
-                        'is-invalid': submitted && f.address.errors
-                      }" />
-                                        <div *ngIf="submitted && f.address.errors" class="invalid-feedback">
-                                            <div *ngIf="f.address.errors.required">
-                                                Địa chỉ thì bắt buộc
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!--DONG4-->
-                                <div class="newspaper4">
-                                    <div class="form-row">
-                                        <label>Giá người lớn:
-                      <p class="form-register-trip">{{ trip.price }} VNĐ</p>
-                    </label>
-                                    </div>
-
-                                    <div class="form-row">
-                                        <label>Giá trẻ em:
-                      <p class="form-register-trip">
-                        {{ trip.childrenPrice }} VNĐ
-                      </p>
-                    </label>
-                                    </div>
-
-                                    <div class="form-row">
-                                        <label>Giá em bé:
-                      <p class="form-register-trip">{{ trip.babyPrice }} VNĐ</p>
-                    </label>
-                                    </div>
-
-                                    <div class="form-row">
-                                        <label>
-                      <p class="form-register-trip"></p>
-                    </label>
-                                    </div>
-                                </div>
-
-                                <!--DONG5-->
-                                <div class="newspaper4">
-                                    <div class="form-row">
-                                        <label>Người lớn</label>
-                                        <input type="number" min="0" formControlName="adults" class="form-control" [ngClass]="{
-                        'is-invalid': submitted && f.adults.errors
-                      }" />
-                                        <div *ngIf="submitted && f.adults.errors" class="invalid-feedback">
-                                            <div *ngIf="f.adults.errors.required">
-                                                Số lượng người lớn thì bắt buộc
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-row">
-                                        <label>Trẻ em</label>
-                                        <input type="number" min="0" formControlName="children" class="form-control" [ngClass]="{
-                        'is-invalid': submitted && f.children.errors
-                      }" />
-                                        <div *ngIf="submitted && f.children.errors" class="invalid-feedback">
-                                            <div *ngIf="f.children.errors.required">
-                                                Số lượng trẻ em thì bắt buộc.
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-row">
-                                        <label>Em bé</label>
-                                        <input type="number" min="0" formControlName="baby" class="form-control" [ngClass]="{
-                        'is-invalid': submitted && f.baby.errors
-                      }" />
-                                        <div *ngIf="submitted && f.baby.errors" class="invalid-feedback">
-                                            <div *ngIf="f.baby.errors.required">
-                                                Số lượng em bé thì bắt buộc.
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <label>Giới tính người đăng kí</label>
-                                    <div>
-                                        <input id="male" type="radio" value="Nam" name="gender" formControlName="gender" />
-                                        <label for="male">Nam</label>
-                                    </div>
-                                    <div>
-                                        <input id="female" type="radio" value="Nữ" name="gender" formControlName="gender" />
-                                        <label for="female">Nữ</label>
-                                    </div>
-                                    <div *ngIf="submitted && f.gender.errors" class="alert alert-danger">
-                                        <div *ngIf="f.gender.errors.required">
-                                            Giới tính thì bắt buộc.
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="form-row">
-                                    <button [disabled]="loading" class="btn btn-primary">
-                    <span
-                      *ngIf="loading"
-                      class="spinner-border spinner-border-sm mr-1"
-                    ></span>
-                    Đăng kí
-                  </button>
-                                   <a class="btn btn-danger" (click)="cancel()">
-                    Hủy
-                  </a>
-                                </div>
-                                <div class="col-md-5 col-sm-5 col-xs-12"></div>
-                                <div class="col-md-7 col-sm-7 col-xs-12"></div>
-                            </form>
+                        <div class="form-row">
+                            <label>Ngày về:
+          <p class="form-register-trip">
+            {{ trip.endDate }}
+          </p>
+        </label>
                         </div>
                     </div>
-                </div>
+
+                    <!--DONG2-->
+                    <div class="newspaper4">
+                        <div class="form-row">
+                            <label>Thời gian:
+          <p class="form-register-trip">
+            {{ tour.time }}
+          </p>
+        </label>
+                        </div>
+
+                        <div class="form-row">
+                            <label>Khách sạn:
+          <p class="form-register-trip">
+            {{ trip.infoHotel }}
+          </p>
+        </label>
+                        </div>
+
+                        <div class="form-row">
+                            <label>Phương tiện di chuyển:
+          <p class="form-register-trip">
+            {{ trip.infoVehicle }}
+          </p>
+        </label>
+                        </div>
+
+                        <div class="form-row">
+                            <label>Mã Tour:
+          <p class="form-register-trip">
+            {{ trip.tourId }}{{ tour.tourGuideId }}{{ trip.id
+            }}{{ trip.tourGuideId }}
+          </p>
+        </label>
+                        </div>
+                    </div>
+
+                    <!--DONG3-->
+                    <div class="newspaper4">
+                        <div class="form-row">
+                            <label>Tên người đăng ký</label>
+                            <input type="text " formControlName="nameRegister" class="form-control" [ngClass]="{
+            'is-invalid': submitted && f.nameRegister.errors
+          }" />
+                            <div *ngIf="submitted && f.nameRegister.errors" class="invalid-feedback">
+                                <div *ngIf="f.nameRegister.errors.required">
+                                    Tên người đăng ký thì bắt buộc
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <label>SĐT</label>
+                            <input type="text" formControlName="phone" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.phone.errors }" />
+                            <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
+                                <div *ngIf="f.phone.errors.required">
+                                    SĐT thì bắt buộc
+                                </div>
+                                <div *ngIf="f.phone.errors.minlength">
+                                    SĐT phải có 10 ký tự
+                                </div>
+                                <div *ngIf="f.phone.errors.maxlength">
+                                    SĐT phải có 10 ký tự
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <label>CMND/CCCD</label>
+                            <input type="text" formControlName="identity" class="form-control" [ngClass]="{
+            'is-invalid': submitted && f.identity.errors
+          }" />
+                            <div *ngIf="submitted && f.identity.errors" class="invalid-feedback">
+                                <div *ngIf="f.identity.errors.required">
+                                    CMND/CCCD thì bắt buộc.
+                                </div>
+                                <div *ngIf="f.identity.errors.minlength">
+                                    CMND/CCCD phải có 9 ký tự.
+                                </div>
+                                <div *ngIf="f.identity.errors.maxlength">
+                                    CMND/CCCD phải có 9 ký tự.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <label>Địa chỉ</label>
+                            <input type="text " formControlName="address" class="form-control" [ngClass]="{
+            'is-invalid': submitted && f.address.errors
+          }" />
+                            <div *ngIf="submitted && f.address.errors" class="invalid-feedback">
+                                <div *ngIf="f.address.errors.required">
+                                    Địa chỉ thì bắt buộc
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--DONG4-->
+                    <div class="newspaper4">
+                        <div class="form-row">
+                            <label>Giá người lớn:
+          <p class="form-register-trip">{{ trip.price }} VNĐ</p>
+        </label>
+                        </div>
+
+                        <div class="form-row">
+                            <label>Giá trẻ em:
+          <p class="form-register-trip">
+            {{ trip.childrenPrice }} VNĐ
+          </p>
+        </label>
+                        </div>
+
+                        <div class="form-row">
+                            <label>Giá em bé:
+          <p class="form-register-trip">{{ trip.babyPrice }} VNĐ</p>
+        </label>
+                        </div>
+
+                        <div class="form-row">
+                            <label>
+          <p class="form-register-trip"></p>
+        </label>
+                        </div>
+                    </div>
+
+                    <!--DONG5-->
+                    <div class="newspaper4">
+                        <div class="form-row">
+                            <label>Người lớn</label>
+                            <input type="number" min="0" formControlName="adults" class="form-control" [ngClass]="{
+            'is-invalid': submitted && f.adults.errors
+          }" />
+                            <div *ngIf="submitted && f.adults.errors" class="invalid-feedback">
+                                <div *ngIf="f.adults.errors.required">
+                                    Số lượng người lớn thì bắt buộc
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <label>Trẻ em</label>
+                            <input type="number" min="0" formControlName="children" class="form-control" [ngClass]="{
+            'is-invalid': submitted && f.children.errors
+          }" />
+                            <div *ngIf="submitted && f.children.errors" class="invalid-feedback">
+                                <div *ngIf="f.children.errors.required">
+                                    Số lượng trẻ em thì bắt buộc.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <label>Em bé</label>
+                            <input type="number" min="0" formControlName="baby" class="form-control" [ngClass]="{
+            'is-invalid': submitted && f.baby.errors
+          }" />
+                            <div *ngIf="submitted && f.baby.errors" class="invalid-feedback">
+                                <div *ngIf="f.baby.errors.required">
+                                    Số lượng em bé thì bắt buộc.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- <div class="form-group">
+                        <label>Giới tính người đăng kí</label>
+                        <div>
+                            <input id="male" type="radio" value="Nam" name="gender" formControlName="gender" />
+                            <label for="male">Nam</label>
+                        </div>
+                        <div>
+                            <input id="female" type="radio" value="Nữ" name="gender" formControlName="gender" />
+                            <label for="female">Nữ</label>
+                        </div>
+                        <div *ngIf="submitted && f.gender.errors" class="alert alert-danger">
+                            <div *ngIf="f.gender.errors.required">
+                                Giới tính thì bắt buộc.
+                            </div>
+                        </div>
+                    </div> -->
+
+                    <br/>
+                    <div class="form-row">
+                        <button [disabled]="loading" class="btn btn-primary">
+        <span
+          *ngIf="loading"
+          class="spinner-border spinner-border-sm mr-1"
+        ></span>
+        Đăng kí
+      </button>
+                        <a class="btn btn-danger" (click)="cancel()">
+        Hủy
+      </a>
+                    </div>
+                    <div class="col-md-5 col-sm-5 col-xs-12"></div>
+                    <div class="col-md-7 col-sm-7 col-xs-12"></div>
+                </form>
             </div>
         </div>
     </div>

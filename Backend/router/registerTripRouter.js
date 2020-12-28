@@ -57,4 +57,23 @@ router.get('/listDaDuyet/:id', async(req, res) => {
     });
 })
 
+router.get('/duyet/:id', async(req, res) => {
+
+    // console.log(req.body);
+
+    const idneed = parseInt(req.params.id, 10);
+    // console.log(idneed);
+    const registerTrip = await RegisterTrip.findOne({ where: { id: idneed } });
+    if (!registerTrip) {
+        res.json(404);
+    } else {
+        await RegisterTrip.update({
+            isConfirm: true
+        }, { where: { id: idneed } }, { new: true }).then((data) => {
+            console.log(data);
+            // res.json(data);
+        })
+    }
+})
+
 module.exports = router;

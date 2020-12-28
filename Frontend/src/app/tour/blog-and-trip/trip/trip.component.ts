@@ -113,7 +113,6 @@ export class TripComponent implements OnInit {
     this.loading = true;      
     // console.log(this.form.value);
     this.trip = this.form.value;
-
     this.trip.endDate = new DatePipe('en-US').transform(this.trip.endDate, 'dd/MM/yyyy');
     this.trip.startDate = new DatePipe('en-US').transform(this.trip.startDate, 'dd/MM/yyyy');
     this.trip.tourGuideId = this.tourGuide.id;
