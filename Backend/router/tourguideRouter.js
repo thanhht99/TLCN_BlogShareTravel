@@ -62,7 +62,12 @@ router.post('/info/update', async(req, res) => {
 router.get('/:id/tripHoanThanh', async(req, res) => {
 
     const idneed = parseInt(req.params.id, 10);
-    const test = await Trip.findOne({ where: { tourGuideId: idneed, isStatus: true } });
+    const test = await Trip.findOne({
+        where: {
+            tourGuideId: idneed,
+            isStatus: true
+        }
+    });
     if (!test) {
         res.json(404);
     } else {
@@ -83,7 +88,7 @@ router.get('/:id/tripHoanThanh', async(req, res) => {
                 // }
             },
             order: [
-                ['id', 'ASC']
+                ['startDate', 'ASC']
                 // tăng ASC
             ],
             include: [{
@@ -101,7 +106,12 @@ router.get('/:id/tripHoanThanh', async(req, res) => {
 router.get('/:id/trip', async(req, res) => {
 
     const idneed = parseInt(req.params.id, 10);
-    const test = await Trip.findOne({ where: { tourGuideId: idneed, isStatus: true } });
+    const test = await Trip.findOne({
+        where: {
+            tourGuideId: idneed,
+            isStatus: true
+        }
+    });
     if (!test) {
         res.json(404);
     } else {

@@ -54,8 +54,8 @@ export class DetailRegisterTripComponent implements OnInit {
         this.detail = this.listDaDuyets[i];
       }      
     }
-    // console.log('--------------detail-------------');
-    // console.log(this.detail);
+    console.log('--------------detail-------------');
+    console.log(this.detail);
 
 
 

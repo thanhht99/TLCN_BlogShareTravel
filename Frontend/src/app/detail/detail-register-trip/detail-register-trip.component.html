@@ -98,6 +98,9 @@
             <div type="button" class="btn btn-danger" style="margin-left: 25px">
                 <b (click)="cancel()">Quay Lại</b>
             </div>
+            <div type="button" class="btn btn-warning" style="margin-left: 25px" *ngIf="detail.Trip.isCondition">
+                Đánh giá
+            </div>
         </div>
     </div>
 </div>

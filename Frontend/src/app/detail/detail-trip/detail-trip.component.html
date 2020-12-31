@@ -99,11 +99,11 @@
             <div type="button" class="btn btn-success" (click)="khoa($event)" id="{{ registerTrips[0].Trip.id }}" *ngIf="
           registerTrips[0].Trip.amount -
             registerTrips[0].Trip.theRemainingAmount >=
-            30 && registerTrips[0].Trip.isStatus
+            30 && registerTrips[0].Trip.isStatus && !registerTrips[0].Trip.isCondition
         ">
                 Khóa Tour
             </div>
-            <div type="button" class="btn btn-danger" (click)="huy($event)" id="{{ registerTrips[0].Trip.id }}" *ngIf="registerTrips[0].Trip.isStatus">
+            <div type="button" class="btn btn-danger" (click)="huy($event)" id="{{ registerTrips[0].Trip.id }}" *ngIf="registerTrips[0].Trip.isStatus && !registerTrips[0].Trip.isCondition">
                 Hủy Tour
             </div>
             <div type="button" class="btn btn-warning" *ngIf="registerTrips[0].Trip.isCondition">Đánh giá</div>
@@ -197,10 +197,10 @@
                 </div>
             </div>
             <br />
-            <div type="button" class="btn btn-success" (click)="khoa($event)" id="{{ trips.id }}" *ngIf="trips.amount - trips.theRemainingAmount >= 30 && trips.isStatus">
+            <div type="button" class="btn btn-success" (click)="khoa($event)" id="{{ trips.id }}" *ngIf="trips.amount - trips.theRemainingAmount >= 30 && trips.isStatus && !trips.isCondition">
                 Khóa Tour
             </div>
-            <div type="button" class="btn btn-danger" (click)="huy($event)" id="{{ trips.id }}" *ngIf="trips.isStatus">
+            <div type="button" class="btn btn-danger" (click)="huy($event)" id="{{ trips.id }}" *ngIf="trips.isStatus && !trips.isCondition">
                 Hủy Tour
             </div>
             <div type="button" class="btn btn-warning" *ngIf="trips.isCondition">Đánh giá</div>

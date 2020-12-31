@@ -7,6 +7,8 @@ let path = require('path');
 const Sequelize = require('sequelize')
 const collect = require('collect.js');
 
+var sequelize = require('sequelize');
+const { Op } = require("sequelize");
 // upload image
 var fileExtension = require('file-extension')
 const multer = require('multer');
@@ -192,7 +194,15 @@ router.get('/trip', (req, res) => {
 router.get('/:id/trip', async(req, res) => {
 
     const idneed = parseInt(req.params.id, 10);
-    const test = await Trip.findOne({ where: { tourId: idneed, isStatus: true } });
+    const test = await Trip.findOne({
+        where: {
+            tourId: idneed,
+            isStatus: true,
+            startDate: {
+                [Op.gt]: new Date()
+            }
+        }
+    });
     if (!test) {
         res.status(404).json("No found");
     } else {
@@ -201,10 +211,13 @@ router.get('/:id/trip', async(req, res) => {
             // where: { tourId: idneed, theRemainingAmount: { $gt: 0 } },
             where: {
                 tourId: idneed,
-                isStatus: true
+                isStatus: true,
+                startDate: {
+                    [Op.gt]: new Date()
+                }
             },
             order: [
-                ['id', 'ASC']
+                ['startDate', 'ASC']
                 // tăng ASC
             ],
             include: [{
@@ -391,7 +404,7 @@ router.get('/khoaTrip/:id', async(req, res) => {
         res.json(404);
     } else {
         await Trip.update({
-            isStatus: false,
+            // isStatus: false,
             isCondition: true,
         }, { where: { id: idneed } }, { new: true }).then((data) => {
             console.log(data);
