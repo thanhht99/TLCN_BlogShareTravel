@@ -12,7 +12,8 @@ export class Trip {
     babyPrice: String; 
     amount: Number;   
     theRemainingAmount: Number;   
-    isStatus: Boolean
+    isStatus: Boolean;
+    isCondition: Boolean;
     tourId: Number;
     tourGuideId: Number;    
     Tour: Tour;

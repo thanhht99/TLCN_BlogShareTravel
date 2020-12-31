@@ -126,4 +126,10 @@ export class DetailTripComponent implements OnInit {
     window.location.reload();
   }
 
+  huy(event) {
+    console.log(event.target.id);
+    this.tourGuideService.huyTrip(event.target.id).pipe(first()).subscribe();
+    window.location.reload();
+  }
+
 }

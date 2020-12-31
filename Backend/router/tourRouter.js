@@ -201,6 +201,7 @@ router.get('/:id/trip', async(req, res) => {
             // where: { tourId: idneed, theRemainingAmount: { $gt: 0 } },
             where: {
                 tourId: idneed,
+                isStatus: true
             },
             order: [
                 ['id', 'ASC']
@@ -374,7 +375,6 @@ router.post('/registerTrip', async(req, res) => {
                 error: 'Số lượng không đủ để đăng kí.'
             })
         }
-
     }
 }, (error, req, res, next) => {
     res.status(400).send({
@@ -382,7 +382,7 @@ router.post('/registerTrip', async(req, res) => {
     })
 });
 
-// Khóa tour
+// Khóa trip
 router.get('/khoaTrip/:id', async(req, res) => {
 
     const idneed = parseInt(req.params.id, 10);
@@ -400,5 +400,24 @@ router.get('/khoaTrip/:id', async(req, res) => {
     }
 });
 
+// hủy trip
+router.get('/huyTrip/:id', async(req, res) => {
+
+    const idneed = parseInt(req.params.id, 10);
+    const test = await Trip.findOne({ where: { id: idneed } });
+    if (!test) {
+        res.json(404);
+    } else {
+        await Trip.update({
+            isStatus: false,
+            isCondition: false,
+        }, { where: { id: idneed } }, { new: true }).then((data) => {
+            // console.log(data);
+            RegisterTrip.destroy({ where: { tripId: idneed } }, { new: true }).then((data1) => {
+                // console.log(data1);
+            })
+        })
+    }
+});
 
 module.exports = router;

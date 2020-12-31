@@ -22,8 +22,8 @@ module.exports = (sequelize, DataTypes) => {
     Trip.init({
         infoHotel: DataTypes.STRING,
         infoVehicle: DataTypes.STRING,
-        startDate: DataTypes.STRING,
-        endDate: DataTypes.STRING,
+        startDate: DataTypes.DATEONLY,
+        endDate: DataTypes.DATEONLY,
         price: DataTypes.STRING,
         childrenPrice: DataTypes.STRING,
         babyPrice: DataTypes.STRING,

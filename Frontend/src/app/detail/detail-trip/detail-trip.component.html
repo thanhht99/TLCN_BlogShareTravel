@@ -7,7 +7,7 @@
   <b (click)="cancel()">Quay Lại</b>
 </div>
 
-<!-- <div class="classdetails" *ngIf="account.isTourGuide && status">
+<div class="classdetails" *ngIf="account.isTourGuide && status">
     <div class="card border-primary">
         <h1 class="tour-banner-title" style="width: 96%">
             {{ registerTrips[0].Trip.Tour.name }}
@@ -96,16 +96,22 @@
                 </div>
             </div>
             <br />
-            <div type="button" class="btn btn-success" *ngIf="(registerTrips[0].Trip.amount -
-            registerTrips[0].Trip.theRemainingAmount) >= 30">
+            <div type="button" class="btn btn-success" (click)="khoa($event)" id="{{ registerTrips[0].Trip.id }}" *ngIf="
+          registerTrips[0].Trip.amount -
+            registerTrips[0].Trip.theRemainingAmount >=
+            30 && registerTrips[0].Trip.isStatus
+        ">
                 Khóa Tour
             </div>
-            <div type="button" class="btn btn-danger">Hủy Tour</div>
+            <div type="button" class="btn btn-danger" (click)="huy($event)" id="{{ registerTrips[0].Trip.id }}" *ngIf="registerTrips[0].Trip.isStatus">
+                Hủy Tour
+            </div>
+            <div type="button" class="btn btn-warning" *ngIf="registerTrips[0].Trip.isCondition">Đánh giá</div>
         </div>
     </div>
-</div> -->
+</div>
 
-<div class="classdetails" *ngIf="account.isTourGuide">
+<div class="classdetails" *ngIf="account.isTourGuide && !status">
     <div class="card border-primary">
         <h1 class="tour-banner-title" style="width: 96%">
             {{ trips.Tour.name }}
@@ -191,10 +197,13 @@
                 </div>
             </div>
             <br />
-            <div type="button" class="btn btn-success" (click)="khoa($event)" id="{{ trips.id }}" *ngIf="(trips.amount - trips.theRemainingAmount) >= 30">
+            <div type="button" class="btn btn-success" (click)="khoa($event)" id="{{ trips.id }}" *ngIf="trips.amount - trips.theRemainingAmount >= 30 && trips.isStatus">
                 Khóa Tour
             </div>
-            <div type="button" class="btn btn-danger">Hủy Tour</div>
+            <div type="button" class="btn btn-danger" (click)="huy($event)" id="{{ trips.id }}" *ngIf="trips.isStatus">
+                Hủy Tour
+            </div>
+            <div type="button" class="btn btn-warning" *ngIf="trips.isCondition">Đánh giá</div>
         </div>
     </div>
 </div>

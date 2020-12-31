@@ -25,6 +25,10 @@ export class ListTripByIdComponent implements OnInit {
 
   listTrips: Trip;
   listTripsArray: Array<Trip>;
+
+  listTripDaThucHiens: Trip;
+  listTripDaThucHiensArray: Array<Trip>;
+
   id: number;
   sub: any;
   constructor(private tourService: TourService, 
@@ -49,9 +53,18 @@ export class ListTripByIdComponent implements OnInit {
             // console.log(lists);
             }
           );
+
+      this.tourGuideService.listTripDaHoanThanhByTourGuideId(this.id)
+          .pipe(first())
+          .subscribe(lists => {
+            // console.log('--------------lists-------------');
+            // console.log(lists);
+            }
+          );
     }
 
     this.listTrips = this.tourGuideService.listTripValue;
+    this.listTripDaThucHiens = this.tourGuideService.listTripDaHoanThanhValue;
 
 
   }
@@ -61,6 +74,10 @@ export class ListTripByIdComponent implements OnInit {
 
   onChangePage(listTripsArray: Array<Trip>) {
     this.listTripsArray = listTripsArray;
+  } 
+
+  onChangePage2(listTripDaThucHiensArray: Array<Trip>) {
+    this.listTripDaThucHiensArray = listTripDaThucHiensArray;
   } 
 
   reloadPage(){

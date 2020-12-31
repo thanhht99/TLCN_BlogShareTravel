@@ -47,8 +47,6 @@ router.post('/register', async(req, res, next) => {
         isSuperAdmin: false,
         isStatus: false
     });
-
-
     var salt = bcrypt.genSaltSync(10);
     var hash = bcrypt.hashSync(valueAccount.password, salt);
     valueAccount.password = hash;

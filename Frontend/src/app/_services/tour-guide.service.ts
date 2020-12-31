@@ -20,6 +20,9 @@ import { map } from 'rxjs/operators';
     private listTripSubject: BehaviorSubject<Trip>;
     public listTrip: Observable<Trip>;
 
+    private listTripDaHoanThanhSubject: BehaviorSubject<Trip>;
+    public listTripDaHoanThanh: Observable<Trip>;
+
     private listDetailTripSubject: BehaviorSubject<RegisterTrip>;
     public listDetailTrip: Observable<RegisterTrip>;
 
@@ -39,6 +42,9 @@ import { map } from 'rxjs/operators';
       this.listTripSubject = new BehaviorSubject<Trip>(JSON.parse(localStorage.getItem('listTrip')));
       this.listTrip = this.listTripSubject.asObservable();
 
+      this.listTripDaHoanThanhSubject = new BehaviorSubject<Trip>(JSON.parse(localStorage.getItem('listTripDaHoanThanh')));
+      this.listTripDaHoanThanh = this.listTripDaHoanThanhSubject.asObservable();
+
       this.listDetailTripSubject = new BehaviorSubject<RegisterTrip>(JSON.parse(localStorage.getItem('listDetailTrip')));
       this.listDetailTrip = this.listDetailTripSubject.asObservable();
 
@@ -55,6 +61,10 @@ import { map } from 'rxjs/operators';
 
     public get listTripValue(): Trip {
       return this.listTripSubject.value;
+    }
+
+    public get listTripDaHoanThanhValue(): Trip {
+      return this.listTripDaHoanThanhSubject.value;
     }
 
     public get listDetailTripValue(): RegisterTrip {
@@ -88,6 +98,15 @@ import { map } from 'rxjs/operators';
             localStorage.setItem('listTrip', JSON.stringify(listTrip));
             this.listTripSubject.next(listTrip);
             return listTrip; 
+        }));
+    }
+
+    listTripDaHoanThanhByTourGuideId(id: number) {
+      return this.http.get<Trip>(`${this.webRequestService.ROOT_URL}/tourguide/${id}/tripHoanThanh`)
+        .pipe(map(listTripDaHoanThanh => {
+            localStorage.setItem('listTripDaHoanThanh', JSON.stringify(listTripDaHoanThanh));
+            this.listTripDaHoanThanhSubject.next(listTripDaHoanThanh);
+            return listTripDaHoanThanh; 
         }));
     }
 
@@ -130,6 +149,13 @@ import { map } from 'rxjs/operators';
       console.log(id);
       return this.http.get(`${this.webRequestService.ROOT_URL}/tour/khoaTrip/${id}`);
     }
+
+    huyTrip(id: number){
+      console.log(id);
+      return this.http.get(`${this.webRequestService.ROOT_URL}/tour/huyTrip/${id}`);
+    }
+
+
 
 
 

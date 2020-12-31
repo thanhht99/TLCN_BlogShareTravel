@@ -6,6 +6,49 @@
 <div type="button" class="btn btn-danger">
   <b (click)="cancel()">Quay Lại</b>
 </div>
+<h2>Danh sách các chuyến đi đã thực hiện</h2>
+<div class="row trip-row" *ngIf="account.isTourGuide">
+    <div class="tbl-header">
+        <table cellpadding="0" cellspacing="0" border="0">
+            <thead>
+                <tr>
+                    <th>Mã Tour</th>
+                    <th>Ngày đi</th>
+                    <th>Ngày về</th>
+                    <th>Khởi hành</th>
+                    <th>Điểm đến</th>
+                    <th>Giá</th>
+                    <th>Chi tiết</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+    <div class="tbl-content" *ngFor="let listTripDaThucHien of listTripDaThucHiensArray">
+        <table cellpadding="0" cellspacing="0" border="0">
+            <tbody>
+                <tr>
+                    <td>
+                        {{ listTripDaThucHien.Tour.id }}{{ listTripDaThucHien.Tour.tourGuideId }}{{ listTripDaThucHien.id }}{{ listTripDaThucHien.tourGuideId }}
+                    </td>
+                    <td>{{ listTripDaThucHien.startDate }}</td>
+                    <td>{{ listTripDaThucHien.endDate }}</td>
+                    <td>{{ listTripDaThucHien.Tour.departureLocation }}</td>
+                    <td>{{ listTripDaThucHien.Tour.destination }}</td>
+                    <td>{{ listTripDaThucHien.Tour.price }} VNĐ</td>
+                    <td>
+                        <a routerLink="/tourguide/info/{{ account.id }}/detailTrip/{{ listTripDaThucHien.id }}"> Chi tiết </a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="card text-center m-3">
+    <div class="card-footer pb-0 pt-3">
+        <jw-pagination [items]="listTripDaThucHiens" (changePage)="onChangePage2($event)"></jw-pagination>
+    </div>
+</div>
+
 <h2>Danh sách các chuyến đi được hướng dẫn</h2>
 <div class="row trip-row" *ngIf="account.isTourGuide">
     <div class="tbl-header">

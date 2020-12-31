@@ -4,6 +4,8 @@ let router = express.Router();
 // Load the models
 let models = require('../models');
 var bcrypt = require('bcrypt');
+var sequelize = require('sequelize');
+const { Op } = require("sequelize");
 
 const Account = models.Account;
 const TourGuide = models.TourGuide;
@@ -56,6 +58,45 @@ router.post('/info/update', async(req, res) => {
     }
 })
 
+// get trip by id tourGuideId chuyến đi đã hoàn thành
+router.get('/:id/tripHoanThanh', async(req, res) => {
+
+    const idneed = parseInt(req.params.id, 10);
+    const test = await Trip.findOne({ where: { tourGuideId: idneed, isStatus: true } });
+    if (!test) {
+        res.json(404);
+    } else {
+        Trip.findAll({
+            where: {
+                tourGuideId: idneed,
+                isStatus: true,
+                startDate: {
+                    [Op.lt]: new Date()
+                        // [Op.gt]: new Date(new Date() - 24 * 60 * 60 * 1000)
+                }
+
+
+                // todayDateTime: { $gt: sequelize.fn('startDate') }
+                // startDate: {
+                //     $lt: new Date('2021-10-20'),
+                //     $gt: new Date(new Date('2021-10-20') - 24 * 60 * 60 * 1000)
+                // }
+            },
+            order: [
+                ['id', 'ASC']
+                // tăng ASC
+            ],
+            include: [{
+                model: Tour
+            }]
+        }).then((trips) => {
+            res.json(trips);
+        }).catch((err) => {
+            res.send(err);
+        });
+    }
+});
+
 // get trip by id tourGuideId
 router.get('/:id/trip', async(req, res) => {
 
@@ -65,9 +106,16 @@ router.get('/:id/trip', async(req, res) => {
         res.json(404);
     } else {
         Trip.findAll({
-            where: { tourGuideId: idneed },
+            where: {
+                tourGuideId: idneed,
+                isStatus: true,
+                startDate: {
+                    [Op.gt]: new Date()
+                        // [Op.gt]: new Date(new Date() - 24 * 60 * 60 * 1000)
+                }
+            },
             order: [
-                ['id', 'ASC']
+                ['startDate', 'ASC']
                 // tăng ASC
             ],
             include: [{
