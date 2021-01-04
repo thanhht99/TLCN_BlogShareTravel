@@ -169,7 +169,7 @@ router.get('/:id/listChuaDuyet', async(req, res) => {
 router.get('/info/:id', async(req, res) => {
 
     const idneed = parseInt(req.params.id, 10);
-    const testTour = await Tour.findOne({ where: { id: idneed, isStatus: true } });
+    const testTour = await Tour.findOne({ where: { id: idneed } });
     if (!testTour) {
         res.json(404);
     } else {

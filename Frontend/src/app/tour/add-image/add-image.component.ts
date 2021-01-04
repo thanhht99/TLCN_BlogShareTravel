@@ -20,6 +20,7 @@ export class AddImageComponent implements OnInit {
   loading = false;
   submitted = false;
   id: number;
+  sub: any;
   account: Account;
   constructor(private loginService: LoginService,
               private tourService: TourService,
@@ -31,8 +32,18 @@ export class AddImageComponent implements OnInit {
               ) 
   {
     this.loginService.account.subscribe(x => this.account = x);
-    this.tourService.imageForTour.subscribe(a => this.tour = a);
-    this.id = this.route.snapshot.params['id'];
+    this.sub = this.route.params.subscribe(params => {
+      let id = Number.parseInt(params['id']);
+      this.id = id;
+      this.tourService.infoTour(id)
+      .pipe(first())
+      .subscribe(tour => {
+        this.tour = tour;
+        }
+      );                   
+    }); 
+    this.tour = this.tourService.imageForTourValue;
+    console.log(this.tour);
   }
 
   ngOnInit(): void {

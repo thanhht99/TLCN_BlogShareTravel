@@ -3,7 +3,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { HttpResponse, HttpClient } from '@angular/common/http';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
-import { TourService, LoginService, AlertService } from '../../_services';
+import { TourService, LoginService, AlertService, TourGuideService } from '../../_services';
 import { Tour, Account, TourGuide } from '../../models';
 
 import { first } from 'rxjs/operators';
@@ -28,6 +28,7 @@ export class AddTourComponent implements OnInit {
 
   constructor(private http: HttpClient,
               private loginService: LoginService,
+              private tourGuideService: TourGuideService, 
               private webRequestService: WebRequestService,
               private tourService: TourService, 
               private router: Router,
@@ -36,8 +37,9 @@ export class AddTourComponent implements OnInit {
               private alertService: AlertService) 
   {
     this.loginService.account.subscribe(x => this.account = x);
-    this.loginService.tourguide.subscribe(x => this.tourGuide = x);
-    //console.log(this.tourGuide)
+    this.tourGuide = this.tourGuideService.tourGuideValue;
+
+    console.log(this.tourGuide)
   }
 
   ngOnInit(): void {
